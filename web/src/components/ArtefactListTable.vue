@@ -1,0 +1,354 @@
+<script setup>
+import CodeBadge from '@/components/CodeBadge.vue'
+import SvgIcon from '@/components/SvgIcon.vue'
+import { useApiStore } from '@/stores/api'
+import { initDropdowns } from 'flowbite'
+
+import axios from 'axios'
+import _ from 'lodash'
+import moment from 'moment'
+import { RouterLink } from 'vue-router'
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      apiStore: useApiStore(),
+      page: 1,
+      perPage: 50,
+      rawArtefactData: null,
+      rawArtefactTypeData: null,
+      rawArtefactSourceData: null,
+      searchTerm: '',
+      typeTerm: '',
+      sourceTerm: ''
+    }
+  },
+  mounted() {
+    _.delay(initDropdowns, 1000)
+  },
+  created() {
+    this.getArtefactData()
+    this.getArtefactTypeData()
+    this.getArtefactSourceData()
+  },
+  computed: {
+    artefactData() {
+      if (this.rawArtefactData) {
+        let data = this.rawArtefactData
+
+        if (this.searchTerm) {
+          data = data.filter((item) => {
+            return item.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1
+          })
+        }
+
+        if (this.typeTerm) {
+          data = data.filter((item) => {
+            return item.type.toLowerCase() === this.typeTerm.toLowerCase()
+          })
+        }
+
+        if (this.sourceTerm) {
+          data = data.filter((item) => {
+            return item.source.toLowerCase() === this.sourceTerm.toLowerCase()
+          })
+        }
+
+        // Paginate the data
+        return data.slice(this.startIndex, this.endIndex)
+      } else {
+        return null
+      }
+    },
+    dataLength() {
+      if (this.rawArtefactData) {
+        return this.searchTerm ? this.artefactData.length : this.rawArtefactData.length
+      } else {
+        return 0
+      }
+    },
+    startIndex() {
+      return (this.page - 1) * this.perPage
+    },
+    endIndex() {
+      return Math.min(this.startIndex + this.perPage, this.dataLength)
+    }
+  },
+  methods: {
+    getArtefactData() {
+      const url = new URL(this.apiStore.artefact)
+      url.searchParams.append('limit', 10000)
+      axios.get(url.href).then((response) => (this.rawArtefactData = response.data))
+    },
+    getArtefactTypeData() {
+      const url = new URL(this.apiStore.artefact)
+      url.searchParams.append('jq', '[.[] | .type] | unique | sort')
+      axios.get(url.href).then((response) => (this.rawArtefactTypeData = response.data))
+    },
+    getArtefactSourceData() {
+      const url = new URL(this.apiStore.artefact)
+      url.searchParams.append('jq', '[.[] | .source | select(length > 0)] | unique | sort')
+      axios.get(url.href).then((response) => (this.rawArtefactSourceData = response.data))
+    },
+    formatDate(date) {
+      if (date) {
+        return moment(date).format('MMMM Do YYYY, h:mm:ss a')
+      }
+    },
+    nextPage() {
+      if (this.endIndex <= this.dataLength - 1) {
+        this.page = this.page + 1
+      }
+    },
+    previousPage() {
+      if (this.page > 1) {
+        this.page = this.page - 1
+      }
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="overflow-x-autosm:rounded-lg relative w-full">
+    <div class="flex items-center justify-between pb-4">
+      <div class="item-center flex justify-center">
+        <button
+          id="dropdownTypeButton"
+          data-dropdown-toggle="dropdownType"
+          class="inline-flex items-center rounded-l-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          type="button"
+        >
+          <SvgIcon icon="filter" class="mr-2" />
+          {{ typeTerm || 'Type' }}
+          <SvgIcon icon="chevronDown" class="ml-2" />
+        </button>
+        <button
+          id="dropdownSourceButton"
+          data-dropdown-toggle="dropdownSource"
+          class="inline-flex items-center rounded-r-lg border border-l-0 border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          type="button"
+        >
+          {{ sourceTerm || 'Source' }}
+          <SvgIcon icon="chevronDown" class="ml-2" />
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownType"
+          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-gray-300 bg-white shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+          data-popper-placement="top"
+          style="
+            position: absolute;
+            inset: auto auto 0px 0px;
+            margin: 0px;
+            transform: translate3d(522.5px, 3847.5px, 0px);
+          "
+        >
+          <ul
+            class="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownTypeButton"
+          >
+            <li>
+              <div
+                class="flex items-center rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >
+                <input
+                  checked=""
+                  id="filter-type-all"
+                  type="radio"
+                  value=""
+                  name="filter-type"
+                  class="h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  v-model="typeTerm"
+                />
+                <label
+                  for="filter-type-all"
+                  class="ml-2 w-full rounded text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  All
+                </label>
+              </div>
+            </li>
+            <li>
+              <div
+                class="flex items-center rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                v-for="record in rawArtefactTypeData"
+                :key="record"
+              >
+                <input
+                  :id="'filter-type-' + record"
+                  type="radio"
+                  :value="record"
+                  name="filter-type"
+                  class="h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  v-model="typeTerm"
+                />
+                <label
+                  :for="'filter-type-' + record"
+                  class="ml-2 w-full rounded text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  {{ record }}
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownSource"
+          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-gray-300 bg-white shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+          data-popper-placement="top"
+          style="
+            position: absolute;
+            inset: auto auto 0px 0px;
+            margin: 0px;
+            transform: translate3d(522.5px, 3847.5px, 0px);
+          "
+        >
+          <ul
+            class="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownSourceButton"
+          >
+            <li>
+              <div class="flex items-center rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+                <input
+                  checked=""
+                  id="filter-source-all"
+                  type="radio"
+                  value=""
+                  name="filter-source"
+                  class="h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  v-model="sourceTerm"
+                />
+                <label
+                  for="filter-source-all"
+                  class="ml-2 w-full rounded text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  All
+                </label>
+              </div>
+            </li>
+            <li>
+              <div
+                class="flex items-center rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                v-for="record in rawArtefactSourceData"
+                :key="record"
+              >
+                <input
+                  :id="'filter-source-' + record"
+                  type="radio"
+                  :value="record"
+                  name="filter-source"
+                  class="h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  v-model="sourceTerm"
+                />
+                <label
+                  :for="'filter-source-' + record"
+                  class="ml-2 w-full rounded text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  {{ record }}
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <label for="table-search" class="sr-only">Search</label>
+      <div class="relative">
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          <SvgIcon icon="search" />
+        </div>
+        <input
+          type="text"
+          id="table-search"
+          class="block w-80 rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+          placeholder="Search"
+          v-model="searchTerm"
+        />
+      </div>
+    </div>
+    <div class="overflow-x-auto border border-gray-300 dark:border-gray-600 sm:rounded-lg">
+      <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
+        <thead
+          class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Description</th>
+            <th scope="col" class="px-6 py-3">Type</th>
+            <th scope="col" class="px-6 py-3">Source</th>
+            <th scope="col" class="px-6 py-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            v-for="record in artefactData"
+            :key="record.artefact_id"
+          >
+            <th
+              scope="row"
+              class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+            >
+              <RouterLink :to="'/data/' + record.artefact_id">{{ record.name }}</RouterLink>
+            </th>
+            <td class="px-6 py-4">{{ record.description }}</td>
+            <td class="px-6 py-4"><CodeBadge :value="record.type" /></td>
+            <td class="px-6 py-4">{{ record.source }}</td>
+            <td class="px-6 py-4">
+              <RouterLink
+                :to="'/data/' + record.artefact_id"
+                class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+              >
+                View
+              </RouterLink>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+      <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+        Showing
+        <span class="font-semibold text-gray-900 dark:text-white">
+          {{ startIndex + 1 }}-{{ endIndex }}
+        </span>
+        of
+        <span
+          class="font-semibold text-gray-900 dark:text-white"
+          v-if="!_.isEmpty(rawArtefactData)"
+        >
+          {{ dataLength }}
+        </span>
+      </span>
+      <ul class="inline-flex items-center -space-x-px">
+        <li>
+          <a
+            href="#!"
+            class="ml-0 block rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            @click="previousPage"
+          >
+            <span class="sr-only">Previous</span>
+            <SvgIcon icon="chevronLeft" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#!"
+            class="block rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            @click="nextPage"
+          >
+            <span class="sr-only">Next</span>
+            <SvgIcon icon="chevronRight" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</template>

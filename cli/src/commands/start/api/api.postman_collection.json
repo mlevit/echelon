@@ -1,0 +1,1776 @@
+{
+  "info": {
+    "_postman_id": "1bd379f9-78bf-419d-b029-dca91b7e6e26",
+    "name": "Echelon API",
+    "description": "The Echelon API enables users to interface with Echelon without the need to compile and execute SQL queries, maintain database connection pools, or work through different database syntaxes.\n\nThe Echelon API is built into the Echelon CLI and is a wrapper for all supported Echelon CLI commands. For route query parameters, see Echelon CLI documentation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Technical",
+      "item": [
+        {
+          "name": "List attributes for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/attribute?name=presentation_dim_sakila_customer",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "attribute"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_dim_sakila_customer",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "retrieve attributes associated with an artefact"
+          },
+          "response": [
+            {
+              "name": "List attributes for an artefact",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/attribute?name=presentation_dim_sakila_customer",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "attribute"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_dim_sakila_customer",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"attribute_id\": 1,\n    \"artefact_id\": 11,\n    \"physical_name\": \"customer_sk\",\n    \"data_type\": \"integer\",\n    \"length\": null,\n    \"sequence_number\": 1,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": true,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": false,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 2,\n    \"artefact_id\": 11,\n    \"physical_name\": \"customer_id\",\n    \"data_type\": \"integer\",\n    \"length\": null,\n    \"sequence_number\": 2,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": true,\n    \"hash_diff_flag\": false,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 3,\n    \"artefact_id\": 11,\n    \"physical_name\": \"store_id\",\n    \"data_type\": \"integer\",\n    \"length\": null,\n    \"sequence_number\": 3,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 4,\n    \"artefact_id\": 11,\n    \"physical_name\": \"first_name\",\n    \"data_type\": \"varchar\",\n    \"length\": 45,\n    \"sequence_number\": 4,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 5,\n    \"artefact_id\": 11,\n    \"physical_name\": \"last_name\",\n    \"data_type\": \"integer\",\n    \"length\": 45,\n    \"sequence_number\": 5,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 6,\n    \"artefact_id\": 11,\n    \"physical_name\": \"email\",\n    \"data_type\": \"varchar\",\n    \"length\": 50,\n    \"sequence_number\": 6,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": false,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 7,\n    \"artefact_id\": 11,\n    \"physical_name\": \"address_id\",\n    \"data_type\": \"integer\",\n    \"length\": null,\n    \"sequence_number\": 7,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 8,\n    \"artefact_id\": 11,\n    \"physical_name\": \"active\",\n    \"data_type\": \"boolean\",\n    \"length\": null,\n    \"sequence_number\": 8,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 9,\n    \"artefact_id\": 11,\n    \"physical_name\": \"create_date\",\n    \"data_type\": \"timestamp\",\n    \"length\": null,\n    \"sequence_number\": 9,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": false,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"attribute_id\": 10,\n    \"artefact_id\": 11,\n    \"physical_name\": \"last_update\",\n    \"data_type\": \"timestamp\",\n    \"length\": null,\n    \"sequence_number\": 10,\n    \"group_number\": null,\n    \"description\": null,\n    \"business_description\": null,\n    \"business_name\": null,\n    \"business_alias\": null,\n    \"acronym_name\": null,\n    \"classification\": \"internal\",\n    \"required_flag\": true,\n    \"computed_flag\": false,\n    \"sequence_flag\": false,\n    \"hash_key_flag\": false,\n    \"hash_diff_flag\": true,\n    \"record_source_flag\": false,\n    \"business_date_flag\": true,\n    \"insert_date\": \"2021-12-23T04:33:45.357Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List artefacts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact"]
+            },
+            "description": "retrieve artefact(s)"
+          },
+          "response": [
+            {
+              "name": "List artefacts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"artefact_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 10,\n    \"name\": \"presentation_dim_sakila_inventory\",\n    \"description\": \"Sakila Inventory dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 12,\n    \"name\": \"presentation_dim_sakila_staff\",\n    \"description\": \"Sakila Staff dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 9,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Sakila Rental fact table\",\n    \"business_description\": null,\n    \"type\": \"transactional_fact_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 3,\n    \"name\": \"raw_sakila_customer\",\n    \"description\": \"Sakila Customer data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 2,\n    \"name\": \"raw_sakila_inventory\",\n    \"description\": \"Sakila Inventory data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 1,\n    \"name\": \"raw_sakila_rental\",\n    \"description\": \"Sakila Rental data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 4,\n    \"name\": \"raw_sakila_staff\",\n    \"description\": \"Sakila Staff data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 7,\n    \"name\": \"staging_sakila_customer\",\n    \"description\": \"Sakila Customer staging table\",\n    \"business_description\": null,\n    \"type\": \"staging_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 6,\n    \"name\": \"staging_sakila_inventory\",\n    \"description\": \"Sakila Inventory staging table\",\n    \"business_description\": null,\n    \"type\": \"staging_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            },
+            {
+              "name": "List artefacts by name",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact?name=presentation_dim_sakila_customer",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_dim_sakila_customer",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"artefact_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            },
+            {
+              "name": "List artefacts with limit",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact?limit=2",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact"],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "2",
+                      "description": "limit the result set"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"artefact_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"artefact_id\": 10,\n    \"name\": \"presentation_dim_sakila_inventory\",\n    \"description\": \"Sakila Inventory dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List constants for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/constant?name=presentation_dim_sakila_customer",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "constant"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_dim_sakila_customer",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "retrieve constants associated with an artefact"
+          },
+          "response": [
+            {
+              "name": "List constants for an artefact",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/constant?name=presentation_dim_sakila_customer",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "constant"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_dim_sakila_customer",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"constant_id\": 1,\n    \"object_id\": 11,\n    \"object_type\": \"dimension_type_2_table\",\n    \"name\": \"database_server\",\n    \"value\": \"cusmat9ljshy.ap-southeast-2.rds.amazonaws.com\",\n    \"insert_date\": \"2021-12-23T04:33:45.423Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"constant_id\": 2,\n    \"object_id\": 11,\n    \"object_type\": \"dimension_type_2_table\",\n    \"name\": \"database_port\",\n    \"value\": \"5432\",\n    \"insert_date\": \"2021-12-23T04:33:45.423Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"constant_id\": 3,\n    \"object_id\": 11,\n    \"object_type\": \"dimension_type_2_table\",\n    \"name\": \"schema_name\",\n    \"value\": \"presentation\",\n    \"insert_date\": \"2021-12-23T04:33:45.423Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"constant_id\": 4,\n    \"object_id\": 11,\n    \"object_type\": \"dimension_type_2_table\",\n    \"name\": \"table_name\",\n    \"value\": \"dim_sakila_customer\",\n    \"insert_date\": \"2021-12-23T04:33:45.423Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            },
+            {
+              "name": "List constants for an artefact as a key–value pair",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/constant?name=presentation_dim_sakila_customer&jq=from_entries",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "constant"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_dim_sakila_customer",
+                      "description": "artefact name"
+                    },
+                    {
+                      "key": "jq",
+                      "value": "from_entries",
+                      "description": "jq string to parse result set"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "154"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"9a-YWUKiAMXB4rI/SiN88V1V9ixj2A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 18 May 2022 05:14:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"database_server\": \"cusmat9ljshy.ap-southeast-2.rds.amazonaws.com\",\n    \"database_port\": \"5432\",\n    \"schema_name\": \"presentation\",\n    \"table_name\": \"dim_sakila_customer\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "List constants for a process",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/constant?name=presentation_fact_sakila_rental",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "constant"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_fact_sakila_rental",
+                  "description": "process name"
+                }
+              ]
+            },
+            "description": "retrieve constants associated with a process"
+          },
+          "response": []
+        },
+        {
+          "name": "List processes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process"]
+            },
+            "description": "retrieve process(es)"
+          },
+          "response": [
+            {
+              "name": "List processes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"process_id\": 5,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Load Sakila Rental table from staging layer to the presentation layer\",\n    \"type\": \"transactional_fact_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 3,\n    \"name\": \"raw_sakila_customer > staging_sakila_customer\",\n    \"description\": \"Load Sakila Customer file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 2,\n    \"name\": \"raw_sakila_inventory > staging_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 1,\n    \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n    \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 4,\n    \"name\": \"raw_sakila_staff > staging_sakila_staff\",\n    \"description\": \"Load Sakila Staff file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 7,\n    \"name\": \"staging_sakila_customer > presentation_dim_sakila_customer\",\n    \"description\": \"Load Sakila Customer table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 6,\n    \"name\": \"staging_sakila_inventory > presentation_dim_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 8,\n    \"name\": \"staging_sakila_staff > presentation_dim_sakila_staff\",\n    \"description\": \"Load Sakila Staff table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            },
+            {
+              "name": "List processes by name",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process?name=presentation_fact_sakila_rental",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_fact_sakila_rental",
+                      "description": "process name"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "List processes with limit",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process?limit=2",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process"],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "2",
+                      "description": "limit the result set"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "List source artefacts for a process",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/source?name=presentation_fact_sakila_rental",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "source"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_fact_sakila_rental",
+                  "description": "process name"
+                }
+              ]
+            },
+            "description": "retrieve source artefacts associated with a process"
+          },
+          "response": [
+            {
+              "name": "List source artefacts for a process",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/source?name=presentation_fact_sakila_rental",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "source"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_fact_sakila_rental",
+                      "description": "process name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"artefact_id\": 5,\n    \"name\": \"staging_sakila_rental\",\n    \"description\": \"Sakila Rental staging table\",\n    \"business_description\": null,\n    \"type\": \"staging_table\",\n    \"source\": \"Sakila\",\n    \"required_flag\": true,\n    \"sequence_number\": 1,\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null\n  },\n  {\n    \"artefact_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"required_flag\": false,\n    \"sequence_number\": 2,\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null\n  },\n  {\n    \"artefact_id\": 10,\n    \"name\": \"presentation_dim_sakila_inventory\",\n    \"description\": \"Sakila Inventory dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"required_flag\": false,\n    \"sequence_number\": 3,\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null\n  },\n  {\n    \"artefact_id\": 12,\n    \"name\": \"presentation_dim_sakila_staff\",\n    \"description\": \"Sakila Staff dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"required_flag\": false,\n    \"sequence_number\": 4,\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List target artefacts for a process",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/target?name=presentation_fact_sakila_rental",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "target"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_fact_sakila_rental",
+                  "description": "process name"
+                }
+              ]
+            },
+            "description": "retrieve target artefacts associated with a process"
+          },
+          "response": [
+            {
+              "name": "List target artefacts for a process",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/target?name=presentation_fact_sakila_rental",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "target"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "presentation_fact_sakila_rental",
+                      "description": "process name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n  {\n    \"artefact_id\": 9,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Sakila Rental fact table\",\n    \"business_description\": null,\n    \"type\": \"transactional_fact_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Operational",
+      "item": [
+        {
+          "name": "Associate a registry object with artefact",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"registry_id\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/registry",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "registry"]
+            },
+            "description": "associate a registry object with an artefact"
+          },
+          "response": [
+            {
+              "name": "Associate a registry object with artefact",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"1\",\n    \"registry_id\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/registry",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "registry"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"registry_artefact_map_id\": 3,\n        \"registry_id\": 1,\n        \"artefact_id\": 1,\n        \"insert_date\": \"2022-01-30T20:50:43.204Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Associate a registry object with a process audit",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"registry_id\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/registry",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "registry"]
+            },
+            "description": "associate a registry object with an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Associate a registry object with a process audit",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"1\",\n    \"registry_id\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/registry",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "registry"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"registry_process_audit_map_id\": 1,\n        \"registry_id\": 1,\n        \"process_audit_id\": 1,\n        \"insert_date\": \"2022-01-30T20:50:58.593Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Create a process audit",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"presentation_fact_sakila_rental\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit?id=1",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "create an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Create a process audit",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"presentation_fact_sakila_rental\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_audit_id\": 17,\n        \"process_id\": 5,\n        \"start\": \"2022-01-30T20:48:36.888Z\",\n        \"end\": null,\n        \"status\": \"running\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get runnable processes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/run",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "run"]
+            },
+            "description": "retrieve processes that can be run based on their object-based dependencies"
+          },
+          "response": [
+            {
+              "name": "Get runnable processes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/run",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "run"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_id\": 5,\n        \"process_name\": \"presentation_fact_sakila_rental\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List flows for a process audit",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/flow?id=1",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "flow"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "process audit ID"
+                }
+              ]
+            },
+            "description": "retrieve flow metrics associated with a process instance (process audit)"
+          },
+          "response": [
+            {
+              "name": "List flows for a process audit",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow?id=1",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "flow"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1",
+                      "description": "process audit ID"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"flow_id\": 2,\n        \"process_audit_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"load_targer\",\n        \"label\": \"insert_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:03:00.000Z\"\n    },\n    {\n        \"flow_id\": 1,\n        \"process_audit_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"extract_source_data\",\n        \"label\": \"source_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:01:00.000Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List logs for a process audit",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/log?id=1",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "log"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "process audit ID"
+                }
+              ]
+            },
+            "description": "retrieve logs associated with a process instance (process audit)"
+          },
+          "response": [
+            {
+              "name": "List logs for a process audit",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/log?id=1",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "log"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1",
+                      "description": "process audit ID"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_audit_id\": 1,\n        \"process_id\": 3,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:02:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List process audits for a process",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit?name=raw_sakila_rental > staging_sakila_rental",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "raw_sakila_rental > staging_sakila_rental"
+                }
+              ]
+            },
+            "description": "retrieve process instances (process audit) of a process"
+          },
+          "response": [
+            {
+              "name": "List process audits for a process",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit?name=raw_sakila_rental > staging_sakila_rental",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "raw_sakila_rental > staging_sakila_rental"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_audit_id\": 15,\n        \"process_id\": 1,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2020-01-04T03:02:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"process_audit_id\": 11,\n        \"process_id\": 1,\n        \"start\": \"2020-01-03T03:00:00.000Z\",\n        \"end\": \"2020-01-03T03:02:00.000Z\",\n        \"status\": \"failed\"\n    },\n    {\n        \"process_audit_id\": 7,\n        \"process_id\": 1,\n        \"start\": \"2020-01-02T03:00:00.000Z\",\n        \"end\": \"2020-01-02T03:10:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"process_audit_id\": 3,\n        \"process_id\": 1,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:10:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List variables for a process",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/variable?name=presentation_fact_sakila_rental",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "variable"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "presentation_fact_sakila_rental",
+                  "description": "process name"
+                }
+              ]
+            },
+            "description": "retrieve variables associated with a process"
+          },
+          "response": []
+        },
+        {
+          "name": "List variables for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/variable?name=raw_sakila_staff",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "variable"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "raw_sakila_staff",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "retrieve variables associated with an artefact"
+          },
+          "response": []
+        },
+        {
+          "name": "Reconcile a process audit",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/reconciliation",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "reconciliation"]
+            },
+            "description": "perform technical reconciliation for an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Reconcile a process audit",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/reconciliation",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "reconciliation"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"flow_id\": 32,\n        \"process_audit_id\": 1,\n        \"job\": \"echelon cli\",\n        \"function\": \"create:process:audit:reconcile\",\n        \"label\": \"technical_reconciliation_variance\",\n        \"count\": 0,\n        \"insert_date\": \"2022-01-28T07:20:28.697Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Monitor a process audit",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"13\",\n    \"threshold\": \"0.1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/monitoring",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "monitoring"]
+            },
+            "description": "proactive monitoring of an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Monitor a process audit",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"13\",\n    \"threshold\": \"0.1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/monitoring",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "monitoring"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"process\": [\n        {\n            \"alert_id\": 34,\n            \"process_audit_id\": 13,\n            \"code\": \"P03\",\n            \"subject\": \"Process has taken more time than usual to run.\",\n            \"message\": \"Process Audit ID '13' has taken 240 seconds to run; more time than the usual 120 seconds.\",\n            \"insert_date\": \"2022-05-18T01:08:22.238Z\"\n        }\n    ],\n    \"artefact\": [\n        {\n            \"alert_id\": 35,\n            \"process_audit_id\": 13,\n            \"code\": \"A05\",\n            \"subject\": \"Artefact loaded more rows than the recent average.\",\n            \"message\": \"Process Audit ID '13' has loaded 120 rows into the target artefact; more rows than the recent average of 100.\",\n            \"insert_date\": \"2022-05-18T01:08:22.326Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Record an alert",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Process has failed\",\n    \"message\": \"This is a test alert.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/alert",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "alert"]
+            },
+            "description": "raise an alert against an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Record an alert",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Process has failed\",\n    \"message\": \"This is a test alert.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/alert",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "alert"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"alert_id\": 2,\n        \"process_audit_id\": 1,\n        \"code\": \"P01\",\n        \"subject\": \"Process has failed\",\n        \"message\": \"This is a test alert.\",\n        \"insert_date\": \"2022-01-28T07:20:45.841Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Record a flow",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"insert_count\",\n    \"count\": \"100\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "flow"]
+            },
+            "description": "store data source metrics against an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Insert Count",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"insert_count\",\n    \"count\": \"100\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "flow"]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "Update Count",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"update_count\",\n    \"count\": \"100\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "flow"]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Record a log",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"INFO\",\n    \"message\": \"This is a test message.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit", "log"]
+            },
+            "description": "log a message against an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Record a log - INFO",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"INFO\",\n    \"message\": \"This is a test message.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "log"]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"log_id\": 62,\n        \"process_audit_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"INFO\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
+            },
+            {
+              "name": "Record a log - ERROR",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"ERROR\",\n    \"message\": \"This is a test message.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit", "log"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"log_id\": 63,\n        \"process_audit_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"ERROR\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Register an object",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"file1.csv\",\n    \"path\": \"/\",\n    \"server\": \"localhost\",\n    \"size\": \"1\",\n    \"checksum\": \"c4ca4238a0b923820dcc509a6f758491\",\n    \"type\": \"CSV\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/registry",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["registry"]
+            },
+            "description": "register an incoming or outgoing object"
+          },
+          "response": [
+            {
+              "name": "Register an object",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"file1.csv\",\n    \"path\": \"/\",\n    \"server\": \"localhost\",\n    \"size\": \"1\",\n    \"checksum\": \"c4ca4238a0b923820dcc509a6f75849b\",\n    \"type\": \"CSV\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/registry",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["registry"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"registry_id\": 3,\n        \"name\": \"file1.csv\",\n        \"path\": \"/\",\n        \"server\": \"localhost\",\n        \"size\": \"1\",\n        \"checksum\": \"c4ca4238a0b923820dcc509a6f758491\",\n        \"type\": \"CSV\",\n        \"status\": \"landed\",\n        \"insert_date\": \"2022-01-28T07:28:10.539Z\",\n        \"update_date\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update an artefact variable",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"6\",\n    \"type\": \"staging_table\",\n    \"name\": \"watermark_integer_value\",\n    \"value\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/variable",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "variable"]
+            },
+            "description": "update a variable value associated with an artefact"
+          },
+          "response": [
+            {
+              "name": "Update an artefact variable",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"6\",\n    \"type\": \"staging_table\",\n    \"name\": \"watermark_integer_value\",\n    \"value\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/variable",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "variable"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"variable_id\": 1,\n        \"object_id\": 6,\n        \"object_type\": \"staging_table\",\n        \"name\": \"watermark_integer_value\",\n        \"value\": \"1\",\n        \"insert_date\": \"2022-01-28T07:28:35.993Z\",\n        \"update_date\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update a process audit",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"16\",\n    \"status\": \"completed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/audit",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "audit"]
+            },
+            "description": "update an instance of a process (process audit)"
+          },
+          "response": [
+            {
+              "name": "Update a process audit",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"16\",\n    \"status\": \"completed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/audit",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "audit"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_audit_id\": 16,\n        \"process_id\": 4,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2022-01-28T07:28:54.848Z\",\n        \"status\": \"completed\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update a process variable",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"6\",\n    \"type\": \"staging_table\",\n    \"name\": \"watermark_integer_value\",\n    \"value\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/process/variable",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["process", "variable"]
+            },
+            "description": "update a variable value associated with a process"
+          },
+          "response": [
+            {
+              "name": "Update a process variable",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"6\",\n    \"type\": \"staging_table\",\n    \"name\": \"watermark_integer_value\",\n    \"value\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/process/variable",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["process", "variable"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"variable_id\": 1,\n        \"object_id\": 6,\n        \"object_type\": \"staging_table\",\n        \"name\": \"watermark_integer_value\",\n        \"value\": \"1\",\n        \"insert_date\": \"2022-01-28T07:28:35.993Z\",\n        \"update_date\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update a registered object",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1\",\n    \"status\": \"validated\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/registry",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["registry"]
+            },
+            "description": "update a registry object"
+          },
+          "response": [
+            {
+              "name": "Update a registered object",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"1\",\n    \"status\": \"validated\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/registry",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["registry"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"registry_id\": 1,\n        \"name\": \"file1.csv\",\n        \"path\": \"/\",\n        \"server\": \"localhost\",\n        \"size\": \"1\",\n        \"checksum\": \"c4ca4238a0b923820dcc509a6f75849b\",\n        \"type\": \"CSV\",\n        \"status\": \"validated\",\n        \"insert_date\": \"2022-01-27T23:48:14.221Z\",\n        \"update_date\": null\n    }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Governance",
+      "item": [
+        {
+          "name": "List data masks for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/mask?name=raw_sakila_staff",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "mask"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "raw_sakila_staff",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "\\[WIP\\] retrieve data masks associated with an artefact's attributes"
+          },
+          "response": [
+            {
+              "name": "List data masks for an artefact",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/mask?name=raw_sakila_staff",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "mask"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "raw_sakila_staff",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"attribute_id\": 55,\n        \"artefact_id\": 4,\n        \"data_mask_id\": 3,\n        \"name\": \"first_name\",\n        \"description\": \"Substitute first names\",\n        \"type\": \"subsitution\",\n        \"insert_date\": \"2022-01-30T20:42:43.408Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    },\n    {\n        \"attribute_id\": 56,\n        \"artefact_id\": 4,\n        \"data_mask_id\": 4,\n        \"name\": \"last_name\",\n        \"description\": \"Substitute last names\",\n        \"type\": \"subsitution\",\n        \"insert_date\": \"2022-01-30T20:42:43.408Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    },\n    {\n        \"attribute_id\": 59,\n        \"artefact_id\": 4,\n        \"data_mask_id\": 1,\n        \"name\": \"email_domain\",\n        \"description\": \"Mask email address domains\",\n        \"type\": \"partial_mask\",\n        \"insert_date\": \"2022-01-30T20:42:43.408Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    },\n    {\n        \"attribute_id\": 63,\n        \"artefact_id\": 4,\n        \"data_mask_id\": 2,\n        \"name\": \"password\",\n        \"description\": \"Blank out passwords\",\n        \"type\": \"blank_mask\",\n        \"insert_date\": \"2022-01-30T20:42:43.408Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List data profiles for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/profile?name=raw_sakila_staff",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "profile"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "raw_sakila_staff",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "\\[WIP\\] retrieve data profile associated with an artefact"
+          },
+          "response": [
+            {
+              "name": "List data profiles for an artefact",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/profile?name=raw_sakila_staff",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "profile"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "raw_sakila_staff",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"artefact_id\": 4,\n        \"data_profile_id\": 3,\n        \"name\": \"1M_dataset_profile\",\n        \"description\": \"One million record sample data profile\",\n        \"sample_size\": 1000000,\n        \"notebook_output_flag\": false,\n        \"html_output_flag\": false,\n        \"active_flag\": true,\n        \"insert_date\": \"2022-01-30T20:42:43.441Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "List data quality rules for an artefact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/artefact/dq?name=raw_sakila_staff",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["artefact", "dq"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "raw_sakila_staff",
+                  "description": "artefact name"
+                }
+              ]
+            },
+            "description": "\\[WIP\\] retrieve data quality rules associated with an artefact's attributes"
+          },
+          "response": [
+            {
+              "name": "List data quality rules for an artefact",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/artefact/dq?name=raw_sakila_staff",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["artefact", "dq"],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "raw_sakila_staff",
+                      "description": "artefact name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"attribute_id\": 59,\n        \"artefact_id\": 4,\n        \"data_quality_rule_id\": 3,\n        \"name\": \"valid_staff_email_address\",\n        \"rule\": \"SELECT COUNT(*) AS row_count , COUNT(DISTINCT(email)) AS unique_count , SUM(CASE WHEN email ~ '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$' THEN 1 ELSE 0 END) AS match_count FROM staff\",\n        \"dimension\": \"validity\",\n        \"criticality\": \"ERROR\",\n        \"description\": \"Check to ensure the staff members email address is valid\",\n        \"threshold_low\": 25,\n        \"threshold_medium\": 50,\n        \"threshold_high\": 75,\n        \"active_flag\": true,\n        \"insert_date\": \"2022-01-30T20:42:43.467Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "item": [
+        {
+          "name": "Execute SQL query",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/query?sql=select * from process where process_id = 1",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["query"],
+              "query": [
+                {
+                  "key": "sql",
+                  "value": "select * from process where process_id = 1",
+                  "description": "SQL query"
+                }
+              ]
+            },
+            "description": "execute a SQL query"
+          },
+          "response": [
+            {
+              "name": "Execute SQL query",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/query?sql=select * from process where process_id = 1",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["query"],
+                  "query": [
+                    {
+                      "key": "sql",
+                      "value": "select * from process where process_id = 1",
+                      "description": "SQL query"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"process_id\": 1,\n        \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n        \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n        \"type\": \"table_load\",\n        \"priority\": 1,\n        \"dependency_logic\": \"and\",\n        \"insert_date\": \"2022-01-30T20:42:42.616Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{hostname}}:{{port}}/healthcheck?api&database",
+              "protocol": "http",
+              "host": ["{{hostname}}"],
+              "port": "{{port}}",
+              "path": ["healthcheck"],
+              "query": [
+                {
+                  "key": "api",
+                  "value": null,
+                  "description": "Check API flag"
+                },
+                {
+                  "key": "database",
+                  "value": null,
+                  "description": "Check database flag"
+                }
+              ]
+            },
+            "description": "perform a health check"
+          },
+          "response": [
+            {
+              "name": "Check Database",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{hostname}}:{{port}}/healthcheck?api&database",
+                  "protocol": "http",
+                  "host": ["{{hostname}}"],
+                  "port": "{{port}}",
+                  "path": ["healthcheck"],
+                  "query": [
+                    {
+                      "key": "api",
+                      "value": null
+                    },
+                    {
+                      "key": "database",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": "{\n    \"api\": \"OK\",\n    \"database\": \"OK\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "hostname",
+      "value": "localhost"
+    },
+    {
+      "key": "port",
+      "value": "3000"
+    }
+  ]
+}

@@ -1,0 +1,1281 @@
+{
+  "constraint_alert_code": [
+    {
+      "value": "A01",
+      "comment": "Source artefact has zero rows."
+    },
+    {
+      "value": "A02",
+      "comment": "Target Artefact loaded zero rows."
+    },
+    {
+      "value": "A03",
+      "comment": "Target Artefact has rejected rows."
+    },
+    {
+      "value": "A04",
+      "comment": "Artefact loaded less rows than recent average."
+    },
+    {
+      "value": "A05",
+      "comment": "Artefact loaded more rows than recent average."
+    },
+    {
+      "value": "P01",
+      "comment": "Process has failed."
+    },
+    {
+      "value": "P02",
+      "comment": "Process has taken less time than usual to run."
+    },
+    {
+      "value": "P03",
+      "comment": "Process has taken more time than usual to run."
+    },
+    {
+      "value": "P04",
+      "comment": "Process has not completed as per business SLA."
+    },
+    {
+      "value": "P05",
+      "comment": "Process is currently running longer than expected."
+    }
+  ],
+  "constraint_artefact_type": [
+    {
+      "value": "accumulating_snapshot_fact_table",
+      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+    },
+    {
+      "value": "delimited_file",
+      "comment": ""
+    },
+    {
+      "value": "denormalised_table",
+      "comment": ""
+    },
+    {
+      "value": "dimension_type_0_table",
+      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+    },
+    {
+      "value": "dimension_type_1_table",
+      "comment": "The type 1 dimension method overwrites old with new data, and therefore does not track historical data."
+    },
+    {
+      "value": "dimension_type_2_table",
+      "comment": "The type 2 dimension method tracks historical data by creating multiple records for a given natural key in the dimensional tables with separate surrogate keys and/or different version numbers."
+    },
+    {
+      "value": "fixed_width_file",
+      "comment": "In a fixed-width text file, data is contained in columns that are of a fixed width (meaning that each column contains a certain number of character positions)."
+    },
+    {
+      "value": "http_endpoint",
+      "comment": ""
+    },
+    {
+      "value": "hub_table",
+      "comment": "Hubs contain a list of unique business keys with low propensity to change. Hubs also contain a surrogate key for each Hub item and metadata describing the origin of the business key."
+    },
+    {
+      "value": "json_file",
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+    },
+    {
+      "value": "link_table",
+      "comment": "Associations or transactions between business keys (relating for instance the hubs for customer and product with each other through the purchase transaction) are modeled using link tables."
+    },
+    {
+      "value": "normalised_table",
+      "comment": ""
+    },
+    {
+      "value": "satellite_table",
+      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+    },
+    {
+      "value": "snapshot_fact_table",
+      "comment": "The periodic snapshot, as the name implies, takes a \"picture of the moment\", where the moment could be any defined period of time, e.g. a performance summary of a salesman over the previous month."
+    },
+    {
+      "value": "staging_table",
+      "comment": ""
+    },
+    {
+      "value": "transactional_fact_table",
+      "comment": "A transactional table is the most basic and fundamental. The grain associated with a transactional fact table is usually specified as \"one row per line in a transaction\", e.g., every line on a receipt."
+    },
+    {
+      "value": "xml_file",
+      "comment": "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."
+    }
+  ],
+  "constraint_attribute_classification": [
+    {
+      "value": "internal",
+      "comment": "Data that is only meant for internal purposes and should not be shared outside of the organisation."
+    },
+    {
+      "value": "public",
+      "comment": "Data that has been made public and can be freely disclosed with anyone externally."
+    },
+    {
+      "value": "restricted",
+      "comment": "Highly sensitive corporate or customer data that could have senior negative legal or financial ramifications if exposed."
+    },
+    {
+      "value": "sensitive",
+      "comment": "Moderately sensitive data that should only be shared with authorised individuals inside (and in some cases outside of) the organisation."
+    }
+  ],
+  "constraint_artefact_constant_name": [
+    {
+      "value": "blank_as_null",
+      "cast": "boolean",
+      "required": false,
+      "comment": "Loads blank fields, which consist of only white space characters, as NULL."
+    },
+    {
+      "value": "ceiling_guardrail",
+      "cast": "integer",
+      "required": false,
+      "comment": "Largest acceptable value after deviation."
+    },
+    {
+      "value": "column_delimiter",
+      "cast": "char(5)",
+      "required": false,
+      "comment": "The character(s) used to delimit the file."
+    },
+    {
+      "value": "column_quote_character",
+      "cast": "char(1)",
+      "required": false,
+      "comment": "The character(s) used to quote values."
+    },
+    {
+      "value": "control_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Path to the control file."
+    },
+    {
+      "value": "control_file_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern of the control file used to find the files in the above path."
+    },
+    {
+      "value": "control_file_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Server where the control file is stored. For AWS this is the S3 bucket, for GCP this is the Cloud Storage bucket, for on-premises this is the DNS or IP address of the file server."
+    },
+    {
+      "value": "database_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Database name used within connection string."
+    },
+    {
+      "value": "database_port",
+      "cast": "integer",
+      "required": false,
+      "comment": "Database port number used within connection string."
+    },
+    {
+      "value": "database_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Database host/IP used within connection string."
+    },
+    {
+      "value": "data_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Path to the data file."
+    },
+    {
+      "value": "data_file_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern of the data file used to find the files in the above path."
+    },
+    {
+      "value": "data_file_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Server where the data file is stored. For AWS this is the S3 bucket, for GCP this is the Cloud Storage bucket, for on-premises this is the DNS or IP address of the file server."
+    },
+    {
+      "value": "date_format",
+      "cast": "text",
+      "required": false,
+      "comment": "Format of the date used to convert the extract date into a date object. The format should match the one expected by the ETL tool."
+    },
+    {
+      "value": "date_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern of the data file used to find the files in the above path."
+    },
+    {
+      "value": "empty_as_null",
+      "cast": "boolean",
+      "required": false,
+      "comment": "Loads empty fields, which do not consist of any characters, as NULL."
+    },
+    {
+      "value": "end_of_transmision_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Path to the end of transmission file."
+    },
+    {
+      "value": "end_of_transmision_file_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern of the end of transmission file used to find the files in the above path."
+    },
+    {
+      "value": "end_of_transmision_file_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Server where the end of transmission file is stored. For AWS this is the S3 bucket, for GCP this is the Cloud Storage bucket, for on-premises this is the DNS or IP address of the file server."
+    },
+    {
+      "value": "extract_job",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the job that will extract the data from the source artefact."
+    },
+    {
+      "value": "floor_guardrail",
+      "cast": "integer",
+      "required": false,
+      "comment": "Smallest acceptable value after deviation."
+    },
+    {
+      "value": "hash_diff_column_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Name of the column that stores the MD5 checksum of the concatenated non-primary key columns."
+    },
+    {
+      "value": "hash_function",
+      "cast": "text",
+      "required": false,
+      "comment": "Hash function used to create a hash of the original value for checksum purposes."
+    },
+    {
+      "value": "hash_key_column_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Name of the column that stores the MD5 checksum of the concatenated primary key columns."
+    },
+    {
+      "value": "header_count",
+      "cast": "integer",
+      "required": false,
+      "comment": "Number of rows at the beginning of the file that should be ignored."
+    },
+    {
+      "value": "header_count_end_range",
+      "cast": "integer",
+      "required": false,
+      "comment": "End index of the file count header attribute."
+    },
+    {
+      "value": "header_count_start_range",
+      "cast": "integer",
+      "required": false,
+      "comment": "Start index of the file count header attribute."
+    },
+    {
+      "value": "header_date_end_range",
+      "cast": "text",
+      "required": false,
+      "comment": "End index of the file date header attribute."
+    },
+    {
+      "value": "header_date_start_range",
+      "cast": "text",
+      "required": false,
+      "comment": "Start index of the file date header attribute."
+    },
+    {
+      "value": "html_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the HTML file that will be produced by the data profiling operation."
+    },
+    {
+      "value": "html_file_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Server where the control file is stored. For AWS this is the S3 bucket, for GCP this is the Cloud Storage bucket, for on-premises this is the DNS or IP address of the file server."
+    },
+    {
+      "value": "json_schema",
+      "cast": "text",
+      "required": false,
+      "comment": "JSON schema to be used by the ETL tool to parse the file. If not present `json_schema_file_path` is required."
+    },
+    {
+      "value": "json_schema_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Path to the JSON schema file. If not present json_schema is required."
+    },
+    {
+      "value": "load_job",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the job that will load the data into the target artefact."
+    },
+    {
+      "value": "max_diviation",
+      "cast": "integer",
+      "required": false,
+      "comment": "Numeric value of the maximum deviation required."
+    },
+    {
+      "value": "min_diviation",
+      "cast": "integer",
+      "required": false,
+      "comment": "Numeric value of the minimum deviation required."
+    },
+    {
+      "value": "notebook_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the Jupyter Notebook file that will be produced by the data profiling operation."
+    },
+    {
+      "value": "notebook_file_server",
+      "cast": "text",
+      "required": false,
+      "comment": "Server where the control file is stored. For AWS this is the S3 bucket, for GCP this is the Cloud Storage bucket, for on-premises this is the DNS or IP address of the file server."
+    },
+    {
+      "value": "orchestration_job",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the job that will orchestrate the source file load."
+    },
+    {
+      "value": "read_view",
+      "cast": "text",
+      "required": false,
+      "comment": "Default database view used for reading from the database table."
+    },
+    {
+      "value": "replace_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Pattern used to replace characters selected by the select_pattern."
+    },
+    {
+      "value": "schema_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Database schema name of the database table."
+    },
+    {
+      "value": "seed_provider",
+      "cast": "text",
+      "required": false,
+      "comment": "Provider name based on your selected fake data library."
+    },
+    {
+      "value": "select_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern used to select the text to mask (e.g., `^d{12}` to select the first 12 numbers of a credit card number)."
+    },
+    {
+      "value": "surrogate_key_column_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Database table column name of the surrogate key column."
+    },
+    {
+      "value": "table_name",
+      "cast": "text",
+      "required": false,
+      "comment": "Database table name."
+    },
+    {
+      "value": "table_view",
+      "cast": "text",
+      "required": false,
+      "comment": "Database table name."
+    },
+    {
+      "value": "token_pattern",
+      "cast": "text",
+      "required": false,
+      "comment": "Regular expression pattern used to generate a unique token whos pattern matches the original value (e.g., `d{16}` for credit card numbers)."
+    },
+    {
+      "value": "trailer_count",
+      "cast": "integer",
+      "required": false,
+      "comment": "Number of rows at the end of the file that should be ignored."
+    },
+    {
+      "value": "transform_job",
+      "cast": "text",
+      "required": false,
+      "comment": "Fully qualified name of the job that will transform the extracted data from the source artefact."
+    },
+    {
+      "value": "transform_sql",
+      "cast": "text",
+      "required": false,
+      "comment": "For instances where a view cannot be created, SQL transformation logic for the process can be stored here."
+    },
+    {
+      "value": "transform_view",
+      "cast": "text",
+      "required": false,
+      "comment": "View that contains transformation logic for the process."
+    },
+    {
+      "value": "trim_blanks",
+      "cast": "boolean",
+      "required": false,
+      "comment": "Removes the trailing white space characters."
+    },
+    {
+      "value": "watermark_field",
+      "cast": "text",
+      "required": false,
+      "comment": "Field used for pipeline checkpointing."
+    },
+    { "value": "xml_schema", "cast": "text", "required": false, "comment": "" },
+    {
+      "value": "xml_schema_file_path",
+      "cast": "text",
+      "required": false,
+      "comment": ""
+    }
+  ],
+  "constraint_data_mask_type": [
+    {
+      "value": "blank_mask",
+      "comment": "The information is blanked, nulled, or removed."
+    },
+    {
+      "value": "deviation",
+      "comment": "Randomly varying numeric or date values within a predfined range (e.g., +/- 90 days for a birthday)."
+    },
+    {
+      "value": "mask",
+      "comment": "Replace the data element with a different and consistent value."
+    },
+    {
+      "value": "partial_mask",
+      "comment": "Replace parts of the data element with a different and consistent value."
+    },
+    {
+      "value": "substitution",
+      "comment": "Replacing the data with synthetic or manufactured data."
+    },
+    {
+      "value": "tokenise_fpe",
+      "comment": "Replace the data element with a unique value whos pattern matches the original value but the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
+    },
+    {
+      "value": "tokenise_uuid",
+      "comment": "Replace the data element with a unique UUID whereby the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
+    }
+  ],
+  "constraint_data_quality_rule_criticality": [
+    {
+      "value": "ERROR",
+      "comment": "Designates error events that might still allow the application to continue running."
+    },
+    {
+      "value": "FATAL",
+      "comment": "Designates very severe error events that will presumably lead the application to abort."
+    },
+    {
+      "value": "INFO",
+      "comment": "Designates informational messages that highlight the progress of the application at coarse-grained level."
+    },
+    {
+      "value": "WARN",
+      "comment": "Designates potentially harmful situations."
+    }
+  ],
+  "constraint_data_quality_rule_dimension": [
+    {
+      "value": "accuracy",
+      "comment": "The degree to which data correctly describes the \"real world\" object or event being described."
+    },
+    {
+      "value": "completeness",
+      "comment": "The proportion of stored data against the potential of \"100% complete\"."
+    },
+    {
+      "value": "consistency",
+      "comment": "The absence of difference, when comparing two or more representations of a thing against a definition."
+    },
+    {
+      "value": "timeliness",
+      "comment": "The degree to which data represent reality FROM the required point in time."
+    },
+    {
+      "value": "uniqueness",
+      "comment": "Nothing will be recorded more than once based upon how that thing is identified."
+    },
+    {
+      "value": "validity",
+      "comment": "Data are valid if it conforms to the syntax { value: format, type, range) of its definition."
+    }
+  ],
+  "constraint_flow_label": [
+    {
+      "value": "end_date_count",
+      "comment": "Number of records updated in the target artefact as part of SCD Type 2."
+    },
+    {
+      "value": "insert_count",
+      "comment": "Number of records inserted into the target artefact."
+    },
+    {
+      "value": "match_count",
+      "comment": "Number of records that were found to be identical in the source and the target artefact."
+    },
+    {
+      "value": "reject_count",
+      "comment": "Number of records that were not inserted into the target artefact because of an error."
+    },
+    {
+      "value": "source_count",
+      "comment": "Number of records present in the source artefact that were selected."
+    },
+    {
+      "value": "technical_reconciliation_variance",
+      "comment": "Number of records that are not accounted for. If this value is greater than or less than zero technical reconciliation has failed."
+    },
+    {
+      "value": "update_insert_count",
+      "comment": "Number of records inserted into the target artefact as part of SCD Type 2."
+    }
+  ],
+  "constraint_glossary_entry_object_rel_object_type": [
+    {
+      "value": "artefact",
+      "comment": ""
+    },
+    {
+      "value": "attribute",
+      "comment": ""
+    },
+    {
+      "value": "process",
+      "comment": ""
+    }
+  ],
+  "constraint_glossary_entry_rel_status": [
+    {
+      "value": "approved",
+      "comment": ""
+    },
+    {
+      "value": "deprecated",
+      "comment": ""
+    },
+    {
+      "value": "draft",
+      "comment": ""
+    },
+    {
+      "value": "pending_approval",
+      "comment": ""
+    }
+  ],
+  "constraint_glossary_entry_rel_type": [
+    {
+      "value": "calculated from",
+      "reverse": "calculates",
+      "comment": null
+    },
+    {
+      "value": "classified as",
+      "reverse": "classifier of",
+      "comment": null
+    },
+    {
+      "value": "contains",
+      "reverse": "contained in",
+      "comment": null
+    },
+    {
+      "value": "governed by",
+      "reverse": "governor of",
+      "comment": null
+    },
+    {
+      "value": "modifier of",
+      "reverse": "modified by",
+      "comment": null
+    },
+    {
+      "value": "parent of",
+      "reverse": "child of",
+      "comment": null
+    },
+    {
+      "value": "related to",
+      "reverse": "related to",
+      "comment": null
+    },
+    {
+      "value": "replaced by",
+      "reverse": "replaces",
+      "comment": null
+    },
+    {
+      "value": "synonym to",
+      "reverse": "synonym to",
+      "comment": null
+    }
+  ],
+  "constraint_glossary_entry_status": [
+    {
+      "value": "approved",
+      "comment": ""
+    },
+    {
+      "value": "deprecated",
+      "comment": ""
+    },
+    {
+      "value": "draft",
+      "comment": ""
+    },
+    {
+      "value": "pending_approval",
+      "comment": ""
+    }
+  ],
+  "constraint_glossary_entry_type": [
+    {
+      "value": "classification",
+      "comment": "An action or process of classifying something."
+    },
+    {
+      "value": "policy",
+      "comment": "A policy is a deliberate system of guidelines to guide decisions and achieve rational outcomes."
+    },
+    {
+      "value": "rule",
+      "comment": "A set of explicit or understood regulations or principles governing conduct or procedure within a particular area of activity."
+    },
+    {
+      "value": "term",
+      "comment": "A word or phrase used to describe a thing or to express a concept."
+    }
+  ],
+  "constraint_log_priority": [
+    {
+      "value": "DEBUG",
+      "comment": "Designates fine-grained informational events that are most useful to debug an application."
+    },
+    {
+      "value": "ERROR",
+      "comment": "Designates error events that might still allow the application to continue running."
+    },
+    {
+      "value": "FATAL",
+      "comment": "Designates very severe error events that will presumably lead the application to abort."
+    },
+    {
+      "value": "INFO",
+      "comment": "Designates informational messages that highlight the progress of the application at coarse-grained level."
+    },
+    {
+      "value": "WARN",
+      "comment": "Designates potentially harmful situations."
+    }
+  ],
+  "constraint_process_audit_status": [
+    {
+      "value": "completed",
+      "comment": "Completed succesfully."
+    },
+    {
+      "value": "failed",
+      "comment": "Failed."
+    },
+    {
+      "value": "running",
+      "comment": "Currently running."
+    }
+  ],
+  "constraint_process_dependency_logic": [
+    {
+      "value": "and",
+      "comment": "All required artefacts require updates."
+    },
+    {
+      "value": "or",
+      "comment": "Any required artefacts require updates."
+    }
+  ],
+  "constraint_process_type": [
+    {
+      "value": "accumulating_snapshot_fact_table_load",
+      "comment": ""
+    },
+    {
+      "value": "data_mask",
+      "comment": ""
+    },
+    {
+      "value": "data_profile",
+      "comment": ""
+    },
+    {
+      "value": "data_quality_check",
+      "comment": ""
+    },
+    {
+      "value": "dimension_type_1_table_load",
+      "comment": ""
+    },
+    {
+      "value": "dimension_type_2_table_load",
+      "comment": ""
+    },
+    {
+      "value": "file_load",
+      "comment": ""
+    },
+    {
+      "value": "generic_activity",
+      "comment": ""
+    },
+    {
+      "value": "http_load",
+      "comment": ""
+    },
+    {
+      "value": "hub_table_load",
+      "comment": ""
+    },
+    {
+      "value": "link_table_load",
+      "comment": ""
+    },
+    {
+      "value": "satellite_table_load",
+      "comment": ""
+    },
+    {
+      "value": "snapshot_fact_table_load",
+      "comment": ""
+    },
+    {
+      "value": "staging_table_load",
+      "comment": ""
+    },
+    {
+      "value": "table_load",
+      "comment": ""
+    },
+    {
+      "value": "transactional_fact_table_load",
+      "comment": ""
+    }
+  ],
+  "constraint_process_constant_name": [
+    {
+      "value": "stored_procedure_name",
+      "cast": "text",
+      "required": true,
+      "comment": "Procedure name to call to acquire the data."
+    }
+  ],
+  "constraint_reference_data_rel_status": [
+    {
+      "value": "approved",
+      "comment": ""
+    },
+    {
+      "value": "deprecated",
+      "comment": ""
+    },
+    {
+      "value": "draft",
+      "comment": ""
+    },
+    {
+      "value": "pending_approval",
+      "comment": ""
+    }
+  ],
+  "constraint_reference_data_rel_type": [
+    {
+      "value": "abbreviation of",
+      "reverse": "expansion of",
+      "comment": ""
+    },
+    {
+      "value": "parent of",
+      "reverse": "child of",
+      "comment": ""
+    },
+    {
+      "value": "replaced by",
+      "reverse": "replaces",
+      "comment": ""
+    },
+    {
+      "value": "synonym of",
+      "reverse": "synonym of",
+      "comment": ""
+    }
+  ],
+  "constraint_reference_data_status": [
+    {
+      "value": "approved",
+      "comment": ""
+    },
+    {
+      "value": "deprecated",
+      "comment": ""
+    },
+    {
+      "value": "draft",
+      "comment": ""
+    },
+    {
+      "value": "pending_approval",
+      "comment": ""
+    }
+  ],
+  "constraint_reference_data_type": [
+    {
+      "value": "ALPHA-2",
+      "comment": "Alphanumericals of length 2."
+    },
+    {
+      "value": "ALPHA-3",
+      "comment": "Alphanumericals of length 3."
+    },
+    {
+      "value": "ALPHANUMERIC",
+      "comment": "Alphanumericals are a combination of alphabetical and numerical characters, and is used to describe the collection of Latin letters and Arabic digits or a text constructed from this collection."
+    },
+    {
+      "value": "BOOLEAN",
+      "comment": "A binary variable that can have one of two possible values, 0 (false) or 1 (true)."
+    },
+    {
+      "value": "NUMERIC",
+      "comment": "Relating to or expressed as a number or numbers."
+    }
+  ],
+  "constraint_registry_status": [
+    {
+      "value": "invalidated",
+      "comment": "Failed validation."
+    },
+    {
+      "value": "landed",
+      "comment": "Landed."
+    },
+    {
+      "value": "processed",
+      "comment": "Processed."
+    },
+    {
+      "value": "validated",
+      "comment": "Passed validation."
+    }
+  ],
+  "constraint_stakeholder_object_rel_object_type": [
+    {
+      "value": "artefact",
+      "comment": ""
+    },
+    {
+      "value": "attribute",
+      "comment": ""
+    },
+    {
+      "value": "batch",
+      "comment": ""
+    },
+    {
+      "value": "data_mask",
+      "comment": ""
+    },
+    {
+      "value": "data_quality_rule",
+      "comment": ""
+    },
+    {
+      "value": "glossary_entry",
+      "comment": ""
+    },
+    {
+      "value": "process",
+      "comment": ""
+    },
+    {
+      "value": "reference_data_set",
+      "comment": ""
+    }
+  ],
+  "constraint_stakeholder_role": [
+    {
+      "value": "business_stakeholder",
+      "comment": "A stakeholder has a vested interest in a company and can either affect or be affected by a business' operations and performance."
+    },
+    {
+      "value": "data_owner",
+      "comment": "Data owners are either individuals or teams who make decisions such as who has the right to access and edit data and how it's used."
+    },
+    {
+      "value": "data_steward",
+      "comment": "A data steward is an oversight or data governance role within an organization, and is responsible for ensuring the quality and fitness for purpose of the organization's data assets, including the metadata for those data assets."
+    },
+    {
+      "value": "operational_owner",
+      "comment": ""
+    },
+    {
+      "value": "subject_matter_expert",
+      "comment": "A subject-matter expert is a person who is an authority in a particular area or topic."
+    }
+  ],
+  "constraint_technical_reconciliation_formula": [
+    {
+      "value": "accumulating_snapshot_fact_table_load",
+      "formula": "{source_count} - {insert_count} - {update_count}",
+      "comment": null
+    },
+    {
+      "value": "dimension_type_1_table_load",
+      "formula": "{source_count} - {insert_count} - {match_count} - {update_count}",
+      "comment": null
+    },
+    {
+      "value": "dimension_type_2_table_load",
+      "formula": "{source_count} - {insert_count} - ({update_insert_count} + {end_date_count})/2 - {match_count}",
+      "comment": null
+    },
+    {
+      "value": "file_load",
+      "formula": "{source_count} - {insert_count}",
+      "comment": null
+    },
+    {
+      "value": "hub_table_load",
+      "formula": "{source_count} - {insert_count} - {match_count} - {filter_count}",
+      "comment": null
+    },
+    {
+      "value": "link_table_load",
+      "formula": "{source_count} - {insert_count} - {match_count} - {filter_count}",
+      "comment": null
+    },
+    {
+      "value": "satellite_table_load",
+      "formula": "{source_count} - {insert_count} - ({update_insert_count} + {end_date_count})/2 - {match_count}",
+      "comment": null
+    },
+    {
+      "value": "snapshot_fact_table_load",
+      "formula": "{source_count} - {insert_count} - {update_count}",
+      "comment": null
+    },
+    {
+      "value": "staging_table_load",
+      "formula": "{source_count} - {insert_count}",
+      "comment": null
+    },
+    {
+      "value": "table_load",
+      "formula": "{source_count} - {insert_count}",
+      "comment": null
+    },
+    {
+      "value": "transactional_fact_table_load",
+      "formula": "{source_count} - {insert_count}",
+      "comment": null
+    }
+  ],
+  "constraint_variable_name": [
+    {
+      "value": "watermark_integer_value",
+      "object_type": "delimited_file",
+      "cast": "integer",
+      "required": false,
+      "comment": "Integer value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_integer_value",
+      "object_type": "fixed_width_file",
+      "cast": "integer",
+      "required": false,
+      "comment": "Integer value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_integer_value",
+      "object_type": "json_file",
+      "cast": "integer",
+      "required": false,
+      "comment": "Integer value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_integer_value",
+      "object_type": "staging_table",
+      "cast": "integer",
+      "required": false,
+      "comment": "Integer value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_integer_value",
+      "object_type": "xml_file",
+      "cast": "integer",
+      "required": false,
+      "comment": "Integer value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_timestamp_value",
+      "object_type": "delimited_file",
+      "cast": "timestamp",
+      "required": false,
+      "comment": "Timestamp value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_timestamp_value",
+      "object_type": "fixed_width_file",
+      "cast": "timestamp",
+      "required": false,
+      "comment": "Timestamp value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_timestamp_value",
+      "object_type": "json_file",
+      "cast": "timestamp",
+      "required": false,
+      "comment": "Timestamp value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_timestamp_value",
+      "object_type": "staging_table",
+      "cast": "timestamp",
+      "required": false,
+      "comment": "Timestamp value used for pipeline checkpointing."
+    },
+    {
+      "value": "watermark_timestamp_value",
+      "object_type": "xml_file",
+      "cast": "timestamp",
+      "required": false,
+      "comment": "Timestamp value used for pipeline checkpointing."
+    }
+  ],
+  "constraint_variable_object_type": [
+    {
+      "value": "accumulating_snapshot_fact_table",
+      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+    },
+    {
+      "value": "accumulating_snapshot_fact_table_load",
+      "comment": ""
+    },
+    {
+      "value": "attribute",
+      "comment": ""
+    },
+    {
+      "value": "blank_mask",
+      "comment": "The information is blanked, nulled, or removed."
+    },
+    {
+      "value": "classification",
+      "comment": "An action or process of classifying something."
+    },
+    {
+      "value": "data_mask",
+      "comment": ""
+    },
+    {
+      "value": "data_profiling",
+      "comment": ""
+    },
+    {
+      "value": "data_quality_check",
+      "comment": ""
+    },
+    {
+      "value": "delimited_file",
+      "comment": ""
+    },
+    {
+      "value": "denormalised_table",
+      "comment": ""
+    },
+    {
+      "value": "deviation",
+      "comment": "Randomly varying numeric or date values within a predfined range (e.g., +/- 90 days for a birthday)."
+    },
+    {
+      "value": "dimension_type_0_table",
+      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+    },
+    {
+      "value": "dimension_type_1_table",
+      "comment": "The type 1 dimension method overwrites old with new data, and therefore does not track historical data."
+    },
+    {
+      "value": "dimension_type_1_table_load",
+      "comment": ""
+    },
+    {
+      "value": "dimension_type_2_table",
+      "comment": "The type 2 dimension method tracks historical data by creating multiple records for a given natural key in the dimensional tables with separate surrogate keys and/or different version numbers."
+    },
+    {
+      "value": "dimension_type_2_table_load",
+      "comment": ""
+    },
+    {
+      "value": "file_load",
+      "comment": ""
+    },
+    {
+      "value": "fixed_width_file",
+      "comment": "In a fixed-width text file, data is contained in columns that are of a fixed width (meaning that each column contains a certain number of character positions)."
+    },
+    {
+      "value": "generic_activity",
+      "comment": ""
+    },
+    {
+      "value": "glossary_entry",
+      "comment": ""
+    },
+    {
+      "value": "http_endpoint",
+      "comment": ""
+    },
+    {
+      "value": "http_load",
+      "comment": ""
+    },
+    {
+      "value": "hub_table",
+      "comment": "Hubs contain a list of unique business keys with low propensity to change. Hubs also contain a surrogate key for each Hub item and metadata describing the origin of the business key."
+    },
+    {
+      "value": "hub_table_load",
+      "comment": ""
+    },
+    {
+      "value": "json_file",
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+    },
+    {
+      "value": "link_table",
+      "comment": "Associations or transactions between business keys (relating for instance the hubs for customer and product with each other through the purchase transaction) are modeled using link tables."
+    },
+    {
+      "value": "link_table_load",
+      "comment": ""
+    },
+    {
+      "value": "mask",
+      "comment": "Replace the data element with a different and consistent value."
+    },
+    {
+      "value": "normalised_table",
+      "comment": ""
+    },
+    {
+      "value": "partial_mask",
+      "comment": "Replace parts of the data element with a different and consistent value."
+    },
+    {
+      "value": "policy",
+      "comment": "A policy is a deliberate system of guidelines to guide decisions and achieve rational outcomes."
+    },
+    {
+      "value": "reference_data",
+      "comment": ""
+    },
+    {
+      "value": "reference_data_set",
+      "comment": ""
+    },
+    {
+      "value": "rule",
+      "comment": "A set of explicit or understood regulations or principles governing conduct or procedure within a particular area of activity."
+    },
+    {
+      "value": "satellite_table",
+      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+    },
+    {
+      "value": "satellite_table_load",
+      "comment": ""
+    },
+    {
+      "value": "snapshot_fact_table",
+      "comment": "The periodic snapshot, as the name implies, takes a \"picture of the moment\", where the moment could be any defined period of time, e.g. a performance summary of a salesman over the previous month."
+    },
+    {
+      "value": "snapshot_fact_table_load",
+      "comment": ""
+    },
+    {
+      "value": "staging_table",
+      "comment": ""
+    },
+    {
+      "value": "staging_table_load",
+      "comment": ""
+    },
+    {
+      "value": "subsitution",
+      "comment": "Replacing the data with synthetic or manufactured data."
+    },
+    {
+      "value": "table_load",
+      "comment": ""
+    },
+    {
+      "value": "term",
+      "comment": "A word or phrase used to describe a thing or to express a concept."
+    },
+    {
+      "value": "tokenise_fpe",
+      "comment": "Replace the data element with a unique value whereby the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
+    },
+    {
+      "value": "tokenise_uuid",
+      "comment": "Replace the data element with a unique value whereby the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
+    },
+    {
+      "value": "transactional_fact_table",
+      "comment": "A transactional table is the most basic and fundamental. The grain associated with a transactional fact table is usually specified as \"one row per line in a transaction\", e.g., every line on a receipt."
+    },
+    {
+      "value": "transactional_fact_table_load",
+      "comment": ""
+    },
+    {
+      "value": "xml_file",
+      "comment": "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."
+    }
+  ]
+}

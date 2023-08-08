@@ -1,0 +1,252 @@
+[
+  {
+    "name": "constraint_alert_code",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_artefact_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_attribute_classification",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_process_constant_name",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_artefact_constant_name",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_mask_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_quality_rule_criticality",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_quality_rule_dimension",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_flow_label",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_object_rel_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_rel_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_rel_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_log_priority",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_process_audit_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_process_dependency_logic",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_process_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_rel_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_rel_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_registry_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_stakeholder_object_rel_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_stakeholder_role",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_technical_reconciliation_formula",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_variable_name",
+    "function": "constraint",
+    "unique_key": ["value", "object_type"]
+  },
+  {
+    "name": "constraint_variable_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "process",
+    "function": "technical",
+    "unique_key": ["name"]
+  },
+  {
+    "name": "artefact",
+    "function": "technical",
+    "unique_key": ["name", "source"]
+  },
+  {
+    "name": "attribute",
+    "function": "technical",
+    "unique_key": ["artefact_id", "physical_name"]
+  },
+  {
+    "name": "process_constant",
+    "function": "technical",
+    "unique_key": ["process_id", "name"]
+  },
+  {
+    "name": "artefact_constant",
+    "function": "technical",
+    "unique_key": ["artefact_id", "name"]
+  },
+  {
+    "name": "process_artefact_rel",
+    "function": "technical",
+    "unique_key": ["process_id", "source_artefact_id", "target_artefact_id"]
+  },
+  {
+    "name": "process_attribute_map",
+    "function": "technical",
+    "unique_key": ["process_id", "source_attribute_id", "target_attribute_id"]
+  },
+  {
+    "name": "data_mask",
+    "function": "data_mask",
+    "unique_key": ["name", "type"]
+  },
+  {
+    "name": "data_mask_attribute_rel",
+    "function": "data_mask",
+    "unique_key": ["data_mask_id", "attribute_id"]
+  },
+  {
+    "name": "data_profile",
+    "function": "data_profile",
+    "unique_key": ["name", "sample_size"]
+  },
+  {
+    "name": "data_profile_artefact_rel",
+    "function": "data_profile",
+    "unique_key": ["data_profile_id", "artefact_id"]
+  },
+  {
+    "name": "data_quality_rule",
+    "function": "data_quality_rule",
+    "unique_key": ["name", "dimension"]
+  },
+  {
+    "name": "data_quality_rule_attribute_rel",
+    "function": "data_quality_rule",
+    "unique_key": ["data_quality_rule_id", "attribute_id"]
+  },
+  {
+    "name": "glossary_entry",
+    "function": "glossary",
+    "unique_key": ["name", "type"]
+  },
+  {
+    "name": "glossary_entry_object_rel",
+    "function": "glossary",
+    "unique_key": ["glossary_entry_id", "object_id", "object_type"]
+  },
+  {
+    "name": "glossary_entry_rel",
+    "function": "glossary",
+    "unique_key": ["glossary_entry_from_id", "glossary_entry_to_id", "type"]
+  },
+  {
+    "name": "reference_data_set",
+    "function": "reference_data",
+    "unique_key": ["name", "application"]
+  },
+  {
+    "name": "reference_data",
+    "function": "reference_data",
+    "unique_key": ["reference_data_set_id", "name", "type"]
+  },
+  {
+    "name": "reference_data_rel",
+    "function": "reference_data",
+    "unique_key": ["reference_data_from_id", "reference_data_to_id", "type"]
+  },
+  {
+    "name": "reference_data_attribute_rel",
+    "function": "reference_data",
+    "unique_key": ["reference_data_id", "attribute_id"]
+  },
+  {
+    "name": "stakeholder",
+    "function": "stakeholder",
+    "unique_key": ["name", "email_address"]
+  },
+  {
+    "name": "stakeholder_object_rel",
+    "function": "stakeholder",
+    "unique_key": ["stakeholder_id", "object_id", "object_type"]
+  }
+]
