@@ -5,6 +5,7 @@ A registry is the record of physical data objects either ingressing or egressing
 ## Definition
 
 <!-- definition -->
+
 | Name        | Type                     | Nullable | Description                                                                                           |
 | ----------- | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------- |
 | registry_id | integer                  | NO       | System generated unique identifier.                                                                   |
@@ -17,25 +18,30 @@ A registry is the record of physical data objects either ingressing or egressing
 | status      | character varying        | NO       | Status of the registered object. See acceptable values within the `constraint_registry_status` table. |
 | insert_date | timestamp with time zone | NO       | UTC timestamp when the record was inserted into the table.                                            |
 | update_date | timestamp with time zone | YES      | UTC timestamp when the record was updated into the table.                                             |
+
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
+
 | Type        | Columns                      |
 | ----------- | ---------------------------- |
 | FOREIGN KEY | status                       |
 | PRIMARY KEY | registry_id                  |
 | UNIQUE      | name, path, server, checksum |
+
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
+
 | Column | Value       | Comment            |
 | ------ | ----------- | ------------------ |
 | status | invalidated | Failed validation. |
 | status | landed      | Landed.            |
-| status | processed   | Processed.         |
+| status | jobed       | Jobed.             |
 | status | validated   | Passed validation. |
+
 <!-- acceptablevaluesstop -->

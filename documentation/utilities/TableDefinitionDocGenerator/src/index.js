@@ -71,7 +71,7 @@ async function generate(argv) {
         var definitionTable = [["Name", "Type", "Nullable", "Description"]];
         var constraintTable = [["Type", "Columns"]];
         var acceptableValuesTable =
-          tableName == "process_constant" ||
+          tableName == "job_constant" ||
           tableName == "artefact_constant" ||
           tableName == "variable"
             ? (acceptableValuesTable = [["Column", "Values"]])
@@ -160,7 +160,7 @@ async function generate(argv) {
               .orderBy(2);
 
             if (
-              tableName != "process_constant" &&
+              tableName != "job_constant" &&
               tableName != "artefact_constant" &&
               tableName != "variable"
             ) {

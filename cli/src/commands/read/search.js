@@ -11,14 +11,14 @@ class CustomCommand extends Command {
     try {
       var searchResult = await knex
         .select(
-          knex.raw("'job_' || process_id as id"),
+          knex.raw("'job_' || job_id as id"),
           "name as title",
           "name",
           "description",
           "type",
           knex.raw("'job' as object")
         )
-        .from("process")
+        .from("job")
         .unionAll(function () {
           this.select(
             knex.raw("'data_' || artefact_id as id"),
@@ -62,7 +62,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve process(es)";
+CustomCommand.description = "retrieve job(es)";
 
 CustomCommand.flags = {
   jq: Flags.string({

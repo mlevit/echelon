@@ -86,7 +86,7 @@ exports.up = async function (knex) {
       .boolean("hash_diff_flag")
       .notNullable()
       .comment(
-        "Is the attribute used as part of the hash_diff column i.e., change data detection process."
+        "Is the attribute used as part of the hash_diff column i.e., change data detection job."
       );
     table
       .boolean("record_source_flag")

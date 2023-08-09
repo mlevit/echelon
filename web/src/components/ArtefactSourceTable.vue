@@ -1,48 +1,50 @@
 <script setup>
-import CodeBadge from '@/components/CodeBadge.vue'
-import { useApiStore } from '@/stores/api'
+import CodeBadge from "@/components/CodeBadge.vue";
+import { useApiStore } from "@/stores/api";
 
-import axios from 'axios'
-import _ from 'lodash'
-import moment from 'moment'
-import { RouterLink } from 'vue-router'
+import axios from "axios";
+import _ from "lodash";
+import moment from "moment";
+import { RouterLink } from "vue-router";
 
 defineProps({
   artefactId: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <script>
 export default {
   data() {
-    return { apiStore: useApiStore(), rawArtefactSourceData: null }
+    return { apiStore: useApiStore(), rawArtefactSourceData: null };
   },
   created() {
-    this.getArtefactSourceData()
+    this.getArtefactSourceData();
   },
   computed: {},
   methods: {
     getArtefactSourceData() {
-      const url = new URL(this.apiStore.query)
+      const url = new URL(this.apiStore.query);
       url.searchParams.append(
-        'sql',
-        `select distinct process.process_id, process.name, process.type 
-         from process 
-         join process_artefact_rel on process.process_id = process_artefact_rel.process_id 
-         where process_artefact_rel.source_artefact_id = ${this.artefactId}`
-      )
-      axios.get(url.href).then((response) => (this.rawArtefactSourceData = response.data))
+        "sql",
+        `select distinct job.job_id, job.name, job.type 
+         from job 
+         join job_artefact_rel on job.job_id = job_artefact_rel.job_id 
+         where job_artefact_rel.source_artefact_id = ${this.artefactId}`
+      );
+      axios
+        .get(url.href)
+        .then((response) => (this.rawArtefactSourceData = response.data));
     },
     formatDate(date) {
       if (date) {
-        return moment(date).format('MMMM Do YYYY, h:mm:ss a')
+        return moment(date).format("MMMM Do YYYY, h:mm:ss a");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <template>
@@ -66,20 +68,24 @@ export default {
         <tbody>
           <tr
             v-for="record in rawArtefactSourceData"
-            :key="record.process_id"
+            :key="record.job_id"
             class="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
           >
             <th
               scope="row"
               class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
             >
-              <RouterLink :to="'/job/' + record.process_id">{{ record.name }}</RouterLink>
+              <RouterLink :to="'/job/' + record.job_id">{{
+                record.name
+              }}</RouterLink>
             </th>
             <td class="px-6 py-4"><CodeBadge :value="record.type" /></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div v-else><p class="text-gray-400 dark:text-gray-500">Not a source for any jobs.</p></div>
+    <div v-else>
+      <p class="text-gray-400 dark:text-gray-500">Not a source for any jobs.</p>
+    </div>
   </div>
 </template>

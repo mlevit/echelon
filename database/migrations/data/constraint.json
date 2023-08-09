@@ -22,29 +22,29 @@
     },
     {
       "value": "P01",
-      "comment": "Process has failed."
+      "comment": "Job has failed."
     },
     {
       "value": "P02",
-      "comment": "Process has taken less time than usual to run."
+      "comment": "Job has taken less time than usual to run."
     },
     {
       "value": "P03",
-      "comment": "Process has taken more time than usual to run."
+      "comment": "Job has taken more time than usual to run."
     },
     {
       "value": "P04",
-      "comment": "Process has not completed as per business SLA."
+      "comment": "Job has not completed as per business SLA."
     },
     {
       "value": "P05",
-      "comment": "Process is currently running longer than expected."
+      "comment": "Job is currently running longer than expected."
     }
   ],
   "constraint_artefact_type": [
     {
       "value": "accumulating_snapshot_fact_table",
-      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+      "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
     },
     {
       "value": "delimited_file",
@@ -434,13 +434,13 @@
       "value": "transform_sql",
       "cast": "text",
       "required": false,
-      "comment": "For instances where a view cannot be created, SQL transformation logic for the process can be stored here."
+      "comment": "For instances where a view cannot be created, SQL transformation logic for the job can be stored here."
     },
     {
       "value": "transform_view",
       "cast": "text",
       "required": false,
-      "comment": "View that contains transformation logic for the process."
+      "comment": "View that contains transformation logic for the job."
     },
     {
       "value": "trim_blanks",
@@ -460,80 +460,6 @@
       "cast": "text",
       "required": false,
       "comment": ""
-    }
-  ],
-  "constraint_data_mask_type": [
-    {
-      "value": "blank_mask",
-      "comment": "The information is blanked, nulled, or removed."
-    },
-    {
-      "value": "deviation",
-      "comment": "Randomly varying numeric or date values within a predfined range (e.g., +/- 90 days for a birthday)."
-    },
-    {
-      "value": "mask",
-      "comment": "Replace the data element with a different and consistent value."
-    },
-    {
-      "value": "partial_mask",
-      "comment": "Replace parts of the data element with a different and consistent value."
-    },
-    {
-      "value": "substitution",
-      "comment": "Replacing the data with synthetic or manufactured data."
-    },
-    {
-      "value": "tokenise_fpe",
-      "comment": "Replace the data element with a unique value whos pattern matches the original value but the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
-    },
-    {
-      "value": "tokenise_uuid",
-      "comment": "Replace the data element with a unique UUID whereby the original data cannot be direvided. Tokenised values consistently produce the same value for a given input value, making them ideal for primary/foreign keys in linked tables."
-    }
-  ],
-  "constraint_data_quality_rule_criticality": [
-    {
-      "value": "ERROR",
-      "comment": "Designates error events that might still allow the application to continue running."
-    },
-    {
-      "value": "FATAL",
-      "comment": "Designates very severe error events that will presumably lead the application to abort."
-    },
-    {
-      "value": "INFO",
-      "comment": "Designates informational messages that highlight the progress of the application at coarse-grained level."
-    },
-    {
-      "value": "WARN",
-      "comment": "Designates potentially harmful situations."
-    }
-  ],
-  "constraint_data_quality_rule_dimension": [
-    {
-      "value": "accuracy",
-      "comment": "The degree to which data correctly describes the \"real world\" object or event being described."
-    },
-    {
-      "value": "completeness",
-      "comment": "The proportion of stored data against the potential of \"100% complete\"."
-    },
-    {
-      "value": "consistency",
-      "comment": "The absence of difference, when comparing two or more representations of a thing against a definition."
-    },
-    {
-      "value": "timeliness",
-      "comment": "The degree to which data represent reality FROM the required point in time."
-    },
-    {
-      "value": "uniqueness",
-      "comment": "Nothing will be recorded more than once based upon how that thing is identified."
-    },
-    {
-      "value": "validity",
-      "comment": "Data are valid if it conforms to the syntax { value: format, type, range) of its definition."
     }
   ],
   "constraint_flow_label": [
@@ -566,121 +492,6 @@
       "comment": "Number of records inserted into the target artefact as part of SCD Type 2."
     }
   ],
-  "constraint_glossary_entry_object_rel_object_type": [
-    {
-      "value": "artefact",
-      "comment": ""
-    },
-    {
-      "value": "attribute",
-      "comment": ""
-    },
-    {
-      "value": "process",
-      "comment": ""
-    }
-  ],
-  "constraint_glossary_entry_rel_status": [
-    {
-      "value": "approved",
-      "comment": ""
-    },
-    {
-      "value": "deprecated",
-      "comment": ""
-    },
-    {
-      "value": "draft",
-      "comment": ""
-    },
-    {
-      "value": "pending_approval",
-      "comment": ""
-    }
-  ],
-  "constraint_glossary_entry_rel_type": [
-    {
-      "value": "calculated from",
-      "reverse": "calculates",
-      "comment": null
-    },
-    {
-      "value": "classified as",
-      "reverse": "classifier of",
-      "comment": null
-    },
-    {
-      "value": "contains",
-      "reverse": "contained in",
-      "comment": null
-    },
-    {
-      "value": "governed by",
-      "reverse": "governor of",
-      "comment": null
-    },
-    {
-      "value": "modifier of",
-      "reverse": "modified by",
-      "comment": null
-    },
-    {
-      "value": "parent of",
-      "reverse": "child of",
-      "comment": null
-    },
-    {
-      "value": "related to",
-      "reverse": "related to",
-      "comment": null
-    },
-    {
-      "value": "replaced by",
-      "reverse": "replaces",
-      "comment": null
-    },
-    {
-      "value": "synonym to",
-      "reverse": "synonym to",
-      "comment": null
-    }
-  ],
-  "constraint_glossary_entry_status": [
-    {
-      "value": "approved",
-      "comment": ""
-    },
-    {
-      "value": "deprecated",
-      "comment": ""
-    },
-    {
-      "value": "draft",
-      "comment": ""
-    },
-    {
-      "value": "pending_approval",
-      "comment": ""
-    }
-  ],
-  "constraint_glossary_entry_type": [
-    {
-      "value": "classification",
-      "comment": "An action or process of classifying something."
-    },
-    {
-      "value": "policy",
-      "comment": "A policy is a deliberate system of guidelines to guide decisions and achieve rational outcomes."
-    },
-    {
-      "value": "rule",
-      "comment": "A set of explicit or understood regulations or principles governing conduct or procedure within a particular area of activity."
-    },
-    {
-      "value": "term",
-      "comment": "A word or phrase used to describe a thing or to express a concept."
-    }
-  ],
   "constraint_log_priority": [
     {
       "value": "DEBUG",
@@ -703,7 +514,7 @@
       "comment": "Designates potentially harmful situations."
     }
   ],
-  "constraint_process_audit_status": [
+  "constraint_run_status": [
     {
       "value": "completed",
       "comment": "Completed succesfully."
@@ -717,7 +528,7 @@
       "comment": "Currently running."
     }
   ],
-  "constraint_process_dependency_logic": [
+  "constraint_job_dependency_logic": [
     {
       "value": "and",
       "comment": "All required artefacts require updates."
@@ -727,7 +538,7 @@
       "comment": "Any required artefacts require updates."
     }
   ],
-  "constraint_process_type": [
+  "constraint_job_type": [
     {
       "value": "accumulating_snapshot_fact_table_load",
       "comment": ""
@@ -793,92 +604,12 @@
       "comment": ""
     }
   ],
-  "constraint_process_constant_name": [
+  "constraint_job_constant_name": [
     {
       "value": "stored_procedure_name",
       "cast": "text",
       "required": true,
       "comment": "Procedure name to call to acquire the data."
-    }
-  ],
-  "constraint_reference_data_rel_status": [
-    {
-      "value": "approved",
-      "comment": ""
-    },
-    {
-      "value": "deprecated",
-      "comment": ""
-    },
-    {
-      "value": "draft",
-      "comment": ""
-    },
-    {
-      "value": "pending_approval",
-      "comment": ""
-    }
-  ],
-  "constraint_reference_data_rel_type": [
-    {
-      "value": "abbreviation of",
-      "reverse": "expansion of",
-      "comment": ""
-    },
-    {
-      "value": "parent of",
-      "reverse": "child of",
-      "comment": ""
-    },
-    {
-      "value": "replaced by",
-      "reverse": "replaces",
-      "comment": ""
-    },
-    {
-      "value": "synonym of",
-      "reverse": "synonym of",
-      "comment": ""
-    }
-  ],
-  "constraint_reference_data_status": [
-    {
-      "value": "approved",
-      "comment": ""
-    },
-    {
-      "value": "deprecated",
-      "comment": ""
-    },
-    {
-      "value": "draft",
-      "comment": ""
-    },
-    {
-      "value": "pending_approval",
-      "comment": ""
-    }
-  ],
-  "constraint_reference_data_type": [
-    {
-      "value": "ALPHA-2",
-      "comment": "Alphanumericals of length 2."
-    },
-    {
-      "value": "ALPHA-3",
-      "comment": "Alphanumericals of length 3."
-    },
-    {
-      "value": "ALPHANUMERIC",
-      "comment": "Alphanumericals are a combination of alphabetical and numerical characters, and is used to describe the collection of Latin letters and Arabic digits or a text constructed from this collection."
-    },
-    {
-      "value": "BOOLEAN",
-      "comment": "A binary variable that can have one of two possible values, 0 (false) or 1 (true)."
-    },
-    {
-      "value": "NUMERIC",
-      "comment": "Relating to or expressed as a number or numbers."
     }
   ],
   "constraint_registry_status": [
@@ -891,68 +622,12 @@
       "comment": "Landed."
     },
     {
-      "value": "processed",
-      "comment": "Processed."
+      "value": "jobed",
+      "comment": "Jobed."
     },
     {
       "value": "validated",
       "comment": "Passed validation."
-    }
-  ],
-  "constraint_stakeholder_object_rel_object_type": [
-    {
-      "value": "artefact",
-      "comment": ""
-    },
-    {
-      "value": "attribute",
-      "comment": ""
-    },
-    {
-      "value": "batch",
-      "comment": ""
-    },
-    {
-      "value": "data_mask",
-      "comment": ""
-    },
-    {
-      "value": "data_quality_rule",
-      "comment": ""
-    },
-    {
-      "value": "glossary_entry",
-      "comment": ""
-    },
-    {
-      "value": "process",
-      "comment": ""
-    },
-    {
-      "value": "reference_data_set",
-      "comment": ""
-    }
-  ],
-  "constraint_stakeholder_role": [
-    {
-      "value": "business_stakeholder",
-      "comment": "A stakeholder has a vested interest in a company and can either affect or be affected by a business' operations and performance."
-    },
-    {
-      "value": "data_owner",
-      "comment": "Data owners are either individuals or teams who make decisions such as who has the right to access and edit data and how it's used."
-    },
-    {
-      "value": "data_steward",
-      "comment": "A data steward is an oversight or data governance role within an organization, and is responsible for ensuring the quality and fitness for purpose of the organization's data assets, including the metadata for those data assets."
-    },
-    {
-      "value": "operational_owner",
-      "comment": ""
-    },
-    {
-      "value": "subject_matter_expert",
-      "comment": "A subject-matter expert is a person who is an authority in a particular area or topic."
     }
   ],
   "constraint_technical_reconciliation_formula": [
@@ -1087,7 +762,7 @@
   "constraint_variable_object_type": [
     {
       "value": "accumulating_snapshot_fact_table",
-      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+      "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
     },
     {
       "value": "accumulating_snapshot_fact_table_load",
@@ -1103,7 +778,7 @@
     },
     {
       "value": "classification",
-      "comment": "An action or process of classifying something."
+      "comment": "An action or job of classifying something."
     },
     {
       "value": "data_mask",

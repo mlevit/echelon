@@ -23,7 +23,7 @@ class CustomCommand extends Command {
         var lineageResult = await knex
           .with("lineage", (qb) => {
             qb.select(["source_artefact_id", "target_artefact_id"])
-              .from("process_artefact_rel")
+              .from("job_artefact_rel")
               .where("source_artefact_id", artefactResult[0]["artefact_id"])
               .orWhere("target_artefact_id", artefactResult[0]["artefact_id"]);
           })
@@ -34,14 +34,14 @@ class CustomCommand extends Command {
             "target_artefact.name as target_artefact_name",
           ])
           .count("*")
-          .from("process_artefact_rel")
+          .from("job_artefact_rel")
           .join("lineage", function () {
             this.on(
               "lineage.source_artefact_id",
-              "process_artefact_rel.target_artefact_id"
+              "job_artefact_rel.target_artefact_id"
             ).orOn(
               "lineage.target_artefact_id",
-              "process_artefact_rel.source_artefact_id"
+              "job_artefact_rel.source_artefact_id"
             );
           })
           .join(

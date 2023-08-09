@@ -1,6 +1,6 @@
 # What is Echelon?
 
-Echelon is a flexible and scalable audit and governance framework. It gathers technical, operational, and business metadata and puts it all in one central database. This setup allows Echelon to be used in various ways, like creating workflows based on metadata, keeping an eye on data quality, mapping out where data comes from, and more.
+Echelon is a flexible and scalable run and governance framework. It gathers technical, operational, and business metadata and puts it all in one central database. This setup allows Echelon to be used in various ways, like creating workflows based on metadata, keeping an eye on data quality, mapping out where data comes from, and more.
 
 ## What are the various components that make up Echelon?
 
@@ -26,7 +26,7 @@ Suggested sequence for setup:
 
 ## How do I contribute?
 
-We welcome contributions from the community! To contribute to the Echelon project, please read our [Contributor's Guide](CONTRIBUTING.md) to understand our processes.
+We welcome contributions from the community! To contribute to the Echelon project, please read our [Contributor's Guide](CONTRIBUTING.md) to understand our jobes.
 
 ## What if I find an issue?
 

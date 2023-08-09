@@ -22,29 +22,29 @@
     },
     {
       "value": "P01",
-      "comment": "Process has failed."
+      "comment": "Job has failed."
     },
     {
       "value": "P02",
-      "comment": "Process has taken less time than usual to run."
+      "comment": "Job has taken less time than usual to run."
     },
     {
       "value": "P03",
-      "comment": "Process has taken more time than usual to run."
+      "comment": "Job has taken more time than usual to run."
     },
     {
       "value": "P04",
-      "comment": "Process has not completed as per business SLA."
+      "comment": "Job has not completed as per business SLA."
     },
     {
       "value": "P05",
-      "comment": "Process is currently running longer than expected."
+      "comment": "Job is currently running longer than expected."
     }
   ],
   "constraint_artefact_type": [
     {
       "value": "accumulating_snapshot_fact_table",
-      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+      "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
     },
     {
       "value": "delimited_file",
@@ -129,7 +129,7 @@
       "comment": "Moderately sensitive data that should only be shared with authorised individuals inside (and in some cases outside of) the organisation."
     }
   ],
-  "constraint_process_constant_name": [
+  "constraint_job_constant_name": [
     {
       "value": "stored_procedure_name",
       "cast": "text",
@@ -442,13 +442,13 @@
       "value": "transform_sql",
       "cast": "text",
       "required": false,
-      "comment": "For instances where a view cannot be created, SQL transformation logic for the process can be stored here."
+      "comment": "For instances where a view cannot be created, SQL transformation logic for the job can be stored here."
     },
     {
       "value": "transform_view",
       "cast": "text",
       "required": false,
-      "comment": "View that contains transformation logic for the process."
+      "comment": "View that contains transformation logic for the job."
     },
     {
       "value": "trim_blanks",
@@ -589,7 +589,7 @@
       "comment": ""
     },
     {
-      "value": "process",
+      "value": "job",
       "comment": ""
     }
   ],
@@ -679,7 +679,7 @@
   "constraint_glossary_entry_type": [
     {
       "value": "classification",
-      "comment": "An action or process of classifying something."
+      "comment": "An action or job of classifying something."
     },
     {
       "value": "policy",
@@ -716,7 +716,7 @@
       "comment": "Designates potentially harmful situations."
     }
   ],
-  "constraint_process_audit_status": [
+  "constraint_run_status": [
     {
       "value": "completed",
       "comment": "Completed succesfully."
@@ -730,7 +730,7 @@
       "comment": "Currently running."
     }
   ],
-  "constraint_process_dependency_logic": [
+  "constraint_job_dependency_logic": [
     {
       "value": "and",
       "comment": "All required artefacts require updates."
@@ -740,7 +740,7 @@
       "comment": "Any required artefacts require updates."
     }
   ],
-  "constraint_process_type": [
+  "constraint_job_type": [
     {
       "value": "accumulating_snapshot_fact_table_load",
       "comment": ""
@@ -896,8 +896,8 @@
       "comment": "Landed."
     },
     {
-      "value": "processed",
-      "comment": "Processed."
+      "value": "jobed",
+      "comment": "Jobed."
     },
     {
       "value": "validated",
@@ -930,7 +930,7 @@
       "comment": ""
     },
     {
-      "value": "process",
+      "value": "job",
       "comment": ""
     },
     {
@@ -1092,7 +1092,7 @@
   "constraint_variable_object_type": [
     {
       "value": "accumulating_snapshot_fact_table",
-      "comment": "This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order."
+      "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
     },
     {
       "value": "accumulating_snapshot_fact_table_load",
@@ -1108,7 +1108,7 @@
     },
     {
       "value": "classification",
-      "comment": "An action or process of classifying something."
+      "comment": "An action or job of classifying something."
     },
     {
       "value": "data_mask",
@@ -1283,7 +1283,7 @@
       "comment": "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."
     }
   ],
-  "process": [
+  "job": [
     {
       "name": "presentation_fact_sakila_rental",
       "description": "Load Sakila Rental table from staging layer to the presentation layer",
@@ -3519,24 +3519,24 @@
       "business_date_flag": false
     }
   ],
-  "process_constant": [
+  "job_constant": [
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "name": "stored_procedure_name",
       "value": "truncate_and_load_raw_sakila_customer"
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "name": "stored_procedure_name",
       "value": "truncate_and_load_raw_sakila_inventory"
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "name": "stored_procedure_name",
       "value": "truncate_and_load_raw_sakila_rental"
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "name": "stored_procedure_name",
       "value": "truncate_and_load_raw_sakila_staff"
     }
@@ -3863,88 +3863,88 @@
       "value": "sakila_staff"
     }
   ],
-  "process_artefact_rel": [
+  "job_artefact_rel": [
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "sequence_number": 1,
       "source_artefact_name": "raw_sakila_customer",
       "target_artefact_name": "staging_sakila_customer",
       "required_flag": true
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "sequence_number": 1,
       "source_artefact_name": "raw_sakila_inventory",
       "target_artefact_name": "staging_sakila_inventory",
       "required_flag": true
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "sequence_number": 1,
       "source_artefact_name": "raw_sakila_rental",
       "target_artefact_name": "staging_sakila_rental",
       "required_flag": true
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "sequence_number": 1,
       "source_artefact_name": "raw_sakila_staff",
       "target_artefact_name": "staging_sakila_staff",
       "required_flag": true
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "sequence_number": 1,
       "source_artefact_name": "staging_sakila_customer",
       "target_artefact_name": "presentation_dim_sakila_customer",
       "required_flag": true
     },
     {
-      "process_name": "Load Dim Sakila Inventory",
+      "job_name": "Load Dim Sakila Inventory",
       "sequence_number": 1,
       "source_artefact_name": "staging_sakila_inventory",
       "target_artefact_name": "presentation_dim_sakila_inventory",
       "required_flag": true
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "sequence_number": 1,
       "source_artefact_name": "staging_sakila_staff",
       "target_artefact_name": "presentation_dim_sakila_staff",
       "required_flag": true
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 1,
       "source_artefact_name": "staging_sakila_rental",
       "target_artefact_name": "presentation_fact_sakila_rental",
       "required_flag": true
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 2,
       "source_artefact_name": "presentation_dim_sakila_customer",
       "target_artefact_name": "presentation_fact_sakila_rental",
       "required_flag": false
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 3,
       "source_artefact_name": "presentation_dim_sakila_inventory",
       "target_artefact_name": "presentation_fact_sakila_rental",
       "required_flag": false
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 4,
       "source_artefact_name": "presentation_dim_sakila_staff",
       "target_artefact_name": "presentation_fact_sakila_rental",
       "required_flag": false
     }
   ],
-  "process_attribute_map": [
+  "job_attribute_map": [
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "customer_id",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3952,7 +3952,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3960,7 +3960,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "first_name",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3968,7 +3968,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "last_name",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3976,7 +3976,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "email",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3984,7 +3984,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "address_id",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -3992,7 +3992,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "active",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -4000,7 +4000,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "create_date",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -4008,7 +4008,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Customer",
+      "job_name": "Load Dim Sakila Customer",
       "source_artefact_name": "staging_sakila_customer",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "presentation_dim_sakila_customer",
@@ -4016,7 +4016,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Inventory",
+      "job_name": "Load Dim Sakila Inventory",
       "source_artefact_name": "staging_sakila_inventory",
       "source_attribute_physical_name": "inventory_id",
       "target_artefact_name": "presentation_dim_sakila_inventory",
@@ -4024,7 +4024,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Inventory",
+      "job_name": "Load Dim Sakila Inventory",
       "source_artefact_name": "staging_sakila_inventory",
       "source_attribute_physical_name": "film_id",
       "target_artefact_name": "presentation_dim_sakila_inventory",
@@ -4032,7 +4032,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Inventory",
+      "job_name": "Load Dim Sakila Inventory",
       "source_artefact_name": "staging_sakila_inventory",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "presentation_dim_sakila_inventory",
@@ -4040,7 +4040,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Inventory",
+      "job_name": "Load Dim Sakila Inventory",
       "source_artefact_name": "staging_sakila_inventory",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "presentation_dim_sakila_inventory",
@@ -4048,7 +4048,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "staff_id",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4056,7 +4056,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "first_name",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4064,7 +4064,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "last_name",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4072,7 +4072,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "address_id",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4080,7 +4080,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "picture",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4088,7 +4088,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "email",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4096,7 +4096,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4104,7 +4104,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "active",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4112,7 +4112,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "username",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4120,7 +4120,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "password",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4128,7 +4128,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Dim Sakila Staff",
+      "job_name": "Load Dim Sakila Staff",
       "source_artefact_name": "staging_sakila_staff",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "presentation_dim_sakila_staff",
@@ -4136,7 +4136,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "staging_sakila_rental",
       "source_attribute_physical_name": "rental_id",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4144,7 +4144,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "presentation_dim_sakila_inventory",
       "source_attribute_physical_name": "inventory_sk",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4152,7 +4152,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "presentation_dim_sakila_customer",
       "source_attribute_physical_name": "customer_sk",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4160,7 +4160,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "presentation_dim_sakila_staff",
       "source_attribute_physical_name": "staff_sk",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4168,7 +4168,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "staging_sakila_rental",
       "source_attribute_physical_name": "rental_date",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4176,7 +4176,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "presentation_fact_sakila_rental",
+      "job_name": "presentation_fact_sakila_rental",
       "source_artefact_name": "staging_sakila_rental",
       "source_attribute_physical_name": "return_date",
       "target_artefact_name": "presentation_fact_sakila_rental",
@@ -4184,7 +4184,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "customer_id",
       "target_artefact_name": "staging_sakila_customer",
@@ -4192,7 +4192,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "staging_sakila_customer",
@@ -4200,7 +4200,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "first_name",
       "target_artefact_name": "staging_sakila_customer",
@@ -4208,7 +4208,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "last_name",
       "target_artefact_name": "staging_sakila_customer",
@@ -4216,7 +4216,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "email",
       "target_artefact_name": "staging_sakila_customer",
@@ -4224,7 +4224,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "address_id",
       "target_artefact_name": "staging_sakila_customer",
@@ -4232,7 +4232,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "active",
       "target_artefact_name": "staging_sakila_customer",
@@ -4240,7 +4240,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "create_date",
       "target_artefact_name": "staging_sakila_customer",
@@ -4248,7 +4248,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Customer",
+      "job_name": "Load Staging Sakila Customer",
       "source_artefact_name": "raw_sakila_customer",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "staging_sakila_customer",
@@ -4256,7 +4256,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "source_artefact_name": "raw_sakila_inventory",
       "source_attribute_physical_name": "inventory_id",
       "target_artefact_name": "staging_sakila_inventory",
@@ -4264,7 +4264,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "source_artefact_name": "raw_sakila_inventory",
       "source_attribute_physical_name": "film_id",
       "target_artefact_name": "staging_sakila_inventory",
@@ -4272,7 +4272,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "source_artefact_name": "raw_sakila_inventory",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "staging_sakila_inventory",
@@ -4280,7 +4280,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Inventory",
+      "job_name": "Load Staging Sakila Inventory",
       "source_artefact_name": "raw_sakila_inventory",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "staging_sakila_inventory",
@@ -4288,7 +4288,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "rental_id",
       "target_artefact_name": "staging_sakila_rental",
@@ -4296,7 +4296,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "rental_date",
       "target_artefact_name": "staging_sakila_rental",
@@ -4304,7 +4304,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "inventory_id",
       "target_artefact_name": "staging_sakila_rental",
@@ -4312,7 +4312,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "customer_id",
       "target_artefact_name": "staging_sakila_rental",
@@ -4320,7 +4320,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "return_date",
       "target_artefact_name": "staging_sakila_rental",
@@ -4328,7 +4328,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "staff_id",
       "target_artefact_name": "staging_sakila_rental",
@@ -4336,7 +4336,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Rental",
+      "job_name": "Load Staging Sakila Rental",
       "source_artefact_name": "raw_sakila_rental",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "staging_sakila_rental",
@@ -4344,7 +4344,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "staff_id",
       "target_artefact_name": "staging_sakila_staff",
@@ -4352,7 +4352,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "first_name",
       "target_artefact_name": "staging_sakila_staff",
@@ -4360,7 +4360,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "last_name",
       "target_artefact_name": "staging_sakila_staff",
@@ -4368,7 +4368,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "address_id",
       "target_artefact_name": "staging_sakila_staff",
@@ -4376,7 +4376,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "picture",
       "target_artefact_name": "staging_sakila_staff",
@@ -4384,7 +4384,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "email",
       "target_artefact_name": "staging_sakila_staff",
@@ -4392,7 +4392,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "store_id",
       "target_artefact_name": "staging_sakila_staff",
@@ -4400,7 +4400,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "active",
       "target_artefact_name": "staging_sakila_staff",
@@ -4408,7 +4408,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "username",
       "target_artefact_name": "staging_sakila_staff",
@@ -4416,7 +4416,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "password",
       "target_artefact_name": "staging_sakila_staff",
@@ -4424,7 +4424,7 @@
       "hard_rule": null
     },
     {
-      "process_name": "Load Staging Sakila Staff",
+      "job_name": "Load Staging Sakila Staff",
       "source_artefact_name": "raw_sakila_staff",
       "source_attribute_physical_name": "last_update",
       "target_artefact_name": "staging_sakila_staff",
@@ -4936,25 +4936,25 @@
     {
       "stakeholder_id": 1,
       "object_id": 1,
-      "object_type": "process",
+      "object_type": "job",
       "active_flag": true
     },
     {
       "stakeholder_id": 1,
       "object_id": 2,
-      "object_type": "process",
+      "object_type": "job",
       "active_flag": true
     },
     {
       "stakeholder_id": 1,
       "object_id": 3,
-      "object_type": "process",
+      "object_type": "job",
       "active_flag": true
     },
     {
       "stakeholder_id": 1,
       "object_id": 4,
-      "object_type": "process",
+      "object_type": "job",
       "active_flag": true
     },
     {

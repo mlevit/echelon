@@ -19,7 +19,7 @@ import _ from "lodash";
 <script>
 export default {
   data() {
-    return { apiStore: useApiStore(), auditData: {}, rawArtefactData: {} };
+    return { apiStore: useApiStore(), runData: {}, rawArtefactData: {} };
   },
   created() {
     this.getArtefactData();
@@ -110,7 +110,7 @@ export default {
       />
     </div>
     <!-- <div class="mb-4 flex h-fit items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-      <ProcessAuditList :artefactName="artefactData.name" v-if="artefactData.name" />
+      <RunList :artefactName="artefactData.name" v-if="artefactData.name" />
     </div> -->
     <!-- <div class="mb-4 flex h-48 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
         <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>

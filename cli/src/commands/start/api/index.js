@@ -38,10 +38,10 @@ class CustomCommand extends Command {
 
     const methodDict = { GET: "read", POST: "create", PUT: "update" };
     const routeTranslationDict = {
-      "dq/audit": "dq/audit/index",
-      "process/audit": "process/audit/index",
+      "dq/run": "dq/run/index",
+      "job/run": "job/run/index",
       artefact: "artefact/index",
-      process: "process/index",
+      job: "job/index",
     };
 
     try {

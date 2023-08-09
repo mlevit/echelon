@@ -92,14 +92,14 @@ class CustomCommand extends Command {
     switch (table) {
       case "attribute":
         return await this.getAttributeRecords();
-      case "process_constant":
-        return await this.getProcessConstantRecords();
+      case "job_constant":
+        return await this.getJobConstantRecords();
       case "artefact_constant":
         return await this.getArtefactConstantRecords();
-      case "process_artefact_rel":
-        return await this.getProcessArtefactRelRecords();
-      case "process_attribute_map":
-        return await this.getProcessAttributeMapRecords();
+      case "job_artefact_rel":
+        return await this.getJobArtefactRelRecords();
+      case "job_attribute_map":
+        return await this.getJobAttributeMapRecords();
       default:
         return await this.getOtherTableRecords(table);
     }
@@ -155,15 +155,11 @@ class CustomCommand extends Command {
       .join("artefact", "attribute.artefact_id", "artefact.artefact_id");
   }
 
-  async getProcessConstantRecords() {
+  async getJobConstantRecords() {
     return await knex
-      .select(
-        "process.name as process_name",
-        "process_constant.name",
-        "process_constant.value"
-      )
-      .from("process_constant")
-      .join("process", "process_constant.process_id", "process.process_id");
+      .select("job.name as job_name", "job_constant.name", "job_constant.value")
+      .from("job_constant")
+      .join("job", "job_constant.job_id", "job.job_id");
   }
 
   async getArtefactConstantRecords() {
@@ -181,44 +177,44 @@ class CustomCommand extends Command {
       );
   }
 
-  async getProcessArtefactRelRecords() {
+  async getJobArtefactRelRecords() {
     return await knex
       .select(
-        "process.name as process_name",
+        "job.name as job_name",
         "sequence_number",
         "source.name as source_artefact_name",
         "target.name as target_artefact_name",
-        "process_artefact_rel.required_flag"
+        "job_artefact_rel.required_flag"
       )
-      .from("process_artefact_rel")
-      .join("process", "process_artefact_rel.process_id", "process.process_id")
+      .from("job_artefact_rel")
+      .join("job", "job_artefact_rel.job_id", "job.job_id")
       .join(
         "artefact as source",
-        "process_artefact_rel.source_artefact_id",
+        "job_artefact_rel.source_artefact_id",
         "source.artefact_id"
       )
       .join(
         "artefact as target",
-        "process_artefact_rel.target_artefact_id",
+        "job_artefact_rel.target_artefact_id",
         "target.artefact_id"
       );
   }
 
-  async getProcessAttributeMapRecords() {
+  async getJobAttributeMapRecords() {
     return await knex
       .select(
-        "process.name as process_name",
+        "job.name as job_name",
         "source_artefact.name as source_artefact_name",
         "source_attribute.physical_name as source_attribute_physical_name",
         "target_artefact.name as target_artefact_name",
         "target_attribute.physical_name as target_attribute_physical_name",
-        "process_attribute_map.hard_rule"
+        "job_attribute_map.hard_rule"
       )
-      .from("process_attribute_map")
-      .join("process", "process_attribute_map.process_id", "process.process_id")
+      .from("job_attribute_map")
+      .join("job", "job_attribute_map.job_id", "job.job_id")
       .join(
         "attribute as source_attribute",
-        "process_attribute_map.source_attribute_id",
+        "job_attribute_map.source_attribute_id",
         "source_attribute.attribute_id"
       )
       .join(
@@ -228,7 +224,7 @@ class CustomCommand extends Command {
       )
       .join(
         "attribute as target_attribute",
-        "process_attribute_map.target_attribute_id",
+        "job_attribute_map.target_attribute_id",
         "target_attribute.attribute_id"
       )
       .join(

@@ -264,54 +264,54 @@
           ]
         },
         {
-          "name": "List constants for a process",
+          "name": "List constants for a job",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/constant?name=presentation_fact_sakila_rental",
+              "raw": "http://{{hostname}}:{{port}}/job/constant?name=presentation_fact_sakila_rental",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "constant"],
+              "path": ["job", "constant"],
               "query": [
                 {
                   "key": "name",
                   "value": "presentation_fact_sakila_rental",
-                  "description": "process name"
+                  "description": "job name"
                 }
               ]
             },
-            "description": "retrieve constants associated with a process"
+            "description": "retrieve constants associated with a job"
           },
           "response": []
         },
         {
-          "name": "List processes",
+          "name": "List jobes",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process",
+              "raw": "http://{{hostname}}:{{port}}/job",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process"]
+              "path": ["job"]
             },
-            "description": "retrieve process(es)"
+            "description": "retrieve job(es)"
           },
           "response": [
             {
-              "name": "List processes",
+              "name": "List jobes",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process",
+                  "raw": "http://{{hostname}}:{{port}}/job",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process"]
+                  "path": ["job"]
                 }
               },
               "status": "OK",
@@ -319,24 +319,24 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n  {\n    \"process_id\": 5,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Load Sakila Rental table from staging layer to the presentation layer\",\n    \"type\": \"transactional_fact_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 3,\n    \"name\": \"raw_sakila_customer > staging_sakila_customer\",\n    \"description\": \"Load Sakila Customer file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 2,\n    \"name\": \"raw_sakila_inventory > staging_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 1,\n    \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n    \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 4,\n    \"name\": \"raw_sakila_staff > staging_sakila_staff\",\n    \"description\": \"Load Sakila Staff file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 7,\n    \"name\": \"staging_sakila_customer > presentation_dim_sakila_customer\",\n    \"description\": \"Load Sakila Customer table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 6,\n    \"name\": \"staging_sakila_inventory > presentation_dim_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"process_id\": 8,\n    \"name\": \"staging_sakila_staff > presentation_dim_sakila_staff\",\n    \"description\": \"Load Sakila Staff table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
+              "body": "[\n  {\n    \"job_id\": 5,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Load Sakila Rental table from staging layer to the presentation layer\",\n    \"type\": \"transactional_fact_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 3,\n    \"name\": \"raw_sakila_customer > staging_sakila_customer\",\n    \"description\": \"Load Sakila Customer file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 2,\n    \"name\": \"raw_sakila_inventory > staging_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 1,\n    \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n    \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 4,\n    \"name\": \"raw_sakila_staff > staging_sakila_staff\",\n    \"description\": \"Load Sakila Staff file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 7,\n    \"name\": \"staging_sakila_customer > presentation_dim_sakila_customer\",\n    \"description\": \"Load Sakila Customer table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 6,\n    \"name\": \"staging_sakila_inventory > presentation_dim_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 8,\n    \"name\": \"staging_sakila_staff > presentation_dim_sakila_staff\",\n    \"description\": \"Load Sakila Staff table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
             },
             {
-              "name": "List processes by name",
+              "name": "List jobes by name",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process?name=presentation_fact_sakila_rental",
+                  "raw": "http://{{hostname}}:{{port}}/job?name=presentation_fact_sakila_rental",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process"],
+                  "path": ["job"],
                   "query": [
                     {
                       "key": "name",
                       "value": "presentation_fact_sakila_rental",
-                      "description": "process name"
+                      "description": "job name"
                     }
                   ]
                 }
@@ -347,16 +347,16 @@
               "body": ""
             },
             {
-              "name": "List processes with limit",
+              "name": "List jobes with limit",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process?limit=2",
+                  "raw": "http://{{hostname}}:{{port}}/job?limit=2",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process"],
+                  "path": ["job"],
                   "query": [
                     {
                       "key": "limit",
@@ -374,43 +374,43 @@
           ]
         },
         {
-          "name": "List source artefacts for a process",
+          "name": "List source artefacts for a job",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/source?name=presentation_fact_sakila_rental",
+              "raw": "http://{{hostname}}:{{port}}/job/source?name=presentation_fact_sakila_rental",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "source"],
+              "path": ["job", "source"],
               "query": [
                 {
                   "key": "name",
                   "value": "presentation_fact_sakila_rental",
-                  "description": "process name"
+                  "description": "job name"
                 }
               ]
             },
-            "description": "retrieve source artefacts associated with a process"
+            "description": "retrieve source artefacts associated with a job"
           },
           "response": [
             {
-              "name": "List source artefacts for a process",
+              "name": "List source artefacts for a job",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/source?name=presentation_fact_sakila_rental",
+                  "raw": "http://{{hostname}}:{{port}}/job/source?name=presentation_fact_sakila_rental",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "source"],
+                  "path": ["job", "source"],
                   "query": [
                     {
                       "key": "name",
                       "value": "presentation_fact_sakila_rental",
-                      "description": "process name"
+                      "description": "job name"
                     }
                   ]
                 }
@@ -425,43 +425,43 @@
           ]
         },
         {
-          "name": "List target artefacts for a process",
+          "name": "List target artefacts for a job",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/target?name=presentation_fact_sakila_rental",
+              "raw": "http://{{hostname}}:{{port}}/job/target?name=presentation_fact_sakila_rental",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "target"],
+              "path": ["job", "target"],
               "query": [
                 {
                   "key": "name",
                   "value": "presentation_fact_sakila_rental",
-                  "description": "process name"
+                  "description": "job name"
                 }
               ]
             },
-            "description": "retrieve target artefacts associated with a process"
+            "description": "retrieve target artefacts associated with a job"
           },
           "response": [
             {
-              "name": "List target artefacts for a process",
+              "name": "List target artefacts for a job",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/target?name=presentation_fact_sakila_rental",
+                  "raw": "http://{{hostname}}:{{port}}/job/target?name=presentation_fact_sakila_rental",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "target"],
+                  "path": ["job", "target"],
                   "query": [
                     {
                       "key": "name",
                       "value": "presentation_fact_sakila_rental",
-                      "description": "process name"
+                      "description": "job name"
                     }
                   ]
                 }
@@ -536,7 +536,7 @@
           ]
         },
         {
-          "name": "Associate a registry object with a process audit",
+          "name": "Associate a registry object with a run",
           "request": {
             "method": "POST",
             "header": [],
@@ -550,17 +550,17 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/registry",
+              "raw": "http://{{hostname}}:{{port}}/job/run/registry",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "registry"]
+              "path": ["job", "run", "registry"]
             },
-            "description": "associate a registry object with an instance of a process (process audit)"
+            "description": "associate a registry object with an instance of a job (run)"
           },
           "response": [
             {
-              "name": "Associate a registry object with a process audit",
+              "name": "Associate a registry object with a run",
               "originalRequest": {
                 "method": "POST",
                 "header": [],
@@ -574,11 +574,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/registry",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/registry",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "registry"]
+                  "path": ["job", "run", "registry"]
                 }
               },
               "status": "OK",
@@ -586,12 +586,12 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"registry_process_audit_map_id\": 1,\n        \"registry_id\": 1,\n        \"process_audit_id\": 1,\n        \"insert_date\": \"2022-01-30T20:50:58.593Z\"\n    }\n]"
+              "body": "[\n    {\n        \"registry_run_map_id\": 1,\n        \"registry_id\": 1,\n        \"run_id\": 1,\n        \"insert_date\": \"2022-01-30T20:50:58.593Z\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "Create a process audit",
+          "name": "Create a run",
           "request": {
             "method": "POST",
             "header": [],
@@ -605,11 +605,11 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit?id=1",
+              "raw": "http://{{hostname}}:{{port}}/job/run?id=1",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit"],
+              "path": ["job", "run"],
               "query": [
                 {
                   "key": "id",
@@ -617,11 +617,11 @@
                 }
               ]
             },
-            "description": "create an instance of a process (process audit)"
+            "description": "create an instance of a job (run)"
           },
           "response": [
             {
-              "name": "Create a process audit",
+              "name": "Create a run",
               "originalRequest": {
                 "method": "POST",
                 "header": [],
@@ -635,11 +635,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit",
+                  "raw": "http://{{hostname}}:{{port}}/job/run",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit"]
+                  "path": ["job", "run"]
                 }
               },
               "status": "OK",
@@ -647,36 +647,36 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_audit_id\": 17,\n        \"process_id\": 5,\n        \"start\": \"2022-01-30T20:48:36.888Z\",\n        \"end\": null,\n        \"status\": \"running\"\n    }\n]"
+              "body": "[\n    {\n        \"run_id\": 17,\n        \"job_id\": 5,\n        \"start\": \"2022-01-30T20:48:36.888Z\",\n        \"end\": null,\n        \"status\": \"running\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "Get runnable processes",
+          "name": "Get runnable jobes",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/run",
+              "raw": "http://{{hostname}}:{{port}}/job/run",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "run"]
+              "path": ["job", "run"]
             },
-            "description": "retrieve processes that can be run based on their object-based dependencies"
+            "description": "retrieve jobes that can be run based on their object-based dependencies"
           },
           "response": [
             {
-              "name": "Get runnable processes",
+              "name": "Get runnable jobes",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/run",
+                  "raw": "http://{{hostname}}:{{port}}/job/run",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "run"]
+                  "path": ["job", "run"]
                 }
               },
               "status": "OK",
@@ -684,48 +684,48 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_id\": 5,\n        \"process_name\": \"presentation_fact_sakila_rental\"\n    }\n]"
+              "body": "[\n    {\n        \"job_id\": 5,\n        \"job_name\": \"presentation_fact_sakila_rental\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "List flows for a process audit",
+          "name": "List flows for a run",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/flow?id=1",
+              "raw": "http://{{hostname}}:{{port}}/job/run/flow?id=1",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "flow"],
+              "path": ["job", "run", "flow"],
               "query": [
                 {
                   "key": "id",
                   "value": "1",
-                  "description": "process audit ID"
+                  "description": "run ID"
                 }
               ]
             },
-            "description": "retrieve flow metrics associated with a process instance (process audit)"
+            "description": "retrieve flow metrics associated with a job instance (run)"
           },
           "response": [
             {
-              "name": "List flows for a process audit",
+              "name": "List flows for a run",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow?id=1",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/flow?id=1",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "flow"],
+                  "path": ["job", "run", "flow"],
                   "query": [
                     {
                       "key": "id",
                       "value": "1",
-                      "description": "process audit ID"
+                      "description": "run ID"
                     }
                   ]
                 }
@@ -735,48 +735,48 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"flow_id\": 2,\n        \"process_audit_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"load_targer\",\n        \"label\": \"insert_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:03:00.000Z\"\n    },\n    {\n        \"flow_id\": 1,\n        \"process_audit_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"extract_source_data\",\n        \"label\": \"source_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:01:00.000Z\"\n    }\n]"
+              "body": "[\n    {\n        \"flow_id\": 2,\n        \"run_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"load_targer\",\n        \"label\": \"insert_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:03:00.000Z\"\n    },\n    {\n        \"flow_id\": 1,\n        \"run_id\": 1,\n        \"job\": \"load_csv_to_redshift\",\n        \"function\": \"extract_source_data\",\n        \"label\": \"source_count\",\n        \"count\": 100,\n        \"insert_date\": \"2020-01-01T03:01:00.000Z\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "List logs for a process audit",
+          "name": "List logs for a run",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/log?id=1",
+              "raw": "http://{{hostname}}:{{port}}/job/run/log?id=1",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "log"],
+              "path": ["job", "run", "log"],
               "query": [
                 {
                   "key": "id",
                   "value": "1",
-                  "description": "process audit ID"
+                  "description": "run ID"
                 }
               ]
             },
-            "description": "retrieve logs associated with a process instance (process audit)"
+            "description": "retrieve logs associated with a job instance (run)"
           },
           "response": [
             {
-              "name": "List logs for a process audit",
+              "name": "List logs for a run",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/log?id=1",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/log?id=1",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "log"],
+                  "path": ["job", "run", "log"],
                   "query": [
                     {
                       "key": "id",
                       "value": "1",
-                      "description": "process audit ID"
+                      "description": "run ID"
                     }
                   ]
                 }
@@ -786,21 +786,21 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_audit_id\": 1,\n        \"process_id\": 3,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:02:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
+              "body": "[\n    {\n        \"run_id\": 1,\n        \"job_id\": 3,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:02:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "List process audits for a process",
+          "name": "List job runs for a job",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit?name=raw_sakila_rental > staging_sakila_rental",
+              "raw": "http://{{hostname}}:{{port}}/job/run?name=raw_sakila_rental > staging_sakila_rental",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit"],
+              "path": ["job", "run"],
               "query": [
                 {
                   "key": "name",
@@ -808,20 +808,20 @@
                 }
               ]
             },
-            "description": "retrieve process instances (process audit) of a process"
+            "description": "retrieve job instances (run) of a job"
           },
           "response": [
             {
-              "name": "List process audits for a process",
+              "name": "List job runs for a job",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit?name=raw_sakila_rental > staging_sakila_rental",
+                  "raw": "http://{{hostname}}:{{port}}/job/run?name=raw_sakila_rental > staging_sakila_rental",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit"],
+                  "path": ["job", "run"],
                   "query": [
                     {
                       "key": "name",
@@ -835,30 +835,30 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_audit_id\": 15,\n        \"process_id\": 1,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2020-01-04T03:02:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"process_audit_id\": 11,\n        \"process_id\": 1,\n        \"start\": \"2020-01-03T03:00:00.000Z\",\n        \"end\": \"2020-01-03T03:02:00.000Z\",\n        \"status\": \"failed\"\n    },\n    {\n        \"process_audit_id\": 7,\n        \"process_id\": 1,\n        \"start\": \"2020-01-02T03:00:00.000Z\",\n        \"end\": \"2020-01-02T03:10:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"process_audit_id\": 3,\n        \"process_id\": 1,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:10:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
+              "body": "[\n    {\n        \"run_id\": 15,\n        \"job_id\": 1,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2020-01-04T03:02:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"run_id\": 11,\n        \"job_id\": 1,\n        \"start\": \"2020-01-03T03:00:00.000Z\",\n        \"end\": \"2020-01-03T03:02:00.000Z\",\n        \"status\": \"failed\"\n    },\n    {\n        \"run_id\": 7,\n        \"job_id\": 1,\n        \"start\": \"2020-01-02T03:00:00.000Z\",\n        \"end\": \"2020-01-02T03:10:00.000Z\",\n        \"status\": \"completed\"\n    },\n    {\n        \"run_id\": 3,\n        \"job_id\": 1,\n        \"start\": \"2020-01-01T03:00:00.000Z\",\n        \"end\": \"2020-01-01T03:10:00.000Z\",\n        \"status\": \"completed\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "List variables for a process",
+          "name": "List variables for a job",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/variable?name=presentation_fact_sakila_rental",
+              "raw": "http://{{hostname}}:{{port}}/job/variable?name=presentation_fact_sakila_rental",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "variable"],
+              "path": ["job", "variable"],
               "query": [
                 {
                   "key": "name",
                   "value": "presentation_fact_sakila_rental",
-                  "description": "process name"
+                  "description": "job name"
                 }
               ]
             },
-            "description": "retrieve variables associated with a process"
+            "description": "retrieve variables associated with a job"
           },
           "response": []
         },
@@ -886,7 +886,7 @@
           "response": []
         },
         {
-          "name": "Reconcile a process audit",
+          "name": "Reconcile a run",
           "request": {
             "method": "POST",
             "header": [],
@@ -900,17 +900,17 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/reconciliation",
+              "raw": "http://{{hostname}}:{{port}}/job/run/reconciliation",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "reconciliation"]
+              "path": ["job", "run", "reconciliation"]
             },
-            "description": "perform technical reconciliation for an instance of a process (process audit)"
+            "description": "perform technical reconciliation for an instance of a job (run)"
           },
           "response": [
             {
-              "name": "Reconcile a process audit",
+              "name": "Reconcile a run",
               "originalRequest": {
                 "method": "POST",
                 "header": [],
@@ -924,11 +924,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/reconciliation",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/reconciliation",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "reconciliation"]
+                  "path": ["job", "run", "reconciliation"]
                 }
               },
               "status": "OK",
@@ -936,12 +936,12 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"flow_id\": 32,\n        \"process_audit_id\": 1,\n        \"job\": \"echelon cli\",\n        \"function\": \"create:process:audit:reconcile\",\n        \"label\": \"technical_reconciliation_variance\",\n        \"count\": 0,\n        \"insert_date\": \"2022-01-28T07:20:28.697Z\"\n    }\n]"
+              "body": "[\n    {\n        \"flow_id\": 32,\n        \"run_id\": 1,\n        \"job\": \"echelon cli\",\n        \"function\": \"create:job:run:reconcile\",\n        \"label\": \"technical_reconciliation_variance\",\n        \"count\": 0,\n        \"insert_date\": \"2022-01-28T07:20:28.697Z\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "Monitor a process audit",
+          "name": "Monitor a run",
           "request": {
             "method": "POST",
             "header": [],
@@ -955,17 +955,17 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/monitoring",
+              "raw": "http://{{hostname}}:{{port}}/job/run/monitoring",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "monitoring"]
+              "path": ["job", "run", "monitoring"]
             },
-            "description": "proactive monitoring of an instance of a process (process audit)"
+            "description": "proactive monitoring of an instance of a job (run)"
           },
           "response": [
             {
-              "name": "Monitor a process audit",
+              "name": "Monitor a run",
               "originalRequest": {
                 "method": "POST",
                 "header": [],
@@ -979,11 +979,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/monitoring",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/monitoring",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "monitoring"]
+                  "path": ["job", "run", "monitoring"]
                 }
               },
               "status": "OK",
@@ -991,7 +991,7 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "{\n    \"process\": [\n        {\n            \"alert_id\": 34,\n            \"process_audit_id\": 13,\n            \"code\": \"P03\",\n            \"subject\": \"Process has taken more time than usual to run.\",\n            \"message\": \"Process Audit ID '13' has taken 240 seconds to run; more time than the usual 120 seconds.\",\n            \"insert_date\": \"2022-05-18T01:08:22.238Z\"\n        }\n    ],\n    \"artefact\": [\n        {\n            \"alert_id\": 35,\n            \"process_audit_id\": 13,\n            \"code\": \"A05\",\n            \"subject\": \"Artefact loaded more rows than the recent average.\",\n            \"message\": \"Process Audit ID '13' has loaded 120 rows into the target artefact; more rows than the recent average of 100.\",\n            \"insert_date\": \"2022-05-18T01:08:22.326Z\"\n        }\n    ]\n}"
+              "body": "{\n    \"job\": [\n        {\n            \"alert_id\": 34,\n            \"run_id\": 13,\n            \"code\": \"P03\",\n            \"subject\": \"Job has taken more time than usual to run.\",\n            \"message\": \"Run ID '13' has taken 240 seconds to run; more time than the usual 120 seconds.\",\n            \"insert_date\": \"2022-05-18T01:08:22.238Z\"\n        }\n    ],\n    \"artefact\": [\n        {\n            \"alert_id\": 35,\n            \"run_id\": 13,\n            \"code\": \"A05\",\n            \"subject\": \"Artefact loaded more rows than the recent average.\",\n            \"message\": \"Run ID '13' has loaded 120 rows into the target artefact; more rows than the recent average of 100.\",\n            \"insert_date\": \"2022-05-18T01:08:22.326Z\"\n        }\n    ]\n}"
             }
           ]
         },
@@ -1002,7 +1002,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Process has failed\",\n    \"message\": \"This is a test alert.\"\n}",
+              "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Job has failed\",\n    \"message\": \"This is a test alert.\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1010,13 +1010,13 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/alert",
+              "raw": "http://{{hostname}}:{{port}}/job/run/alert",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "alert"]
+              "path": ["job", "run", "alert"]
             },
-            "description": "raise an alert against an instance of a process (process audit)"
+            "description": "raise an alert against an instance of a job (run)"
           },
           "response": [
             {
@@ -1026,7 +1026,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Process has failed\",\n    \"message\": \"This is a test alert.\"\n}",
+                  "raw": "{\n    \"id\": \"1\",\n    \"code\": \"P01\",\n    \"subject\": \"Job has failed\",\n    \"message\": \"This is a test alert.\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1034,11 +1034,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/alert",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/alert",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "alert"]
+                  "path": ["job", "run", "alert"]
                 }
               },
               "status": "OK",
@@ -1046,7 +1046,7 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"alert_id\": 2,\n        \"process_audit_id\": 1,\n        \"code\": \"P01\",\n        \"subject\": \"Process has failed\",\n        \"message\": \"This is a test alert.\",\n        \"insert_date\": \"2022-01-28T07:20:45.841Z\"\n    }\n]"
+              "body": "[\n    {\n        \"alert_id\": 2,\n        \"run_id\": 1,\n        \"code\": \"P01\",\n        \"subject\": \"Job has failed\",\n        \"message\": \"This is a test alert.\",\n        \"insert_date\": \"2022-01-28T07:20:45.841Z\"\n    }\n]"
             }
           ]
         },
@@ -1065,13 +1065,13 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+              "raw": "http://{{hostname}}:{{port}}/job/run/flow",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "flow"]
+              "path": ["job", "run", "flow"]
             },
-            "description": "store data source metrics against an instance of a process (process audit)"
+            "description": "store data source metrics against an instance of a job (run)"
           },
           "response": [
             {
@@ -1081,7 +1081,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"insert_count\",\n    \"count\": \"100\"\n}",
+                  "raw": "{\n    \"run_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"insert_count\",\n    \"count\": \"100\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1089,11 +1089,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/flow",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "flow"]
+                  "path": ["job", "run", "flow"]
                 }
               },
               "_postman_previewlanguage": "Text",
@@ -1108,7 +1108,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"update_count\",\n    \"count\": \"100\"\n}",
+                  "raw": "{\n    \"run_id\": \"1\",\n    \"job\": \"Postman\",\n    \"label\": \"update_count\",\n    \"count\": \"100\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1116,11 +1116,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/flow",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/flow",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "flow"]
+                  "path": ["job", "run", "flow"]
                 }
               },
               "_postman_previewlanguage": "Text",
@@ -1145,13 +1145,13 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+              "raw": "http://{{hostname}}:{{port}}/job/run/log",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit", "log"]
+              "path": ["job", "run", "log"]
             },
-            "description": "log a message against an instance of a process (process audit)"
+            "description": "log a message against an instance of a job (run)"
           },
           "response": [
             {
@@ -1161,7 +1161,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"INFO\",\n    \"message\": \"This is a test message.\"\n}",
+                  "raw": "{\n    \"run_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"INFO\",\n    \"message\": \"This is a test message.\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1169,17 +1169,17 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/log",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "log"]
+                  "path": ["job", "run", "log"]
                 }
               },
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"log_id\": 62,\n        \"process_audit_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"INFO\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
+              "body": "[\n    {\n        \"log_id\": 62,\n        \"run_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"INFO\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
             },
             {
               "name": "Record a log - ERROR",
@@ -1188,7 +1188,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"process_audit_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"ERROR\",\n    \"message\": \"This is a test message.\"\n}",
+                  "raw": "{\n    \"run_id\": \"1\",\n    \"job\": \"Postman\",\n    \"priority\": \"ERROR\",\n    \"message\": \"This is a test message.\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1196,11 +1196,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit/log",
+                  "raw": "http://{{hostname}}:{{port}}/job/run/log",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit", "log"]
+                  "path": ["job", "run", "log"]
                 }
               },
               "status": "OK",
@@ -1208,7 +1208,7 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"log_id\": 63,\n        \"process_audit_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"ERROR\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
+              "body": "[\n    {\n        \"log_id\": 63,\n        \"run_id\": 1,\n        \"job\": \"Postman\",\n        \"function\": null,\n        \"priority\": \"ERROR\",\n        \"message\": \"This is a test message.\",\n        \"code\": null,\n        \"insert_date\": \"2022-01-28T07:21:06.341Z\"\n    }\n]"
             }
           ]
         },
@@ -1323,7 +1323,7 @@
           ]
         },
         {
-          "name": "Update a process audit",
+          "name": "Update a run",
           "request": {
             "method": "PUT",
             "header": [],
@@ -1337,17 +1337,17 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/audit",
+              "raw": "http://{{hostname}}:{{port}}/job/run",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "audit"]
+              "path": ["job", "run"]
             },
-            "description": "update an instance of a process (process audit)"
+            "description": "update an instance of a job (run)"
           },
           "response": [
             {
-              "name": "Update a process audit",
+              "name": "Update a run",
               "originalRequest": {
                 "method": "PUT",
                 "header": [],
@@ -1361,11 +1361,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/audit",
+                  "raw": "http://{{hostname}}:{{port}}/job/run",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "audit"]
+                  "path": ["job", "run"]
                 }
               },
               "status": "OK",
@@ -1373,12 +1373,12 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_audit_id\": 16,\n        \"process_id\": 4,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2022-01-28T07:28:54.848Z\",\n        \"status\": \"completed\"\n    }\n]"
+              "body": "[\n    {\n        \"run_id\": 16,\n        \"job_id\": 4,\n        \"start\": \"2020-01-04T03:00:00.000Z\",\n        \"end\": \"2022-01-28T07:28:54.848Z\",\n        \"status\": \"completed\"\n    }\n]"
             }
           ]
         },
         {
-          "name": "Update a process variable",
+          "name": "Update a job variable",
           "request": {
             "method": "PUT",
             "header": [],
@@ -1392,17 +1392,17 @@
               }
             },
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/process/variable",
+              "raw": "http://{{hostname}}:{{port}}/job/variable",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
-              "path": ["process", "variable"]
+              "path": ["job", "variable"]
             },
-            "description": "update a variable value associated with a process"
+            "description": "update a variable value associated with a job"
           },
           "response": [
             {
-              "name": "Update a process variable",
+              "name": "Update a job variable",
               "originalRequest": {
                 "method": "PUT",
                 "header": [],
@@ -1416,11 +1416,11 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/process/variable",
+                  "raw": "http://{{hostname}}:{{port}}/job/variable",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
-                  "path": ["process", "variable"]
+                  "path": ["job", "variable"]
                 }
               },
               "status": "OK",
@@ -1656,7 +1656,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://{{hostname}}:{{port}}/query?sql=select * from process where process_id = 1",
+              "raw": "http://{{hostname}}:{{port}}/query?sql=select * from job where job_id = 1",
               "protocol": "http",
               "host": ["{{hostname}}"],
               "port": "{{port}}",
@@ -1664,7 +1664,7 @@
               "query": [
                 {
                   "key": "sql",
-                  "value": "select * from process where process_id = 1",
+                  "value": "select * from job where job_id = 1",
                   "description": "SQL query"
                 }
               ]
@@ -1678,7 +1678,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{hostname}}:{{port}}/query?sql=select * from process where process_id = 1",
+                  "raw": "http://{{hostname}}:{{port}}/query?sql=select * from job where job_id = 1",
                   "protocol": "http",
                   "host": ["{{hostname}}"],
                   "port": "{{port}}",
@@ -1686,7 +1686,7 @@
                   "query": [
                     {
                       "key": "sql",
-                      "value": "select * from process where process_id = 1",
+                      "value": "select * from job where job_id = 1",
                       "description": "SQL query"
                     }
                   ]
@@ -1697,7 +1697,7 @@
               "_postman_previewlanguage": "Text",
               "header": [],
               "cookie": [],
-              "body": "[\n    {\n        \"process_id\": 1,\n        \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n        \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n        \"type\": \"table_load\",\n        \"priority\": 1,\n        \"dependency_logic\": \"and\",\n        \"insert_date\": \"2022-01-30T20:42:42.616Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
+              "body": "[\n    {\n        \"job_id\": 1,\n        \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n        \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n        \"type\": \"table_load\",\n        \"priority\": 1,\n        \"dependency_logic\": \"and\",\n        \"insert_date\": \"2022-01-30T20:42:42.616Z\",\n        \"update_date\": null,\n        \"migration_insert_id\": null,\n        \"migration_update_id\": null\n    }\n]"
             }
           ]
         },

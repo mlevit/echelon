@@ -93,24 +93,24 @@ nav:
   - Data Transformation:
       - Technical:
           - transformation/technical/index.md
-          - Process: transformation/technical/process.md
+          - Job: transformation/technical/job.md
           - Artefact: transformation/technical/artefact.md
           - Attribute: transformation/technical/attribute.md
-          - Process Constant: transformation/technical/process_constant.md
+          - Job Constant: transformation/technical/job_constant.md
           - Artefact Constant: transformation/technical/artefact_constant.md
           - Relationships:
-              - Process Artefact Rel: transformation/technical/process_artefact_rel.md
-              - Process Attribute Mapping: transformation/technical/process_attribute_map.md
+              - Job Artefact Rel: transformation/technical/job_artefact_rel.md
+              - Job Attribute Mapping: transformation/technical/job_attribute_map.md
       - Operational:
           - transformation/operational/index.md
-          - Process Audit: transformation/operational/process_audit.md
+          - Run: transformation/operational/run.md
           - Alert: transformation/operational/alert.md
           - Flow: transformation/operational/flow.md
           - Log: transformation/operational/log.md
           - Registry:
               - Registry: transformation/operational/registry.md
               - Registry Artefact Mapping: transformation/operational/registry_artefact_map.md
-              - Registry Process Audit Mapping: transformation/operational/registry_process_audit_map.md
+              - Registry Run Mapping: transformation/operational/registry_run_map.md
           - Variable: transformation/operational/variable.md
   - Frameworks:
       - Object-based Dependencies: frameworks/object_based_dependencies.md

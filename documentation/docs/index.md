@@ -1,6 +1,6 @@
 # Echelon
 
-Echelon is a flexible and scalable audit and governance framework. It gathers technical, operational, and business metadata and consolidates it into a central database. This setup allows Echelon to be utilized in various ways, such as creating workflows based on metadata, monitoring data quality, mapping the origins of data, and more.
+Echelon is a flexible and scalable run and governance framework. It gathers technical, operational, and business metadata and consolidates it into a central database. This setup allows Echelon to be utilized in various ways, such as creating workflows based on metadata, monitoring data quality, mapping the origins of data, and more.
 
 All primary features of the framework are described below:
 
@@ -13,7 +13,7 @@ All primary features of the framework are described below:
 
 ### Object-based Dependencies
 
-The principle of object-based dependencies simplifies dependency management by using physical objects instead of physical processes that load or transform our objects. Managing complex webs of dependencies is time-consuming and often perplexing. Controlling the timing of data loads, file landings, and more can sometimes be some of the most time-intensive work.
+The principle of object-based dependencies simplifies dependency management by using physical objects instead of physical jobes that load or transform our objects. Managing complex webs of dependencies is time-consuming and often perplexing. Controlling the timing of data loads, file landings, and more can sometimes be some of the most time-intensive work.
 
 ### Reconciliation
 

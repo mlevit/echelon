@@ -1,0 +1,12 @@
+{
+  "job_attribute_map": [
+    {
+      "job_name": null,
+      "source_artefact_name": null,
+      "source_attribute_physical_name": null,
+      "target_artefact_name": null,
+      "target_attribute_physical_name": null,
+      "hard_rule": null
+    }
+  ]
+}

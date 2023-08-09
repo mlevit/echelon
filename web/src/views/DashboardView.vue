@@ -1,7 +1,7 @@
 <script setup>
-import AuditChart from "@/components/AuditChart.vue";
-import AuditListTable from "@/components/AuditListTable.vue";
-import AuditUpcomingListTable from "@/components/AuditUpcomingListTable.vue";
+import RunChart from "@/components/RunChart.vue";
+import RunListTable from "@/components/RunListTable.vue";
+import RunUpcomingListTable from "@/components/RunUpcomingListTable.vue";
 import KpiCard from "@/components/KpiCard.vue";
 
 import { useApiStore } from "@/stores/api";
@@ -20,28 +20,28 @@ export default {
   data() {
     return {
       apiStore: useApiStore(),
-      auditData: null,
+      runData: null,
       dateStore: useDateStore(),
     };
   },
   created() {
-    this.getAuditData();
-    this.dateStore.$subscribe(this.getAuditData);
+    this.getRunData();
+    this.dateStore.$subscribe(this.getRunData);
   },
   computed: {
     completedCount() {
-      return _.get(this.auditData, "completed");
+      return _.get(this.runData, "completed");
     },
     failedCount() {
-      return _.get(this.auditData, "failed");
+      return _.get(this.runData, "failed");
     },
     runningCount() {
-      return _.get(this.auditData, "running");
+      return _.get(this.runData, "running");
     },
   },
   methods: {
-    getAuditData() {
-      const url = new URL(this.apiStore.processAudit);
+    getRunData() {
+      const url = new URL(this.apiStore.run);
       url.searchParams.append("start", this.dateStore.startTimestamp);
       url.searchParams.append("end", this.dateStore.endTimestamp);
       url.searchParams.append(
@@ -49,7 +49,7 @@ export default {
         '[group_by (.status)[] | {"\\(.[0].status)": length}] | add'
       );
       url.searchParams.append("limit", 1000);
-      axios.get(url.href).then((response) => (this.auditData = response.data));
+      axios.get(url.href).then((response) => (this.runData = response.data));
     },
     formatDate(date) {
       if (date) {
@@ -63,7 +63,7 @@ export default {
 <template>
   <div class="min-h-screen px-4 py-6 dark:bg-gray-900 sm:ml-64">
     <div class="mb-4 flex h-fit items-center justify-center rounded">
-      <AuditChart />
+      <RunChart />
     </div>
     <div class="mb-4 grid grid-cols-3 gap-4">
       <div
@@ -98,10 +98,10 @@ export default {
       </div>
     </div>
     <div class="mb-4 flex h-fit items-center justify-center rounded">
-      <AuditListTable />
+      <RunListTable />
     </div>
     <div class="mb-4 flex h-fit items-center justify-center rounded">
-      <AuditUpcomingListTable />
+      <RunUpcomingListTable />
     </div>
     <!-- <div class="mb-4 grid grid-cols-2 gap-4">
       <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">

@@ -1,18 +1,18 @@
 # Proactive Monitoring
 
-Proactive monitoring will monitor process jobs as they run and actively create alerts when certain thresholds (see tables below) are breached.
+Proactive monitoring will monitor job jobs as they run and actively create alerts when certain thresholds (see tables below) are breached.
 
-## Process
+## Job
 
-Similarly, the Process events being monitored are:
+Similarly, the Job events being monitored are:
 
-| Alert Code | Event Description                                  |
-| ---------- | -------------------------------------------------- |
-| P01        | Process has failed.                                |
-| P02        | Process has taken less time than usual to run.     |
-| P03        | Process has taken more time than usual to run.     |
-| P04        | Process has not completed as per business SLA.     |
-| P05        | Process is currently running longer than expected. |
+| Alert Code | Event Description                              |
+| ---------- | ---------------------------------------------- |
+| P01        | Job has failed.                                |
+| P02        | Job has taken less time than usual to run.     |
+| P03        | Job has taken more time than usual to run.     |
+| P04        | Job has not completed as per business SLA.     |
+| P05        | Job is currently running longer than expected. |
 
 ## Artefact
 

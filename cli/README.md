@@ -37,13 +37,13 @@ USAGE
 <!-- commands -->
 
 - [`echelon create:artefact:registry`](#echelon-createartefactregistry)
-- [`echelon create:process:audit`](#echelon-createprocessaudit)
-- [`echelon create:process:audit:alert`](#echelon-createprocessauditalert)
-- [`echelon create:process:audit:flow`](#echelon-createprocessauditflow)
-- [`echelon create:process:audit:log`](#echelon-createprocessauditlog)
-- [`echelon create:process:audit:monitoring`](#echelon-createprocessauditmonitoring)
-- [`echelon create:process:audit:reconciliation`](#echelon-createprocessauditreconciliation)
-- [`echelon create:process:audit:registry`](#echelon-createprocessauditregistry)
+- [`echelon create:job:run`](#echelon-createjobrun)
+- [`echelon create:job:run:alert`](#echelon-createjobrunalert)
+- [`echelon create:job:run:flow`](#echelon-createjobrunflow)
+- [`echelon create:job:run:log`](#echelon-createjobrunlog)
+- [`echelon create:job:run:monitoring`](#echelon-createjobrunmonitoring)
+- [`echelon create:job:run:reconciliation`](#echelon-createjobrunreconciliation)
+- [`echelon create:job:run:registry`](#echelon-createjobrunregistry)
 - [`echelon create:registry`](#echelon-createregistry)
 - [`echelon data:export`](#echelon-dataexport)
 - [`echelon data:import`](#echelon-dataimport)
@@ -54,27 +54,27 @@ USAGE
 - [`echelon read:artefact:lineage`](#echelon-readartefactlineage)
 - [`echelon read:artefact:variable`](#echelon-readartefactvariable)
 - [`echelon read:healthcheck`](#echelon-readhealthcheck)
-- [`echelon read:process`](#echelon-readprocess)
-- [`echelon read:process:attribute:map`](#echelon-readprocessattributemap)
-- [`echelon read:process:audit`](#echelon-readprocessaudit)
-- [`echelon read:process:audit:flow`](#echelon-readprocessauditflow)
-- [`echelon read:process:audit:log`](#echelon-readprocessauditlog)
-- [`echelon read:process:constant`](#echelon-readprocessconstant)
-- [`echelon read:process:depend`](#echelon-readprocessdepend)
-- [`echelon read:process:dependant`](#echelon-readprocessdependant)
-- [`echelon read:process:lineage`](#echelon-readprocesslineage)
-- [`echelon read:process:run`](#echelon-readprocessrun)
-- [`echelon read:process:source`](#echelon-readprocesssource)
-- [`echelon read:process:target`](#echelon-readprocesstarget)
-- [`echelon read:process:variable`](#echelon-readprocessvariable)
+- [`echelon read:job`](#echelon-readjob)
+- [`echelon read:job:attribute:map`](#echelon-readjobattributemap)
+- [`echelon read:job:run`](#echelon-readjobrun)
+- [`echelon read:job:run:flow`](#echelon-readjobrunflow)
+- [`echelon read:job:run:log`](#echelon-readjobrunlog)
+- [`echelon read:job:constant`](#echelon-readjobconstant)
+- [`echelon read:job:depend`](#echelon-readjobdepend)
+- [`echelon read:job:dependant`](#echelon-readjobdependant)
+- [`echelon read:job:lineage`](#echelon-readjoblineage)
+- [`echelon read:job:run`](#echelon-readjobrun)
+- [`echelon read:job:source`](#echelon-readjobsource)
+- [`echelon read:job:target`](#echelon-readjobtarget)
+- [`echelon read:job:variable`](#echelon-readjobvariable)
 - [`echelon read:query`](#echelon-readquery)
 - [`echelon read:search`](#echelon-readsearch)
-- [`echelon read:ui:process:audit:detail`](#echelon-readuiprocessauditdetail)
-- [`echelon read:ui:process:audit:list`](#echelon-readuiprocessauditlist)
+- [`echelon read:ui:job:run:detail`](#echelon-readuijobrundetail)
+- [`echelon read:ui:job:run:list`](#echelon-readuijobrunlist)
 - [`echelon start:api`](#echelon-startapi)
 - [`echelon update:artefact:variable`](#echelon-updateartefactvariable)
-- [`echelon update:process:audit`](#echelon-updateprocessaudit)
-- [`echelon update:process:variable`](#echelon-updateprocessvariable)
+- [`echelon update:job:run`](#echelon-updatejobrun)
+- [`echelon update:job:variable`](#echelon-updatejobvariable)
 - [`echelon update:registry`](#echelon-updateregistry)
 - [`echelon version`](#echelon-version)
 
@@ -94,126 +94,126 @@ DESCRIPTION
   associate a registry object with an artefact
 ```
 
-## `echelon create:process:audit`
+## `echelon create:job:run`
 
-create an instance of a process (process audit)
+create an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit --name <value>
+  $ echelon create:job:run --name <value>
 
 FLAGS
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  create an instance of a process (process audit)
+  create an instance of a job (run)
 ```
 
-## `echelon create:process:audit:alert`
+## `echelon create:job:run:alert`
 
-raise an alert against an instance of a process (process audit)
+raise an alert against an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit:alert --id <value> --code <value> --subject <value> --message <value>
+  $ echelon create:job:run:alert --id <value> --code <value> --subject <value> --message <value>
 
 FLAGS
   --code=<value>     (required) alert code
-  --id=<value>       (required) process audit ID associated with the alert
+  --id=<value>       (required) run ID associated with the alert
   --message=<value>  (required) alert message
   --subject=<value>  (required) alert subject
 
 DESCRIPTION
-  raise an alert against an instance of a process (process audit)
+  raise an alert against an instance of a job (run)
 ```
 
-## `echelon create:process:audit:flow`
+## `echelon create:job:run:flow`
 
-store data source metrics against an instance of a process (process audit)
+store data source metrics against an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit:flow --id <value> --label <value> --count <value> [--job <value>] [--function <value>]
+  $ echelon create:job:run:flow --id <value> --label <value> --count <value> [--job <value>] [--function <value>]
 
 FLAGS
   --count=<value>     (required) record count
   --function=<value>  ETL job function that produced the metric
-  --id=<value>        (required) process audit ID
+  --id=<value>        (required) run ID
   --job=<value>       ETL job that produced the metric
   --label=<value>     (required) label of the metric
 
 DESCRIPTION
-  store data source metrics against an instance of a process (process audit)
+  store data source metrics against an instance of a job (run)
 ```
 
-## `echelon create:process:audit:log`
+## `echelon create:job:run:log`
 
-log a message against an instance of a process (process audit)
+log a message against an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit:log --id <value> --priority DEBUG|ERROR|FATAL|INFO|WARN --message <value> [--job <value>]
+  $ echelon create:job:run:log --id <value> --priority DEBUG|ERROR|FATAL|INFO|WARN --message <value> [--job <value>]
     [--function <value>] [--code <value>]
 
 FLAGS
   --code=<value>       error code of log
   --function=<value>   ETL job function that produced the log
-  --id=<value>         (required) process audit ID
+  --id=<value>         (required) run ID
   --job=<value>        ETL job that produced the log
   --message=<value>    (required) message of log
   --priority=<option>  (required) priority of log
                        <options: DEBUG|ERROR|FATAL|INFO|WARN>
 
 DESCRIPTION
-  log a message against an instance of a process (process audit)
+  log a message against an instance of a job (run)
 ```
 
-## `echelon create:process:audit:monitoring`
+## `echelon create:job:run:monitoring`
 
-proactive monitoring of an instance of a process (process audit)
+proactive monitoring of an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit:monitoring --id <value> [--threshold <value>] [--sample <value>]
+  $ echelon create:job:run:monitoring --id <value> [--threshold <value>] [--sample <value>]
 
 FLAGS
-  --id=<value>         (required) process audit ID
+  --id=<value>         (required) run ID
   --sample=<value>     [default: 999] sample size for calculating average
   --threshold=<value>  [default: 0.1] acceptable threshold for monitoring rules
 
 DESCRIPTION
-  proactive monitoring of an instance of a process (process audit)
+  proactive monitoring of an instance of a job (run)
 ```
 
-## `echelon create:process:audit:reconciliation`
+## `echelon create:job:run:reconciliation`
 
-perform technical reconciliation for an instance of a process (process audit)
-
-```
-USAGE
-  $ echelon create:process:audit:reconciliation --id <value>
-
-FLAGS
-  --id=<value>  (required) process audit ID
-
-DESCRIPTION
-  perform technical reconciliation for an instance of a process (process audit)
-```
-
-## `echelon create:process:audit:registry`
-
-associate a registry object with an instance of a process (process audit)
+perform technical reconciliation for an instance of a job (run)
 
 ```
 USAGE
-  $ echelon create:process:audit:registry --id <value> --registry_id <value>
+  $ echelon create:job:run:reconciliation --id <value>
 
 FLAGS
-  --id=<value>           (required) process audit ID
-  --registry_id=<value>  (required) registry process_audit_id
+  --id=<value>  (required) run ID
 
 DESCRIPTION
-  associate a registry object with an instance of a process (process audit)
+  perform technical reconciliation for an instance of a job (run)
+```
+
+## `echelon create:job:run:registry`
+
+associate a registry object with an instance of a job (run)
+
+```
+USAGE
+  $ echelon create:job:run:registry --id <value> --registry_id <value>
+
+FLAGS
+  --id=<value>           (required) run ID
+  --registry_id=<value>  (required) registry run_id
+
+DESCRIPTION
+  associate a registry object with an instance of a job (run)
 ```
 
 ## `echelon create:registry`
@@ -389,218 +389,218 @@ DESCRIPTION
   perform a health check
 ```
 
-## `echelon read:process`
+## `echelon read:job`
 
-retrieve process(es)
+retrieve job(es)
 
 ```
 USAGE
-  $ echelon read:process [--name <value> | --id <value>] [--limit <value>] [--jq <value>]
+  $ echelon read:job [--name <value> | --id <value>] [--limit <value>] [--jq <value>]
 
 FLAGS
-  --id=<value>     process id
+  --id=<value>     job id
   --jq=<value>     jq string to parse result set
   --limit=<value>  [default: 10] limit the result set
-  --name=<value>   process name
+  --name=<value>   job name
 
 DESCRIPTION
-  retrieve process(es)
+  retrieve job(es)
 ```
 
-## `echelon read:process:attribute:map`
+## `echelon read:job:attribute:map`
 
-retrieve source artefacts associated with a process
+retrieve source artefacts associated with a job
 
 ```
 USAGE
-  $ echelon read:process:attribute:map --name <value> [--jq <value>]
+  $ echelon read:job:attribute:map --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source artefacts associated with a process
+  retrieve source artefacts associated with a job
 ```
 
-## `echelon read:process:audit`
+## `echelon read:job:run`
 
-retrieve process instances (process audit) of a process
+retrieve job instances (run) of a job
 
 ```
 USAGE
-  $ echelon read:process:audit [--name <value> | --id <value>] [--start <value>] [--end <value>] [--limit <value>] [--jq
+  $ echelon read:job:run [--name <value> | --id <value>] [--start <value>] [--end <value>] [--limit <value>] [--jq
     <value>]
 
 FLAGS
   --end=<value>    [default: 2999-12-31] date filter end
-  --id=<value>     process id
+  --id=<value>     job id
   --jq=<value>     jq string to parse result set
   --limit=<value>  [default: 10] limit the result set
-  --name=<value>   process name
+  --name=<value>   job name
   --start=<value>  [default: 1970-01-01] date filter start
 
 DESCRIPTION
-  retrieve process instances (process audit) of a process
+  retrieve job instances (run) of a job
 ```
 
-## `echelon read:process:audit:flow`
+## `echelon read:job:run:flow`
 
-retrieve flow metrics associated with a process instance (process audit)
+retrieve flow metrics associated with a job instance (run)
 
 ```
 USAGE
-  $ echelon read:process:audit:flow --id <value> [--jq <value>]
+  $ echelon read:job:run:flow --id <value> [--jq <value>]
 
 FLAGS
-  --id=<value>  (required) process audit ID
+  --id=<value>  (required) run ID
   --jq=<value>  jq string to parse result set
 
 DESCRIPTION
-  retrieve flow metrics associated with a process instance (process audit)
+  retrieve flow metrics associated with a job instance (run)
 ```
 
-## `echelon read:process:audit:log`
+## `echelon read:job:run:log`
 
-retrieve logs associated with a process instance (process audit)
+retrieve logs associated with a job instance (run)
 
 ```
 USAGE
-  $ echelon read:process:audit:log --id <value> [--jq <value>]
+  $ echelon read:job:run:log --id <value> [--jq <value>]
 
 FLAGS
-  --id=<value>  (required) process audit ID
+  --id=<value>  (required) run ID
   --jq=<value>  jq string to parse result set
 
 DESCRIPTION
-  retrieve logs associated with a process instance (process audit)
+  retrieve logs associated with a job instance (run)
 ```
 
-## `echelon read:process:constant`
+## `echelon read:job:constant`
 
-retrieve constants associated with a process
+retrieve constants associated with a job
 
 ```
 USAGE
-  $ echelon read:process:constant --name <value> [--jq <value>]
+  $ echelon read:job:constant --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve constants associated with a process
+  retrieve constants associated with a job
 ```
 
-## `echelon read:process:depend`
+## `echelon read:job:depend`
 
-retrieve source processes this process depends on
+retrieve source jobes this job depends on
 
 ```
 USAGE
-  $ echelon read:process:depend --name <value> [--jq <value>]
+  $ echelon read:job:depend --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source processes this process depends on
+  retrieve source jobes this job depends on
 ```
 
-## `echelon read:process:dependant`
+## `echelon read:job:dependant`
 
-retrieve target processes this process is the dependant of
+retrieve target jobes this job is the dependant of
 
 ```
 USAGE
-  $ echelon read:process:dependant --name <value> [--jq <value>]
+  $ echelon read:job:dependant --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve target processes this process is the dependant of
+  retrieve target jobes this job is the dependant of
 ```
 
-## `echelon read:process:lineage`
+## `echelon read:job:lineage`
 
-retrieve source artefacts associated with a process
+retrieve source artefacts associated with a job
 
 ```
 USAGE
-  $ echelon read:process:lineage --name <value> [--jq <value>]
+  $ echelon read:job:lineage --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source artefacts associated with a process
+  retrieve source artefacts associated with a job
 ```
 
-## `echelon read:process:run`
+## `echelon read:job:run`
 
-retrieve processes that can be run based on their object-based dependencies
+retrieve jobes that can be run based on their object-based dependencies
 
 ```
 USAGE
-  $ echelon read:process:run [--jq <value>]
+  $ echelon read:job:run [--jq <value>]
 
 FLAGS
   --jq=<value>  jq string to parse result set
 
 DESCRIPTION
-  retrieve processes that can be run based on their object-based dependencies
+  retrieve jobes that can be run based on their object-based dependencies
 ```
 
-## `echelon read:process:source`
+## `echelon read:job:source`
 
-retrieve source artefacts associated with a process
-
-```
-USAGE
-  $ echelon read:process:source --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
-
-DESCRIPTION
-  retrieve source artefacts associated with a process
-```
-
-## `echelon read:process:target`
-
-retrieve target artefacts associated with a process
+retrieve source artefacts associated with a job
 
 ```
 USAGE
-  $ echelon read:process:target --name <value> [--jq <value>]
+  $ echelon read:job:source --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve target artefacts associated with a process
+  retrieve source artefacts associated with a job
 ```
 
-## `echelon read:process:variable`
+## `echelon read:job:target`
 
-retrieve variables associated with a process
+retrieve target artefacts associated with a job
 
 ```
 USAGE
-  $ echelon read:process:variable --name <value> [--jq <value>]
+  $ echelon read:job:target --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) process name
+  --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve variables associated with a process
+  retrieve target artefacts associated with a job
+```
+
+## `echelon read:job:variable`
+
+retrieve variables associated with a job
+
+```
+USAGE
+  $ echelon read:job:variable --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) job name
+
+DESCRIPTION
+  retrieve variables associated with a job
 ```
 
 ## `echelon read:query`
@@ -622,7 +622,7 @@ DESCRIPTION
 
 ## `echelon read:search`
 
-retrieve process(es)
+retrieve job(es)
 
 ```
 USAGE
@@ -632,32 +632,32 @@ FLAGS
   --jq=<value>  jq string to parse result set
 
 DESCRIPTION
-  retrieve process(es)
+  retrieve job(es)
 ```
 
-## `echelon read:ui:process:audit:detail`
+## `echelon read:ui:job:run:detail`
 
-retrieve information associated with a process instance (process audit)
+retrieve information associated with a job instance (run)
 
 ```
 USAGE
-  $ echelon read:ui:process:audit:detail --id <value> [--jq <value>]
+  $ echelon read:ui:job:run:detail --id <value> [--jq <value>]
 
 FLAGS
-  --id=<value>  (required) process audit ID
+  --id=<value>  (required) run ID
   --jq=<value>  jq string to parse result set
 
 DESCRIPTION
-  retrieve information associated with a process instance (process audit)
+  retrieve information associated with a job instance (run)
 ```
 
-## `echelon read:ui:process:audit:list`
+## `echelon read:ui:job:run:list`
 
-retrieve process instances (process audit) of a process
+retrieve job instances (run) of a job
 
 ```
 USAGE
-  $ echelon read:ui:process:audit:list [--filterStart <value>] [--filterEnd <value>] [--jq <value>]
+  $ echelon read:ui:job:run:list [--filterStart <value>] [--filterEnd <value>] [--jq <value>]
 
 FLAGS
   --filterEnd=<value>    [default: 2999-12-31] filter end date
@@ -665,7 +665,7 @@ FLAGS
   --jq=<value>           jq string to parse result set
 
 DESCRIPTION
-  retrieve process instances (process audit) of a process
+  retrieve job instances (run) of a job
 ```
 
 ## `echelon start:api`
@@ -701,39 +701,39 @@ DESCRIPTION
   update a variable value associated with an artefact
 ```
 
-## `echelon update:process:audit`
+## `echelon update:job:run`
 
-update an instance of a process (process audit)
+update an instance of a job (run)
 
 ```
 USAGE
-  $ echelon update:process:audit --id <value> --status completed|failed
+  $ echelon update:job:run --id <value> --status completed|failed
 
 FLAGS
-  --id=<value>       (required) process audit ID
-  --status=<option>  (required) process audit status
+  --id=<value>       (required) run ID
+  --status=<option>  (required) run status
                      <options: completed|failed>
 
 DESCRIPTION
-  update an instance of a process (process audit)
+  update an instance of a job (run)
 ```
 
-## `echelon update:process:variable`
+## `echelon update:job:variable`
 
-update a variable value associated with a process
+update a variable value associated with a job
 
 ```
 USAGE
-  $ echelon update:process:variable --id <value> --type <value> --name <value> --value <value>
+  $ echelon update:job:variable --id <value> --type <value> --name <value> --value <value>
 
 FLAGS
-  --id=<value>     (required) process audit ID
+  --id=<value>     (required) run ID
   --name=<value>   (required) variable name
-  --type=<value>   (required) process type
+  --type=<value>   (required) job type
   --value=<value>  (required) variable value
 
 DESCRIPTION
-  update a variable value associated with a process
+  update a variable value associated with a job
 ```
 
 ## `echelon update:registry`

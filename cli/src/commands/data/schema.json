@@ -15,7 +15,7 @@
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_process_constant_name",
+    "name": "constraint_job_constant_name",
     "function": "constraint",
     "unique_key": ["value"]
   },
@@ -75,17 +75,17 @@
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_process_audit_status",
+    "name": "constraint_run_status",
     "function": "constraint",
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_process_dependency_logic",
+    "name": "constraint_job_dependency_logic",
     "function": "constraint",
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_process_type",
+    "name": "constraint_job_type",
     "function": "constraint",
     "unique_key": ["value"]
   },
@@ -140,7 +140,7 @@
     "unique_key": ["value"]
   },
   {
-    "name": "process",
+    "name": "job",
     "function": "technical",
     "unique_key": ["name"]
   },
@@ -155,9 +155,9 @@
     "unique_key": ["artefact_id", "physical_name"]
   },
   {
-    "name": "process_constant",
+    "name": "job_constant",
     "function": "technical",
-    "unique_key": ["process_id", "name"]
+    "unique_key": ["job_id", "name"]
   },
   {
     "name": "artefact_constant",
@@ -165,14 +165,14 @@
     "unique_key": ["artefact_id", "name"]
   },
   {
-    "name": "process_artefact_rel",
+    "name": "job_artefact_rel",
     "function": "technical",
-    "unique_key": ["process_id", "source_artefact_id", "target_artefact_id"]
+    "unique_key": ["job_id", "source_artefact_id", "target_artefact_id"]
   },
   {
-    "name": "process_attribute_map",
+    "name": "job_attribute_map",
     "function": "technical",
-    "unique_key": ["process_id", "source_attribute_id", "target_attribute_id"]
+    "unique_key": ["job_id", "source_attribute_id", "target_attribute_id"]
   },
   {
     "name": "data_mask",

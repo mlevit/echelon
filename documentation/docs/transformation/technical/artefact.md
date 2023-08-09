@@ -1,10 +1,11 @@
 # Artefact
 
-An artefact is object that contains data i.e., source file, transient table, hub, link, satellite, fact or dimension table. Artifacts are used to describe the data that is being processed.
+An artefact is object that contains data i.e., source file, transient table, hub, link, satellite, fact or dimension table. Artifacts are used to describe the data that is being jobed.
 
 ## Definition
 
 <!-- definition -->
+
 | Name                 | Type                     | Nullable | Description                                                                              |
 | -------------------- | ------------------------ | -------- | ---------------------------------------------------------------------------------------- |
 | artefact_id          | integer                  | NO       | System generated unique identifier.                                                      |
@@ -17,24 +18,28 @@ An artefact is object that contains data i.e., source file, transient table, hub
 | update_date          | timestamp with time zone | YES      | UTC timestamp when the record was updated into the table.                                |
 | migration_insert_id  | integer                  | YES      | System generated unique identifier of the migration this record was inserted by.         |
 | migration_update_id  | integer                  | YES      | System generated unique identifier of the migration this record was updated by.          |
+
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
+
 | Type        | Columns      |
 | ----------- | ------------ |
 | FOREIGN KEY | type         |
 | PRIMARY KEY | artefact_id  |
 | UNIQUE      | name, source |
+
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
+
 | Column | Value                            | Comment                                                                                                                                                                                                   |
 | ------ | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type   | accumulating_snapshot_fact_table | This type of fact table is used to show the activity of a process that has a well-defined beginning and end, e.g., the processing of an order.                                                            |
+| type   | accumulating_snapshot_fact_table | This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order.                                                                    |
 | type   | delimited_file                   |                                                                                                                                                                                                           |
 | type   | denormalised_table               |                                                                                                                                                                                                           |
 | type   | dimension_type_0_table           | The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'.                                                                      |
@@ -51,4 +56,5 @@ An artefact is object that contains data i.e., source file, transient table, hub
 | type   | staging_table                    |                                                                                                                                                                                                           |
 | type   | transactional_fact_table         | A transactional table is the most basic and fundamental. The grain associated with a transactional fact table is usually specified as "one row per line in a transaction", e.g., every line on a receipt. |
 | type   | xml_file                         | Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.                                          |
+
 <!-- acceptablevaluesstop -->

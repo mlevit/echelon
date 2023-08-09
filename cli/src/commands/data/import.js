@@ -32,10 +32,10 @@ class CustomCommand extends Command {
       "constraint_glossary_entry_status",
       "constraint_glossary_entry_type",
       "constraint_log_priority",
-      "constraint_process_audit_status",
-      "constraint_process_constant_name",
-      "constraint_process_dependency_logic",
-      "constraint_process_type",
+      "constraint_run_status",
+      "constraint_job_constant_name",
+      "constraint_job_dependency_logic",
+      "constraint_job_type",
       "constraint_reference_data_rel_status",
       "constraint_reference_data_rel_type",
       "constraint_reference_data_status",
@@ -46,19 +46,19 @@ class CustomCommand extends Command {
       "constraint_technical_reconciliation_formula",
       "constraint_variable_name",
       "constraint_variable_object_type",
-      "process",
-      "process_constant",
+      "job",
+      "job_constant",
       "artefact",
       "artefact_constant",
       "attribute",
-      "process_artefact_rel",
-      "process_attribute_map",
+      "job_artefact_rel",
+      "job_attribute_map",
     ];
 
     // Create request JSON
     requestJson["input"] = [];
 
-    // Get all files to be processed and record them in the request JSON
+    // Get all files to be jobed and record them in the request JSON
     if (fs.lstatSync(input).isDirectory()) {
       for (var file of fs.readdirSync(input)) {
         if (file.toLowerCase().includes(".json")) {
@@ -281,14 +281,14 @@ class CustomCommand extends Command {
     switch (table) {
       case "attribute":
         return await this.getAttributeRecord(record);
-      case "process_constant":
-        return await this.getProcessConstantRecord(record);
+      case "job_constant":
+        return await this.getJobConstantRecord(record);
       case "artefact_constant":
         return await this.getArtefactConstantRecord(record);
-      case "process_artefact_rel":
-        return await this.getProcessArtefactRelRecord(record);
-      case "process_attribute_map":
-        return await this.getProcessAttributeMapRecord(record);
+      case "job_artefact_rel":
+        return await this.getJobArtefactRelRecord(record);
+      case "job_attribute_map":
+        return await this.getJobAttributeMapRecord(record);
       default:
         return record;
     }
@@ -327,15 +327,15 @@ class CustomCommand extends Command {
     return record;
   }
 
-  async getProcessConstantRecord(record) {
-    var process_id_result = await knex
-      .select("process_id")
-      .from("process")
-      .where("name", record["process_name"]);
+  async getJobConstantRecord(record) {
+    var job_id_result = await knex
+      .select("job_id")
+      .from("job")
+      .where("name", record["job_name"]);
 
-    if (process_id_result.length > 0) {
-      record["process_id"] = process_id_result[0]["process_id"];
-      delete record["process_name"];
+    if (job_id_result.length > 0) {
+      record["job_id"] = job_id_result[0]["job_id"];
+      delete record["job_name"];
       return record;
     }
   }
@@ -353,11 +353,11 @@ class CustomCommand extends Command {
     }
   }
 
-  async getProcessArtefactRelRecord(record) {
-    var process_id_result = await knex
-      .select("process_id")
-      .from("process")
-      .where("name", record["process_name"]);
+  async getJobArtefactRelRecord(record) {
+    var job_id_result = await knex
+      .select("job_id")
+      .from("job")
+      .where("name", record["job_name"]);
 
     var source_artefact_id_result = await knex
       .select("artefact_id")
@@ -369,22 +369,22 @@ class CustomCommand extends Command {
       .from("artefact")
       .where("name", record["target_artefact_name"]);
 
-    record["process_id"] = process_id_result[0]["process_id"];
+    record["job_id"] = job_id_result[0]["job_id"];
     record["source_artefact_id"] = source_artefact_id_result[0]["artefact_id"];
     record["target_artefact_id"] = target_artefact_id_result[0]["artefact_id"];
 
-    delete record["process_name"];
+    delete record["job_name"];
     delete record["source_artefact_name"];
     delete record["target_artefact_name"];
 
     return record;
   }
 
-  async getProcessAttributeMapRecord(record) {
-    var process_id_result = await knex
-      .select("process_id")
-      .from("process")
-      .where("name", record["process_name"]);
+  async getJobAttributeMapRecord(record) {
+    var job_id_result = await knex
+      .select("job_id")
+      .from("job")
+      .where("name", record["job_name"]);
 
     var source_attribute_id_result = await knex
       .select("attribute.attribute_id")
@@ -406,13 +406,13 @@ class CustomCommand extends Command {
         record["target_attribute_physical_name"]
       );
 
-    record["process_id"] = process_id_result[0]["process_id"];
+    record["job_id"] = job_id_result[0]["job_id"];
     record["source_attribute_id"] =
       source_attribute_id_result[0]["attribute_id"];
     record["target_attribute_id"] =
       target_attribute_id_result[0]["attribute_id"];
 
-    delete record["process_name"];
+    delete record["job_name"];
     delete record["source_artefact_name"];
     delete record["source_attribute_physical_name"];
     delete record["target_artefact_name"];

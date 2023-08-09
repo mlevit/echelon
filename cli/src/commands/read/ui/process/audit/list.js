@@ -10,38 +10,37 @@ class CustomCommand extends Command {
     const jsonQuery = flags.jq;
     const api = flags.api;
 
-    var processAuditResult = await knex
+    var runResult = await knex
       .select(
-        "process.name as process_name",
-        "process.process_id",
-        "process_audit.process_audit_id",
-        "process_audit.start",
-        "process_audit.end",
-        "process_audit.status"
+        "job.name as job_name",
+        "job.job_id",
+        "run.run_id",
+        "run.start",
+        "run.end",
+        "run.status"
       )
-      .from("process_audit")
-      .join("process", "process_audit.process_id", "process.process_id")
+      .from("run")
+      .join("job", "run.job_id", "job.job_id")
       .where("start", ">=", start)
       .where("start", "<=", end)
-      .orderBy("process_audit_id", "desc");
+      .orderBy("run_id", "desc");
 
     if (jsonQuery) {
-      processAuditResult = await jq.run(jsonQuery, processAuditResult, {
+      runResult = await jq.run(jsonQuery, runResult, {
         input: "json",
         output: "json",
       });
     }
 
     if (api) {
-      return processAuditResult;
+      return runResult;
     } else {
-      this.log(processAuditResult);
+      this.log(runResult);
     }
   }
 }
 
-CustomCommand.description =
-  "retrieve process instances (process audit) of a process";
+CustomCommand.description = "retrieve job instances (run) of a job";
 
 CustomCommand.flags = {
   filterStart: Flags.string({

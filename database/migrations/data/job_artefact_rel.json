@@ -1,0 +1,11 @@
+{
+  "job_artefact_rel": [
+    {
+      "job_name": null,
+      "sequence_number": null,
+      "source_artefact_name": null,
+      "target_artefact_name": null,
+      "required_flag": null
+    }
+  ]
+}

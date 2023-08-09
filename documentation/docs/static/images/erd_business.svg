@@ -434,16 +434,16 @@
       <rect fill="none" x="1551" width="348" height="153.752" y="573.124" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1647.5" xml:space="preserve" y="591.6924" clip-path="url(#clipPath2)" stroke="none">process_attribute_map</text>
+      <text x="1647.5" xml:space="preserve" y="591.6924" clip-path="url(#clipPath2)" stroke="none">job_attribute_map</text>
     </g>
     <g fill="gray" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke="gray">
       <line y2="598" fill="none" x1="1552" clip-path="url(#clipPath2)" x2="1898" y1="598"/>
       <image x="1555" y="601" transform="translate(0,0.4346)" clip-path="url(#clipPath13)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xs2Rvw7B&#10;UBTGK/EwFjGYTN7CQ0iMBsO5PIKF5yCxkdja20ViYBS72xbBIKG+U9Vw6t8i8Uu+&#10;nNN7v+/c29ayfo2xWzlfU9/Tasfintek7ylsRCiAQqHgqyG+Vr2HoEulSOh5T/pT&#10;xNdOBqw0FVnx8076U8C0F1c/x+J+L/0pYDJiwL0G0p8QhlYGhnlgUxl1+yS89W3K&#10;y1zELYzfVUVdGEfVPE1D9MeraBi4VJC5CBHeGFdNjG52eD0ct7IsmUmIw7Nb2OOP&#10;5VBF+l6CwNRo1UBdQ0seKD1vQegEHTxHjVDbcv8jeN8un+y7qi73/psLIY8NaIob&#10;5F4AAAAASUVORK5CYII=" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1577" xml:space="preserve" y="614.1025" clip-path="url(#clipPath2)" stroke="none">process_attribute_map_id</text>
+      <text x="1577" xml:space="preserve" y="614.1025" clip-path="url(#clipPath2)" stroke="none">job_attribute_map_id</text>
       <text x="1718" xml:space="preserve" y="614.1025" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">SERIAL</text>
-      <text x="1577" xml:space="preserve" y="631.8799" clip-path="url(#clipPath2)" stroke="none">process_id</text>
+      <text x="1577" xml:space="preserve" y="631.8799" clip-path="url(#clipPath2)" stroke="none">job_id</text>
       <text x="1718" xml:space="preserve" y="631.8799" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">INTEGER</text>
     </g>
     <g fill="gray" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745) translate(0,0.2119)" stroke="gray">
@@ -478,14 +478,14 @@
       <rect fill="none" x="1572" width="306" height="153.752" y="-1.876" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1699" xml:space="preserve" y="16.6924" clip-path="url(#clipPath2)" stroke="none">process</text>
+      <text x="1699" xml:space="preserve" y="16.6924" clip-path="url(#clipPath2)" stroke="none">job</text>
     </g>
     <g fill="gray" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke="gray">
       <line y2="23" fill="none" x1="1573" clip-path="url(#clipPath2)" x2="1877" y1="23"/>
       <image x="1576" y="26" transform="translate(0,0.4346)" clip-path="url(#clipPath13)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xs2Rvw7B&#10;UBTGK/EwFjGYTN7CQ0iMBsO5PIKF5yCxkdja20ViYBS72xbBIKG+U9Vw6t8i8Uu+&#10;nNN7v+/c29ayfo2xWzlfU9/Tasfintek7ylsRCiAQqHgqyG+Vr2HoEulSOh5T/pT&#10;xNdOBqw0FVnx8076U8C0F1c/x+J+L/0pYDJiwL0G0p8QhlYGhnlgUxl1+yS89W3K&#10;y1zELYzfVUVdGEfVPE1D9MeraBi4VJC5CBHeGFdNjG52eD0ct7IsmUmIw7Nb2OOP&#10;5VBF+l6CwNRo1UBdQ0seKD1vQegEHTxHjVDbcv8jeN8un+y7qi73/psLIY8NaIob&#10;5F4AAAAASUVORK5CYII=" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1598" xml:space="preserve" y="39.1025" clip-path="url(#clipPath2)" stroke="none">process_id</text>
+      <text x="1598" xml:space="preserve" y="39.1025" clip-path="url(#clipPath2)" stroke="none">job_id</text>
       <text x="1697" xml:space="preserve" y="39.1025" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">SERIAL</text>
       <text x="1598" xml:space="preserve" y="56.8799" clip-path="url(#clipPath2)" stroke="none">name</text>
       <text x="1697" xml:space="preserve" y="56.8799" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">CHARACTER VARYING(255)</text>
@@ -517,16 +517,16 @@
       <rect fill="none" x="1183.5" width="333" height="171.5293" y="-10.7646" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1282" xml:space="preserve" y="7.8037" clip-path="url(#clipPath2)" stroke="none">process_artefact_rel</text>
+      <text x="1282" xml:space="preserve" y="7.8037" clip-path="url(#clipPath2)" stroke="none">job_artefact_rel</text>
     </g>
     <g fill="gray" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke="gray">
       <line y2="14" fill="none" x1="1184" clip-path="url(#clipPath2)" x2="1515" y1="14"/>
       <image x="1187" y="17" transform="translate(0.5,0.5459)" clip-path="url(#clipPath18)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xs2Rvw7B&#10;UBTGK/EwFjGYTN7CQ0iMBsO5PIKF5yCxkdja20ViYBS72xbBIKG+U9Vw6t8i8Uu+&#10;nNN7v+/c29ayfo2xWzlfU9/Tasfintek7ylsRCiAQqHgqyG+Vr2HoEulSOh5T/pT&#10;xNdOBqw0FVnx8076U8C0F1c/x+J+L/0pYDJiwL0G0p8QhlYGhnlgUxl1+yS89W3K&#10;y1zELYzfVUVdGEfVPE1D9MeraBi4VJC5CBHeGFdNjG52eD0ct7IsmUmIw7Nb2OOP&#10;5VBF+l6CwNRo1UBdQ0seKD1vQegEHTxHjVDbcv8jeN8un+y7qi73/psLIY8NaIob&#10;5F4AAAAASUVORK5CYII=" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745)" stroke-linecap="butt">
-      <text x="1209.5" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" stroke="none">process_artefact_rel_id</text>
+      <text x="1209.5" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" stroke="none">job_artefact_rel_id</text>
       <text x="1335.5" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">SERIAL</text>
-      <text x="1209.5" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" stroke="none">process_id</text>
+      <text x="1209.5" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" stroke="none">job_id</text>
       <text x="1335.5" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">INTEGER</text>
     </g>
     <g fill="gray" transform="matrix(0.6797,0,0,0.6797,15.4935,14.2745) translate(0.5,0.3232)" stroke="gray">

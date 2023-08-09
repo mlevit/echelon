@@ -1,14 +1,14 @@
 exports.seed = function (knex) {
   return knex("flow").insert([
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Customer" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "extract_source_data",
       label: "source_count",
@@ -16,14 +16,14 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:01:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Customer" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "load_target",
       label: "insert_count",
@@ -31,16 +31,16 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:03:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({
               name: "Load Staging Sakila Inventory",
             })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "extract_source_data",
       label: "source_count",
@@ -48,16 +48,16 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:01:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({
               name: "Load Staging Sakila Inventory",
             })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "load_target",
       label: "insert_count",
@@ -65,14 +65,14 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:03:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Rental" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "extract_source_data",
       label: "source_count",
@@ -80,14 +80,14 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:01:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Rental" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "load_target",
       label: "insert_count",
@@ -95,14 +95,14 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:03:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Staff" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "extract_source_data",
       label: "source_count",
@@ -110,14 +110,14 @@ exports.seed = function (knex) {
       insert_date: "2020-01-01 3:01:00",
     },
     {
-      process_audit_id: knex("process_audit")
+      run_id: knex("run")
         .where({
-          process_id: knex("process")
+          job_id: knex("job")
             .where({ name: "Load Staging Sakila Staff" })
-            .select("process_id"),
+            .select("job_id"),
           start: "2020-01-01 03:00:00",
         })
-        .select("process_audit_id"),
+        .select("run_id"),
       job: "load_csv_to_redshift",
       function: "load_target",
       label: "insert_count",

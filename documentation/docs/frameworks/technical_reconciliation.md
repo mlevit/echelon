@@ -20,9 +20,9 @@ In order to ensure technical reconciliation can be performed, the `label` column
 
 ## Reconciliation Formulas
 
-The following formulas have been set up in the constant table to enable technical reconciliation through the Echelon. These formulas live in the `constant` table and are retrieved during the technical reconciliation process.
+The following formulas have been set up in the constant table to enable technical reconciliation through the Echelon. These formulas live in the `constant` table and are retrieved during the technical reconciliation job.
 
-Labelling of reconciliation process depends on the target artefact `type`. The results of reconciliation are stored in the `flow` table.
+Labelling of reconciliation job depends on the target artefact `type`. The results of reconciliation are stored in the `flow` table.
 
 ### File
 
@@ -36,7 +36,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                  | Label used in flow table |
+    | Job                                                                  | Label used in flow table |
     | ------------------------------------------------------------------------ | ------------------------ |
     | Retrieve the number of records in the header (control file) or the file. | source_count             |
     | Count the number of records loaded into the staging table.               | insert_count             |
@@ -53,7 +53,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                       | Label used in flow table |
+    | Job                                                                                                                                                       | Label used in flow table |
     | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the staging table.                                                                                                             | source_count             |
     | Count the new records loaded into the hub (i.e., the new inserted because new business key identified). Technically a new `hash_key` has been identified.     | insert_count             |
@@ -70,7 +70,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                                                                     | Label used in flow table |
+    | Job                                                                                                                                                                                                                                     | Label used in flow table |
     | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the staging table.                                                                                                                                                                                           | source_count             |
     | Count new records loaded into satellite ( i.e., the new is inserted because new business key identified). Technically a new `hash_key` identified.                                                                                          | insert_count             |
@@ -89,7 +89,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                   | Label used in flow table |
+    | Job                                                                                                                                                                                   | Label used in flow table |
     | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | In source, count the number of records with a business key combination that defines the link.                                                                                             | source_count             |
     | Count the number of new records loaded into the link ( i.e., the new inserted because the new business key combination was identified). Technically a new `hash_key` has been identified. | insert_count             |
@@ -108,7 +108,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                                                             | Label used in flow table |
+    | Job                                                                                                                                                                                                                             | Label used in flow table |
     | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the source query.                                                                                                                                                                                    | source_count             |
     | Count the number of new records loaded into the dimension ( i.e., the new is inserted because new business key identified). Technically a new `hash_key` identified.                                                                | insert_count             |
@@ -125,7 +125,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                                                                     | Label used in flow table |
+    | Job                                                                                                                                                                                                                                     | Label used in flow table |
     | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the source query.                                                                                                                                                                                            | source_count             |
     | Count new records loaded into dimension (i.e.the new is inserted because new business key identified). Technically a new `hash_key` identified.                                                                                             | insert_count             |
@@ -144,7 +144,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                                                               | Label used in flow table |
+    | Job                                                                                                                                                                                                                               | Label used in flow table |
     | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the source query.                                                                                                                                                                                      | source_count             |
     | Count the number of records where the business key already exists in the fact but new descriptive information is needed to be loaded. Technically `hash_key` already exists in dimension but new `hash_diff_key` needs to be updated. | update_insert_count      |
@@ -160,7 +160,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                                                                                               | Label used in flow table |
+    | Job                                                                                                                                                                                                                               | Label used in flow table |
     | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the source query.                                                                                                                                                                                      | source_count             |
     | Count the number of records where the business key already exists in the fact but new descriptive information is needed to be loaded. Technically `hash_key` already exists in dimension but new `hash_diff_key` needs to be updated. | update_insert_count      |
@@ -176,7 +176,7 @@ Labelling of reconciliation process depends on the target artefact `type`. The r
 
     **Labels**
 
-    | Process                                                                                                                                                        | Label used in flow table |
+    | Job                                                                                                                                                        | Label used in flow table |
     | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
     | Count the number of records in the source query.                                                                                                               | source_count             |
     | Count the number of new records loaded into the fact (i.e., the new is inserted because new business key identified). Technically a new `hash_key` identified. | insert_count             |

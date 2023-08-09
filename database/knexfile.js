@@ -11,7 +11,7 @@ module.exports = {
     },
     pool: { min: 0, max: 20 },
     migrations: {
-      tableName: "knex_migrations",
+      tableName: "knex_migration",
       directory: [
         "./migrations/table/audit",
         "./migrations/table/constraint",

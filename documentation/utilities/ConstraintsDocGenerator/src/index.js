@@ -26,9 +26,9 @@ async function generate(argv) {
   console.log("[INFO] Generating constraint markdown files");
 
   const constraintTables = [
-    "constraint_process_type",
+    "constraint_job_type",
     "constraint_artefact_type",
-    "constraint_process_constant_name",
+    "constraint_job_constant_name",
     "constraint_artefact_constant_name",
     "constraint_variable_name",
     "constraint_variable_object_type",
@@ -62,9 +62,7 @@ async function generate(argv) {
 
       var mdFileBody = "";
 
-      if (
-        table === "constraint_variable_name"
-      ) {
+      if (table === "constraint_variable_name") {
         // Group records for variable name table
         var groupedJsonPayload = {};
         for (row of constraints) {
