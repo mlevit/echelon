@@ -21,18 +21,18 @@ class CustomCommand extends Command {
         .from("job")
         .unionAll(function () {
           this.select(
-            knex.raw("'data_' || entity_id as id"),
+            knex.raw("'entity_' || entity_id as id"),
             "name as title",
             "name",
             "description",
             "type",
-            knex.raw("'data' as object")
+            knex.raw("'entity' as object")
           ).from("entity");
         })
         .unionAll(function () {
           this.select(
             knex.raw(
-              "'data_' || field.entity_id || '_field_' || field.field_id as id"
+              "'entity_' || field.entity_id || '_field_' || field.field_id as id"
             ),
             knex.raw("physical_name || ' - ' || entity.name as title"),
             "physical_name as name",
