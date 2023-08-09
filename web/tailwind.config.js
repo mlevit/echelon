@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          light: "#fc144d",
-          DEFAULT: "#fc144d",
-          dark: "#3b82f6",
-        },
+        // primary: {
+        //   light: "#fc144d",
+        //   DEFAULT: "#fc144d",
+        //   dark: "#3b82f6",
+        // },
+        accent: { light: "#fc144d", DEFAULT: "#fc144d", dark: "#3b82f6" },
         background: {
           lightest: "#ffffff", // white
           light: "#f9fafb", // gray-50
@@ -19,6 +20,31 @@ module.exports = {
           dark: "#374151", // gray-700
           darker: "#111827", // gray-900
           darkest: "#030712", // gray-950
+        },
+        inputBorder: {
+          light: "#d1d5db", // gray-300
+          DEFAULT: "#d1d5db", // gray-300
+          dark: "#4b5563", // gray-600
+        },
+        inputBg: {
+          light: "#f9fafb", // gray-50
+          DEFAULT: "#f9fafb", // gray-50
+          dark: "#374151", // gray-700
+        },
+        tableBorder: {
+          light: "#d1d5db", // gray-300
+          DEFAULT: "#d1d5db", // gray-300
+          dark: "#4b5563", // gray-600
+        },
+        tableHeadBg: {
+          light: "#f9fafb", // gray-50
+          DEFAULT: "#f9fafb", // gray-50
+          dark: "#374151", // gray-700
+        },
+        tableText: {
+          light: "#6b7280", // gray-500
+          DEFAULT: "#6b7280", // gray-500
+          dark: "#9ca3af", // gray-400
         },
         border: {
           lighter: "#e5e7eb", // gray-200

@@ -61,7 +61,7 @@ export default {
               icon="eye"
               size="2xl"
               color="custom"
-              class="mr-3 h-8 text-primary dark:text-textPrimary-dark"
+              class="mr-3 h-8 text-accent dark:text-textPrimary-dark"
             />
             <span
               class="self-center whitespace-nowrap text-xl font-semibold dark:text-textPrimary-dark sm:text-2xl"
@@ -82,7 +82,7 @@ export default {
               <div>
                 <button
                   type="button"
-                  class="inline-flex select-none items-center rounded-l-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
+                  class="inline-flex select-none items-center rounded-l-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
                   @click="toggleLive()"
                 >
                   <SvgIcon
@@ -95,7 +95,7 @@ export default {
                 </button>
                 <!-- <button
                   type="button"
-                  class="inline-flex items-center rounded-r-lg border-t border border-border-lighter bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary focus:z-10 focus:text-primary focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark dark:focus:text-textPrimary-dark dark:focus:ring-primary"
+                  class="inline-flex items-center rounded-r-lg border-t border border-border-lighter bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent focus:z-10 focus:text-accent focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark dark:focus:text-textPrimary-dark dark:focus:ring-accent"
                 >
                   <svg
                     aria-hidden="true"
@@ -112,7 +112,7 @@ export default {
                 </button> -->
                 <button
                   type="button"
-                  class="inline-flex items-center rounded-r-md border border-l-0 border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
+                  class="inline-flex items-center rounded-r-md border border-l-0 border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
                   @click="toggleDark()"
                 >
                   <SvgIcon

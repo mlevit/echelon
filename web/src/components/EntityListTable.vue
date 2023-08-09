@@ -181,7 +181,7 @@ export default {
                   type="radio"
                   value=""
                   name="filter-type"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                   v-model="typeTerm"
                 />
                 <label
@@ -203,7 +203,7 @@ export default {
                   type="radio"
                   :value="record"
                   name="filter-type"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                   v-model="typeTerm"
                 />
                 <label
@@ -244,7 +244,7 @@ export default {
                   type="radio"
                   value=""
                   name="filter-source"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                   v-model="sourceTerm"
                 />
                 <label
@@ -266,7 +266,7 @@ export default {
                   type="radio"
                   :value="record"
                   name="filter-source"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-2 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                   v-model="sourceTerm"
                 />
                 <label
@@ -290,18 +290,20 @@ export default {
         <input
           type="text"
           id="table-search"
-          class="block w-80 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+          class="block w-80 rounded-lg border border-inputBorder bg-inputBg p-2 pl-10 text-sm text-textPrimary focus:border-accent focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
           placeholder="Search"
           v-model="searchTerm"
         />
       </div>
     </div>
     <div
-      class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
+      class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
     >
-      <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
+      <table
+        class="w-full text-left text-sm text-tableText dark:text-tableText-dark"
+      >
         <thead
-          class="bg-background text-xs uppercase text-textSecondary dark:bg-gray-700 dark:text-gray-400"
+          class="bg-tableHeadBg text-xs uppercase text-textSecondary dark:bg-tableHeadBg-dark dark:text-gray-400"
         >
           <tr>
             <th scope="col" class="px-6 py-3">Name</th>
@@ -331,7 +333,7 @@ export default {
             <td class="px-6 py-4">
               <RouterLink
                 :to="'/entity/' + record.entity_id"
-                class="font-medium text-primary hover:underline dark:text-primary-dark"
+                class="font-medium text-accent hover:underline dark:text-accent-dark"
               >
                 View
               </RouterLink>

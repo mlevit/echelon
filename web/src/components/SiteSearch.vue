@@ -80,7 +80,7 @@ export default {
     <input
       type="text"
       id="site-search"
-      class="block w-36 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary duration-300 focus:w-[560px] focus:border-primary focus:ring-primary dark:border-border-dark dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+      class="block w-36 rounded-lg border border-inputBorder bg-inputBg p-2 pl-10 text-sm text-textPrimary duration-300 focus:w-[560px] focus:border-accent focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
       placeholder="Search"
       v-model="searchTerm"
       v-on:blur="_.delay(clearSearch, 150)"
@@ -100,7 +100,7 @@ export default {
       <div class="flex h-fit" v-for="result in searchResults" :key="result.id">
         <RouterLink
           :to="getUrl(result.id)"
-          class="min-h-14 flex max-h-fit w-full rounded-lg border border-border-lighter bg-background-lightest p-2 shadow hover:border-primary hover:bg-hover dark:border-border-darker dark:bg-background-darker dark:hover:bg-hover-dark"
+          class="min-h-14 flex max-h-fit w-full rounded-lg border border-border-lighter bg-background-lightest p-2 shadow hover:border-accent hover:bg-hover dark:border-border-darker dark:bg-background-darker dark:hover:border-accent-dark dark:hover:bg-hover-dark"
         >
           <div class="mr-2 flex items-center">
             <SvgIcon :icon="result.object" color="black" />

@@ -85,7 +85,7 @@ export default {
         name="start"
         id="startDate"
         type="text"
-        class="block w-36 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+        class="block w-36 rounded-lg border border-inputBorder bg-inputBg p-2 pl-10 text-sm text-textPrimary focus:border-accent focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
         placeholder="Start date"
         @input="(event) => (text = event.target.value)"
       />
@@ -101,7 +101,7 @@ export default {
         name="end"
         id="endDate"
         type="text"
-        class="block w-36 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+        class="block w-36 rounded-lg border border-inputBorder bg-inputBg p-2 pl-10 text-sm text-textPrimary focus:border-accent focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
         placeholder="End date"
         @input="(event) => (text = event.target.value)"
       />

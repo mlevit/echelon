@@ -29,7 +29,7 @@ export default {
       <label for="tabs" class="sr-only">Select tab</label>
       <select
         id="tabs"
-        class="block w-full rounded-t-lg border-0 border-b border-border-lighter bg-background p-2.5 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+        class="block w-full rounded-t-lg border-0 border-b border-border-lighter bg-background p-2.5 text-sm text-textPrimary focus:border-accent focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
       >
         <option>Details</option>
         <option>Statistics</option>
