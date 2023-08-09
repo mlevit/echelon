@@ -40,14 +40,14 @@ export default {
       </h6>
     </div>
     <div
-      class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
+      class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
       v-if="!_.isEmpty(rawMapData)"
     >
       <table
         class="w-full table-fixed text-left text-sm text-gray-500 dark:text-gray-400"
       >
         <thead
-          class="bg-background text-xs uppercase text-textSecondary dark:bg-gray-700 dark:text-gray-400"
+          class="bg-tableHeadBg text-xs uppercase text-textSecondary dark:bg-tableHeadBg-dark dark:text-textSecondary-dark"
         >
           <tr>
             <th scope="col" class="px-6 py-3 text-right">Source Entity</th>
@@ -59,7 +59,7 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
+            class="border-b bg-tableTrBg hover:bg-tableTrBgHover dark:border-tableBorder-dark dark:bg-tableTrBg-dark dark:hover:bg-tableTrBgHover-dark"
             v-for="record in rawMapData"
             :key="record.run_id"
           >

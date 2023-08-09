@@ -253,13 +253,13 @@ export default {
       </div>
     </div>
     <div
-      class="overflow-x-auto border border-border dark:border-border-dark sm:rounded-lg"
+      class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
     >
       <table
         class="w-full text-left text-sm text-gray-500 dark:text-textSecondary-dark"
       >
         <thead
-          class="bg-background text-xs uppercase text-textSecondary dark:bg-background-dark dark:text-textSecondary-dark"
+          class="bg-tableHeadBg text-xs uppercase text-textSecondary dark:bg-tableHeadBg-dark dark:text-textSecondary-dark"
         >
           <tr>
             <th scope="col" class="px-6 py-3">Name</th>
@@ -274,7 +274,7 @@ export default {
           <tr
             v-for="record in runData"
             :key="record.run_id"
-            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
+            class="border-b bg-tableTrBg hover:bg-tableTrBgHover dark:border-tableBorder-dark dark:bg-tableTrBg-dark dark:hover:bg-tableTrBgHover-dark"
           >
             <th
               scope="row"

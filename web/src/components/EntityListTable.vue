@@ -315,7 +315,7 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
+            class="border-b bg-tableTrBg hover:bg-tableTrBgHover dark:border-tableBorder-dark dark:bg-tableTrBg-dark dark:hover:bg-tableTrBgHover-dark"
             v-for="record in entityData"
             :key="record.entity_id"
           >

@@ -72,12 +72,12 @@ export default {
       </h6>
     </div>
     <div
-      class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
+      class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
       v-if="!_.isEmpty(rawEntityConstantData)"
     >
       <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
         <thead
-          class="bg-background text-xs uppercase text-textSecondary dark:bg-gray-700 dark:text-gray-400"
+          class="bg-tableHeadBg text-xs uppercase text-textSecondary dark:bg-tableHeadBg-dark dark:text-textSecondary-dark"
         >
           <tr>
             <th scope="col" class="px-6 py-3">Name</th>
@@ -86,7 +86,7 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
+            class="border-b bg-tableTrBg hover:bg-tableTrBgHover dark:border-tableBorder-dark dark:bg-tableTrBg-dark dark:hover:bg-tableTrBgHover-dark"
             v-for="record in rawEntityConstantData"
             :key="record.entity_constant_id"
           >
@@ -109,7 +109,7 @@ export default {
                 class="invisible absolute z-10 inline-block w-fit rounded-lg border border-border-lighter bg-background-lightest text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-background-darker dark:text-gray-400"
               >
                 <div
-                  class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
+                  class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
                   v-if="!_.isEmpty(rawEntityConstantDescriptionData)"
                 >
                   <table

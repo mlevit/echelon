@@ -41,6 +41,16 @@ module.exports = {
           DEFAULT: "#f9fafb", // gray-50
           dark: "#374151", // gray-700
         },
+        tableTrBg: {
+          light: "#ffffff", // white
+          DEFAULT: "#ffffff", // white
+          dark: "#111827", // gray-900
+        },
+        tableTrBgHover: {
+          light: "#f9fafb", // gray-50
+          DEFAULT: "#f9fafb", // gray-50
+          dark: "#4b5563", // gray-600
+        },
         tableText: {
           light: "#6b7280", // gray-500
           DEFAULT: "#6b7280", // gray-500

@@ -140,7 +140,7 @@ export default {
       </div>
       <div class="flex h-fit items-center justify-center rounded">
         <KpiCard
-          title="Jobed"
+          title="Processed"
           :value="runFlowCount"
           unit="records"
           v-if="runFlowCount"
