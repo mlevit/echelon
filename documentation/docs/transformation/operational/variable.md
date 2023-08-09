@@ -1,6 +1,6 @@
 # Variable
 
-A variable is value that is expected to change over time. Variables are linked to other Echelon objects such as job and artefact to provide extra piece of metadata for data handling purposes at run time.
+A variable is value that is expected to change over time. Variables are linked to other Echelon objects such as job and entity to provide extra piece of metadata for data handling purposes at run time.
 
 ## Definition
 
@@ -9,7 +9,7 @@ A variable is value that is expected to change over time. Variables are linked t
 | Name        | Type                     | Nullable | Description                                                                                                                        |
 | ----------- | ------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | variable_id | integer                  | NO       | System generated unique identifier.                                                                                                |
-| object_id   | integer                  | NO       | System generated unique identifier of the job, artefact, or attribute this variable is associated with.                            |
+| object_id   | integer                  | NO       | System generated unique identifier of the job, entity, or field this variable is associated with.                                  |
 | object_type | character varying        | NO       | The type of the object this variable is associated with. See acceptable values within the `constraint_variable_object_type` table. |
 | name        | character varying        | NO       | Name of the variable. See acceptable values within the `constraint_variable_name` table.                                           |
 | value       | character varying        | NO       | Value of the variable.                                                                                                             |

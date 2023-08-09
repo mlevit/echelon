@@ -1,0 +1,12 @@
+{
+  "job_field_map": [
+    {
+      "job_name": null,
+      "source_entity_name": null,
+      "source_field_physical_name": null,
+      "target_entity_name": null,
+      "target_field_physical_name": null,
+      "hard_rule": null
+    }
+  ]
+}

@@ -2,23 +2,23 @@
   "constraint_alert_code": [
     {
       "value": "A01",
-      "comment": "Source artefact has zero rows."
+      "comment": "Source entity has zero rows."
     },
     {
       "value": "A02",
-      "comment": "Target Artefact loaded zero rows."
+      "comment": "Target Entity loaded zero rows."
     },
     {
       "value": "A03",
-      "comment": "Target Artefact has rejected rows."
+      "comment": "Target Entity has rejected rows."
     },
     {
       "value": "A04",
-      "comment": "Artefact loaded less rows than recent average."
+      "comment": "Entity loaded less rows than recent average."
     },
     {
       "value": "A05",
-      "comment": "Artefact loaded more rows than recent average."
+      "comment": "Entity loaded more rows than recent average."
     },
     {
       "value": "P01",
@@ -41,7 +41,7 @@
       "comment": "Job is currently running longer than expected."
     }
   ],
-  "constraint_artefact_type": [
+  "constraint_entity_type": [
     {
       "value": "accumulating_snapshot_fact_table",
       "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
@@ -56,7 +56,7 @@
     },
     {
       "value": "dimension_type_0_table",
-      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+      "comment": "The type 0 dimension fields never change and are assigned to fields that have durable values or are described as 'Original'."
     },
     {
       "value": "dimension_type_1_table",
@@ -80,7 +80,7 @@
     },
     {
       "value": "json_file",
-      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of field–value pairs and arrays."
     },
     {
       "value": "link_table",
@@ -92,7 +92,7 @@
     },
     {
       "value": "satellite_table",
-      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+      "comment": "The hubs and links form the structure of the model, but have no temporal fields and hold no descriptive fields. These are stored in separate tables called satellites."
     },
     {
       "value": "snapshot_fact_table",
@@ -111,7 +111,7 @@
       "comment": "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."
     }
   ],
-  "constraint_attribute_classification": [
+  "constraint_field_classification": [
     {
       "value": "internal",
       "comment": "Data that is only meant for internal purposes and should not be shared outside of the organisation."
@@ -137,7 +137,7 @@
       "comment": "Procedure name to call to acquire the data."
     }
   ],
-  "constraint_artefact_constant_name": [
+  "constraint_entity_constant_name": [
     {
       "value": "blank_as_null",
       "cast": "boolean",
@@ -256,7 +256,7 @@
       "value": "extract_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will extract the data from the source artefact."
+      "comment": "Fully qualified name of the job that will extract the data from the source entity."
     },
     {
       "value": "floor_guardrail",
@@ -292,25 +292,25 @@
       "value": "header_count_end_range",
       "cast": "integer",
       "required": false,
-      "comment": "End index of the file count header attribute."
+      "comment": "End index of the file count header field."
     },
     {
       "value": "header_count_start_range",
       "cast": "integer",
       "required": false,
-      "comment": "Start index of the file count header attribute."
+      "comment": "Start index of the file count header field."
     },
     {
       "value": "header_date_end_range",
       "cast": "text",
       "required": false,
-      "comment": "End index of the file date header attribute."
+      "comment": "End index of the file date header field."
     },
     {
       "value": "header_date_start_range",
       "cast": "text",
       "required": false,
-      "comment": "Start index of the file date header attribute."
+      "comment": "Start index of the file date header field."
     },
     {
       "value": "html_file_path",
@@ -340,7 +340,7 @@
       "value": "load_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will load the data into the target artefact."
+      "comment": "Fully qualified name of the job that will load the data into the target entity."
     },
     {
       "value": "max_diviation",
@@ -436,7 +436,7 @@
       "value": "transform_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will transform the extracted data from the source artefact."
+      "comment": "Fully qualified name of the job that will transform the extracted data from the source entity."
     },
     {
       "value": "transform_sql",
@@ -552,23 +552,23 @@
   "constraint_flow_label": [
     {
       "value": "end_date_count",
-      "comment": "Number of records updated in the target artefact as part of SCD Type 2."
+      "comment": "Number of records updated in the target entity as part of SCD Type 2."
     },
     {
       "value": "insert_count",
-      "comment": "Number of records inserted into the target artefact."
+      "comment": "Number of records inserted into the target entity."
     },
     {
       "value": "match_count",
-      "comment": "Number of records that were found to be identical in the source and the target artefact."
+      "comment": "Number of records that were found to be identical in the source and the target entity."
     },
     {
       "value": "reject_count",
-      "comment": "Number of records that were not inserted into the target artefact because of an error."
+      "comment": "Number of records that were not inserted into the target entity because of an error."
     },
     {
       "value": "source_count",
-      "comment": "Number of records present in the source artefact that were selected."
+      "comment": "Number of records present in the source entity that were selected."
     },
     {
       "value": "technical_reconciliation_variance",
@@ -576,16 +576,16 @@
     },
     {
       "value": "update_insert_count",
-      "comment": "Number of records inserted into the target artefact as part of SCD Type 2."
+      "comment": "Number of records inserted into the target entity as part of SCD Type 2."
     }
   ],
   "constraint_glossary_entry_object_rel_object_type": [
     {
-      "value": "artefact",
+      "value": "entity",
       "comment": ""
     },
     {
-      "value": "attribute",
+      "value": "field",
       "comment": ""
     },
     {
@@ -733,11 +733,11 @@
   "constraint_job_dependency_logic": [
     {
       "value": "and",
-      "comment": "All required artefacts require updates."
+      "comment": "All required entitys require updates."
     },
     {
       "value": "or",
-      "comment": "Any required artefacts require updates."
+      "comment": "Any required entitys require updates."
     }
   ],
   "constraint_job_type": [
@@ -906,11 +906,11 @@
   ],
   "constraint_stakeholder_object_rel_object_type": [
     {
-      "value": "artefact",
+      "value": "entity",
       "comment": ""
     },
     {
-      "value": "attribute",
+      "value": "field",
       "comment": ""
     },
     {
@@ -1099,7 +1099,7 @@
       "comment": ""
     },
     {
-      "value": "attribute",
+      "value": "field",
       "comment": ""
     },
     {
@@ -1136,7 +1136,7 @@
     },
     {
       "value": "dimension_type_0_table",
-      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+      "comment": "The type 0 dimension fields never change and are assigned to fields that have durable values or are described as 'Original'."
     },
     {
       "value": "dimension_type_1_table",
@@ -1188,7 +1188,7 @@
     },
     {
       "value": "json_file",
-      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of field–value pairs and arrays."
     },
     {
       "value": "link_table",
@@ -1228,7 +1228,7 @@
     },
     {
       "value": "satellite_table",
-      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+      "comment": "The hubs and links form the structure of the model, but have no temporal fields and hold no descriptive fields. These are stored in separate tables called satellites."
     },
     {
       "value": "satellite_table_load",
@@ -1341,7 +1341,7 @@
       "dependency_logic": "and"
     }
   ],
-  "artefact": [
+  "entity": [
     {
       "name": "presentation_dim_sakila_customer",
       "description": "Sakila Customer dimension table",
@@ -1427,9 +1427,9 @@
       "source": "Sakila"
     }
   ],
-  "attribute": [
+  "field": [
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -1451,7 +1451,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "staff_id",
       "data_type": "integer",
       "length": null,
@@ -1473,7 +1473,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "return_date",
       "data_type": "timestamp",
       "length": null,
@@ -1495,7 +1495,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "customer_id",
       "data_type": "integer",
       "length": null,
@@ -1517,7 +1517,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "inventory_id",
       "data_type": "integer",
       "length": null,
@@ -1539,7 +1539,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "rental_date",
       "data_type": "timestamp",
       "length": null,
@@ -1561,7 +1561,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "physical_name": "rental_id",
       "data_type": "integer",
       "length": null,
@@ -1583,7 +1583,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -1605,7 +1605,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -1627,7 +1627,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "physical_name": "film_id",
       "data_type": "integer",
       "length": null,
@@ -1649,7 +1649,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "physical_name": "inventory_id",
       "data_type": "integer",
       "length": null,
@@ -1671,7 +1671,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -1693,7 +1693,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "create_date",
       "data_type": "timestamp",
       "length": null,
@@ -1715,7 +1715,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -1737,7 +1737,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "address_id",
       "data_type": "numeric",
       "length": null,
@@ -1759,7 +1759,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -1781,7 +1781,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -1803,7 +1803,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -1825,7 +1825,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -1847,7 +1847,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "physical_name": "customer_id",
       "data_type": "integer",
       "length": null,
@@ -1869,7 +1869,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -1891,7 +1891,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "password",
       "data_type": "varchar",
       "length": 40,
@@ -1913,7 +1913,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "username",
       "data_type": "varchar",
       "length": 16,
@@ -1935,7 +1935,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -1957,7 +1957,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -1979,7 +1979,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -2001,7 +2001,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "picture",
       "data_type": "blob",
       "length": null,
@@ -2023,7 +2023,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "address_id",
       "data_type": "integer",
       "length": null,
@@ -2045,7 +2045,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -2067,7 +2067,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -2089,7 +2089,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "physical_name": "staff_id",
       "data_type": "integer",
       "length": null,
@@ -2111,7 +2111,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -2133,7 +2133,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "staff_id",
       "data_type": "integer",
       "length": null,
@@ -2155,7 +2155,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "return_date",
       "data_type": "timestamp",
       "length": null,
@@ -2177,7 +2177,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "customer_id",
       "data_type": "integer",
       "length": null,
@@ -2199,7 +2199,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "inventory_id",
       "data_type": "integer",
       "length": null,
@@ -2221,7 +2221,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "rental_date",
       "data_type": "timestamp",
       "length": null,
@@ -2243,7 +2243,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "physical_name": "rental_id",
       "data_type": "integer",
       "length": null,
@@ -2265,7 +2265,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -2287,7 +2287,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -2309,7 +2309,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "physical_name": "film_id",
       "data_type": "integer",
       "length": null,
@@ -2331,7 +2331,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "physical_name": "inventory_id",
       "data_type": "integer",
       "length": null,
@@ -2353,7 +2353,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -2375,7 +2375,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "create_date",
       "data_type": "timestamp",
       "length": null,
@@ -2397,7 +2397,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -2419,7 +2419,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "address_id",
       "data_type": "numeric",
       "length": null,
@@ -2441,7 +2441,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -2463,7 +2463,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -2485,7 +2485,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -2507,7 +2507,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -2529,7 +2529,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "physical_name": "customer_id",
       "data_type": "integer",
       "length": null,
@@ -2551,7 +2551,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -2573,7 +2573,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "password",
       "data_type": "varchar",
       "length": 40,
@@ -2595,7 +2595,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "username",
       "data_type": "varchar",
       "length": 16,
@@ -2617,7 +2617,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -2639,7 +2639,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -2661,7 +2661,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -2683,7 +2683,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "picture",
       "data_type": "blob",
       "length": null,
@@ -2705,7 +2705,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "address_id",
       "data_type": "integer",
       "length": null,
@@ -2727,7 +2727,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -2749,7 +2749,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -2771,7 +2771,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "physical_name": "staff_id",
       "data_type": "integer",
       "length": null,
@@ -2793,7 +2793,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "return_date",
       "data_type": "timestamp",
       "length": null,
@@ -2815,7 +2815,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "rental_date",
       "data_type": "timestamp",
       "length": null,
@@ -2837,7 +2837,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "staff_sk",
       "data_type": "integer",
       "length": null,
@@ -2859,7 +2859,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "customer_sk",
       "data_type": "integer",
       "length": null,
@@ -2881,7 +2881,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "inventory_sk",
       "data_type": "integer",
       "length": null,
@@ -2903,7 +2903,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "physical_name": "rental_id",
       "data_type": "integer",
       "length": null,
@@ -2925,7 +2925,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -2947,7 +2947,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -2969,7 +2969,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "physical_name": "film_id",
       "data_type": "integer",
       "length": null,
@@ -2991,7 +2991,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "physical_name": "inventory_id",
       "data_type": "integer",
       "length": null,
@@ -3013,7 +3013,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "physical_name": "inventory_sk",
       "data_type": "integer",
       "length": null,
@@ -3035,7 +3035,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -3057,7 +3057,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "create_date",
       "data_type": "timestamp",
       "length": null,
@@ -3079,7 +3079,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -3101,7 +3101,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "address_id",
       "data_type": "numeric",
       "length": null,
@@ -3123,7 +3123,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -3145,7 +3145,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -3167,7 +3167,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -3189,7 +3189,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -3211,7 +3211,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "customer_id",
       "data_type": "integer",
       "length": null,
@@ -3233,7 +3233,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "physical_name": "customer_sk",
       "data_type": "integer",
       "length": null,
@@ -3255,7 +3255,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "last_update",
       "data_type": "timestamp",
       "length": null,
@@ -3277,7 +3277,7 @@
       "business_date_flag": true
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "password",
       "data_type": "varchar",
       "length": 40,
@@ -3299,7 +3299,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "username",
       "data_type": "varchar",
       "length": 16,
@@ -3321,7 +3321,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "active",
       "data_type": "boolean",
       "length": null,
@@ -3343,7 +3343,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "store_id",
       "data_type": "integer",
       "length": null,
@@ -3365,7 +3365,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "email",
       "data_type": "varchar",
       "length": 50,
@@ -3387,7 +3387,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "picture",
       "data_type": "blob",
       "length": null,
@@ -3409,7 +3409,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "address_id",
       "data_type": "integer",
       "length": null,
@@ -3431,7 +3431,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "last_name",
       "data_type": "integer",
       "length": 45,
@@ -3453,7 +3453,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "first_name",
       "data_type": "varchar",
       "length": 45,
@@ -3475,7 +3475,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "staff_id",
       "data_type": "integer",
       "length": null,
@@ -3497,7 +3497,7 @@
       "business_date_flag": false
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "physical_name": "staff_sk",
       "data_type": "integer",
       "length": null,
@@ -3541,894 +3541,894 @@
       "value": "truncate_and_load_raw_sakila_staff"
     }
   ],
-  "artefact_constant": [
+  "entity_constant": [
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "name": "schema_name",
       "value": "presentation"
     },
     {
-      "artefact_name": "presentation_dim_sakila_customer",
+      "entity_name": "presentation_dim_sakila_customer",
       "name": "table_name",
       "value": "dim_sakila_customer"
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "name": "schema_name",
       "value": "presentation"
     },
     {
-      "artefact_name": "presentation_dim_sakila_inventory",
+      "entity_name": "presentation_dim_sakila_inventory",
       "name": "table_name",
       "value": "dim_sakila_inventory"
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "name": "schema_name",
       "value": "presentation"
     },
     {
-      "artefact_name": "presentation_dim_sakila_staff",
+      "entity_name": "presentation_dim_sakila_staff",
       "name": "table_name",
       "value": "dim_sakila_staff"
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "name": "schema_name",
       "value": "presentation"
     },
     {
-      "artefact_name": "presentation_fact_sakila_rental",
+      "entity_name": "presentation_fact_sakila_rental",
       "name": "table_name",
       "value": "fact_sakila_rental"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "column_delimiter",
       "value": ","
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "column_quote_character",
       "value": "\""
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "data_file_server",
       "value": "s3://data-lake-raw.s3-website-ap-southeast-2.amazonaws.com"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "data_file_path",
       "value": "sakila_customer/"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "data_file_pattern",
       "value": "sakila_customer_\\d{8}.csv"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "date_pattern",
       "value": "\\d{8}"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "date_format",
       "value": "YYYY-MM-DD"
     },
     {
-      "artefact_name": "raw_sakila_customer",
+      "entity_name": "raw_sakila_customer",
       "name": "header_count",
       "value": "1"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "column_delimiter",
       "value": ","
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "column_quote_character",
       "value": "\""
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "data_file_server",
       "value": "s3://data-lake-raw.s3-website-ap-southeast-2.amazonaws.com"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "data_file_path",
       "value": "sakila_inventory/"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "data_file_pattern",
       "value": "sakila_inventory_\\d{8}.csv"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "date_pattern",
       "value": "\\d{8}"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "date_format",
       "value": "YYYY-MM-DD"
     },
     {
-      "artefact_name": "raw_sakila_inventory",
+      "entity_name": "raw_sakila_inventory",
       "name": "header_count",
       "value": "1"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "column_delimiter",
       "value": ","
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "column_quote_character",
       "value": "\""
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "data_file_server",
       "value": "s3://data-lake-raw.s3-website-ap-southeast-2.amazonaws.com"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "data_file_path",
       "value": "sakila_rental/"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "data_file_pattern",
       "value": "sakila_rental_\\d{8}.csv"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "date_pattern",
       "value": "\\d{8}"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "date_format",
       "value": "YYYY-MM-DD"
     },
     {
-      "artefact_name": "raw_sakila_rental",
+      "entity_name": "raw_sakila_rental",
       "name": "header_count",
       "value": "1"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "column_delimiter",
       "value": ","
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "column_quote_character",
       "value": "\""
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "data_file_server",
       "value": "s3://data-lake-raw.s3-website-ap-southeast-2.amazonaws.com"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "data_file_path",
       "value": "sakila_staff/"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "data_file_pattern",
       "value": "sakila_staff_\\d{8}.csv"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "date_pattern",
       "value": "\\d{8}"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "date_format",
       "value": "YYYY-MM-DD"
     },
     {
-      "artefact_name": "raw_sakila_staff",
+      "entity_name": "raw_sakila_staff",
       "name": "header_count",
       "value": "1"
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "name": "schema_name",
       "value": "staging"
     },
     {
-      "artefact_name": "staging_sakila_customer",
+      "entity_name": "staging_sakila_customer",
       "name": "table_name",
       "value": "sakila_customer"
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "name": "schema_name",
       "value": "staging"
     },
     {
-      "artefact_name": "staging_sakila_inventory",
+      "entity_name": "staging_sakila_inventory",
       "name": "table_name",
       "value": "sakila_inventory"
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "name": "schema_name",
       "value": "staging"
     },
     {
-      "artefact_name": "staging_sakila_rental",
+      "entity_name": "staging_sakila_rental",
       "name": "table_name",
       "value": "sakila_rental"
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "name": "database_server",
       "value": "cusmat9ljshy.ap-southeast-2.rds.amazonaws.com"
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "name": "database_port",
       "value": "5432"
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "name": "schema_name",
       "value": "staging"
     },
     {
-      "artefact_name": "staging_sakila_staff",
+      "entity_name": "staging_sakila_staff",
       "name": "table_name",
       "value": "sakila_staff"
     }
   ],
-  "job_artefact_rel": [
+  "job_entity_rel": [
     {
       "job_name": "Load Staging Sakila Customer",
       "sequence_number": 1,
-      "source_artefact_name": "raw_sakila_customer",
-      "target_artefact_name": "staging_sakila_customer",
+      "source_entity_name": "raw_sakila_customer",
+      "target_entity_name": "staging_sakila_customer",
       "required_flag": true
     },
     {
       "job_name": "Load Staging Sakila Inventory",
       "sequence_number": 1,
-      "source_artefact_name": "raw_sakila_inventory",
-      "target_artefact_name": "staging_sakila_inventory",
+      "source_entity_name": "raw_sakila_inventory",
+      "target_entity_name": "staging_sakila_inventory",
       "required_flag": true
     },
     {
       "job_name": "Load Staging Sakila Rental",
       "sequence_number": 1,
-      "source_artefact_name": "raw_sakila_rental",
-      "target_artefact_name": "staging_sakila_rental",
+      "source_entity_name": "raw_sakila_rental",
+      "target_entity_name": "staging_sakila_rental",
       "required_flag": true
     },
     {
       "job_name": "Load Staging Sakila Staff",
       "sequence_number": 1,
-      "source_artefact_name": "raw_sakila_staff",
-      "target_artefact_name": "staging_sakila_staff",
+      "source_entity_name": "raw_sakila_staff",
+      "target_entity_name": "staging_sakila_staff",
       "required_flag": true
     },
     {
       "job_name": "Load Dim Sakila Customer",
       "sequence_number": 1,
-      "source_artefact_name": "staging_sakila_customer",
-      "target_artefact_name": "presentation_dim_sakila_customer",
+      "source_entity_name": "staging_sakila_customer",
+      "target_entity_name": "presentation_dim_sakila_customer",
       "required_flag": true
     },
     {
       "job_name": "Load Dim Sakila Inventory",
       "sequence_number": 1,
-      "source_artefact_name": "staging_sakila_inventory",
-      "target_artefact_name": "presentation_dim_sakila_inventory",
+      "source_entity_name": "staging_sakila_inventory",
+      "target_entity_name": "presentation_dim_sakila_inventory",
       "required_flag": true
     },
     {
       "job_name": "Load Dim Sakila Staff",
       "sequence_number": 1,
-      "source_artefact_name": "staging_sakila_staff",
-      "target_artefact_name": "presentation_dim_sakila_staff",
+      "source_entity_name": "staging_sakila_staff",
+      "target_entity_name": "presentation_dim_sakila_staff",
       "required_flag": true
     },
     {
       "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 1,
-      "source_artefact_name": "staging_sakila_rental",
-      "target_artefact_name": "presentation_fact_sakila_rental",
+      "source_entity_name": "staging_sakila_rental",
+      "target_entity_name": "presentation_fact_sakila_rental",
       "required_flag": true
     },
     {
       "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 2,
-      "source_artefact_name": "presentation_dim_sakila_customer",
-      "target_artefact_name": "presentation_fact_sakila_rental",
+      "source_entity_name": "presentation_dim_sakila_customer",
+      "target_entity_name": "presentation_fact_sakila_rental",
       "required_flag": false
     },
     {
       "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 3,
-      "source_artefact_name": "presentation_dim_sakila_inventory",
-      "target_artefact_name": "presentation_fact_sakila_rental",
+      "source_entity_name": "presentation_dim_sakila_inventory",
+      "target_entity_name": "presentation_fact_sakila_rental",
       "required_flag": false
     },
     {
       "job_name": "presentation_fact_sakila_rental",
       "sequence_number": 4,
-      "source_artefact_name": "presentation_dim_sakila_staff",
-      "target_artefact_name": "presentation_fact_sakila_rental",
+      "source_entity_name": "presentation_dim_sakila_staff",
+      "target_entity_name": "presentation_fact_sakila_rental",
       "required_flag": false
     }
   ],
-  "job_attribute_map": [
+  "job_field_map": [
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "customer_id",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "customer_id",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "customer_id",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "customer_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "first_name",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "first_name",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "first_name",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "first_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "last_name",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "last_name",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "last_name",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "last_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "email",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "email",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "email",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "email",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "address_id",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "address_id",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "address_id",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "address_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "active",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "active",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "active",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "active",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "create_date",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "create_date",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "create_date",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "create_date",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Customer",
-      "source_artefact_name": "staging_sakila_customer",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "presentation_dim_sakila_customer",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "staging_sakila_customer",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "presentation_dim_sakila_customer",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Inventory",
-      "source_artefact_name": "staging_sakila_inventory",
-      "source_attribute_physical_name": "inventory_id",
-      "target_artefact_name": "presentation_dim_sakila_inventory",
-      "target_attribute_physical_name": "inventory_id",
+      "source_entity_name": "staging_sakila_inventory",
+      "source_field_physical_name": "inventory_id",
+      "target_entity_name": "presentation_dim_sakila_inventory",
+      "target_field_physical_name": "inventory_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Inventory",
-      "source_artefact_name": "staging_sakila_inventory",
-      "source_attribute_physical_name": "film_id",
-      "target_artefact_name": "presentation_dim_sakila_inventory",
-      "target_attribute_physical_name": "film_id",
+      "source_entity_name": "staging_sakila_inventory",
+      "source_field_physical_name": "film_id",
+      "target_entity_name": "presentation_dim_sakila_inventory",
+      "target_field_physical_name": "film_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Inventory",
-      "source_artefact_name": "staging_sakila_inventory",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "presentation_dim_sakila_inventory",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "staging_sakila_inventory",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "presentation_dim_sakila_inventory",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Inventory",
-      "source_artefact_name": "staging_sakila_inventory",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "presentation_dim_sakila_inventory",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "staging_sakila_inventory",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "presentation_dim_sakila_inventory",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "staff_id",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "staff_id",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "staff_id",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "staff_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "first_name",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "first_name",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "first_name",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "first_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "last_name",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "last_name",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "last_name",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "last_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "address_id",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "address_id",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "address_id",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "address_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "picture",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "picture",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "picture",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "picture",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "email",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "email",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "email",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "email",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "active",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "active",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "active",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "active",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "username",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "username",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "username",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "username",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "password",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "password",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "password",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "password",
       "hard_rule": null
     },
     {
       "job_name": "Load Dim Sakila Staff",
-      "source_artefact_name": "staging_sakila_staff",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "presentation_dim_sakila_staff",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "staging_sakila_staff",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "presentation_dim_sakila_staff",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "staging_sakila_rental",
-      "source_attribute_physical_name": "rental_id",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "rental_id",
+      "source_entity_name": "staging_sakila_rental",
+      "source_field_physical_name": "rental_id",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "rental_id",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "presentation_dim_sakila_inventory",
-      "source_attribute_physical_name": "inventory_sk",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "inventory_sk",
+      "source_entity_name": "presentation_dim_sakila_inventory",
+      "source_field_physical_name": "inventory_sk",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "inventory_sk",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "presentation_dim_sakila_customer",
-      "source_attribute_physical_name": "customer_sk",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "customer_sk",
+      "source_entity_name": "presentation_dim_sakila_customer",
+      "source_field_physical_name": "customer_sk",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "customer_sk",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "presentation_dim_sakila_staff",
-      "source_attribute_physical_name": "staff_sk",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "staff_sk",
+      "source_entity_name": "presentation_dim_sakila_staff",
+      "source_field_physical_name": "staff_sk",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "staff_sk",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "staging_sakila_rental",
-      "source_attribute_physical_name": "rental_date",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "rental_date",
+      "source_entity_name": "staging_sakila_rental",
+      "source_field_physical_name": "rental_date",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "rental_date",
       "hard_rule": null
     },
     {
       "job_name": "presentation_fact_sakila_rental",
-      "source_artefact_name": "staging_sakila_rental",
-      "source_attribute_physical_name": "return_date",
-      "target_artefact_name": "presentation_fact_sakila_rental",
-      "target_attribute_physical_name": "return_date",
+      "source_entity_name": "staging_sakila_rental",
+      "source_field_physical_name": "return_date",
+      "target_entity_name": "presentation_fact_sakila_rental",
+      "target_field_physical_name": "return_date",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "customer_id",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "customer_id",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "customer_id",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "customer_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "first_name",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "first_name",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "first_name",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "first_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "last_name",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "last_name",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "last_name",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "last_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "email",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "email",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "email",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "email",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "address_id",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "address_id",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "address_id",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "address_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "active",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "active",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "active",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "active",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "create_date",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "create_date",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "create_date",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "create_date",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Customer",
-      "source_artefact_name": "raw_sakila_customer",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "staging_sakila_customer",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "raw_sakila_customer",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "staging_sakila_customer",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Inventory",
-      "source_artefact_name": "raw_sakila_inventory",
-      "source_attribute_physical_name": "inventory_id",
-      "target_artefact_name": "staging_sakila_inventory",
-      "target_attribute_physical_name": "inventory_id",
+      "source_entity_name": "raw_sakila_inventory",
+      "source_field_physical_name": "inventory_id",
+      "target_entity_name": "staging_sakila_inventory",
+      "target_field_physical_name": "inventory_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Inventory",
-      "source_artefact_name": "raw_sakila_inventory",
-      "source_attribute_physical_name": "film_id",
-      "target_artefact_name": "staging_sakila_inventory",
-      "target_attribute_physical_name": "film_id",
+      "source_entity_name": "raw_sakila_inventory",
+      "source_field_physical_name": "film_id",
+      "target_entity_name": "staging_sakila_inventory",
+      "target_field_physical_name": "film_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Inventory",
-      "source_artefact_name": "raw_sakila_inventory",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "staging_sakila_inventory",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "raw_sakila_inventory",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "staging_sakila_inventory",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Inventory",
-      "source_artefact_name": "raw_sakila_inventory",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "staging_sakila_inventory",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "raw_sakila_inventory",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "staging_sakila_inventory",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "rental_id",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "rental_id",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "rental_id",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "rental_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "rental_date",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "rental_date",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "rental_date",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "rental_date",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "inventory_id",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "inventory_id",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "inventory_id",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "inventory_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "customer_id",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "customer_id",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "customer_id",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "customer_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "return_date",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "return_date",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "return_date",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "return_date",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "staff_id",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "staff_id",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "staff_id",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "staff_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Rental",
-      "source_artefact_name": "raw_sakila_rental",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "staging_sakila_rental",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "raw_sakila_rental",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "staging_sakila_rental",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "staff_id",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "staff_id",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "staff_id",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "staff_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "first_name",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "first_name",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "first_name",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "first_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "last_name",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "last_name",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "last_name",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "last_name",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "address_id",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "address_id",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "address_id",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "address_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "picture",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "picture",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "picture",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "picture",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "email",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "email",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "email",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "email",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "store_id",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "store_id",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "store_id",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "store_id",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "active",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "active",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "active",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "active",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "username",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "username",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "username",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "username",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "password",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "password",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "password",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "password",
       "hard_rule": null
     },
     {
       "job_name": "Load Staging Sakila Staff",
-      "source_artefact_name": "raw_sakila_staff",
-      "source_attribute_physical_name": "last_update",
-      "target_artefact_name": "staging_sakila_staff",
-      "target_attribute_physical_name": "last_update",
+      "source_entity_name": "raw_sakila_staff",
+      "source_field_physical_name": "last_update",
+      "target_entity_name": "staging_sakila_staff",
+      "target_field_physical_name": "last_update",
       "hard_rule": null
     }
   ],
@@ -4459,105 +4459,105 @@
       "type": "blank_mask"
     }
   ],
-  "data_mask_attribute_rel": [
+  "data_mask_field_rel": [
     {
       "data_mask_id": 1,
-      "attribute_id": 38,
+      "field_id": 38,
       "active_flag": true
     },
     {
       "data_mask_id": 1,
-      "attribute_id": 59,
+      "field_id": 59,
       "active_flag": true
     },
     {
       "data_mask_id": 1,
-      "attribute_id": 69,
+      "field_id": 69,
       "active_flag": true
     },
     {
       "data_mask_id": 1,
-      "attribute_id": 90,
+      "field_id": 90,
       "active_flag": true
     },
     {
       "data_mask_id": 2,
-      "attribute_id": 63,
+      "field_id": 63,
       "active_flag": true
     },
     {
       "data_mask_id": 2,
-      "attribute_id": 94,
+      "field_id": 94,
       "active_flag": true
     },
     {
       "data_mask_id": 3,
-      "attribute_id": 36,
+      "field_id": 36,
       "active_flag": true
     },
     {
       "data_mask_id": 3,
-      "attribute_id": 55,
+      "field_id": 55,
       "active_flag": true
     },
     {
       "data_mask_id": 3,
-      "attribute_id": 67,
+      "field_id": 67,
       "active_flag": true
     },
     {
       "data_mask_id": 3,
-      "attribute_id": 86,
+      "field_id": 86,
       "active_flag": true
     },
     {
       "data_mask_id": 4,
-      "attribute_id": 37,
+      "field_id": 37,
       "active_flag": true
     },
     {
       "data_mask_id": 4,
-      "attribute_id": 56,
+      "field_id": 56,
       "active_flag": true
     },
     {
       "data_mask_id": 4,
-      "attribute_id": 68,
+      "field_id": 68,
       "active_flag": true
     },
     {
       "data_mask_id": 4,
-      "attribute_id": 87,
+      "field_id": 87,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 34,
+      "field_id": 34,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 39,
+      "field_id": 39,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 50,
+      "field_id": 50,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 65,
+      "field_id": 65,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 70,
+      "field_id": 70,
       "active_flag": true
     },
     {
       "data_mask_id": 5,
-      "attribute_id": 81,
+      "field_id": 81,
       "active_flag": true
     }
   ],
@@ -4587,20 +4587,20 @@
       "active_flag": true
     }
   ],
-  "data_profile_artefact_rel": [
+  "data_profile_entity_rel": [
     {
       "data_profile_id": 1,
-      "artefact_id": 1,
+      "entity_id": 1,
       "active_flag": true
     },
     {
       "data_profile_id": 2,
-      "artefact_id": 3,
+      "entity_id": 3,
       "active_flag": true
     },
     {
       "data_profile_id": 3,
-      "artefact_id": 4,
+      "entity_id": 4,
       "active_flag": true
     }
   ],
@@ -4639,20 +4639,20 @@
       "active_flag": true
     }
   ],
-  "data_quality_rule_attribute_rel": [
+  "data_quality_rule_field_rel": [
     {
       "data_quality_rule_id": 1,
-      "attribute_id": 51,
+      "field_id": 51,
       "active_flag": true
     },
     {
       "data_quality_rule_id": 2,
-      "attribute_id": 38,
+      "field_id": 38,
       "active_flag": true
     },
     {
       "data_quality_rule_id": 3,
-      "attribute_id": 59,
+      "field_id": 59,
       "active_flag": true
     }
   ],
@@ -4698,73 +4698,73 @@
     {
       "glossary_entry_id": 1,
       "object_id": 36,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 1,
       "object_id": 55,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 1,
       "object_id": 67,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 1,
       "object_id": 86,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 2,
       "object_id": 37,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 2,
       "object_id": 56,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 2,
       "object_id": 68,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 2,
       "object_id": 87,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 4,
       "object_id": 62,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 4,
       "object_id": 93,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 5,
       "object_id": 63,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     },
     {
       "glossary_entry_id": 5,
       "object_id": 94,
-      "object_type": "attribute",
+      "object_type": "field",
       "active_flag": true
     }
   ],
@@ -4860,45 +4860,45 @@
       "status": "approved"
     }
   ],
-  "reference_data_attribute_rel": [
+  "reference_data_field_rel": [
     {
       "reference_data_id": 1,
-      "attribute_id": 40,
+      "field_id": 40,
       "active_flag": true
     },
     {
       "reference_data_id": 1,
-      "attribute_id": 61,
+      "field_id": 61,
       "active_flag": true
     },
     {
       "reference_data_id": 2,
-      "attribute_id": 40,
+      "field_id": 40,
       "active_flag": true
     },
     {
       "reference_data_id": 2,
-      "attribute_id": 61,
+      "field_id": 61,
       "active_flag": true
     },
     {
       "reference_data_id": 3,
-      "attribute_id": 71,
+      "field_id": 71,
       "active_flag": true
     },
     {
       "reference_data_id": 3,
-      "attribute_id": 92,
+      "field_id": 92,
       "active_flag": true
     },
     {
       "reference_data_id": 4,
-      "attribute_id": 71,
+      "field_id": 71,
       "active_flag": true
     },
     {
       "reference_data_id": 4,
-      "attribute_id": 92,
+      "field_id": 92,
       "active_flag": true
     }
   ],
@@ -4978,25 +4978,25 @@
     {
       "stakeholder_id": 2,
       "object_id": 9,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 2,
       "object_id": 10,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 2,
       "object_id": 11,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 2,
       "object_id": 12,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
@@ -5014,25 +5014,25 @@
     {
       "stakeholder_id": 4,
       "object_id": 1,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 4,
       "object_id": 2,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 4,
       "object_id": 3,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     },
     {
       "stakeholder_id": 4,
       "object_id": 4,
-      "object_type": "artefact",
+      "object_type": "entity",
       "active_flag": true
     }
   ]

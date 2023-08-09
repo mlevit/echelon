@@ -21,27 +21,27 @@ class CustomCommand extends Command {
         .from("job")
         .unionAll(function () {
           this.select(
-            knex.raw("'data_' || artefact_id as id"),
+            knex.raw("'data_' || entity_id as id"),
             "name as title",
             "name",
             "description",
             "type",
             knex.raw("'data' as object")
-          ).from("artefact");
+          ).from("entity");
         })
         .unionAll(function () {
           this.select(
             knex.raw(
-              "'data_' || attribute.artefact_id || '_field_' || attribute.attribute_id as id"
+              "'data_' || field.entity_id || '_field_' || field.field_id as id"
             ),
-            knex.raw("physical_name || ' - ' || artefact.name as title"),
+            knex.raw("physical_name || ' - ' || entity.name as title"),
             "physical_name as name",
-            "attribute.description",
-            "attribute.data_type as type",
+            "field.description",
+            "field.data_type as type",
             knex.raw("'field' as object")
           )
-            .from("attribute")
-            .join("artefact", "attribute.artefact_id", "artefact.artefact_id");
+            .from("field")
+            .join("entity", "field.entity_id", "entity.entity_id");
         });
     } catch (error) {
       this.error(error);

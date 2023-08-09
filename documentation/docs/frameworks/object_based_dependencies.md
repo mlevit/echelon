@@ -46,11 +46,11 @@ Echelon resolves the above problems by orchestrating jobes based on their source
 
 Users no longer need to maintain orchestrations between jobes as these will now be specified within Echelon itself. To make this work, we need to implement the following:
 
-- Each job should be related to at least one source and one target artefact via the `job_artefact_rel` table.
+- Each job should be related to at least one source and one target entity via the `job_entity_rel` table.
 
-- Each job artefact relationship should be classified as either required or not required using the `required` field in the `job_artefact_rel` table. This specifies whether the source artefact is necessary to have updated data for the job to run.
+- Each job entity relationship should be classified as either required or not required using the `required` field in the `job_entity_rel` table. This specifies whether the source entity is necessary to have updated data for the job to run.
 
-- Each job should have its dependency logic set to either `and` or `or` via the `dependency_logic` field in the `job` table. This specifies whether either all or one of the required source artefacts needs to have updated data for the job to run.
+- Each job should have its dependency logic set to either `and` or `or` via the `dependency_logic` field in the `job` table. This specifies whether either all or one of the required source entitys needs to have updated data for the job to run.
 
 Based on the above solution, Echelon will be able to return the jobes that can be executed at any point in time. `metacli read:job:run` command has been introduced to provide a list of jobes that can be executed.
 

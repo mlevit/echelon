@@ -14,14 +14,14 @@ Similarly, the Job events being monitored are:
 | P04        | Job has not completed as per business SLA.     |
 | P05        | Job is currently running longer than expected. |
 
-## Artefact
+## Entity
 
-Finally, the Artefact events being monitored are:
+Finally, the Entity events being monitored are:
 
-| Alert Code | Event Description                                   |
-| ---------- | --------------------------------------------------- |
-| A01        | Source artefact has zero rows.                      |
-| A02        | Target artefact loaded zero rows.                   |
-| A03        | Target artefact has rejected rows.                  |
-| A04        | Artefact loaded fewer rows than the recent average. |
-| A05        | Artefact loaded more rows than the recent average.  |
+| Alert Code | Event Description                                 |
+| ---------- | ------------------------------------------------- |
+| A01        | Source entity has zero rows.                      |
+| A02        | Target entity loaded zero rows.                   |
+| A03        | Target entity has rejected rows.                  |
+| A04        | Entity loaded fewer rows than the recent average. |
+| A05        | Entity loaded more rows than the recent average.  |

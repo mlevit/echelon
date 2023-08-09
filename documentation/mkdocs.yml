@@ -94,13 +94,13 @@ nav:
       - Technical:
           - transformation/technical/index.md
           - Job: transformation/technical/job.md
-          - Artefact: transformation/technical/artefact.md
-          - Attribute: transformation/technical/attribute.md
+          - Entity: transformation/technical/entity.md
+          - Field: transformation/technical/field.md
           - Job Constant: transformation/technical/job_constant.md
-          - Artefact Constant: transformation/technical/artefact_constant.md
+          - Entity Constant: transformation/technical/entity_constant.md
           - Relationships:
-              - Job Artefact Rel: transformation/technical/job_artefact_rel.md
-              - Job Attribute Mapping: transformation/technical/job_attribute_map.md
+              - Job Entity Rel: transformation/technical/job_entity_rel.md
+              - Job Field Mapping: transformation/technical/job_field_map.md
       - Operational:
           - transformation/operational/index.md
           - Run: transformation/operational/run.md
@@ -109,7 +109,7 @@ nav:
           - Log: transformation/operational/log.md
           - Registry:
               - Registry: transformation/operational/registry.md
-              - Registry Artefact Mapping: transformation/operational/registry_artefact_map.md
+              - Registry Entity Mapping: transformation/operational/registry_entity_map.md
               - Registry Run Mapping: transformation/operational/registry_run_map.md
           - Variable: transformation/operational/variable.md
   - Frameworks:

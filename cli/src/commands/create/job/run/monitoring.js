@@ -17,7 +17,7 @@ class CustomCommand extends Command {
 
     if (runResult.length > 0) {
       try {
-        var artefactResult;
+        var entityResult;
         var jobResult;
 
         switch (runResult[0]["status"]) {
@@ -31,7 +31,7 @@ class CustomCommand extends Command {
               (await this.p04(runResult, threshold, sample)) ||
               (await this.p05(runResult, threshold, sample));
 
-            artefactResult =
+            entityResult =
               (await this.a01(runResult)) ||
               (await this.a02(runResult)) ||
               (await this.a03(runResult)) ||
@@ -65,13 +65,13 @@ class CustomCommand extends Command {
           }
         }
 
-        if (artefactResult) {
+        if (entityResult) {
           try {
-            returnDict["artefact"] = await this.insertAlert(
+            returnDict["entity"] = await this.insertAlert(
               runId,
-              artefactResult["code"],
-              artefactResult["subject"],
-              artefactResult["message"]
+              entityResult["code"],
+              entityResult["subject"],
+              entityResult["message"]
             );
           } catch (error) {
             this.error(error);
@@ -168,21 +168,21 @@ class CustomCommand extends Command {
   }
 
   async a01(runResult) {
-    // Source artefact has zero rows.
+    // Source entity has zero rows.
     var runId = runResult[0]["run_id"];
 
-    var artefactFlow = await knex
+    var entityFlow = await knex
       .select("count")
       .from("flow")
       .where("run_id", runId)
       .where("label", "source_count");
 
-    if (artefactFlow.length > 0) {
-      if (artefactFlow[0]["count"] === 0) {
+    if (entityFlow.length > 0) {
+      if (entityFlow[0]["count"] === 0) {
         return {
           code: "A01",
-          subject: "Source artefact has zero rows.",
-          message: `Run ID '${runId}' has zero rows in the source artefact.`,
+          subject: "Source entity has zero rows.",
+          message: `Run ID '${runId}' has zero rows in the source entity.`,
         };
       } else {
         return null;
@@ -191,21 +191,21 @@ class CustomCommand extends Command {
   }
 
   async a02(runResult) {
-    // Target artefact loaded zero rows.
+    // Target entity loaded zero rows.
     var runId = runResult[0]["run_id"];
 
-    var artefactFlow = await knex
+    var entityFlow = await knex
       .select("count")
       .from("flow")
       .where("run_id", runId)
       .where("label", "insert_count");
 
-    if (artefactFlow.length > 0) {
-      if (artefactFlow[0]["count"] === 0) {
+    if (entityFlow.length > 0) {
+      if (entityFlow[0]["count"] === 0) {
         return {
           code: "A02",
-          subject: "Target artefact loaded zero rows.",
-          message: `Run ID '${runId}' has loaded zero rows into the target artefact.`,
+          subject: "Target entity loaded zero rows.",
+          message: `Run ID '${runId}' has loaded zero rows into the target entity.`,
         };
       } else {
         return null;
@@ -214,21 +214,21 @@ class CustomCommand extends Command {
   }
 
   async a03(runResult) {
-    // 	Target artefact has rejected rows.
+    // 	Target entity has rejected rows.
     var runId = runResult[0]["run_id"];
 
-    var artefactFlow = await knex
+    var entityFlow = await knex
       .select("count")
       .from("flow")
       .where("run_id", runId)
       .where("label", "reject_count");
 
-    if (artefactFlow.length > 0) {
-      if (artefactFlow[0]["count"] > 0) {
+    if (entityFlow.length > 0) {
+      if (entityFlow[0]["count"] > 0) {
         return {
           code: "A03",
-          subject: "Target artefact has rejected rows.",
-          message: `Run ID '${runId}' has rejected ${artefactFlow[0]["count"]} rows.`,
+          subject: "Target entity has rejected rows.",
+          message: `Run ID '${runId}' has rejected ${entityFlow[0]["count"]} rows.`,
         };
       } else {
         return null;
@@ -237,7 +237,7 @@ class CustomCommand extends Command {
   }
 
   async a04(runResult, threshold, sample) {
-    // Artefact loaded fewer rows than the recent average.
+    // Entity loaded fewer rows than the recent average.
     var runId = runResult[0]["run_id"];
     var jobId = runResult[0]["job_id"];
 
@@ -253,8 +253,8 @@ class CustomCommand extends Command {
       if (currentCount < averageCount - averageCount * threshold) {
         return {
           code: "A04",
-          subject: "Artefact loaded fewer rows than the recent average.",
-          message: `Run ID '${runId}' has loaded ${currentCount} rows into the target artefact; fewer rows than the recent average of ${averageCount}.`,
+          subject: "Entity loaded fewer rows than the recent average.",
+          message: `Run ID '${runId}' has loaded ${currentCount} rows into the target entity; fewer rows than the recent average of ${averageCount}.`,
         };
       } else {
         return null;
@@ -267,7 +267,7 @@ class CustomCommand extends Command {
   }
 
   async a05(runResult, threshold, sample) {
-    // Artefact loaded more rows than the recent average.
+    // Entity loaded more rows than the recent average.
     var runId = runResult[0]["run_id"];
     var jobId = runResult[0]["job_id"];
 
@@ -283,8 +283,8 @@ class CustomCommand extends Command {
       if (currentCount > averageCount + averageCount * threshold) {
         return {
           code: "A05",
-          subject: "Artefact loaded more rows than the recent average.",
-          message: `Run ID '${runId}' has loaded ${currentCount} rows into the target artefact; more rows than the recent average of ${averageCount}.`,
+          subject: "Entity loaded more rows than the recent average.",
+          message: `Run ID '${runId}' has loaded ${currentCount} rows into the target entity; more rows than the recent average of ${averageCount}.`,
         };
       } else {
         return null;

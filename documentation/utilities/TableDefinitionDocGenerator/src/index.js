@@ -72,7 +72,7 @@ async function generate(argv) {
         var constraintTable = [["Type", "Columns"]];
         var acceptableValuesTable =
           tableName == "job_constant" ||
-          tableName == "artefact_constant" ||
+          tableName == "entity_constant" ||
           tableName == "variable"
             ? (acceptableValuesTable = [["Column", "Values"]])
             : (acceptableValuesTable = [["Column", "Value", "Comment"]]);
@@ -161,7 +161,7 @@ async function generate(argv) {
 
             if (
               tableName != "job_constant" &&
-              tableName != "artefact_constant" &&
+              tableName != "entity_constant" &&
               tableName != "variable"
             ) {
               for (acceptableValue of acceptableValuesResult) {

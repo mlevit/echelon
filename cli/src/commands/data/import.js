@@ -19,9 +19,9 @@ class CustomCommand extends Command {
 
     const inputOrder = [
       "constraint_alert_code",
-      "constraint_artefact_constant_name",
-      "constraint_artefact_type",
-      "constraint_attribute_classification",
+      "constraint_entity_constant_name",
+      "constraint_entity_type",
+      "constraint_field_classification",
       "constraint_data_mask_type",
       "constraint_data_quality_rule_criticality",
       "constraint_data_quality_rule_dimension",
@@ -48,11 +48,11 @@ class CustomCommand extends Command {
       "constraint_variable_object_type",
       "job",
       "job_constant",
-      "artefact",
-      "artefact_constant",
-      "attribute",
-      "job_artefact_rel",
-      "job_attribute_map",
+      "entity",
+      "entity_constant",
+      "field",
+      "job_entity_rel",
+      "job_field_map",
     ];
 
     // Create request JSON
@@ -279,16 +279,16 @@ class CustomCommand extends Command {
 
   async getValidRecord(table, record) {
     switch (table) {
-      case "attribute":
-        return await this.getAttributeRecord(record);
+      case "field":
+        return await this.getFieldRecord(record);
       case "job_constant":
         return await this.getJobConstantRecord(record);
-      case "artefact_constant":
-        return await this.getArtefactConstantRecord(record);
-      case "job_artefact_rel":
-        return await this.getJobArtefactRelRecord(record);
-      case "job_attribute_map":
-        return await this.getJobAttributeMapRecord(record);
+      case "entity_constant":
+        return await this.getEntityConstantRecord(record);
+      case "job_entity_rel":
+        return await this.getJobEntityRelRecord(record);
+      case "job_field_map":
+        return await this.getJobFieldMapRecord(record);
       default:
         return record;
     }
@@ -316,14 +316,14 @@ class CustomCommand extends Command {
     }
   }
 
-  async getAttributeRecord(record) {
-    var artefact_id_result = await knex
-      .select("artefact_id")
-      .from("artefact")
-      .where("name", record["artefact_name"]);
+  async getFieldRecord(record) {
+    var entity_id_result = await knex
+      .select("entity_id")
+      .from("entity")
+      .where("name", record["entity_name"]);
 
-    record["artefact_id"] = artefact_id_result[0]["artefact_id"];
-    delete record["artefact_name"];
+    record["entity_id"] = entity_id_result[0]["entity_id"];
+    delete record["entity_name"];
     return record;
   }
 
@@ -340,83 +340,75 @@ class CustomCommand extends Command {
     }
   }
 
-  async getArtefactConstantRecord(record) {
-    var artefact_id_result = await knex
-      .select("artefact_id")
-      .from("artefact")
-      .where("name", record["artefact_name"]);
+  async getEntityConstantRecord(record) {
+    var entity_id_result = await knex
+      .select("entity_id")
+      .from("entity")
+      .where("name", record["entity_name"]);
 
-    if (artefact_id_result.length > 0) {
-      record["artefact_id"] = artefact_id_result[0]["artefact_id"];
-      delete record["artefact_name"];
+    if (entity_id_result.length > 0) {
+      record["entity_id"] = entity_id_result[0]["entity_id"];
+      delete record["entity_name"];
       return record;
     }
   }
 
-  async getJobArtefactRelRecord(record) {
+  async getJobEntityRelRecord(record) {
     var job_id_result = await knex
       .select("job_id")
       .from("job")
       .where("name", record["job_name"]);
 
-    var source_artefact_id_result = await knex
-      .select("artefact_id")
-      .from("artefact")
-      .where("name", record["source_artefact_name"]);
+    var source_entity_id_result = await knex
+      .select("entity_id")
+      .from("entity")
+      .where("name", record["source_entity_name"]);
 
-    var target_artefact_id_result = await knex
-      .select("artefact_id")
-      .from("artefact")
-      .where("name", record["target_artefact_name"]);
+    var target_entity_id_result = await knex
+      .select("entity_id")
+      .from("entity")
+      .where("name", record["target_entity_name"]);
 
     record["job_id"] = job_id_result[0]["job_id"];
-    record["source_artefact_id"] = source_artefact_id_result[0]["artefact_id"];
-    record["target_artefact_id"] = target_artefact_id_result[0]["artefact_id"];
+    record["source_entity_id"] = source_entity_id_result[0]["entity_id"];
+    record["target_entity_id"] = target_entity_id_result[0]["entity_id"];
 
     delete record["job_name"];
-    delete record["source_artefact_name"];
-    delete record["target_artefact_name"];
+    delete record["source_entity_name"];
+    delete record["target_entity_name"];
 
     return record;
   }
 
-  async getJobAttributeMapRecord(record) {
+  async getJobFieldMapRecord(record) {
     var job_id_result = await knex
       .select("job_id")
       .from("job")
       .where("name", record["job_name"]);
 
-    var source_attribute_id_result = await knex
-      .select("attribute.attribute_id")
-      .from("artefact")
-      .join("attribute", "artefact.artefact_id", "attribute.artefact_id")
-      .where("artefact.name", record["source_artefact_name"])
-      .where(
-        "attribute.physical_name",
-        record["source_attribute_physical_name"]
-      );
+    var source_field_id_result = await knex
+      .select("field.field_id")
+      .from("entity")
+      .join("field", "entity.entity_id", "field.entity_id")
+      .where("entity.name", record["source_entity_name"])
+      .where("field.physical_name", record["source_field_physical_name"]);
 
-    var target_attribute_id_result = await knex
-      .select("attribute.attribute_id")
-      .from("artefact")
-      .join("attribute", "artefact.artefact_id", "attribute.artefact_id")
-      .where("artefact.name", record["target_artefact_name"])
-      .where(
-        "attribute.physical_name",
-        record["target_attribute_physical_name"]
-      );
+    var target_field_id_result = await knex
+      .select("field.field_id")
+      .from("entity")
+      .join("field", "entity.entity_id", "field.entity_id")
+      .where("entity.name", record["target_entity_name"])
+      .where("field.physical_name", record["target_field_physical_name"]);
 
     record["job_id"] = job_id_result[0]["job_id"];
-    record["source_attribute_id"] =
-      source_attribute_id_result[0]["attribute_id"];
-    record["target_attribute_id"] =
-      target_attribute_id_result[0]["attribute_id"];
+    record["source_field_id"] = source_field_id_result[0]["field_id"];
+    record["target_field_id"] = target_field_id_result[0]["field_id"];
 
     delete record["job_name"];
-    delete record["source_artefact_name"];
-    delete record["source_attribute_physical_name"];
-    delete record["target_artefact_name"];
-    delete record["target_attribute_physical_name"];
+    delete record["source_entity_name"];
+    delete record["source_field_physical_name"];
+    delete record["target_entity_name"];
+    delete record["target_field_physical_name"];
 
     return record;
   }

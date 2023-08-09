@@ -40,7 +40,7 @@ class CustomCommand extends Command {
     const routeTranslationDict = {
       "dq/run": "dq/run/index",
       "job/run": "job/run/index",
-      artefact: "artefact/index",
+      entity: "entity/index",
       job: "job/index",
     };
 

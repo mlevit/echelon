@@ -127,14 +127,14 @@
       <rect fill="none" x="373" width="354" height="135.9746" y="7.0127" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(1,0,0,1,21,30)" stroke-linecap="butt">
-      <text x="467.5" xml:space="preserve" y="25.5811" clip-path="url(#clipPath2)" stroke="none">data_profile_artefact_rel</text>
+      <text x="467.5" xml:space="preserve" y="25.5811" clip-path="url(#clipPath2)" stroke="none">data_profile_entity_rel</text>
     </g>
     <g fill="gray" transform="matrix(1,0,0,1,21,30)" stroke="gray">
       <line y2="32" fill="none" x1="374" clip-path="url(#clipPath2)" x2="726" y1="32"/>
       <image x="377" y="35" transform="translate(0,0.3232)" clip-path="url(#clipPath7)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xs2Rvw7B&#10;UBTGK/EwFjGYTN7CQ0iMBsO5PIKF5yCxkdja20ViYBS72xbBIKG+U9Vw6t8i8Uu+&#10;nNN7v+/c29ayfo2xWzlfU9/Tasfintek7ylsRCiAQqHgqyG+Vr2HoEulSOh5T/pT&#10;xNdOBqw0FVnx8076U8C0F1c/x+J+L/0pYDJiwL0G0p8QhlYGhnlgUxl1+yS89W3K&#10;y1zELYzfVUVdGEfVPE1D9MeraBi4VJC5CBHeGFdNjG52eD0ct7IsmUmIw7Nb2OOP&#10;5VBF+l6CwNRo1UBdQ0seKD1vQegEHTxHjVDbcv8jeN8un+y7qi73/psLIY8NaIob&#10;5F4AAAAASUVORK5CYII=" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(1,0,0,1,21,30)" stroke-linecap="butt">
-      <text x="399" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" stroke="none">data_profile_artefact_rel_id</text>
+      <text x="399" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" stroke="none">data_profile_entity_rel_id</text>
       <text x="546" xml:space="preserve" y="47.9912" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">SERIAL</text>
       <text x="399" xml:space="preserve" y="65.7686" clip-path="url(#clipPath2)" stroke="none">data_profile_id</text>
       <text x="546" xml:space="preserve" y="65.7686" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">INTEGER</text>
@@ -143,7 +143,7 @@
       <image x="705" y="53" clip-path="url(#clipPath8)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAi0lEQVR4XmNgGJ7A&#10;u32LoG/TjmNA/B8L/oiuHgWANTduP41FIxyj60EBPk07TqBrQMfoerCChoYGJqBh&#10;c9E1E2UAPs0EDcCmGZ2PrgcOcGkGiSOJHUPXBwb4NIPkwWLA2AHFErpeMPBt3DkD&#10;l2YQAMUOTs0g4Nu8cw4uzUSB0FWrmMGGAF1CsuYBBQD9OsYDT+FmggAAAABJRU5E&#10;rkJggg==" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(1,0,0,1,21,30)" stroke-linecap="butt">
-      <text x="399" xml:space="preserve" y="83.5459" clip-path="url(#clipPath2)" stroke="none">artefact_id</text>
+      <text x="399" xml:space="preserve" y="83.5459" clip-path="url(#clipPath2)" stroke="none">entity_id</text>
       <text x="546" xml:space="preserve" y="83.5459" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">INTEGER</text>
     </g>
     <g fill="gray" transform="matrix(1,0,0,1,21,30) translate(0,0.8779)" stroke="gray">
@@ -197,14 +197,14 @@
       <rect fill="none" x="393" width="314" height="171.5293" y="189.2354" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(1,0,0,1,21,30)" stroke-linecap="butt">
-      <text x="524" xml:space="preserve" y="207.8037" clip-path="url(#clipPath2)" stroke="none">artefact</text>
+      <text x="524" xml:space="preserve" y="207.8037" clip-path="url(#clipPath2)" stroke="none">entity</text>
     </g>
     <g fill="gray" transform="matrix(1,0,0,1,21,30)" stroke="gray">
       <line y2="214" fill="none" x1="394" clip-path="url(#clipPath2)" x2="706" y1="214"/>
       <image x="397" y="217" transform="translate(0,0.5459)" clip-path="url(#clipPath13)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xs2Rvw7B&#10;UBTGK/EwFjGYTN7CQ0iMBsO5PIKF5yCxkdja20ViYBS72xbBIKG+U9Vw6t8i8Uu+&#10;nNN7v+/c29ayfo2xWzlfU9/Tasfintek7ylsRCiAQqHgqyG+Vr2HoEulSOh5T/pT&#10;xNdOBqw0FVnx8076U8C0F1c/x+J+L/0pYDJiwL0G0p8QhlYGhnlgUxl1+yS89W3K&#10;y1zELYzfVUVdGEfVPE1D9MeraBi4VJC5CBHeGFdNjG52eD0ct7IsmUmIw7Nb2OOP&#10;5VBF+l6CwNRo1UBdQ0seKD1vQegEHTxHjVDbcv8jeN8un+y7qi73/psLIY8NaIob&#10;5F4AAAAASUVORK5CYII=" height="16" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(1,0,0,1,21,30)" stroke-linecap="butt">
-      <text x="419" xml:space="preserve" y="230.2139" clip-path="url(#clipPath2)" stroke="none">artefact_id</text>
+      <text x="419" xml:space="preserve" y="230.2139" clip-path="url(#clipPath2)" stroke="none">entity_id</text>
       <text x="526" xml:space="preserve" y="230.2139" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">SERIAL</text>
       <text x="419" xml:space="preserve" y="247.9912" clip-path="url(#clipPath2)" stroke="none">name</text>
       <text x="526" xml:space="preserve" y="247.9912" clip-path="url(#clipPath2)" font-weight="normal" stroke="none">CHARACTER VARYING(255)</text>

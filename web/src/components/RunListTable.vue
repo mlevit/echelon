@@ -115,7 +115,12 @@ export default {
     class="overflow-x-autosm:rounded-lg relative w-full"
   >
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Recent</h6>
+      <h6
+        class="mb-4 text-lg font-bold dark:text-white"
+        v-if="_.isEmpty(this.jobName)"
+      >
+        Recent Runs
+      </h6>
     </div>
     <div class="flex items-center justify-between pb-4">
       <div>
@@ -342,7 +347,7 @@ export default {
   </div>
   <div v-else class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Recent</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-white" v-if="_.isEmpty(this.jobName)">Recent Runs</h6>
     </div>
     <p class="text-gray-400 dark:text-gray-500">No recent jobs found.</p>
   </div>

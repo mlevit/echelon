@@ -36,11 +36,11 @@ An alert is a record of an event that occurred in the system that should be repo
 
 | Column | Value | Comment                                        |
 | ------ | ----- | ---------------------------------------------- |
-| code   | A01   | Source artefact has zero rows.                 |
-| code   | A02   | Target Artefact loaded zero rows.              |
-| code   | A03   | Target Artefact has rejected rows.             |
-| code   | A04   | Artefact loaded less rows than recent average. |
-| code   | A05   | Artefact loaded more rows than recent average. |
+| code   | A01   | Source entity has zero rows.                   |
+| code   | A02   | Target Entity loaded zero rows.                |
+| code   | A03   | Target Entity has rejected rows.               |
+| code   | A04   | Entity loaded less rows than recent average.   |
+| code   | A05   | Entity loaded more rows than recent average.   |
 | code   | P01   | Job has failed.                                |
 | code   | P02   | Job has taken less time than usual to run.     |
 | code   | P03   | Job has taken more time than usual to run.     |

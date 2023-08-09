@@ -43,7 +43,7 @@ export default {
 <template>
   <div class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Target Data</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-white">Target Entity</h6>
     </div>
     <div
       class="overflow-x-auto border border-gray-300 dark:border-gray-600 sm:rounded-lg"
@@ -61,14 +61,14 @@ export default {
         <tbody>
           <tr
             v-for="record in rawJobTargetData"
-            :key="record.artefact_id"
+            :key="record.entity_id"
             class="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
           >
             <th
               scope="row"
               class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
             >
-              <RouterLink :to="'/data/' + record.artefact_id">{{
+              <RouterLink :to="'/data/' + record.entity_id">{{
                 record.name
               }}</RouterLink>
             </th>

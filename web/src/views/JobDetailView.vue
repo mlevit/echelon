@@ -1,6 +1,6 @@
 <script setup>
 import DetailCard from "@/components/DetailCard.vue";
-import JobAttributeMap from "@/components/JobAttributeMap.vue";
+import JobFieldMap from "@/components/JobFieldMap.vue";
 import JobBread from "@/components/JobBread.vue";
 import JobConstantTable from "@/components/JobConstantTable.vue";
 import JobLineage from "@/components/JobLineage.vue";
@@ -129,7 +129,7 @@ export default {
       </div>
     </div>
     <div class="mb-4 flex h-full items-center justify-center">
-      <JobAttributeMap :jobName="rawJobData.name" v-if="rawJobData.name" />
+      <JobFieldMap :jobName="rawJobData.name" v-if="rawJobData.name" />
     </div>
     <div class="mb-4 flex h-full items-center justify-center">
       <JobConstantTable :jobName="rawJobData.name" v-if="rawJobData.name" />

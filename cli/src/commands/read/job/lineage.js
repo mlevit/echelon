@@ -24,11 +24,11 @@ class CustomCommand extends Command {
             "trg_rel.job_id as target_job_id",
             "trg_job.name as target_job_name",
           ])
-          .from("job_artefact_rel as src_rel")
+          .from("job_entity_rel as src_rel")
           .join(
-            "job_artefact_rel as trg_rel",
-            "src_rel.target_artefact_id",
-            "trg_rel.source_artefact_id"
+            "job_entity_rel as trg_rel",
+            "src_rel.target_entity_id",
+            "trg_rel.source_entity_id"
           )
           .join("job as src_job", "src_job.job_id", "src_rel.job_id")
           .join("job as trg_job", "trg_job.job_id", "trg_rel.job_id")
@@ -55,7 +55,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve source artefacts associated with a job";
+CustomCommand.description = "retrieve source entitys associated with a job";
 
 CustomCommand.flags = {
   name: Flags.string({

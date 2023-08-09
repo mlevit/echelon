@@ -113,7 +113,7 @@
       <rect fill="none" x="418" width="314" height="171.5293" y="-10.7646" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
-      <text x="549" xml:space="preserve" y="7.8037" clip-path="url(#clipPath2)" stroke="none">artefact</text>
+      <text x="549" xml:space="preserve" y="7.8037" clip-path="url(#clipPath2)" stroke="none">entity</text>
     </g>
     <g fill="gray" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke="gray">
       <line y2="14" fill="none" x1="419" clip-path="url(#clipPath2)" x2="731" y1="14"/>
@@ -122,7 +122,7 @@
       <image x="0" y="0" clip-path="url(#clipPath4)" width="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABoElEQVR4Xu2WMUvD&#10;QBTHCzroKIKgH0Jw8mM4Kbi5ObupkEsH/Q4xo4vSRZeKCFKI2lzATVy6OOhQtJeK&#10;Y5XGd82lxpfkTpNLp/zhTwP37n6v995dUqtV0qR+21hhlFjgDnggzJ8tPobjtem5&#10;vTMLEBs8BAcZ5mM2j8XzC0nAnRRglh2tSfB/lQJR2cbr5JKoeea2+9Q4696ZC9z8&#10;OTY21NITLGy4BDgyB0ex/BmNW/G1comFHZ4A/zGBTnytXGLhMUuAI0tKwD3A6/1b&#10;qgQU1pKAtAQKaymBtAkVLtaEQWN9SnUMJS52DJ9a9RlGjaZPzWU26YsohJMLRs2T&#10;t/v9RXG8JnMV/4LfmkvMJQ+wE9ciiXJfRunw8eKPPddYLe11rIALG03emHhuYcnh&#10;5tGHtzf/frM7F7Tq03huYcnhcNV6ZBPP0SYZvOeRV/h96VGyhudp0Q+cNDAcfIrj&#10;tcun5HwEc42NlG0/wPHaBaAvAezG4BR8CcdtC8drVyyByA6OKVVQgmOAfo63HUqC&#10;Y0rX6CvGI9uQwJXvmod4vFIlnfoGmXq95RmlsJwAAAAASUVORK5CYII=" height="32" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
-      <text x="444" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" stroke="none">artefact_id</text>
+      <text x="444" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" stroke="none">entity_id</text>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
       <text x="551" xml:space="preserve" y="30.2139" clip-path="url(#clipPath2)" stroke="none">SERIAL</text>
@@ -421,7 +421,7 @@
       <rect fill="none" x="403.5" width="343" height="100.4199" y="224.79" clip-path="url(#clipPath2)"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="13px" font-weight="bold" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
-      <text x="500.5" xml:space="preserve" y="243.3584" clip-path="url(#clipPath2)" stroke="none">registry_artefact_map</text>
+      <text x="500.5" xml:space="preserve" y="243.3584" clip-path="url(#clipPath2)" stroke="none">registry_entity_map</text>
     </g>
     <g fill="gray" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke="gray">
       <line y2="250" fill="none" x1="404" clip-path="url(#clipPath2)" x2="745" y1="250"/>
@@ -430,7 +430,7 @@
       <image x="0" y="0" clip-path="url(#clipPath14)" width="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABoElEQVR4Xu2WMUvD&#10;QBTHCzroKIKgH0Jw8mM4Kbi5ObupkEsH/Q4xo4vSRZeKCFKI2lzATVy6OOhQtJeK&#10;Y5XGd82lxpfkTpNLp/zhTwP37n6v995dUqtV0qR+21hhlFjgDnggzJ8tPobjtem5&#10;vTMLEBs8BAcZ5mM2j8XzC0nAnRRglh2tSfB/lQJR2cbr5JKoeea2+9Q4696ZC9z8&#10;OTY21NITLGy4BDgyB0ex/BmNW/G1comFHZ4A/zGBTnytXGLhMUuAI0tKwD3A6/1b&#10;qgQU1pKAtAQKaymBtAkVLtaEQWN9SnUMJS52DJ9a9RlGjaZPzWU26YsohJMLRs2T&#10;t/v9RXG8JnMV/4LfmkvMJQ+wE9ciiXJfRunw8eKPPddYLe11rIALG03emHhuYcnh&#10;5tGHtzf/frM7F7Tq03huYcnhcNV6ZBPP0SYZvOeRV/h96VGyhudp0Q+cNDAcfIrj&#10;tcun5HwEc42NlG0/wPHaBaAvAezG4BR8CcdtC8drVyyByA6OKVVQgmOAfo63HUqC&#10;Y0rX6CvGI9uQwJXvmod4vFIlnfoGmXq95RmlsJwAAAAASUVORK5CYII=" height="32" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
-      <text x="429.5" xml:space="preserve" y="265.7686" clip-path="url(#clipPath2)" stroke="none">registry_artefact_map_id</text>
+      <text x="429.5" xml:space="preserve" y="265.7686" clip-path="url(#clipPath2)" stroke="none">registry_entity_map_id</text>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
       <text x="565.5" xml:space="preserve" y="265.7686" clip-path="url(#clipPath2)" stroke="none">SERIAL</text>
@@ -441,7 +441,7 @@
       <image x="0" y="0" clip-path="url(#clipPath8)" width="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7klEQVR4Xu2VvwrC&#10;MBCH6yY+lYij0Vcq6as4uQo2HcTV5+jWF3Ctd6VCOVO4P6EO5oNbcsl9P2hIiyKT&#10;yQhxVbNzPrRQPbcOPjzpHBWnKuydb15UwCk6S4xFbg5glZsCpJDrA/T9Cg53dJim&#10;6Ggz2/KxhsE3Kporet6EVJ40gEaeLIBWniQAUz7bp/NEcOXjPrpuCyCR4/5ID6ul&#10;c1lI5ch3Hx4x+IFN57LQyBEqx5d02mehlSM/lSMmOXKs6nNEyJIj0O/UcgQuzCUi&#10;ZckH4AdGl0S48rpxvr6r5KmIhFhO/mEIAZ8D78Ti8sxf8Qa2MdefEti/pwAAAABJ&#10;RU5ErkJggg==" height="32" preserveAspectRatio="none"/>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-weight="bold" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
-      <text x="429.5" xml:space="preserve" y="301.3232" clip-path="url(#clipPath2)" stroke="none">artefact_id</text>
+      <text x="429.5" xml:space="preserve" y="301.3232" clip-path="url(#clipPath2)" stroke="none">entity_id</text>
     </g>
     <g stroke-miterlimit="1.45" font-size="10px" font-family="sans-serif" transform="matrix(0.8083,0,0,0.8083,17.5518,16.9735)" stroke-linecap="butt">
       <text x="565.5" xml:space="preserve" y="301.3232" clip-path="url(#clipPath2)" stroke="none">INTEGER</text>

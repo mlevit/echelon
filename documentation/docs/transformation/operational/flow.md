@@ -39,12 +39,12 @@ The collection of this data is deemed necessary for data reconciliation.
 
 | Column | Value                             | Comment                                                                                                                            |
 | ------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| label  | end_date_count                    | Number of records updated in the target artefact as part of SCD Type 2.                                                            |
-| label  | insert_count                      | Number of records inserted into the target artefact.                                                                               |
-| label  | match_count                       | Number of records that were found to be identical in the source and the target artefact.                                           |
-| label  | reject_count                      | Number of records that were not inserted into the target artefact because of an error.                                             |
-| label  | source_count                      | Number of records present in the source artefact that were selected.                                                               |
+| label  | end_date_count                    | Number of records updated in the target entity as part of SCD Type 2.                                                              |
+| label  | insert_count                      | Number of records inserted into the target entity.                                                                                 |
+| label  | match_count                       | Number of records that were found to be identical in the source and the target entity.                                             |
+| label  | reject_count                      | Number of records that were not inserted into the target entity because of an error.                                               |
+| label  | source_count                      | Number of records present in the source entity that were selected.                                                                 |
 | label  | technical_reconciliation_variance | Number of records that are not accounted for. If this value is greater than or less than zero technical reconciliation has failed. |
-| label  | update_insert_count               | Number of records inserted into the target artefact as part of SCD Type 2.                                                         |
+| label  | update_insert_count               | Number of records inserted into the target entity as part of SCD Type 2.                                                           |
 
 <!-- acceptablevaluesstop -->

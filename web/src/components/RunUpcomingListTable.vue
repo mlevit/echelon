@@ -98,7 +98,7 @@ export default {
     class="overflow-x-autosm:rounded-lg relative w-full"
   >
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming Runs</h6>
     </div>
     <div class="flex hidden items-center justify-between pb-4">
       <div></div>
@@ -199,7 +199,7 @@ export default {
   </div>
   <div v-else class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming Runs</h6>
     </div>
     <p class="text-gray-400 dark:text-gray-500">No upcoming jobs found.</p>
   </div>

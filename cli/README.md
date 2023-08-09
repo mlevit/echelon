@@ -36,7 +36,7 @@ USAGE
 
 <!-- commands -->
 
-- [`echelon create:artefact:registry`](#echelon-createartefactregistry)
+- [`echelon create:entity:registry`](#echelon-createentityregistry)
 - [`echelon create:job:run`](#echelon-createjobrun)
 - [`echelon create:job:run:alert`](#echelon-createjobrunalert)
 - [`echelon create:job:run:flow`](#echelon-createjobrunflow)
@@ -48,14 +48,14 @@ USAGE
 - [`echelon data:export`](#echelon-dataexport)
 - [`echelon data:import`](#echelon-dataimport)
 - [`echelon help [COMMAND]`](#echelon-help-command)
-- [`echelon read:artefact`](#echelon-readartefact)
-- [`echelon read:artefact:attribute`](#echelon-readartefactattribute)
-- [`echelon read:artefact:constant`](#echelon-readartefactconstant)
-- [`echelon read:artefact:lineage`](#echelon-readartefactlineage)
-- [`echelon read:artefact:variable`](#echelon-readartefactvariable)
+- [`echelon read:entity`](#echelon-readentity)
+- [`echelon read:entity:field`](#echelon-readentityfield)
+- [`echelon read:entity:constant`](#echelon-readentityconstant)
+- [`echelon read:entity:lineage`](#echelon-readentitylineage)
+- [`echelon read:entity:variable`](#echelon-readentityvariable)
 - [`echelon read:healthcheck`](#echelon-readhealthcheck)
 - [`echelon read:job`](#echelon-readjob)
-- [`echelon read:job:attribute:map`](#echelon-readjobattributemap)
+- [`echelon read:job:field:map`](#echelon-readjobfieldmap)
 - [`echelon read:job:run`](#echelon-readjobrun)
 - [`echelon read:job:run:flow`](#echelon-readjobrunflow)
 - [`echelon read:job:run:log`](#echelon-readjobrunlog)
@@ -72,26 +72,26 @@ USAGE
 - [`echelon read:ui:job:run:detail`](#echelon-readuijobrundetail)
 - [`echelon read:ui:job:run:list`](#echelon-readuijobrunlist)
 - [`echelon start:api`](#echelon-startapi)
-- [`echelon update:artefact:variable`](#echelon-updateartefactvariable)
+- [`echelon update:entity:variable`](#echelon-updateentityvariable)
 - [`echelon update:job:run`](#echelon-updatejobrun)
 - [`echelon update:job:variable`](#echelon-updatejobvariable)
 - [`echelon update:registry`](#echelon-updateregistry)
 - [`echelon version`](#echelon-version)
 
-## `echelon create:artefact:registry`
+## `echelon create:entity:registry`
 
-associate a registry object with an artefact
+associate a registry object with an entity
 
 ```
 USAGE
-  $ echelon create:artefact:registry --id <value> --registry_id <value>
+  $ echelon create:entity:registry --id <value> --registry_id <value>
 
 FLAGS
-  --id=<value>           (required) artefact ID
+  --id=<value>           (required) entity ID
   --registry_id=<value>  (required) registry ID
 
 DESCRIPTION
-  associate a registry object with an artefact
+  associate a registry object with an entity
 ```
 
 ## `echelon create:job:run`
@@ -292,86 +292,86 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
 
-## `echelon read:artefact`
+## `echelon read:entity`
 
-retrieve artefact(s)
+retrieve entity(s)
 
 ```
 USAGE
-  $ echelon read:artefact [--name <value> | --id <value>] [--limit <value>] [--jq <value>]
+  $ echelon read:entity [--name <value> | --id <value>] [--limit <value>] [--jq <value>]
 
 FLAGS
-  --id=<value>     artefact id
+  --id=<value>     entity id
   --jq=<value>     jq string to parse result set
   --limit=<value>  [default: 10] limit the result set
-  --name=<value>   artefact name
+  --name=<value>   entity name
 
 DESCRIPTION
-  retrieve artefact(s)
+  retrieve entity(s)
 ```
 
-## `echelon read:artefact:attribute`
+## `echelon read:entity:field`
 
-retrieve attributes associated with an artefact
+retrieve fields associated with an entity
 
 ```
 USAGE
-  $ echelon read:artefact:attribute --name <value> [--jq <value>]
+  $ echelon read:entity:field --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) artefact name
+  --name=<value>  (required) entity name
 
 DESCRIPTION
-  retrieve attributes associated with an artefact
+  retrieve fields associated with an entity
 ```
 
-## `echelon read:artefact:constant`
+## `echelon read:entity:constant`
 
-retrieve constants associated with an artefact
+retrieve constants associated with an entity
 
 ```
 USAGE
-  $ echelon read:artefact:constant --name <value> [--jq <value>]
+  $ echelon read:entity:constant --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) artefact name
+  --name=<value>  (required) entity name
 
 DESCRIPTION
-  retrieve constants associated with an artefact
+  retrieve constants associated with an entity
 ```
 
-## `echelon read:artefact:lineage`
+## `echelon read:entity:lineage`
 
-retrieve variables associated with an artefact
+retrieve variables associated with an entity
 
 ```
 USAGE
-  $ echelon read:artefact:lineage --name <value> [--jq <value>]
+  $ echelon read:entity:lineage --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) artefact name
+  --name=<value>  (required) entity name
 
 DESCRIPTION
-  retrieve variables associated with an artefact
+  retrieve variables associated with an entity
 ```
 
-## `echelon read:artefact:variable`
+## `echelon read:entity:variable`
 
-retrieve variables associated with an artefact
+retrieve variables associated with an entity
 
 ```
 USAGE
-  $ echelon read:artefact:variable --name <value> [--jq <value>]
+  $ echelon read:entity:variable --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
-  --name=<value>  (required) artefact name
+  --name=<value>  (required) entity name
 
 DESCRIPTION
-  retrieve variables associated with an artefact
+  retrieve variables associated with an entity
 ```
 
 ## `echelon read:healthcheck`
@@ -407,20 +407,20 @@ DESCRIPTION
   retrieve job(es)
 ```
 
-## `echelon read:job:attribute:map`
+## `echelon read:job:field:map`
 
-retrieve source artefacts associated with a job
+retrieve source entitys associated with a job
 
 ```
 USAGE
-  $ echelon read:job:attribute:map --name <value> [--jq <value>]
+  $ echelon read:job:field:map --name <value> [--jq <value>]
 
 FLAGS
   --jq=<value>    jq string to parse result set
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source artefacts associated with a job
+  retrieve source entitys associated with a job
 ```
 
 ## `echelon read:job:run`
@@ -526,7 +526,7 @@ DESCRIPTION
 
 ## `echelon read:job:lineage`
 
-retrieve source artefacts associated with a job
+retrieve source entitys associated with a job
 
 ```
 USAGE
@@ -537,7 +537,7 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source artefacts associated with a job
+  retrieve source entitys associated with a job
 ```
 
 ## `echelon read:job:run`
@@ -557,7 +557,7 @@ DESCRIPTION
 
 ## `echelon read:job:source`
 
-retrieve source artefacts associated with a job
+retrieve source entitys associated with a job
 
 ```
 USAGE
@@ -568,12 +568,12 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source artefacts associated with a job
+  retrieve source entitys associated with a job
 ```
 
 ## `echelon read:job:target`
 
-retrieve target artefacts associated with a job
+retrieve target entitys associated with a job
 
 ```
 USAGE
@@ -584,7 +584,7 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve target artefacts associated with a job
+  retrieve target entitys associated with a job
 ```
 
 ## `echelon read:job:variable`
@@ -683,22 +683,22 @@ DESCRIPTION
   start a Echelon API server that wraps the Echelon CLI
 ```
 
-## `echelon update:artefact:variable`
+## `echelon update:entity:variable`
 
-update a variable value associated with an artefact
+update a variable value associated with an entity
 
 ```
 USAGE
-  $ echelon update:artefact:variable --id <value> --type <value> --name <value> --value <value>
+  $ echelon update:entity:variable --id <value> --type <value> --name <value> --value <value>
 
 FLAGS
-  --id=<value>     (required) artefact ID
+  --id=<value>     (required) entity ID
   --name=<value>   (required) variable name
-  --type=<value>   (required) artefact type
+  --type=<value>   (required) entity type
   --value=<value>  (required) variable value
 
 DESCRIPTION
-  update a variable value associated with an artefact
+  update a variable value associated with an entity
 ```
 
 ## `echelon update:job:run`

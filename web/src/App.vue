@@ -172,7 +172,7 @@ export default {
             class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
           >
             <SvgIcon icon="data" size="lg" color="black" />
-            <span class="ml-3 flex-1 whitespace-nowrap">Data</span>
+            <span class="ml-3 flex-1 whitespace-nowrap">Entities</span>
           </RouterLink>
         </li>
       </ul>

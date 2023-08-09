@@ -7,7 +7,7 @@ exports.up = async function (knex) {
       .integer("object_id")
       .notNullable()
       .comment(
-        "System generated unique identifier of the job, artefact, or attribute this variable is associated with."
+        "System generated unique identifier of the job, entity, or field this variable is associated with."
       );
     table
       .string("object_type")

@@ -27,9 +27,9 @@ async function generate(argv) {
 
   const constraintTables = [
     "constraint_job_type",
-    "constraint_artefact_type",
+    "constraint_entity_type",
     "constraint_job_constant_name",
-    "constraint_artefact_constant_name",
+    "constraint_entity_constant_name",
     "constraint_variable_name",
     "constraint_variable_object_type",
   ];

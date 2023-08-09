@@ -17,30 +17,30 @@ class CustomCommand extends Command {
 
     if (jobResult.length > 0) {
       try {
-        var artefactResult = await knex
-          .distinct("artefact.*")
-          .from("artefact")
+        var entityResult = await knex
+          .distinct("entity.*")
+          .from("entity")
           .join(
-            "job_artefact_rel",
-            "artefact.artefact_id",
-            "job_artefact_rel.target_artefact_id"
+            "job_entity_rel",
+            "entity.entity_id",
+            "job_entity_rel.target_entity_id"
           )
-          .where("job_artefact_rel.job_id", jobResult[0]["job_id"]);
+          .where("job_entity_rel.job_id", jobResult[0]["job_id"]);
       } catch (error) {
         this.error(error);
       }
 
       if (jsonQuery) {
-        artefactResult = await jq.run(jsonQuery, artefactResult, {
+        entityResult = await jq.run(jsonQuery, entityResult, {
           input: "json",
           output: "json",
         });
       }
 
       if (api) {
-        return artefactResult;
+        return entityResult;
       } else {
-        this.log(artefactResult);
+        this.log(entityResult);
       }
     } else {
       this.error(`Job '${name}' does not exist.`);
@@ -48,7 +48,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve target artefacts associated with a job";
+CustomCommand.description = "retrieve target entitys associated with a job";
 
 CustomCommand.flags = {
   name: Flags.string({

@@ -2,23 +2,23 @@
   "constraint_alert_code": [
     {
       "value": "A01",
-      "comment": "Source artefact has zero rows."
+      "comment": "Source entity has zero rows."
     },
     {
       "value": "A02",
-      "comment": "Target Artefact loaded zero rows."
+      "comment": "Target Entity loaded zero rows."
     },
     {
       "value": "A03",
-      "comment": "Target Artefact has rejected rows."
+      "comment": "Target Entity has rejected rows."
     },
     {
       "value": "A04",
-      "comment": "Artefact loaded less rows than recent average."
+      "comment": "Entity loaded less rows than recent average."
     },
     {
       "value": "A05",
-      "comment": "Artefact loaded more rows than recent average."
+      "comment": "Entity loaded more rows than recent average."
     },
     {
       "value": "P01",
@@ -41,7 +41,7 @@
       "comment": "Job is currently running longer than expected."
     }
   ],
-  "constraint_artefact_type": [
+  "constraint_entity_type": [
     {
       "value": "accumulating_snapshot_fact_table",
       "comment": "This type of fact table is used to show the activity of a job that has a well-defined beginning and end, e.g., the jobing of an order."
@@ -56,7 +56,7 @@
     },
     {
       "value": "dimension_type_0_table",
-      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+      "comment": "The type 0 dimension fields never change and are assigned to fields that have durable values or are described as 'Original'."
     },
     {
       "value": "dimension_type_1_table",
@@ -80,7 +80,7 @@
     },
     {
       "value": "json_file",
-      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of field–value pairs and arrays."
     },
     {
       "value": "link_table",
@@ -92,7 +92,7 @@
     },
     {
       "value": "satellite_table",
-      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+      "comment": "The hubs and links form the structure of the model, but have no temporal fields and hold no descriptive fields. These are stored in separate tables called satellites."
     },
     {
       "value": "snapshot_fact_table",
@@ -111,7 +111,7 @@
       "comment": "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."
     }
   ],
-  "constraint_attribute_classification": [
+  "constraint_field_classification": [
     {
       "value": "internal",
       "comment": "Data that is only meant for internal purposes and should not be shared outside of the organisation."
@@ -129,7 +129,7 @@
       "comment": "Moderately sensitive data that should only be shared with authorised individuals inside (and in some cases outside of) the organisation."
     }
   ],
-  "constraint_artefact_constant_name": [
+  "constraint_entity_constant_name": [
     {
       "value": "blank_as_null",
       "cast": "boolean",
@@ -248,7 +248,7 @@
       "value": "extract_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will extract the data from the source artefact."
+      "comment": "Fully qualified name of the job that will extract the data from the source entity."
     },
     {
       "value": "floor_guardrail",
@@ -284,25 +284,25 @@
       "value": "header_count_end_range",
       "cast": "integer",
       "required": false,
-      "comment": "End index of the file count header attribute."
+      "comment": "End index of the file count header field."
     },
     {
       "value": "header_count_start_range",
       "cast": "integer",
       "required": false,
-      "comment": "Start index of the file count header attribute."
+      "comment": "Start index of the file count header field."
     },
     {
       "value": "header_date_end_range",
       "cast": "text",
       "required": false,
-      "comment": "End index of the file date header attribute."
+      "comment": "End index of the file date header field."
     },
     {
       "value": "header_date_start_range",
       "cast": "text",
       "required": false,
-      "comment": "Start index of the file date header attribute."
+      "comment": "Start index of the file date header field."
     },
     {
       "value": "html_file_path",
@@ -332,7 +332,7 @@
       "value": "load_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will load the data into the target artefact."
+      "comment": "Fully qualified name of the job that will load the data into the target entity."
     },
     {
       "value": "max_diviation",
@@ -428,7 +428,7 @@
       "value": "transform_job",
       "cast": "text",
       "required": false,
-      "comment": "Fully qualified name of the job that will transform the extracted data from the source artefact."
+      "comment": "Fully qualified name of the job that will transform the extracted data from the source entity."
     },
     {
       "value": "transform_sql",
@@ -465,23 +465,23 @@
   "constraint_flow_label": [
     {
       "value": "end_date_count",
-      "comment": "Number of records updated in the target artefact as part of SCD Type 2."
+      "comment": "Number of records updated in the target entity as part of SCD Type 2."
     },
     {
       "value": "insert_count",
-      "comment": "Number of records inserted into the target artefact."
+      "comment": "Number of records inserted into the target entity."
     },
     {
       "value": "match_count",
-      "comment": "Number of records that were found to be identical in the source and the target artefact."
+      "comment": "Number of records that were found to be identical in the source and the target entity."
     },
     {
       "value": "reject_count",
-      "comment": "Number of records that were not inserted into the target artefact because of an error."
+      "comment": "Number of records that were not inserted into the target entity because of an error."
     },
     {
       "value": "source_count",
-      "comment": "Number of records present in the source artefact that were selected."
+      "comment": "Number of records present in the source entity that were selected."
     },
     {
       "value": "technical_reconciliation_variance",
@@ -489,7 +489,7 @@
     },
     {
       "value": "update_insert_count",
-      "comment": "Number of records inserted into the target artefact as part of SCD Type 2."
+      "comment": "Number of records inserted into the target entity as part of SCD Type 2."
     }
   ],
   "constraint_log_priority": [
@@ -531,11 +531,11 @@
   "constraint_job_dependency_logic": [
     {
       "value": "and",
-      "comment": "All required artefacts require updates."
+      "comment": "All required entitys require updates."
     },
     {
       "value": "or",
-      "comment": "Any required artefacts require updates."
+      "comment": "Any required entitys require updates."
     }
   ],
   "constraint_job_type": [
@@ -769,7 +769,7 @@
       "comment": ""
     },
     {
-      "value": "attribute",
+      "value": "field",
       "comment": ""
     },
     {
@@ -806,7 +806,7 @@
     },
     {
       "value": "dimension_type_0_table",
-      "comment": "The type 0 dimension attributes never change and are assigned to attributes that have durable values or are described as 'Original'."
+      "comment": "The type 0 dimension fields never change and are assigned to fields that have durable values or are described as 'Original'."
     },
     {
       "value": "dimension_type_1_table",
@@ -858,7 +858,7 @@
     },
     {
       "value": "json_file",
-      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays."
+      "comment": "JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of field–value pairs and arrays."
     },
     {
       "value": "link_table",
@@ -898,7 +898,7 @@
     },
     {
       "value": "satellite_table",
-      "comment": "The hubs and links form the structure of the model, but have no temporal attributes and hold no descriptive attributes. These are stored in separate tables called satellites."
+      "comment": "The hubs and links form the structure of the model, but have no temporal fields and hold no descriptive fields. These are stored in separate tables called satellites."
     },
     {
       "value": "satellite_table_load",

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import ArtefactDetailView from "@/views/ArtefactDetailView.vue";
-import ArtefactListView from "@/views/ArtefactListView.vue";
+import EntityDetailView from "@/views/EntityDetailView.vue";
+import EntityListView from "@/views/EntityListView.vue";
 import RunDetailView from "@/views/RunDetailView.vue";
 import RunListView from "@/views/RunListView.vue";
 import DashboardView from "@/views/DashboardView.vue";
@@ -19,13 +19,13 @@ const router = createRouter({
     {
       path: "/data",
       name: "data-list",
-      component: ArtefactListView,
+      component: EntityListView,
     },
     {
-      path: "/data/:artefactId",
+      path: "/data/:entityId",
       props: true,
       name: "data-detail",
-      component: ArtefactDetailView,
+      component: EntityDetailView,
     },
     {
       path: "/job",

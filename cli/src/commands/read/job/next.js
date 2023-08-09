@@ -41,11 +41,11 @@ class CustomCommand extends Command {
             "source.run_end as source_job_end",
             "target_par.required_flag as target_required_flag"
           )
-            .from("job_artefact_rel as target_par")
+            .from("job_entity_rel as target_par")
             .join(
-              "job_artefact_rel as source_par",
-              "target_par.source_artefact_id",
-              "source_par.target_artefact_id"
+              "job_entity_rel as source_par",
+              "target_par.source_entity_id",
+              "source_par.target_entity_id"
             )
             .leftJoin("latest as target", "target_par.job_id", "target.job_id")
             .leftJoin("latest as source", "source_par.job_id", "source.job_id");

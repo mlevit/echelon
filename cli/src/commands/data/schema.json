@@ -5,12 +5,12 @@
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_artefact_type",
+    "name": "constraint_entity_type",
     "function": "constraint",
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_attribute_classification",
+    "name": "constraint_field_classification",
     "function": "constraint",
     "unique_key": ["value"]
   },
@@ -20,7 +20,7 @@
     "unique_key": ["value"]
   },
   {
-    "name": "constraint_artefact_constant_name",
+    "name": "constraint_entity_constant_name",
     "function": "constraint",
     "unique_key": ["value"]
   },
@@ -145,14 +145,14 @@
     "unique_key": ["name"]
   },
   {
-    "name": "artefact",
+    "name": "entity",
     "function": "technical",
     "unique_key": ["name", "source"]
   },
   {
-    "name": "attribute",
+    "name": "field",
     "function": "technical",
-    "unique_key": ["artefact_id", "physical_name"]
+    "unique_key": ["entity_id", "physical_name"]
   },
   {
     "name": "job_constant",
@@ -160,19 +160,19 @@
     "unique_key": ["job_id", "name"]
   },
   {
-    "name": "artefact_constant",
+    "name": "entity_constant",
     "function": "technical",
-    "unique_key": ["artefact_id", "name"]
+    "unique_key": ["entity_id", "name"]
   },
   {
-    "name": "job_artefact_rel",
+    "name": "job_entity_rel",
     "function": "technical",
-    "unique_key": ["job_id", "source_artefact_id", "target_artefact_id"]
+    "unique_key": ["job_id", "source_entity_id", "target_entity_id"]
   },
   {
-    "name": "job_attribute_map",
+    "name": "job_field_map",
     "function": "technical",
-    "unique_key": ["job_id", "source_attribute_id", "target_attribute_id"]
+    "unique_key": ["job_id", "source_field_id", "target_field_id"]
   },
   {
     "name": "data_mask",
@@ -180,9 +180,9 @@
     "unique_key": ["name", "type"]
   },
   {
-    "name": "data_mask_attribute_rel",
+    "name": "data_mask_field_rel",
     "function": "data_mask",
-    "unique_key": ["data_mask_id", "attribute_id"]
+    "unique_key": ["data_mask_id", "field_id"]
   },
   {
     "name": "data_profile",
@@ -190,9 +190,9 @@
     "unique_key": ["name", "sample_size"]
   },
   {
-    "name": "data_profile_artefact_rel",
+    "name": "data_profile_entity_rel",
     "function": "data_profile",
-    "unique_key": ["data_profile_id", "artefact_id"]
+    "unique_key": ["data_profile_id", "entity_id"]
   },
   {
     "name": "data_quality_rule",
@@ -200,9 +200,9 @@
     "unique_key": ["name", "dimension"]
   },
   {
-    "name": "data_quality_rule_attribute_rel",
+    "name": "data_quality_rule_field_rel",
     "function": "data_quality_rule",
-    "unique_key": ["data_quality_rule_id", "attribute_id"]
+    "unique_key": ["data_quality_rule_id", "field_id"]
   },
   {
     "name": "glossary_entry",
@@ -235,9 +235,9 @@
     "unique_key": ["reference_data_from_id", "reference_data_to_id", "type"]
   },
   {
-    "name": "reference_data_attribute_rel",
+    "name": "reference_data_field_rel",
     "function": "reference_data",
-    "unique_key": ["reference_data_id", "attribute_id"]
+    "unique_key": ["reference_data_id", "field_id"]
   },
   {
     "name": "stakeholder",

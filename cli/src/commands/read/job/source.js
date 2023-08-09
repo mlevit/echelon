@@ -17,42 +17,42 @@ class CustomCommand extends Command {
 
     if (jobResult.length > 0) {
       try {
-        var artefactResult = await knex
+        var entityResult = await knex
           .distinct(
-            "artefact.artefact_id",
-            "artefact.name",
-            "artefact.description",
-            "artefact.business_description",
-            "artefact.type",
-            "artefact.source",
-            "job_artefact_rel.required_flag",
-            "job_artefact_rel.sequence_number",
-            "artefact.insert_date",
-            "artefact.update_date"
+            "entity.entity_id",
+            "entity.name",
+            "entity.description",
+            "entity.business_description",
+            "entity.type",
+            "entity.source",
+            "job_entity_rel.required_flag",
+            "job_entity_rel.sequence_number",
+            "entity.insert_date",
+            "entity.update_date"
           )
-          .from("artefact")
+          .from("entity")
           .join(
-            "job_artefact_rel",
-            "artefact.artefact_id",
-            "job_artefact_rel.source_artefact_id"
+            "job_entity_rel",
+            "entity.entity_id",
+            "job_entity_rel.source_entity_id"
           )
-          .where("job_artefact_rel.job_id", jobResult[0]["job_id"])
-          .orderBy("job_artefact_rel.sequence_number");
+          .where("job_entity_rel.job_id", jobResult[0]["job_id"])
+          .orderBy("job_entity_rel.sequence_number");
       } catch (error) {
         this.error(error);
       }
 
       if (jsonQuery) {
-        artefactResult = await jq.run(jsonQuery, artefactResult, {
+        entityResult = await jq.run(jsonQuery, entityResult, {
           input: "json",
           output: "json",
         });
       }
 
       if (api) {
-        return artefactResult;
+        return entityResult;
       } else {
-        this.log(artefactResult);
+        this.log(entityResult);
       }
     } else {
       this.error(`Job '${name}' does not exist.`);
@@ -60,7 +60,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve source artefacts associated with a job";
+CustomCommand.description = "retrieve source entitys associated with a job";
 
 CustomCommand.flags = {
   name: Flags.string({

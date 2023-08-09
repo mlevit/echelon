@@ -21,7 +21,7 @@ exports.up = async function (knex) {
       .notNullable()
       .defaultTo("and")
       .comment(
-        "How should artefact dependencies be treated (`and` = all required artefacts require updates, `or` = any required artefacts require updates). See acceptable values within the `constraint_job_dependency_logic` table."
+        "How should entity dependencies be treated (`and` = all required entitys require updates, `or` = any required entitys require updates). See acceptable values within the `constraint_job_dependency_logic` table."
       );
     table
       .timestamp("insert_date")

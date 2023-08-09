@@ -10,19 +10,19 @@ In order to ensure technical reconciliation can be performed, the `label` column
 
 | Description                                                                                                                                  | Label                               |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| Number of records present in the source <br />artefact that were selected.                                                                   | `source_count`                      |
-| Number of records inserted into the target artefact.                                                                                         | `insert_count`                      |
-| Number of records that were found to be<br />identical in the source and the target artefact.                                                | `match_count`                       |
-| Number of records that were not inserted into<br />the target artefact because of an error.                                                  | `reject_count`                      |
-| Number of records inserted into the target artefact<br />as part of SCD Type 2.                                                              | `update_insert_count`               |
-| Number of records updated in the target artefact<br />as part of SCD Type 2.                                                                 | `end_date_count`                    |
+| Number of records present in the source <br />entity that were selected.                                                                     | `source_count`                      |
+| Number of records inserted into the target entity.                                                                                           | `insert_count`                      |
+| Number of records that were found to be<br />identical in the source and the target entity.                                                  | `match_count`                       |
+| Number of records that were not inserted into<br />the target entity because of an error.                                                    | `reject_count`                      |
+| Number of records inserted into the target entity<br />as part of SCD Type 2.                                                                | `update_insert_count`               |
+| Number of records updated in the target entity<br />as part of SCD Type 2.                                                                   | `end_date_count`                    |
 | Number of records that are not accounted for.<br />If this value is greater than or less than zero<br />technical reconciliation has failed. | `technical_reconciliation_variance` |
 
 ## Reconciliation Formulas
 
 The following formulas have been set up in the constant table to enable technical reconciliation through the Echelon. These formulas live in the `constant` table and are retrieved during the technical reconciliation job.
 
-Labelling of reconciliation job depends on the target artefact `type`. The results of reconciliation are stored in the `flow` table.
+Labelling of reconciliation job depends on the target entity `type`. The results of reconciliation are stored in the `flow` table.
 
 ### File
 

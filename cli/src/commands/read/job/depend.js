@@ -19,11 +19,11 @@ class CustomCommand extends Command {
       try {
         var mapResult = await knex
           .select("job.job_id", "job.name")
-          .from("job_artefact_rel AS current")
+          .from("job_entity_rel AS current")
           .join(
-            "job_artefact_rel AS source",
-            "current.source_artefact_id",
-            "source.target_artefact_id"
+            "job_entity_rel AS source",
+            "current.source_entity_id",
+            "source.target_entity_id"
           )
           .join("job", "source.job_id", "job.job_id")
           .where("current.job_id", jobResult[0]["job_id"])
