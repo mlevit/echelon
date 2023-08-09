@@ -40,9 +40,9 @@ At the core of Echelon lies a robust and centralised database. This repository s
 
 - Insert constraint data via the Echelon CLI.
 
-```bash
-echelon data:import --input migrations/data/ --insert
-```
+  ```bash
+  echelon data:import --input migrations/data/ --insert
+  ```
 
 ## How do I roll it back?
 
