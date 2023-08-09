@@ -39,7 +39,7 @@ export default {
 <template>
   <div class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Fields</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">Fields</h6>
     </div>
     <div class="relative w-full overflow-x-auto sm:rounded-lg">
       <div
@@ -71,13 +71,13 @@ export default {
           </thead>
           <tbody>
             <tr
-              class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+              class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
               v-for="record in rawFieldData"
               :key="record.entity_id"
             >
               <th
                 scope="row"
-                class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
+                class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
               >
                 {{ record.physical_name }}
               </th>

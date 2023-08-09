@@ -117,7 +117,7 @@ export default {
 </script>
 
 <template>
-  <div class="min-h-screen p-4 dark:bg-gray-900 sm:ml-64">
+  <div class="min-h-screen p-4 dark:bg-background-darker sm:ml-64">
     <div class="mb-4 flex h-fit items-center">
       <RunBread
         :jobName="jobName"

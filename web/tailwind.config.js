@@ -12,30 +12,35 @@ module.exports = {
           DEFAULT: "#fc144d",
           dark: "#3b82f6",
         },
+        background: {
+          lightest: "#ffffff", // white
+          light: "#f9fafb", // gray-50
+          DEFAULT: "#f9fafb", // gray-50
+          dark: "#374151", // gray-700
+          darker: "#111827", // gray-900
+          darkest: "#030712", // gray-950
+        },
         border: {
-          light: "#d1d5db", // grey-300
-          DEFAULT: "#d1d5db", // grey-300
-          dark: "#4b5563", // grey 600
+          lighter: "#e5e7eb", // gray-200
+          light: "#d1d5db", // gray-300
+          DEFAULT: "#d1d5db", // gray-300
+          dark: "#4b5563", // gray-600
+          darker: "#374151", // gray-700
         },
         hover: {
-          light: "#f3f4f6", // grey-100
-          DEFAULT: "#f3f4f6", // grey-100
-          dark: "#374151", // grey-700
+          light: "#f3f4f6", // gray-100
+          DEFAULT: "#f3f4f6", // gray-100
+          dark: "#374151", // gray-700
         },
         textPrimary: {
-          light: "#111827", // grey-900
-          DEFAULT: "#111827", // grey-900
-          dark: "#f9fafb", // grey-50
+          light: "#111827", // gray-900
+          DEFAULT: "#111827", // gray-900
+          dark: "#f9fafb", // gray-50
         },
         textSecondary: {
-          light: "#374151", // grey-700
-          DEFAULT: "#374151", // grey-700
-          dark: "#9ca3af", // grey-400
-        },
-        background: {
-          light: "#f9fafb", // grey-50
-          DEFAULT: "#f9fafb", // grey-50
-          dark: "#374151", // grey-700
+          light: "#374151", // gray-700
+          DEFAULT: "#374151", // gray-700
+          dark: "#9ca3af", // gray-400
         },
       },
     },

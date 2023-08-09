@@ -127,7 +127,7 @@ export default {
         <button
           id="dropdownRadioButton"
           data-dropdown-toggle="dropdownRadio"
-          class="inline-flex items-center rounded-lg border border-border bg-white px-3 py-2 text-sm font-medium capitalize text-gray-500 hover:bg-hover focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-border-dark dark:bg-gray-800 dark:text-textPrimary-dark dark:hover:border-gray-600 dark:hover:bg-background-dark dark:focus:ring-gray-700"
+          class="inline-flex items-center rounded-lg border border-border bg-background-lightest px-3 py-2 text-sm font-medium capitalize text-gray-500 hover:bg-hover focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-border-dark dark:bg-background-darker dark:text-textPrimary-dark dark:hover:border-gray-600 dark:hover:bg-background-dark dark:focus:ring-gray-700"
           type="button"
         >
           <SvgIcon icon="filter" class="mr-2" />
@@ -137,7 +137,7 @@ export default {
         <!-- Dropdown menu -->
         <div
           id="dropdownRadio"
-          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-white shadow dark:divide-gray-600 dark:border-border-dark dark:bg-background-dark"
+          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-background-lightest shadow dark:divide-gray-600 dark:border-border-dark dark:bg-background-dark"
           data-popper-reference-hidden=""
           data-popper-escaped=""
           data-popper-placement="top"
@@ -274,7 +274,7 @@ export default {
           <tr
             v-for="record in runData"
             :key="record.run_id"
-            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
           >
             <th
               scope="row"
@@ -329,7 +329,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="ml-0 block rounded-l-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-textSecondary-dark dark:hover:bg-background-dark dark:hover:text-white"
+            class="ml-0 block rounded-l-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-textSecondary-dark dark:hover:bg-background-dark dark:hover:text-textPrimary-dark"
             @click="previousPage"
           >
             <span class="sr-only">Previous</span>
@@ -339,7 +339,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="block rounded-r-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-textSecondary-dark dark:hover:bg-background-dark dark:hover:text-white"
+            class="block rounded-r-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-textSecondary-dark dark:hover:bg-background-dark dark:hover:text-textPrimary-dark"
             @click="nextPage"
           >
             <span class="sr-only">Next</span>
@@ -358,6 +358,8 @@ export default {
         Runs
       </h6>
     </div>
-    <p class="text-gray-400 dark:text-gray-500">No recent jobs found.</p>
+    <p class="text-textSecondary-dark dark:text-gray-500">
+      No recent jobs found.
+    </p>
   </div>
 </template>

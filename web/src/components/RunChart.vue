@@ -178,7 +178,7 @@ export default {
 <template>
   <div
     id="dashboard-chart"
-    class="grid gap-y-4 dark:bg-gray-900"
+    class="grid gap-y-4 dark:bg-background-darker"
     style="width: 100%; height: 300px"
   ></div>
 </template>

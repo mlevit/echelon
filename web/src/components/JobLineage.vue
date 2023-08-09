@@ -90,7 +90,7 @@ export default {
 <template>
   <div class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Lineage</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">Lineage</h6>
     </div>
     <vue-mermaid
       :nodes="getLineageGraph()"

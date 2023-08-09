@@ -29,7 +29,7 @@ export default {
 
 <template>
   <nav
-    class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+    class="fixed top-0 z-50 w-full border-b border-border-lighter bg-background-lightest dark:border-border-darker dark:bg-background-darker"
   >
     <div class="px-3 py-3 lg:px-4 lg:pl-3">
       <div class="flex items-center justify-between">
@@ -61,16 +61,16 @@ export default {
               icon="eye"
               size="2xl"
               color="custom"
-              class="mr-3 h-8 text-primary dark:text-white"
+              class="mr-3 h-8 text-primary dark:text-textPrimary-dark"
             />
             <span
-              class="self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
+              class="self-center whitespace-nowrap text-xl font-semibold dark:text-textPrimary-dark sm:text-2xl"
             >
               Echelon
             </span>
           </a>
           <div
-            class="inline-flex rounded-lg border border-border bg-white px-2 py-2 text-center text-sm font-normal text-textSecondary dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
+            class="inline-flex rounded-lg border border-border bg-background-lightest px-2 py-2 text-center text-sm font-normal text-textSecondary dark:border-gray-600 dark:bg-background-darker dark:text-gray-400"
           >
             {{ apiStore.env }}
           </div>
@@ -82,7 +82,7 @@ export default {
               <div>
                 <button
                   type="button"
-                  class="inline-flex select-none items-center rounded-l-lg border border-border bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="inline-flex select-none items-center rounded-l-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
                   @click="toggleLive()"
                 >
                   <SvgIcon
@@ -95,7 +95,7 @@ export default {
                 </button>
                 <!-- <button
                   type="button"
-                  class="inline-flex items-center rounded-r-lg border-t border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary focus:z-10 focus:text-primary focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-primary"
+                  class="inline-flex items-center rounded-r-lg border-t border border-border-lighter bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary focus:z-10 focus:text-primary focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark dark:focus:text-textPrimary-dark dark:focus:ring-primary"
                 >
                   <svg
                     aria-hidden="true"
@@ -112,7 +112,7 @@ export default {
                 </button> -->
                 <button
                   type="button"
-                  class="inline-flex items-center rounded-r-md border border-l-0 border-border bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="inline-flex items-center rounded-r-md border border-l-0 border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
                   @click="toggleDark()"
                 >
                   <SvgIcon
@@ -134,15 +134,17 @@ export default {
   </nav>
   <aside
     id="logo-sidebar"
-    class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full select-none border-r border-gray-200 bg-white pt-20 transition-transform dark:border-gray-700 dark:bg-gray-800 sm:translate-x-0"
+    class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full select-none border-r border-border-lighter bg-background-lightest pt-20 transition-transform dark:border-border-darker dark:bg-background-darker sm:translate-x-0"
     aria-label="Sidebar"
   >
-    <div class="h-full overflow-y-auto bg-white px-3 pb-4 dark:bg-gray-800">
+    <div
+      class="h-full overflow-y-auto bg-background-lightest px-3 pb-4 dark:bg-background-darker"
+    >
       <ul class="space-y-2">
         <li>
           <RouterLink
             to="/"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="dashboard" size="lg" color="black" />
             <span class="ml-3">Dashboard</span>
@@ -151,7 +153,7 @@ export default {
         <li>
           <RouterLink
             to="/run"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="run" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Runs</span>
@@ -160,7 +162,7 @@ export default {
         <li>
           <RouterLink
             to="/job"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="job" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Jobs</span>
@@ -169,7 +171,7 @@ export default {
         <li>
           <RouterLink
             to="/data"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="data" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Entities</span>

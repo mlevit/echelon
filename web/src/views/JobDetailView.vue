@@ -84,13 +84,13 @@ export default {
 </script>
 
 <template>
-  <div class="min-h-screen px-4 py-6 dark:bg-gray-900 sm:ml-64">
+  <div class="min-h-screen px-4 py-6 dark:bg-background-darker sm:ml-64">
     <div class="mb-4 flex h-fit items-center">
       <JobBread :jobName="jobName" v-if="jobName" />
     </div>
     <div class="mb-4 grid grid-cols-4 gap-4">
       <div
-        class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800"
+        class="flex h-full items-center justify-center rounded bg-background dark:bg-background-darker"
         v-for="detail of detailsObject"
         :key="detail.title"
       >
@@ -98,16 +98,16 @@ export default {
       </div>
     </div>
     <!-- <div class="mb-4 grid grid-cols-4 gap-4">
-      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-background-darker">
         <DetailCard title="Description" :value="data.description" v-if="data.description" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-background-darker">
         <DetailCard title="Type" :value="data.type" v-if="data.type" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-background-darker">
         <DetailCard title="Priority" :value="data.priority" v-if="data.priority" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-background-darker">
         <DetailCard
           title="Dependency Logic"
           :value="data.dependency_logic"
@@ -141,9 +141,9 @@ export default {
         v-if="rawJobData.name"
       />
     </div>
-    <div class="grid w-full gap-y-4 dark:bg-gray-900">
+    <div class="grid w-full gap-y-4 dark:bg-background-darker">
       <div>
-        <h6 class="text-lg font-bold dark:text-white">Runs</h6>
+        <h6 class="text-lg font-bold dark:text-textPrimary-dark">Runs</h6>
       </div>
       <div class="mb-4 flex h-fit items-center justify-center rounded">
         <RunChart :jobName="rawJobData.name" v-if="rawJobData.name" />

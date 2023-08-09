@@ -28,13 +28,15 @@ export default {
 
 <template>
   <div
-    class="flex h-full w-full flex-col items-center rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-8"
+    class="flex h-full w-full flex-col items-center rounded-lg border border-border-lighter bg-background-lightest p-4 shadow dark:border-border-darker dark:bg-background-darker sm:p-8"
   >
-    <p class="text-center font-normal text-textSecondary dark:text-gray-400">
+    <p
+      class="text-center font-normal text-textSecondary dark:text-textSecondary-dark"
+    >
       {{ title }}
     </p>
     <h5
-      class="mb-2 text-center text-2xl font-bold capitalize tracking-tight text-textPrimary dark:text-white"
+      class="mb-2 text-center text-2xl font-bold capitalize tracking-tight text-textPrimary dark:text-textPrimary-dark"
     >
       {{ cleanValue }}
     </h5>

@@ -13,12 +13,12 @@ defineProps({
   },
   textColor: {
     type: String,
-    default: "text-textPrimary dark:text-white",
+    default: "text-textPrimary dark:text-textPrimary-dark",
     required: false,
   },
   bgColor: {
     type: String,
-    default: "bg-white dark:bg-gray-800",
+    default: "bg-background-lightest dark:bg-background-darker",
     required: false,
   },
 });
@@ -26,7 +26,7 @@ defineProps({
 
 <template>
   <div
-    class="flex w-full select-none flex-col items-center rounded-lg border border-gray-200 p-4 shadow dark:border-gray-700 sm:p-8"
+    class="flex w-full select-none flex-col items-center rounded-lg border border-border-lighter p-4 shadow dark:border-border-darker sm:p-8"
     :class="bgColor"
   >
     <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">

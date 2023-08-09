@@ -50,7 +50,9 @@ export default {
 <template>
   <div class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Target of</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
+        Target of
+      </h6>
     </div>
     <div
       class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
@@ -69,11 +71,11 @@ export default {
           <tr
             v-for="record in rawEntityTargetData"
             :key="record.job_id"
-            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
           >
             <th
               scope="row"
-              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
+              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
               <RouterLink :to="'/job/' + record.job_id">{{
                 record.name

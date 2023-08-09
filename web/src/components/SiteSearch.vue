@@ -87,20 +87,20 @@ export default {
     />
     <!-- <div class="absolute inset-y-0 right-0 flex items-center justify-center pr-3">
       <kbd
-        class="flex items-center justify-center rounded-lg border border-gray-200 px-2 align-middle text-xs font-semibold text-gray-500 dark:border-border-dark dark:text-textSecondary-dark"
+        class="flex items-center justify-center rounded-lg border border-border-lighter px-2 align-middle text-xs font-semibold text-gray-500 dark:border-border-dark dark:text-textSecondary-dark"
       >
         <span class="mr-0.5 items-center justify-center text-base font-thin">⌘</span>
         <span>K</span>
       </kbd>
     </div> -->
     <div
-      class="absolute mt-2 grid max-h-96 w-[560px] grid-cols-1 gap-2 overflow-auto rounded-lg border border-border bg-white p-4 duration-500 dark:border-border-dark dark:bg-gray-900"
+      class="absolute mt-2 grid max-h-96 w-[560px] grid-cols-1 gap-2 overflow-auto rounded-lg border border-border bg-background-lightest p-4 duration-500 dark:border-border-dark dark:bg-background-darker"
       v-if="searchTerm"
     >
       <div class="flex h-fit" v-for="result in searchResults" :key="result.id">
         <RouterLink
           :to="getUrl(result.id)"
-          class="min-h-14 flex max-h-fit w-full rounded-lg border border-gray-200 bg-white p-2 shadow hover:border-primary hover:bg-hover dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-hover-dark"
+          class="min-h-14 flex max-h-fit w-full rounded-lg border border-border-lighter bg-background-lightest p-2 shadow hover:border-primary hover:bg-hover dark:border-border-darker dark:bg-background-darker dark:hover:bg-hover-dark"
         >
           <div class="mr-2 flex items-center">
             <SvgIcon :icon="result.object" color="black" />

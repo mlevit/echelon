@@ -23,13 +23,13 @@ export default {
 
 <template>
   <div
-    class="w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+    class="w-full rounded-lg border border-border-lighter bg-background-lightest shadow dark:border-border-darker dark:bg-background-darker"
   >
     <div class="sm:hidden">
       <label for="tabs" class="sr-only">Select tab</label>
       <select
         id="tabs"
-        class="block w-full rounded-t-lg border-0 border-b border-gray-200 bg-background p-2.5 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+        class="block w-full rounded-t-lg border-0 border-b border-border-lighter bg-background p-2.5 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
       >
         <option>Details</option>
         <option>Statistics</option>
@@ -70,16 +70,16 @@ export default {
     </ul>
     <div
       id="fullWidthTabContent"
-      class="border-t border-gray-200 dark:border-gray-600"
+      class="border-t border-border-lighter dark:border-gray-600"
     >
       <div
-        class="hidden rounded-lg bg-white dark:bg-gray-800"
+        class="hidden rounded-lg bg-background-lightest dark:bg-background-darker"
         id="details"
         role="tabpanel"
         aria-labelledby="details-tab"
       >
         <dl
-          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-4"
+          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-textPrimary-dark sm:grid-cols-3 sm:p-8 xl:grid-cols-4"
         >
           <div
             v-for="record in details"
@@ -96,13 +96,13 @@ export default {
         </dl>
       </div>
       <div
-        class="hidden rounded-lg bg-white dark:bg-gray-800"
+        class="hidden rounded-lg bg-background-lightest dark:bg-background-darker"
         id="stats"
         role="tabpanel"
         aria-labelledby="stats-tab"
       >
         <dl
-          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-3"
+          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-textPrimary-dark sm:grid-cols-3 sm:p-8 xl:grid-cols-3"
         >
           <div
             v-for="record in stats"

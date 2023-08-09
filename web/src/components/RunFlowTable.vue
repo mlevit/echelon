@@ -78,7 +78,7 @@ export default {
 <template>
   <div class="grid w-full gap-y-4">
     <div class="flex items-center">
-      <h6 class="text-lg font-bold dark:text-white">Metrics</h6>
+      <h6 class="text-lg font-bold dark:text-textPrimary-dark">Metrics</h6>
       <SvgIcon
         icon="clipboard"
         color="black"
@@ -90,7 +90,7 @@ export default {
       <div
         id="tooltip-copy"
         role="tooltip"
-        class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+        class="tooltip invisible absolute z-10 inline-block rounded-lg bg-background-darker px-3 py-2 text-sm font-medium text-textPrimary-dark opacity-0 shadow-sm dark:bg-gray-700"
       >
         Copy
         <div class="tooltip-arrow" data-popper-arrow></div>
@@ -116,7 +116,7 @@ export default {
           </thead>
           <tbody>
             <tr
-              class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+              class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
               v-for="record in rawRunFlowData"
               :key="record.flow_id"
             >

@@ -98,7 +98,9 @@ export default {
     class="overflow-x-autosm:rounded-lg relative w-full"
   >
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming Runs</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
+        Upcoming Runs
+      </h6>
     </div>
     <div class="flex hidden items-center justify-between pb-4">
       <div></div>
@@ -112,7 +114,7 @@ export default {
         <input
           type="text"
           id="table-search"
-          class="block w-80 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+          class="block w-80 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
           placeholder="Search"
           v-model="searchTerm"
         />
@@ -134,11 +136,11 @@ export default {
           <tr
             v-for="record in jobRunData"
             :key="record.job_id"
-            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
           >
             <th
               scope="row"
-              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
+              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
               <RouterLink :to="'/job/' + record.job_id">
                 {{ record.job_name }}
@@ -162,12 +164,12 @@ export default {
     >
       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
         Showing
-        <span class="font-semibold text-textPrimary dark:text-white">
+        <span class="font-semibold text-textPrimary dark:text-textPrimary-dark">
           {{ startIndex + 1 }}-{{ endIndex }}
         </span>
         of
         <span
-          class="font-semibold text-textPrimary dark:text-white"
+          class="font-semibold text-textPrimary dark:text-textPrimary-dark"
           v-if="!_.isEmpty(rawRunData)"
         >
           {{ dataLength }}
@@ -177,7 +179,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="ml-0 block rounded-l-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="ml-0 block rounded-l-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-textPrimary-dark"
             @click="previousPage"
           >
             <span class="sr-only">Previous</span>
@@ -187,7 +189,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="block rounded-r-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="block rounded-r-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-textPrimary-dark"
             @click="nextPage"
           >
             <span class="sr-only">Next</span>
@@ -199,7 +201,9 @@ export default {
   </div>
   <div v-else class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Upcoming Runs</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
+        Upcoming Runs
+      </h6>
     </div>
     <p class="text-gray-400 dark:text-gray-500">No upcoming jobs found.</p>
   </div>

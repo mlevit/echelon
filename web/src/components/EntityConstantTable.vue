@@ -67,7 +67,9 @@ export default {
 <template>
   <div class="w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Constants</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
+        Constants
+      </h6>
     </div>
     <div
       class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
@@ -84,13 +86,13 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
             v-for="record in rawEntityConstantData"
             :key="record.entity_constant_id"
           >
             <th
               scope="row"
-              class="items-center whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
+              class="items-center whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
               <span
                 :data-popover-target="
@@ -104,7 +106,7 @@ export default {
                 data-popover
                 :id="'popover-' + record.name.replaceAll('_', '-')"
                 role="tooltip"
-                class="invisible absolute z-10 inline-block w-fit rounded-lg border border-gray-200 bg-white text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
+                class="invisible absolute z-10 inline-block w-fit rounded-lg border border-border-lighter bg-background-lightest text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-background-darker dark:text-gray-400"
               >
                 <div
                   class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
@@ -115,7 +117,7 @@ export default {
                   >
                     <tbody>
                       <tr
-                        class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                        class="border-b bg-background-lightest dark:border-border-darker dark:bg-background-darker"
                         v-for="(value, key) in getConstantPopoverData(
                           record.name
                         )"
@@ -123,27 +125,27 @@ export default {
                       >
                         <th
                           scope="row"
-                          class="items-center whitespace-nowrap px-6 py-4 font-medium capitalize text-textPrimary dark:text-white"
+                          class="items-center whitespace-nowrap px-6 py-4 font-medium capitalize text-textPrimary dark:text-textPrimary-dark"
                         >
                           {{ key }}
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
                           v-if="_.isBoolean(value)"
                         >
                           <BooleanFlag :value="value" />
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
                           v-else-if="key === 'cast'"
                         >
                           <CodeBadge :value="value" />
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
                           v-else
                         >
                           {{ value }}

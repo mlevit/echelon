@@ -128,14 +128,16 @@ export default {
 <template>
   <div class="overflow-x-autosm:rounded-lg relative w-full">
     <div>
-      <h6 class="mb-4 text-lg font-bold dark:text-white">Entities</h6>
+      <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
+        Entities
+      </h6>
     </div>
     <div class="flex items-center justify-between pb-4">
       <div class="item-center flex justify-center">
         <button
           id="dropdownTypeButton"
           data-dropdown-toggle="dropdownType"
-          class="inline-flex items-center rounded-l-lg border border-border bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-hover dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          class="inline-flex items-center rounded-l-lg border border-border bg-background-lightest px-3 py-2 text-sm font-medium text-gray-500 hover:bg-hover dark:border-gray-600 dark:bg-background-darker dark:text-textPrimary-dark dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
           type="button"
         >
           <SvgIcon icon="filter" class="mr-2" />
@@ -145,7 +147,7 @@ export default {
         <button
           id="dropdownSourceButton"
           data-dropdown-toggle="dropdownSource"
-          class="inline-flex items-center rounded-r-lg border border-l-0 border-border bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-hover dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          class="inline-flex items-center rounded-r-lg border border-l-0 border-border bg-background-lightest px-3 py-2 text-sm font-medium text-gray-500 hover:bg-hover dark:border-gray-600 dark:bg-background-darker dark:text-textPrimary-dark dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
           type="button"
         >
           {{ sourceTerm || "Source" }}
@@ -154,7 +156,7 @@ export default {
         <!-- Dropdown menu -->
         <div
           id="dropdownType"
-          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-white shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
+          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-background-lightest shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
           data-popper-reference-hidden=""
           data-popper-escaped=""
           data-popper-placement="top"
@@ -217,7 +219,7 @@ export default {
         <!-- Dropdown menu -->
         <div
           id="dropdownSource"
-          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-white shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
+          class="z-50 hidden w-fit divide-y divide-gray-100 rounded-lg border border-border bg-background-lightest shadow dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-700"
           data-popper-reference-hidden=""
           data-popper-escaped=""
           data-popper-placement="top"
@@ -288,7 +290,7 @@ export default {
         <input
           type="text"
           id="table-search"
-          class="block w-80 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
+          class="block w-80 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
           placeholder="Search"
           v-model="searchTerm"
         />
@@ -311,13 +313,13 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-background-lightest hover:bg-background dark:border-border-darker dark:bg-background-darker dark:hover:bg-gray-600"
             v-for="record in entityData"
             :key="record.entity_id"
           >
             <th
               scope="row"
-              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
+              class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
               <RouterLink :to="'/data/' + record.entity_id">{{
                 record.name
@@ -344,12 +346,12 @@ export default {
     >
       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
         Showing
-        <span class="font-semibold text-textPrimary dark:text-white">
+        <span class="font-semibold text-textPrimary dark:text-textPrimary-dark">
           {{ startIndex + 1 }}-{{ endIndex }}
         </span>
         of
         <span
-          class="font-semibold text-textPrimary dark:text-white"
+          class="font-semibold text-textPrimary dark:text-textPrimary-dark"
           v-if="!_.isEmpty(rawEntityData)"
         >
           {{ dataLength }}
@@ -359,7 +361,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="ml-0 block rounded-l-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="ml-0 block rounded-l-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-textPrimary-dark"
             @click="previousPage"
           >
             <span class="sr-only">Previous</span>
@@ -369,7 +371,7 @@ export default {
         <li>
           <a
             href="#!"
-            class="block rounded-r-lg border border-border bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="block rounded-r-lg border border-border bg-background-lightest px-3 py-2 leading-tight text-gray-500 hover:bg-hover hover:text-textSecondary dark:border-border-darker dark:bg-background-darker dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-textPrimary-dark"
             @click="nextPage"
           >
             <span class="sr-only">Next</span>
