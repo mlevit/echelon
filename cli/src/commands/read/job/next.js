@@ -10,7 +10,7 @@ class CustomCommand extends Command {
 
     try {
       var jobResult = await knex
-        .with("jobes", (qb) => {
+        .with("jobs", (qb) => {
           qb.select(
             "job.job_id as job_id",
             "job.name as job_name",
@@ -29,7 +29,7 @@ class CustomCommand extends Command {
             });
         })
         .with("latest", (qb) => {
-          qb.select("*").from("jobes").where("row_number", 1);
+          qb.select("*").from("jobs").where("row_number", 1);
         })
         .with("relationship", (qb) => {
           qb.distinct(
@@ -104,7 +104,7 @@ class CustomCommand extends Command {
 }
 
 CustomCommand.description =
-  "retrieve jobes that can be run based on their object-based dependencies";
+  "retrieve jobs that can be run based on their object-based dependencies";
 
 CustomCommand.flags = {
   jq: Flags.string({

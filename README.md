@@ -26,7 +26,7 @@ Suggested sequence for setup:
 
 ## How do I contribute?
 
-We welcome contributions from the community! To contribute to the Echelon project, please read our [Contributor's Guide](CONTRIBUTING.md) to understand our jobes.
+We welcome contributions from the community! To contribute to the Echelon project, please read our [Contributor's Guide](CONTRIBUTING.md) to understand our jobs.
 
 ## What if I find an issue?
 

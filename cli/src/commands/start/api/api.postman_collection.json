@@ -61,7 +61,7 @@
           ]
         },
         {
-          "name": "List entitys",
+          "name": "List entities",
           "request": {
             "method": "GET",
             "header": [],
@@ -76,7 +76,7 @@
           },
           "response": [
             {
-              "name": "List entitys",
+              "name": "List entities",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -96,7 +96,7 @@
               "body": "[\n  {\n    \"entity_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 10,\n    \"name\": \"presentation_dim_sakila_inventory\",\n    \"description\": \"Sakila Inventory dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 12,\n    \"name\": \"presentation_dim_sakila_staff\",\n    \"description\": \"Sakila Staff dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 9,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Sakila Rental fact table\",\n    \"business_description\": null,\n    \"type\": \"transactional_fact_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 3,\n    \"name\": \"raw_sakila_customer\",\n    \"description\": \"Sakila Customer data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 2,\n    \"name\": \"raw_sakila_inventory\",\n    \"description\": \"Sakila Inventory data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 1,\n    \"name\": \"raw_sakila_rental\",\n    \"description\": \"Sakila Rental data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 4,\n    \"name\": \"raw_sakila_staff\",\n    \"description\": \"Sakila Staff data lake file\",\n    \"business_description\": null,\n    \"type\": \"delimited_file\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 7,\n    \"name\": \"staging_sakila_customer\",\n    \"description\": \"Sakila Customer staging table\",\n    \"business_description\": null,\n    \"type\": \"staging_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"entity_id\": 6,\n    \"name\": \"staging_sakila_inventory\",\n    \"description\": \"Sakila Inventory staging table\",\n    \"business_description\": null,\n    \"type\": \"staging_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
             },
             {
-              "name": "List entitys by name",
+              "name": "List entities by name",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -123,7 +123,7 @@
               "body": "[\n  {\n    \"entity_id\": 11,\n    \"name\": \"presentation_dim_sakila_customer\",\n    \"description\": \"Sakila Customer dimension table\",\n    \"business_description\": null,\n    \"type\": \"dimension_type_2_table\",\n    \"source\": \"Sakila\",\n    \"insert_date\": \"2021-12-23T04:33:45.343Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
             },
             {
-              "name": "List entitys with limit",
+              "name": "List entities with limit",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -287,7 +287,7 @@
           "response": []
         },
         {
-          "name": "List jobes",
+          "name": "List jobs",
           "request": {
             "method": "GET",
             "header": [],
@@ -302,7 +302,7 @@
           },
           "response": [
             {
-              "name": "List jobes",
+              "name": "List jobs",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -322,7 +322,7 @@
               "body": "[\n  {\n    \"job_id\": 5,\n    \"name\": \"presentation_fact_sakila_rental\",\n    \"description\": \"Load Sakila Rental table from staging layer to the presentation layer\",\n    \"type\": \"transactional_fact_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 3,\n    \"name\": \"raw_sakila_customer > staging_sakila_customer\",\n    \"description\": \"Load Sakila Customer file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 2,\n    \"name\": \"raw_sakila_inventory > staging_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 1,\n    \"name\": \"raw_sakila_rental > staging_sakila_rental\",\n    \"description\": \"Load Sakila Rental file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 4,\n    \"name\": \"raw_sakila_staff > staging_sakila_staff\",\n    \"description\": \"Load Sakila Staff file from Data Lake Raw to Redshift Staging\",\n    \"type\": \"table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 7,\n    \"name\": \"staging_sakila_customer > presentation_dim_sakila_customer\",\n    \"description\": \"Load Sakila Customer table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 6,\n    \"name\": \"staging_sakila_inventory > presentation_dim_sakila_inventory\",\n    \"description\": \"Load Sakila Inventory table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  },\n  {\n    \"job_id\": 8,\n    \"name\": \"staging_sakila_staff > presentation_dim_sakila_staff\",\n    \"description\": \"Load Sakila Staff table from staging layer to the presentation layer\",\n    \"type\": \"dimension_type_2_table_load\",\n    \"priority\": 1,\n    \"dependency_logic\": \"and\",\n    \"insert_date\": \"2021-12-23T04:33:45.349Z\",\n    \"update_date\": null,\n    \"migration_insert_id\": null,\n    \"migration_update_id\": null\n  }\n]"
             },
             {
-              "name": "List jobes by name",
+              "name": "List jobs by name",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -347,7 +347,7 @@
               "body": ""
             },
             {
-              "name": "List jobes with limit",
+              "name": "List jobs with limit",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -374,7 +374,7 @@
           ]
         },
         {
-          "name": "List source entitys for a job",
+          "name": "List source entities for a job",
           "request": {
             "method": "GET",
             "header": [],
@@ -392,11 +392,11 @@
                 }
               ]
             },
-            "description": "retrieve source entitys associated with a job"
+            "description": "retrieve source entities associated with a job"
           },
           "response": [
             {
-              "name": "List source entitys for a job",
+              "name": "List source entities for a job",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -425,7 +425,7 @@
           ]
         },
         {
-          "name": "List target entitys for a job",
+          "name": "List target entities for a job",
           "request": {
             "method": "GET",
             "header": [],
@@ -443,11 +443,11 @@
                 }
               ]
             },
-            "description": "retrieve target entitys associated with a job"
+            "description": "retrieve target entities associated with a job"
           },
           "response": [
             {
-              "name": "List target entitys for a job",
+              "name": "List target entities for a job",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -652,7 +652,7 @@
           ]
         },
         {
-          "name": "Get runnable jobes",
+          "name": "Get runnable jobs",
           "request": {
             "method": "GET",
             "header": [],
@@ -663,11 +663,11 @@
               "port": "{{port}}",
               "path": ["job", "run"]
             },
-            "description": "retrieve jobes that can be run based on their object-based dependencies"
+            "description": "retrieve jobs that can be run based on their object-based dependencies"
           },
           "response": [
             {
-              "name": "Get runnable jobes",
+              "name": "Get runnable jobs",
               "originalRequest": {
                 "method": "GET",
                 "header": [],

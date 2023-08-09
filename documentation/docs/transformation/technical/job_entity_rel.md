@@ -1,6 +1,6 @@
 # Job Entity Relationship
 
-The relationship between two or more entitys for a particular job.
+The relationship between two or more entities for a particular job.
 
 ## Definition
 

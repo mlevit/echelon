@@ -48,7 +48,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve target entitys associated with a job";
+CustomCommand.description = "retrieve target entities associated with a job";
 
 CustomCommand.flags = {
   name: Flags.string({

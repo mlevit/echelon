@@ -20,14 +20,15 @@ KNEX_PASSWORD=
 <!-- usage -->
 
 ```sh-session
-$ npm install -g echelon
+$ npm install -g echelon-cli
 $ echelon COMMAND
 running command...
 $ echelon (--version|-v)
-echelon/1.0.0 linux-x64 node-v20.5.0
+echelon-cli/0.0.1 linux-x64 node-v20.5.0
 $ echelon --help [COMMAND]
 USAGE
   $ echelon COMMAND
+...
 ```
 
 <!-- usagestop -->
@@ -49,28 +50,28 @@ USAGE
 - [`echelon data:import`](#echelon-dataimport)
 - [`echelon help [COMMAND]`](#echelon-help-command)
 - [`echelon read:entity`](#echelon-readentity)
-- [`echelon read:entity:field`](#echelon-readentityfield)
 - [`echelon read:entity:constant`](#echelon-readentityconstant)
+- [`echelon read:entity:field`](#echelon-readentityfield)
 - [`echelon read:entity:lineage`](#echelon-readentitylineage)
 - [`echelon read:entity:variable`](#echelon-readentityvariable)
 - [`echelon read:healthcheck`](#echelon-readhealthcheck)
 - [`echelon read:job`](#echelon-readjob)
-- [`echelon read:job:field:map`](#echelon-readjobfieldmap)
-- [`echelon read:job:run`](#echelon-readjobrun)
-- [`echelon read:job:run:flow`](#echelon-readjobrunflow)
-- [`echelon read:job:run:log`](#echelon-readjobrunlog)
 - [`echelon read:job:constant`](#echelon-readjobconstant)
 - [`echelon read:job:depend`](#echelon-readjobdepend)
 - [`echelon read:job:dependant`](#echelon-readjobdependant)
+- [`echelon read:job:field:map`](#echelon-readjobfieldmap)
 - [`echelon read:job:lineage`](#echelon-readjoblineage)
+- [`echelon read:job:next`](#echelon-readjobnext)
 - [`echelon read:job:run`](#echelon-readjobrun)
+- [`echelon read:job:run:flow`](#echelon-readjobrunflow)
+- [`echelon read:job:run:log`](#echelon-readjobrunlog)
 - [`echelon read:job:source`](#echelon-readjobsource)
 - [`echelon read:job:target`](#echelon-readjobtarget)
 - [`echelon read:job:variable`](#echelon-readjobvariable)
 - [`echelon read:query`](#echelon-readquery)
 - [`echelon read:search`](#echelon-readsearch)
-- [`echelon read:ui:job:run:detail`](#echelon-readuijobrundetail)
-- [`echelon read:ui:job:run:list`](#echelon-readuijobrunlist)
+- [`echelon read:ui:process:audit:detail`](#echelon-readuiprocessauditdetail)
+- [`echelon read:ui:process:audit:list`](#echelon-readuiprocessauditlist)
 - [`echelon start:api`](#echelon-startapi)
 - [`echelon update:entity:variable`](#echelon-updateentityvariable)
 - [`echelon update:job:run`](#echelon-updatejobrun)
@@ -310,22 +311,6 @@ DESCRIPTION
   retrieve entity(s)
 ```
 
-## `echelon read:entity:field`
-
-retrieve fields associated with an entity
-
-```
-USAGE
-  $ echelon read:entity:field --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) entity name
-
-DESCRIPTION
-  retrieve fields associated with an entity
-```
-
 ## `echelon read:entity:constant`
 
 retrieve constants associated with an entity
@@ -340,6 +325,22 @@ FLAGS
 
 DESCRIPTION
   retrieve constants associated with an entity
+```
+
+## `echelon read:entity:field`
+
+retrieve fields associated with an entity
+
+```
+USAGE
+  $ echelon read:entity:field --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) entity name
+
+DESCRIPTION
+  retrieve fields associated with an entity
 ```
 
 ## `echelon read:entity:lineage`
@@ -407,9 +408,57 @@ DESCRIPTION
   retrieve job(es)
 ```
 
+## `echelon read:job:constant`
+
+retrieve constants associated with a job
+
+```
+USAGE
+  $ echelon read:job:constant --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) job name
+
+DESCRIPTION
+  retrieve constants associated with a job
+```
+
+## `echelon read:job:depend`
+
+retrieve source jobs this job depends on
+
+```
+USAGE
+  $ echelon read:job:depend --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) job name
+
+DESCRIPTION
+  retrieve source jobs this job depends on
+```
+
+## `echelon read:job:dependant`
+
+retrieve target jobs this job is the dependant of
+
+```
+USAGE
+  $ echelon read:job:dependant --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) job name
+
+DESCRIPTION
+  retrieve target jobs this job is the dependant of
+```
+
 ## `echelon read:job:field:map`
 
-retrieve source entitys associated with a job
+retrieve source entities associated with a job
 
 ```
 USAGE
@@ -420,7 +469,38 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source entitys associated with a job
+  retrieve source entities associated with a job
+```
+
+## `echelon read:job:lineage`
+
+retrieve source entities associated with a job
+
+```
+USAGE
+  $ echelon read:job:lineage --name <value> [--jq <value>]
+
+FLAGS
+  --jq=<value>    jq string to parse result set
+  --name=<value>  (required) job name
+
+DESCRIPTION
+  retrieve source entities associated with a job
+```
+
+## `echelon read:job:next`
+
+retrieve jobs that can be run based on their object-based dependencies
+
+```
+USAGE
+  $ echelon read:job:next [--jq <value>]
+
+FLAGS
+  --jq=<value>  jq string to parse result set
+
+DESCRIPTION
+  retrieve jobs that can be run based on their object-based dependencies
 ```
 
 ## `echelon read:job:run`
@@ -476,88 +556,9 @@ DESCRIPTION
   retrieve logs associated with a job instance (run)
 ```
 
-## `echelon read:job:constant`
-
-retrieve constants associated with a job
-
-```
-USAGE
-  $ echelon read:job:constant --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) job name
-
-DESCRIPTION
-  retrieve constants associated with a job
-```
-
-## `echelon read:job:depend`
-
-retrieve source jobes this job depends on
-
-```
-USAGE
-  $ echelon read:job:depend --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) job name
-
-DESCRIPTION
-  retrieve source jobes this job depends on
-```
-
-## `echelon read:job:dependant`
-
-retrieve target jobes this job is the dependant of
-
-```
-USAGE
-  $ echelon read:job:dependant --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) job name
-
-DESCRIPTION
-  retrieve target jobes this job is the dependant of
-```
-
-## `echelon read:job:lineage`
-
-retrieve source entitys associated with a job
-
-```
-USAGE
-  $ echelon read:job:lineage --name <value> [--jq <value>]
-
-FLAGS
-  --jq=<value>    jq string to parse result set
-  --name=<value>  (required) job name
-
-DESCRIPTION
-  retrieve source entitys associated with a job
-```
-
-## `echelon read:job:run`
-
-retrieve jobes that can be run based on their object-based dependencies
-
-```
-USAGE
-  $ echelon read:job:run [--jq <value>]
-
-FLAGS
-  --jq=<value>  jq string to parse result set
-
-DESCRIPTION
-  retrieve jobes that can be run based on their object-based dependencies
-```
-
 ## `echelon read:job:source`
 
-retrieve source entitys associated with a job
+retrieve source entities associated with a job
 
 ```
 USAGE
@@ -568,12 +569,12 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve source entitys associated with a job
+  retrieve source entities associated with a job
 ```
 
 ## `echelon read:job:target`
 
-retrieve target entitys associated with a job
+retrieve target entities associated with a job
 
 ```
 USAGE
@@ -584,7 +585,7 @@ FLAGS
   --name=<value>  (required) job name
 
 DESCRIPTION
-  retrieve target entitys associated with a job
+  retrieve target entities associated with a job
 ```
 
 ## `echelon read:job:variable`
@@ -635,13 +636,13 @@ DESCRIPTION
   retrieve job(es)
 ```
 
-## `echelon read:ui:job:run:detail`
+## `echelon read:ui:process:audit:detail`
 
 retrieve information associated with a job instance (run)
 
 ```
 USAGE
-  $ echelon read:ui:job:run:detail --id <value> [--jq <value>]
+  $ echelon read:ui:process:audit:detail --id <value> [--jq <value>]
 
 FLAGS
   --id=<value>  (required) run ID
@@ -651,13 +652,13 @@ DESCRIPTION
   retrieve information associated with a job instance (run)
 ```
 
-## `echelon read:ui:job:run:list`
+## `echelon read:ui:process:audit:list`
 
 retrieve job instances (run) of a job
 
 ```
 USAGE
-  $ echelon read:ui:job:run:list [--filterStart <value>] [--filterEnd <value>] [--jq <value>]
+  $ echelon read:ui:process:audit:list [--filterStart <value>] [--filterEnd <value>] [--jq <value>]
 
 FLAGS
   --filterEnd=<value>    [default: 2999-12-31] filter end date
@@ -776,7 +777,7 @@ env DEBUG=\* echelon COMMAND
 This readme file is generated by oclif by running
 
 ```bash
-npx oclif-dev readme
+npx oclif readme
 ```
 
 ## How do I regenerate the index.html file?

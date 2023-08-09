@@ -531,11 +531,11 @@
   "constraint_job_dependency_logic": [
     {
       "value": "and",
-      "comment": "All required entitys require updates."
+      "comment": "All required entities require updates."
     },
     {
       "value": "or",
-      "comment": "Any required entitys require updates."
+      "comment": "Any required entities require updates."
     }
   ],
   "constraint_job_type": [

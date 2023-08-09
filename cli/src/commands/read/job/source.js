@@ -60,7 +60,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "retrieve source entitys associated with a job";
+CustomCommand.description = "retrieve source entities associated with a job";
 
 CustomCommand.flags = {
   name: Flags.string({

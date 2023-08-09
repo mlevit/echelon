@@ -14,14 +14,14 @@ exports.up = async function (knex) {
       .notNullable()
       .defaultTo("1")
       .comment(
-        "Priority of the job. When multiple jobes can be run at the same time, the jobes with higher priority run first."
+        "Priority of the job. When multiple jobs can be run at the same time, the jobs with higher priority run first."
       );
     table
       .string("dependency_logic")
       .notNullable()
       .defaultTo("and")
       .comment(
-        "How should entity dependencies be treated (`and` = all required entitys require updates, `or` = any required entitys require updates). See acceptable values within the `constraint_job_dependency_logic` table."
+        "How should entity dependencies be treated (`and` = all required entities require updates, `or` = any required entities require updates). See acceptable values within the `constraint_job_dependency_logic` table."
       );
     table
       .timestamp("insert_date")

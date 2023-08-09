@@ -50,8 +50,7 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description =
-  "retrieve target jobes this job is the dependant of";
+CustomCommand.description = "retrieve target jobs this job is the dependant of";
 
 CustomCommand.flags = {
   name: Flags.string({
