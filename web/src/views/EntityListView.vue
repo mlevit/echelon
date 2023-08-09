@@ -3,7 +3,7 @@ import EntityListTable from "@/components/EntityListTable.vue";
 
 import { useTitle } from "@vueuse/core";
 
-useTitle("Entity | Echelon");
+useTitle("Entities | Echelon");
 </script>
 
 <template>
