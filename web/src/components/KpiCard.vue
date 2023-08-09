@@ -13,7 +13,7 @@ defineProps({
   },
   textColor: {
     type: String,
-    default: "text-gray-900 dark:text-white",
+    default: "text-textPrimary dark:text-white",
     required: false,
   },
   bgColor: {

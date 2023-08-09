@@ -39,7 +39,7 @@ export default {
             data-drawer-toggle="logo-sidebar"
             aria-controls="logo-sidebar"
             type="button"
-            class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-hover focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
           >
             <span class="sr-only">Open sidebar</span>
             <svg
@@ -61,7 +61,7 @@ export default {
               icon="eye"
               size="2xl"
               color="custom"
-              class="mr-3 h-8 text-[#fc144d] dark:text-white"
+              class="mr-3 h-8 text-primary dark:text-white"
             />
             <span
               class="self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
@@ -70,7 +70,7 @@ export default {
             </span>
           </a>
           <div
-            class="inline-flex rounded-lg border border-gray-300 bg-white px-2 py-2 text-center text-sm font-normal text-gray-700 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
+            class="inline-flex rounded-lg border border-border bg-white px-2 py-2 text-center text-sm font-normal text-textSecondary dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
           >
             {{ apiStore.env }}
           </div>
@@ -82,7 +82,7 @@ export default {
               <div>
                 <button
                   type="button"
-                  class="inline-flex select-none items-center rounded-l-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="inline-flex select-none items-center rounded-l-lg border border-border bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
                   @click="toggleLive()"
                 >
                   <SvgIcon
@@ -95,7 +95,7 @@ export default {
                 </button>
                 <!-- <button
                   type="button"
-                  class="inline-flex items-center rounded-r-lg border-t border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500"
+                  class="inline-flex items-center rounded-r-lg border-t border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary focus:z-10 focus:text-primary focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-primary"
                 >
                   <svg
                     aria-hidden="true"
@@ -112,7 +112,7 @@ export default {
                 </button> -->
                 <button
                   type="button"
-                  class="inline-flex items-center rounded-r-md border border-l-0 border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="inline-flex items-center rounded-r-md border border-l-0 border-border bg-white px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white"
                   @click="toggleDark()"
                 >
                   <SvgIcon
@@ -142,7 +142,7 @@ export default {
         <li>
           <RouterLink
             to="/"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
           >
             <SvgIcon icon="dashboard" size="lg" color="black" />
             <span class="ml-3">Dashboard</span>
@@ -151,7 +151,7 @@ export default {
         <li>
           <RouterLink
             to="/run"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
           >
             <SvgIcon icon="run" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Runs</span>
@@ -160,7 +160,7 @@ export default {
         <li>
           <RouterLink
             to="/job"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
           >
             <SvgIcon icon="job" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Jobs</span>
@@ -169,7 +169,7 @@ export default {
         <li>
           <RouterLink
             to="/data"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-white dark:hover:bg-gray-700"
           >
             <SvgIcon icon="data" size="lg" color="black" />
             <span class="ml-3 flex-1 whitespace-nowrap">Entities</span>

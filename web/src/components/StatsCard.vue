@@ -1,24 +1,24 @@
 <script setup>
-import { initTabs } from 'flowbite'
+import { initTabs } from "flowbite";
 
 defineProps({
   details: {
     type: Object,
-    required: false
+    required: false,
   },
   stats: {
     type: Object,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 </script>
 
 <script>
 export default {
   mounted() {
-    initTabs()
-  }
-}
+    initTabs();
+  },
+};
 </script>
 
 <template>
@@ -29,7 +29,7 @@ export default {
       <label for="tabs" class="sr-only">Select tab</label>
       <select
         id="tabs"
-        class="block w-full rounded-t-lg border-0 border-b border-gray-200 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        class="block w-full rounded-t-lg border-0 border-b border-gray-200 bg-background p-2.5 text-sm text-textPrimary focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
       >
         <option>Details</option>
         <option>Statistics</option>
@@ -49,7 +49,7 @@ export default {
           role="tab"
           aria-controls="details"
           aria-selected="true"
-          class="inline-block w-full rounded-tl-lg bg-gray-50 p-4 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600"
+          class="inline-block w-full rounded-tl-lg bg-background p-4 hover:bg-hover focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Details
         </button>
@@ -62,13 +62,16 @@ export default {
           role="tab"
           aria-controls="stats"
           aria-selected="false"
-          class="inline-block w-full bg-gray-50 p-4 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600"
+          class="inline-block w-full bg-background p-4 hover:bg-hover focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Statistics
         </button>
       </li>
     </ul>
-    <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
+    <div
+      id="fullWidthTabContent"
+      class="border-t border-gray-200 dark:border-gray-600"
+    >
       <div
         class="hidden rounded-lg bg-white dark:bg-gray-800"
         id="details"
@@ -76,14 +79,16 @@ export default {
         aria-labelledby="details-tab"
       >
         <dl
-          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-gray-900 dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-4"
+          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-4"
         >
           <div
             v-for="record in details"
             :key="record.title"
             class="flex flex-col items-center justify-center"
           >
-            <dt class="mb-2 text-center text-3xl font-extrabold">{{ record.value }}</dt>
+            <dt class="mb-2 text-center text-3xl font-extrabold">
+              {{ record.value }}
+            </dt>
             <dd class="text-center font-light text-gray-500 dark:text-gray-400">
               {{ record.title }}
             </dd>
@@ -97,14 +102,16 @@ export default {
         aria-labelledby="stats-tab"
       >
         <dl
-          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-gray-900 dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-3"
+          class="mx-auto grid max-w-screen-xl grid-cols-2 gap-8 p-4 text-textPrimary dark:text-white sm:grid-cols-3 sm:p-8 xl:grid-cols-3"
         >
           <div
             v-for="record in stats"
             :key="record.title"
             class="flex flex-col items-center justify-center"
           >
-            <dt class="mb-2 text-center text-3xl font-extrabold">{{ record.value }}</dt>
+            <dt class="mb-2 text-center text-3xl font-extrabold">
+              {{ record.value }}
+            </dt>
             <dd class="text-center font-light text-gray-500 dark:text-gray-400">
               {{ record.title }}
             </dd>

@@ -90,7 +90,7 @@ export default {
     </div>
     <div class="mb-4 grid grid-cols-4 gap-4">
       <div
-        class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+        class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800"
         v-for="detail of detailsObject"
         :key="detail.title"
       >
@@ -98,16 +98,16 @@ export default {
       </div>
     </div>
     <!-- <div class="mb-4 grid grid-cols-4 gap-4">
-      <div class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
         <DetailCard title="Description" :value="data.description" v-if="data.description" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
         <DetailCard title="Type" :value="data.type" v-if="data.type" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
         <DetailCard title="Priority" :value="data.priority" v-if="data.priority" />
       </div>
-      <div class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+      <div class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800">
         <DetailCard
           title="Dependency Logic"
           :value="data.dependency_logic"

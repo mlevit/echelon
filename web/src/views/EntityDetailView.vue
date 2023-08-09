@@ -68,17 +68,17 @@ export default {
     </div>
     <div class="mb-4 grid grid-cols-3 gap-4">
       <div
-        class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+        class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800"
       >
         <DetailCard title="Description" :value="entityDescription" />
       </div>
       <div
-        class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+        class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800"
       >
         <DetailCard title="Type" :value="entityType" />
       </div>
       <div
-        class="flex h-full items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+        class="flex h-full items-center justify-center rounded bg-background dark:bg-gray-800"
       >
         <DetailCard title="Source" :value="entitySource" />
       </div>
@@ -109,23 +109,23 @@ export default {
         v-if="entityName"
       />
     </div>
-    <!-- <div class="mb-4 flex h-fit items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+    <!-- <div class="mb-4 flex h-fit items-center justify-center rounded bg-background dark:bg-gray-800">
       <RunList :entityName="entityData.name" v-if="entityData.name" />
     </div> -->
-    <!-- <div class="mb-4 flex h-48 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+    <!-- <div class="mb-4 flex h-48 items-center justify-center rounded bg-background dark:bg-gray-800">
         <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
       </div>
       <div class="grid grid-cols-2 gap-4">
-        <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex h-28 items-center justify-center rounded bg-background dark:bg-gray-800">
           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
         </div>
-        <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex h-28 items-center justify-center rounded bg-background dark:bg-gray-800">
           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
         </div>
-        <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex h-28 items-center justify-center rounded bg-background dark:bg-gray-800">
           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
         </div>
-        <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex h-28 items-center justify-center rounded bg-background dark:bg-gray-800">
           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
         </div>
       </div> -->

@@ -1,40 +1,40 @@
 <script setup>
 defineProps({
   title: {
-    required: true
+    required: true,
   },
   value: {
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <script>
 export default {
   data() {
-    return {}
+    return {};
   },
   computed: {
     cleanValue() {
-      if (typeof this.value === 'string' || this.value instanceof String) {
-        return this.value.split('_').join(' ')
+      if (typeof this.value === "string" || this.value instanceof String) {
+        return this.value.split("_").join(" ");
       } else {
-        return this.value
+        return this.value;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <template>
   <div
     class="flex h-full w-full flex-col items-center rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-8"
   >
-    <p class="text-center font-normal text-gray-700 dark:text-gray-400">
+    <p class="text-center font-normal text-textSecondary dark:text-gray-400">
       {{ title }}
     </p>
     <h5
-      class="mb-2 text-center text-2xl font-bold capitalize tracking-tight text-gray-900 dark:text-white"
+      class="mb-2 text-center text-2xl font-bold capitalize tracking-tight text-textPrimary dark:text-white"
     >
       {{ cleanValue }}
     </h5>

@@ -80,36 +80,38 @@ export default {
     <input
       type="text"
       id="site-search"
-      class="block w-36 rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 duration-300 focus:w-[560px] focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+      class="block w-36 rounded-lg border border-border bg-background p-2 pl-10 text-sm text-textPrimary duration-300 focus:w-[560px] focus:border-primary focus:ring-primary dark:border-border-dark dark:bg-gray-700 dark:text-textPrimary-dark dark:placeholder-gray-400 dark:focus:border-primary-dark dark:focus:ring-primary-dark"
       placeholder="Search"
       v-model="searchTerm"
       v-on:blur="_.delay(clearSearch, 150)"
     />
     <!-- <div class="absolute inset-y-0 right-0 flex items-center justify-center pr-3">
       <kbd
-        class="flex items-center justify-center rounded-lg border border-gray-200 px-2 align-middle text-xs font-semibold text-gray-500 dark:border-gray-600 dark:text-gray-400"
+        class="flex items-center justify-center rounded-lg border border-gray-200 px-2 align-middle text-xs font-semibold text-gray-500 dark:border-border-dark dark:text-textSecondary-dark"
       >
         <span class="mr-0.5 items-center justify-center text-base font-thin">⌘</span>
         <span>K</span>
       </kbd>
     </div> -->
     <div
-      class="absolute mt-2 grid max-h-96 w-[560px] grid-cols-1 gap-2 overflow-auto rounded-lg border border-gray-300 bg-white p-4 duration-500 dark:border-gray-600 dark:bg-gray-900"
+      class="absolute mt-2 grid max-h-96 w-[560px] grid-cols-1 gap-2 overflow-auto rounded-lg border border-border bg-white p-4 duration-500 dark:border-border-dark dark:bg-gray-900"
       v-if="searchTerm"
     >
       <div class="flex h-fit" v-for="result in searchResults" :key="result.id">
         <RouterLink
           :to="getUrl(result.id)"
-          class="min-h-14 flex max-h-fit w-full rounded-lg border border-gray-200 bg-white p-2 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+          class="min-h-14 flex max-h-fit w-full rounded-lg border border-gray-200 bg-white p-2 shadow hover:border-primary hover:bg-hover dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-hover-dark"
         >
           <div class="mr-2 flex items-center">
             <SvgIcon :icon="result.object" color="black" />
           </div>
           <div class="block">
-            <h5 class="text-sm text-gray-900 dark:text-white">
+            <h5 class="text-sm text-textPrimary dark:text-textPrimary-dark">
               {{ result.title }}
             </h5>
-            <p class="text-[12px] text-gray-700 dark:text-gray-400">
+            <p
+              class="text-[12px] text-textSecondary dark:text-textSecondary-dark"
+            >
               <span class="capitalize">{{
                 result.type.split("_").join(" ")
               }}</span>

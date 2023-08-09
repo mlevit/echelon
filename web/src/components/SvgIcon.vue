@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       colorSet: {
-        black: "text-gray-900 dark:text-white",
+        black: "text-textPrimary dark:text-white",
         gray: "text-gray-500 dark:text-gray-400",
         green: "text-green-500",
         red: "text-red-500",

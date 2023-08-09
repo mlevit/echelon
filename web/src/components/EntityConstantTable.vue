@@ -70,12 +70,12 @@ export default {
       <h6 class="mb-4 text-lg font-bold dark:text-white">Constants</h6>
     </div>
     <div
-      class="overflow-x-auto border border-gray-300 dark:border-gray-600 sm:rounded-lg"
+      class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
       v-if="!_.isEmpty(rawEntityConstantData)"
     >
       <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
         <thead
-          class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
+          class="bg-background text-xs uppercase text-textSecondary dark:bg-gray-700 dark:text-gray-400"
         >
           <tr>
             <th scope="col" class="px-6 py-3">Name</th>
@@ -84,13 +84,13 @@ export default {
         </thead>
         <tbody>
           <tr
-            class="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+            class="border-b bg-white hover:bg-background dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
             v-for="record in rawEntityConstantData"
             :key="record.entity_constant_id"
           >
             <th
               scope="row"
-              class="items-center whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+              class="items-center whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-white"
             >
               <span
                 :data-popover-target="
@@ -107,7 +107,7 @@ export default {
                 class="invisible absolute z-10 inline-block w-fit rounded-lg border border-gray-200 bg-white text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
               >
                 <div
-                  class="overflow-x-auto border border-gray-300 dark:border-gray-600 sm:rounded-lg"
+                  class="overflow-x-auto border border-border dark:border-gray-600 sm:rounded-lg"
                   v-if="!_.isEmpty(rawEntityConstantDescriptionData)"
                 >
                   <table
@@ -123,27 +123,27 @@ export default {
                       >
                         <th
                           scope="row"
-                          class="items-center whitespace-nowrap px-6 py-4 font-medium capitalize text-gray-900 dark:text-white"
+                          class="items-center whitespace-nowrap px-6 py-4 font-medium capitalize text-textPrimary dark:text-white"
                         >
                           {{ key }}
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-gray-900 dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
                           v-if="_.isBoolean(value)"
                         >
                           <BooleanFlag :value="value" />
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-gray-900 dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
                           v-else-if="key === 'cast'"
                         >
                           <CodeBadge :value="value" />
                         </th>
                         <th
                           scope="row"
-                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-gray-900 dark:text-white"
+                          class="max-w-xs items-center whitespace-normal px-6 py-4 font-medium text-textPrimary dark:text-white"
                           v-else
                         >
                           {{ value }}

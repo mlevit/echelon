@@ -46,14 +46,14 @@ export default {
 
 <template>
   <nav
-    class="flex w-full select-none rounded-lg border border-gray-200 bg-gray-50 px-5 py-3 text-gray-700 dark:border-gray-700 dark:bg-gray-800"
+    class="flex w-full select-none rounded-lg border border-gray-200 bg-background px-5 py-3 text-textSecondary dark:border-gray-700 dark:bg-gray-800"
     aria-label="Breadcrumb"
   >
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
       <li class="inline-flex items-center">
         <RouterLink
           to="/job"
-          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+          class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
         >
           Job
         </RouterLink>
@@ -63,7 +63,7 @@ export default {
           <SvgIcon icon="chevronRight" />
           <RouterLink
             :to="'/job/' + jobId"
-            class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white md:ml-2"
+            class="ml-1 text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-white md:ml-2"
             >{{ jobName }}</RouterLink
           >
         </div>
@@ -76,7 +76,7 @@ export default {
           >
             <RouterLink
               to="/run"
-              class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+              class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
             >
               Run
             </RouterLink></span
@@ -89,7 +89,7 @@ export default {
           <button
             id="dropdownrun"
             data-dropdown-toggle="dropdown-run"
-            class="inline-flex rounded-lg border border-gray-300 bg-white px-2 py-2 text-center text-sm font-normal text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900 dark:focus:ring-gray-700"
+            class="inline-flex rounded-lg border border-border bg-white px-2 py-2 text-center text-sm font-normal text-textSecondary hover:bg-hover dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900 dark:focus:ring-gray-700"
           >
             #{{ runId }}
             <SvgIcon icon="chevronDown" class="ml-2" />
@@ -99,13 +99,13 @@ export default {
             class="z-10 hidden w-fit divide-y divide-gray-100 rounded-lg border border-gray-200 bg-white shadow dark:border-gray-600 dark:bg-gray-700"
           >
             <ul
-              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              class="py-2 text-sm text-textSecondary dark:text-gray-200"
               aria-labelledby="dropdownDefault"
             >
               <li v-for="record in rawRunData" :key="record.run_id">
                 <RouterLink
                   :to="'/job/' + jobId + '/run/' + record.run_id"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="block px-4 py-2 hover:bg-hover dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   #{{ record.run_id }}
                 </RouterLink>
