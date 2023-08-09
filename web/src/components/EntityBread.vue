@@ -23,7 +23,7 @@ defineProps({
             class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ml-2"
           >
             <RouterLink
-              to="/data"
+              to="/entity"
               class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-textPrimary-dark"
             >
               Entity

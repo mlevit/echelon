@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     entityLink(entityId) {
-      router.push(`/data/${entityId}`);
+      router.push(`/entity/${entityId}`);
     },
     getEntityData() {
       if (this.entityName) {

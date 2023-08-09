@@ -321,7 +321,7 @@ export default {
               scope="row"
               class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
-              <RouterLink :to="'/data/' + record.entity_id">{{
+              <RouterLink :to="'/entity/' + record.entity_id">{{
                 record.name
               }}</RouterLink>
             </th>
@@ -330,7 +330,7 @@ export default {
             <td class="px-6 py-4">{{ record.source }}</td>
             <td class="px-6 py-4">
               <RouterLink
-                :to="'/data/' + record.entity_id"
+                :to="'/entity/' + record.entity_id"
                 class="font-medium text-primary hover:underline dark:text-primary-dark"
               >
                 View

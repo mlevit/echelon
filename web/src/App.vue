@@ -170,7 +170,7 @@ export default {
         </li>
         <li>
           <RouterLink
-            to="/data"
+            to="/entity"
             class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="data" size="lg" color="black" />

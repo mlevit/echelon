@@ -17,14 +17,14 @@ const router = createRouter({
       component: DashboardView,
     },
     {
-      path: "/data",
-      name: "data-list",
+      path: "/entity",
+      name: "entity-list",
       component: EntityListView,
     },
     {
-      path: "/data/:entityId",
+      path: "/entity/:entityId",
       props: true,
-      name: "data-detail",
+      name: "entity-detail",
       component: EntityDetailView,
     },
     {

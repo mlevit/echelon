@@ -70,7 +70,7 @@ export default {
               scope="row"
               class="whitespace-nowrap px-6 py-4 font-medium text-textPrimary dark:text-textPrimary-dark"
             >
-              <RouterLink :to="'/data/' + record.entity_id">{{
+              <RouterLink :to="'/entity/' + record.entity_id">{{
                 record.name
               }}</RouterLink>
             </th>

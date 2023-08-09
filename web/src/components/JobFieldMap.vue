@@ -64,7 +64,7 @@ export default {
             :key="record.run_id"
           >
             <td class="px-6 py-4 text-right">
-              <RouterLink :to="'/data/' + record.source_entity_id">{{
+              <RouterLink :to="'/entity/' + record.source_entity_id">{{
                 record.source_entity_name
               }}</RouterLink>
             </td>
@@ -85,7 +85,7 @@ export default {
             </th>
 
             <td class="px-6 py-4">
-              <RouterLink :to="'/data/' + record.target_entity_id">{{
+              <RouterLink :to="'/entity/' + record.target_entity_id">{{
                 record.target_entity_name
               }}</RouterLink>
             </td>
