@@ -489,7 +489,7 @@ POST /job/run/flow
 
 ### Perform Proactive Monitoring (during run)
 
-While the job is running, you have the option to engage in proactive monitoring. This involves conducting statistical checks on the ongoing run.
+While the job is running, you have the option to run proactive monitoring. This involves conducting statistical checks on the ongoing run.
 
 Should any of these proactive monitoring checks falter, a new entry will be added to the `alert` table.
 
@@ -570,9 +570,9 @@ PUT /job/run
 
 ### Perform Proactive Monitoring (post run)
 
-Following the completion of the workflow, you can choose to participate in proactive monitoring. This entails performing statistical evaluations on the finished run. Distinct checks are conducted for both ongoing and completed jobs.
+Following the completion of the workflow, you can choose to run proactive monitoring. This check performs statistical evaluations on the finished run. Distinct checks are conducted for both ongoing and completed jobs.
 
-In the event that any of these proactive monitoring assessments encounter issues, a fresh record will be appended to the `alert` table.
+In the event that any of these proactive monitoring assessments encounter issues, a new record will be inserted into the `alert` table.
 
 > Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.0.1:8000/frameworks/proactive_monitoring.html) guide.
 
