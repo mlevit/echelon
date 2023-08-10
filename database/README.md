@@ -51,3 +51,11 @@ At the core of Echelon lies a robust and centralised database. This repository s
   ```bash
   knex migrate:rollback --all
   ```
+
+## Seed
+
+- Sample seed data has been provided which can be loaded for demo purposes.
+
+  ```bash
+  knex seed:run
+  ```
