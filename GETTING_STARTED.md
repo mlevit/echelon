@@ -4,7 +4,7 @@ This guide aims to assist you in initiating your comprehension of Echelon's elem
 
 Although the initial learning curve might seem steep, as you become more accustomed to it, incorporating and upkeeping Echelon becomes notably straightforward.
 
-## Table of contents
+## Table of Contents
 
 - [Components](#components)
 - [Metadata](#metadata)
