@@ -390,6 +390,8 @@ POST /job/run/log
 
 Capture the count of records within the source file, as well as the count of records that have been inserted into the target table.
 
+> Note: To gain a deeper understanding of the flow metrics that should be documented, refer to the [Technical Reconciliation](http://127.0.0.1:8000/frameworks/technical_reconciliation.html) guide.
+
 #### Source Count
 
 ```
@@ -420,7 +422,7 @@ POST /job/run/flow
 ]
 ```
 
-#### Source Count
+#### Insert Count
 
 ```
 POST /job/run/flow
@@ -453,6 +455,8 @@ POST /job/run/flow
 ### Perform Technical Reconciliation
 
 After the workflow has concluded, carry out the technical reconciliation process to guarantee the comprehensive accountability of all records.
+
+> Note: To gain a deeper understanding of the reconciliation process, refer to the [Technical Reconciliation](http://127.0.0.1:8000/frameworks/technical_reconciliation.html) guide.
 
 ```
 POST /job/run/reconciliation
