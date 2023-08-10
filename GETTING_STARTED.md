@@ -20,7 +20,7 @@ Although the initial learning curve might seem steep, as you become more accusto
   - [Perform Technical Reconciliation](#perform-technical-reconciliation)
   - [Update Run](#update-run)
 
-## Setting Up Components
+## Components
 
 Setup the necessary Echelon components. Refer to their respective README files for instructions.
 
