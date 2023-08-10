@@ -24,7 +24,7 @@ Suggested sequence for setup:
 2. Database
 3. Web Application
 
-Afterwards, following the [Getting Started](./GETTING_STARTED.md) guide to get your first taste of the framework.
+Afterwards, follow the [Getting Started](./GETTING_STARTED.md) guide to get your first taste of the framework.
 
 ## How do I contribute?
 
