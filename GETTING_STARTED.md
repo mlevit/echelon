@@ -17,8 +17,10 @@ Although the initial learning curve might seem steep, as you become more accusto
   - [Get Target Entities](#get-target-entities)
   - [Create Log](#create-log)
   - [Create Flow](#create-flow)
+  - [Perform Proactive Monitoring (during run)](#perform-proactive-monitoring-during-run)
   - [Perform Technical Reconciliation](#perform-technical-reconciliation)
   - [Update Run](#update-run)
+  - [Perform Proactive Monitoring (post run)](#perform-proactive-monitoring-post-run)
 
 ## Components
 
@@ -208,6 +210,40 @@ Once you have established all the framework components, the next step involves g
 
 - If desired, you can introduce additional types of constants by appending them to the `constraint.json` file under the `constraint_entity_constant_name` category and then proceeding to re-import the data.
 
+#### Fields
+
+- Access the `field.json` file and create all the necessary fields contained within the entities created in the above steps.
+
+  **Example**
+
+  ```json
+  "field": [
+    {
+      "entity_name": "salesforce_customer_file",
+      "physical_name": "first_name",
+      "data_type": "varchar",
+      "length": "100",
+      "precision": null,
+      "scale": null,
+      "sequence_number": 1,
+      "group_number": null,
+      "business_description": "Customer's first name",
+      "business_name": "First Name",
+      "business_alias": null,
+      "acronym_name": null,
+      "classification": "restricted",
+      "required_flag": true,
+      "computed_flag": false,
+      "sequence_flag": false,
+      "hash_key_flag": false,
+      "hash_diff_flag": true,
+      "record_source_flag": false,
+      "business_date_flag": false
+    }
+    ...
+  ]
+  ```
+
 ### Load
 
 With your metadata successfully generated, the next step involves its loading. This process is accomplished through the utilisation of the Echelon Command Line Interface (CLI).
@@ -226,11 +262,10 @@ echelon data:import --input [metadata directory] --insert --update
 
 ### Access
 
-When the need arises to retrieve your technical metadata or create operational metadata, there are three available methods to choose from:
+When there is a requirement to access your technical metadata or generate operational metadata, you have three options to consider:
 
-- Utilising the Echelon API
-- Utilising the Echelon CLI
-- Employing SQL queries directly against the Echelon DB (not recommended)
+- **API**: This is the preferred choice for the majority of interactions.
+- **CLI**: This is the suggested method for interactions involving scripting or automation.
 
 ## Workflow
 
@@ -452,11 +487,35 @@ POST /job/run/flow
 ]
 ```
 
+### Perform Proactive Monitoring (during run)
+
+While the job is running, you have the option to engage in proactive monitoring. This involves conducting statistical checks on the ongoing run.
+
+Should any of these proactive monitoring checks falter, a new entry will be added to the `alert` table.
+
+> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.0.1:8000/frameworks/proactive_monitoring.html) guide.
+
+```
+POST /job/run/monitoring
+
+{
+  "id": "1"
+}
+```
+
+**Response**
+
+```
+null
+```
+
 ### Perform Technical Reconciliation
 
 After the workflow has concluded, carry out the technical reconciliation process to guarantee the comprehensive accountability of all records.
 
 > Note: To gain a deeper understanding of the reconciliation process, refer to the [Technical Reconciliation](http://127.0.0.1:8000/frameworks/technical_reconciliation.html) guide.
+
+**Request**
 
 ```
 POST /job/run/reconciliation
@@ -507,4 +566,26 @@ PUT /job/run
     "status": "completed"
   }
 ]
+```
+
+### Perform Proactive Monitoring (post run)
+
+Following the completion of the workflow, you can choose to participate in proactive monitoring. This entails performing statistical evaluations on the finished run. Distinct checks are conducted for both ongoing and completed jobs.
+
+In the event that any of these proactive monitoring assessments encounter issues, a fresh record will be appended to the `alert` table.
+
+> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.0.1:8000/frameworks/proactive_monitoring.html) guide.
+
+```
+POST /job/run/monitoring
+
+{
+  "id": "1"
+}
+```
+
+**Response**
+
+```
+null
 ```

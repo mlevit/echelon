@@ -139,9 +139,9 @@ class CustomCommand extends Command {
     }
   }
 
-  // async p04(runResult, threshold) {
-  //   return null;
-  // }
+  async p04(runResult, threshold) {
+    return null;
+  }
 
   async p05(runResult, threshold, sample) {
     // Job is currently running longer than expected.
