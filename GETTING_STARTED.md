@@ -34,11 +34,11 @@ Setup the necessary Echelon components. Refer to their respective README files f
 
 Once you have established all the framework components, the next step involves generating your metadata.
 
-- Begin by duplicating the files from the /database/migrations/data directory and placing them into a designated working directory.
+- Begin by duplicating the files from the `/database/migrations/data` directory and placing them into a designated working directory.
 
 #### Job
 
-- Access the `job.json` file and initiate the formation of a singular job. This serves as your data flow, and for simplicity, consider crafting a basic task such as loading a table into a database.
+- Access the `job.json` file and initiate the creation of a singular job. This serves as your data flow, and for simplicity, consider crafting a basic task such as loading a file into a database table.
 
 - An advisable naming convention to adhere to is as follows:
 
@@ -109,6 +109,8 @@ Once you have established all the framework components, the next step involves g
 
 - Access the `job_entity_rel.json` file and establish a solitary relationship connecting the entities formed in step 3 with the job conceived in step 1.
 
+  > Note: In the case of a many-to-one relationship, you should create multiple entries, each featuring a distinct `source_entity_name`, but all associated with the same `target_entity_name`.
+
   **Example**
 
   ```json
@@ -147,7 +149,7 @@ Once you have established all the framework components, the next step involves g
     {
       "entity_name": "salesforce_customer_file",
       "name": "data_file_pattern",
-      "value": "./customer_\d{8}.csv"
+      "value": "./customer_\\d{8}.csv"
     },
     {
       "entity_name": "salesforce_customer_file",
