@@ -4,7 +4,23 @@ This guide aims to assist you in initiating your comprehension of Echelon's elem
 
 Although the initial learning curve might seem steep, as you become more accustomed to it, incorporating and upkeeping Echelon becomes notably straightforward.
 
-## Establishing Components
+## Table of contents
+
+- [Components](#components)
+- [Metadata](#metadata)
+  - [Create](#create)
+  - [Load](#load)
+  - [Access](#access)
+- [Workflow](#workflow)
+  - [Create Run](#create-run)
+  - [Get Source Entities](#get-source-entities)
+  - [Get Target Entities](#get-target-entities)
+  - [Create Log](#create-log)
+  - [Create Flow](#create-flow)
+  - [Perform Technical Reconciliation](#perform-technical-reconciliation)
+  - [Update Run](#update-run)
+
+## Setting Up Components
 
 Setup the necessary Echelon components. Refer to their respective README files for instructions.
 
@@ -12,13 +28,15 @@ Setup the necessary Echelon components. Refer to their respective README files f
 2. Database
 3. Web Application
 
-## Creating Metadata
+## Metadata
+
+### Create
 
 Once you have established all the framework components, the next step involves generating your metadata.
 
 - Begin by duplicating the files from the /database/migrations/data directory and placing them into a designated working directory.
 
-### Job
+#### Job
 
 - Access the `job.json` file and initiate the formation of a singular job. This serves as your data flow, and for simplicity, consider crafting a basic task such as loading a table into a database.
 
@@ -48,7 +66,7 @@ Once you have established all the framework components, the next step involves g
   ]
   ```
 
-### Entities
+#### Entities
 
 - Access the `entity.json` file and establish a pair of entities. These entities correspond to your source and target elements (namely, your source file and target table).
 
@@ -87,7 +105,7 @@ Once you have established all the framework components, the next step involves g
   ]
   ```
 
-### Relationships
+#### Relationships
 
 - Access the `job_entity_rel.json` file and establish a solitary relationship connecting the entities formed in step 3 with the job conceived in step 1.
 
@@ -105,7 +123,7 @@ Once you have established all the framework components, the next step involves g
   ]
   ```
 
-### Constants
+#### Constants
 
 - Access the `entity_constant.json` file and generate several constants intended for both the source file and the target table.
 
@@ -188,7 +206,7 @@ Once you have established all the framework components, the next step involves g
 
 - If desired, you can introduce additional types of constants by appending them to the `constraint.json` file under the `constraint_entity_constant_name` category and then proceeding to re-import the data.
 
-## Loading Metadata
+### Load
 
 With your metadata successfully generated, the next step involves its loading. This process is accomplished through the utilisation of the Echelon Command Line Interface (CLI).
 
@@ -204,7 +222,7 @@ In case your metadata is already present within Echelon and you've made modifica
 echelon data:import --input [metadata directory] --insert --update
 ```
 
-## Access Your Metadata
+### Access
 
 When the need arises to retrieve your technical metadata or create operational metadata, there are three available methods to choose from:
 
@@ -212,7 +230,7 @@ When the need arises to retrieve your technical metadata or create operational m
 - Utilising the Echelon CLI
 - Employing SQL queries directly against the Echelon DB (not recommended)
 
-## Sample Workflow
+## Workflow
 
 The provided example workflow will illustrate the majority of the potential and essential interactions that your workflow will need to establish with Echelon throughout its execution.
 
@@ -244,7 +262,7 @@ POST /job/run
 ]
 ```
 
-### Get Job Source Entities
+### Get Source Entities
 
 Fetch the source entities linked to the job along with their corresponding constants.
 
@@ -288,7 +306,7 @@ GET /entity/constant?name=salesforce_customer_file&jq=from_entries
 }
 ```
 
-### Get Job Target Entities
+### Get Target Entities
 
 Fetch the target entities linked to the job along with their corresponding constants.
 
