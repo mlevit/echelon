@@ -38,7 +38,6 @@ class CustomCommand extends Command {
 
     const methodDict = { GET: "read", POST: "create", PUT: "update" };
     const routeTranslationDict = {
-      "dq/run": "dq/run/index",
       "job/run": "job/run/index",
       entity: "entity/index",
       job: "job/index",
@@ -139,8 +138,11 @@ class CustomCommand extends Command {
         }
       });
 
-      app.listen(port, () => {
-        console.log(`Echelon server running at http://localhost:${port}`);
+      // Added to prevent oclif command from timing out after 10 seconds
+      await new Promise((resolve) => {
+        app.listen(port, () => {
+          console.log(`Echelon server running at http://localhost:${port}`);
+        });
       });
     } catch (error) {
       return this.log(error.toString(), "error", flags);
