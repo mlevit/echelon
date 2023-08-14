@@ -5,7 +5,6 @@ An Entity constant is a value that is not expected to change over time. Entity C
 ## Definition
 
 <!-- definition -->
-
 | Name                | Type                     | Nullable | Description                                                                                     |
 | ------------------- | ------------------------ | -------- | ----------------------------------------------------------------------------------------------- |
 | entity_constant_id  | integer                  | NO       | System generated unique identifier.                                                             |
@@ -16,28 +15,23 @@ An Entity constant is a value that is not expected to change over time. Entity C
 | update_date         | timestamp with time zone | YES      | UTC timestamp when the record was updated into the table.                                       |
 | migration_insert_id | integer                  | YES      | System generated unique identifier of the migration this record was inserted by.                |
 | migration_update_id | integer                  | YES      | System generated unique identifier of the migration this record was updated by.                 |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns            |
 | ----------- | ------------------ |
 | FOREIGN KEY | entity_id          |
 | FOREIGN KEY | name               |
 | PRIMARY KEY | entity_constant_id |
 | UNIQUE      | entity_id, name    |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 | Column | Values                                                                     |
 | ------ | -------------------------------------------------------------------------- |
 | name   | See full list of values [here](../../constraints/entity_constant_name.md). |
-
 <!-- acceptablevaluesstop -->

@@ -5,7 +5,6 @@ The relationship between two fields for a particular job.
 ## Definition
 
 <!-- definition -->
-
 | Name                | Type                     | Nullable | Description                                                                                                                                                                                                                                                                                                          |
 | ------------------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | job_field_map_id    | integer                  | NO       | System generated unique identifier.                                                                                                                                                                                                                                                                                  |
@@ -17,13 +16,11 @@ The relationship between two fields for a particular job.
 | update_date         | timestamp with time zone | YES      | UTC timestamp when the record was updated into the table.                                                                                                                                                                                                                                                            |
 | migration_insert_id | integer                  | YES      | System generated unique identifier of the migration this record was inserted by.                                                                                                                                                                                                                                     |
 | migration_update_id | integer                  | YES      | System generated unique identifier of the migration this record was updated by.                                                                                                                                                                                                                                      |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns                                  |
 | ----------- | ---------------------------------------- |
 | FOREIGN KEY | job_id                                   |
@@ -31,13 +28,10 @@ The relationship between two fields for a particular job.
 | FOREIGN KEY | target_field_id                          |
 | PRIMARY KEY | job_field_map_id                         |
 | UNIQUE      | job_id, source_field_id, target_field_id |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 No related acceptable values found.
-
 <!-- acceptablevaluesstop -->
