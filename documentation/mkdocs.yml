@@ -1,0 +1,118 @@
+# Project information
+site_name: Echelon 0.1.0
+site_description: Scalable and extensible framework for creating transformation-driven data pipelines
+site_author: Marat Levit
+site_url:
+
+# Repository
+repo_name: Echelon
+repo_url: https://github.com/mlevit/echelon
+edit_uri: -/blob/master/documentation/
+
+# Copyright
+# copyright:
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - toc.integrate
+  icon:
+    logo: material/eye-outline
+    repo: material/github
+  favicon: static/images/code.ico
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
+
+# Customization
+# extra:
+#   social:
+#     - icon: material/earth
+#       link:
+#     - icon: material/twitter
+#       link:
+#     - icon: material/linkedin
+#       link:
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+plugins:
+  - mkdocs-jupyter
+  - search
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+  - https://unpkg.com/mermaid@7.0.14/dist/themes/mermaid.default.min.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - https://unpkg.com/mermaid@8.5/dist/mermaid.min.js
+  - javascripts/config.js
+
+# Page tree
+nav:
+  - Home:
+      - index.md
+      # - Deployment Guide: deployment.md
+      - Database Design: erd.md
+  - Data Transformation:
+      - Technical:
+          - transformation/technical/index.md
+          - Job: transformation/technical/job.md
+          - Entity: transformation/technical/entity.md
+          - Field: transformation/technical/field.md
+          - Job Constant: transformation/technical/job_constant.md
+          - Entity Constant: transformation/technical/entity_constant.md
+          - Relationships:
+              - Job Entity Rel: transformation/technical/job_entity_rel.md
+              - Job Field Mapping: transformation/technical/job_field_map.md
+      - Operational:
+          - transformation/operational/index.md
+          - Run: transformation/operational/run.md
+          - Alert: transformation/operational/alert.md
+          - Flow: transformation/operational/flow.md
+          - Log: transformation/operational/log.md
+          - Registry:
+              - Registry: transformation/operational/registry.md
+              - Registry Entity Mapping: transformation/operational/registry_entity_map.md
+              - Registry Run Mapping: transformation/operational/registry_run_map.md
+          - Variable: transformation/operational/variable.md
+  - Frameworks:
+      - Object-based Dependencies: frameworks/object_based_dependencies.md
+      - Proactive Monitoring: frameworks/proactive_monitoring.md
+      - Technical Reconciliation: frameworks/technical_reconciliation.md

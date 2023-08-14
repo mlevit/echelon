@@ -1,0 +1,252 @@
+[
+  {
+    "name": "constraint_alert_code",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_entity_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_field_classification",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_job_constant_name",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_entity_constant_name",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_mask_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_quality_rule_criticality",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_data_quality_rule_dimension",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_flow_label",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_object_rel_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_rel_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_rel_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_glossary_entry_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_log_priority",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_run_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_job_dependency_logic",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_job_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_rel_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_rel_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_reference_data_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_registry_status",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_stakeholder_object_rel_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_stakeholder_role",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_technical_reconciliation_formula",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "constraint_variable_name",
+    "function": "constraint",
+    "unique_key": ["value", "object_type"]
+  },
+  {
+    "name": "constraint_variable_object_type",
+    "function": "constraint",
+    "unique_key": ["value"]
+  },
+  {
+    "name": "job",
+    "function": "technical",
+    "unique_key": ["name"]
+  },
+  {
+    "name": "entity",
+    "function": "technical",
+    "unique_key": ["name", "source"]
+  },
+  {
+    "name": "field",
+    "function": "technical",
+    "unique_key": ["entity_id", "physical_name"]
+  },
+  {
+    "name": "job_constant",
+    "function": "technical",
+    "unique_key": ["job_id", "name"]
+  },
+  {
+    "name": "entity_constant",
+    "function": "technical",
+    "unique_key": ["entity_id", "name"]
+  },
+  {
+    "name": "job_entity_rel",
+    "function": "technical",
+    "unique_key": ["job_id", "source_entity_id", "target_entity_id"]
+  },
+  {
+    "name": "job_field_map",
+    "function": "technical",
+    "unique_key": ["job_id", "source_field_id", "target_field_id"]
+  },
+  {
+    "name": "data_mask",
+    "function": "data_mask",
+    "unique_key": ["name", "type"]
+  },
+  {
+    "name": "data_mask_field_rel",
+    "function": "data_mask",
+    "unique_key": ["data_mask_id", "field_id"]
+  },
+  {
+    "name": "data_profile",
+    "function": "data_profile",
+    "unique_key": ["name", "sample_size"]
+  },
+  {
+    "name": "data_profile_entity_rel",
+    "function": "data_profile",
+    "unique_key": ["data_profile_id", "entity_id"]
+  },
+  {
+    "name": "data_quality_rule",
+    "function": "data_quality_rule",
+    "unique_key": ["name", "dimension"]
+  },
+  {
+    "name": "data_quality_rule_field_rel",
+    "function": "data_quality_rule",
+    "unique_key": ["data_quality_rule_id", "field_id"]
+  },
+  {
+    "name": "glossary_entry",
+    "function": "glossary",
+    "unique_key": ["name", "type"]
+  },
+  {
+    "name": "glossary_entry_object_rel",
+    "function": "glossary",
+    "unique_key": ["glossary_entry_id", "object_id", "object_type"]
+  },
+  {
+    "name": "glossary_entry_rel",
+    "function": "glossary",
+    "unique_key": ["glossary_entry_from_id", "glossary_entry_to_id", "type"]
+  },
+  {
+    "name": "reference_data_set",
+    "function": "reference_data",
+    "unique_key": ["name", "application"]
+  },
+  {
+    "name": "reference_data",
+    "function": "reference_data",
+    "unique_key": ["reference_data_set_id", "name", "type"]
+  },
+  {
+    "name": "reference_data_rel",
+    "function": "reference_data",
+    "unique_key": ["reference_data_from_id", "reference_data_to_id", "type"]
+  },
+  {
+    "name": "reference_data_field_rel",
+    "function": "reference_data",
+    "unique_key": ["reference_data_id", "field_id"]
+  },
+  {
+    "name": "stakeholder",
+    "function": "stakeholder",
+    "unique_key": ["name", "email_address"]
+  },
+  {
+    "name": "stakeholder_object_rel",
+    "function": "stakeholder",
+    "unique_key": ["stakeholder_id", "object_id", "object_type"]
+  }
+]

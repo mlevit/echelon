@@ -1,0 +1,26 @@
+{
+  "field": [
+    {
+      "entity_name": null,
+      "physical_name": null,
+      "data_type": null,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "sequence_number": null,
+      "group_number": null,
+      "business_description": null,
+      "business_name": null,
+      "business_alias": null,
+      "acronym_name": null,
+      "classification": null,
+      "required_flag": null,
+      "computed_flag": null,
+      "sequence_flag": null,
+      "hash_key_flag": null,
+      "hash_diff_flag": null,
+      "record_source_flag": null,
+      "business_date_flag": null
+    }
+  ]
+}

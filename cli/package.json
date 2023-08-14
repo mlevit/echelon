@@ -1,0 +1,81 @@
+{
+  "name": "echelon-cli",
+  "version": "0.1.0",
+  "bin": {
+    "echelon": "./bin/run"
+  },
+  "bugs": "",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "echelon",
+    "topicSeparator": ":",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-version"
+    ],
+    "topics": {
+      "create": {
+        "description": "create metadata"
+      },
+      "data": {
+        "description": "import/export metadata"
+      },
+      "read": {
+        "description": "read metadata"
+      },
+      "start": {
+        "description": "start a echelon API server"
+      },
+      "update": {
+        "description": "update metadata"
+      }
+    },
+    "additionalHelpFlags": [
+      "-h"
+    ],
+    "additionalVersionFlags": [
+      "-v"
+    ]
+  },
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/core": "~1.9.0",
+    "@oclif/plugin-help": "~5.1.12",
+    "@oclif/plugin-version": "~1",
+    "cli-progress": "~3.10.0",
+    "cors": "^2.8.5",
+    "deepmerge": "~4.2.2",
+    "dotenv": "^16.3.1",
+    "express": "~4.17.3",
+    "express-winston": "~4.2.0",
+    "knex": "~1.0.4",
+    "md5-file": "~5.0.0",
+    "node-jq": "2.1.0",
+    "oclif": "~3.0.1",
+    "winston": "~3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "~8.15.0",
+    "pg": "~8.7.3"
+  }
+}

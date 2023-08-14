@@ -1,0 +1,11 @@
+{
+  "job_entity_rel": [
+    {
+      "job_name": null,
+      "sequence_number": null,
+      "source_entity_name": null,
+      "target_entity_name": null,
+      "required_flag": null
+    }
+  ]
+}

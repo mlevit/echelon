@@ -1,0 +1,23 @@
+{
+  "name": "TableDefinitionDocGenerator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": {
+    "generate": "./src/index.js generate"
+  },
+  "scripts": {
+    "generate": "./src/index.js generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Servian",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fs": "^0.1.0-security",
+    "knex": "^0.95.11",
+    "markdown-table": "2.0.0",
+    "pg": "^8.7.1",
+    "yargs": "^17.0.1"
+  }
+}

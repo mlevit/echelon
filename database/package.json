@@ -1,0 +1,11 @@
+{
+  "name": "echelon-db",
+  "version": "0.1.0",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "knex": "^2.5.1"
+  },
+  "devDependencies": {
+    "pg": "~8.7.3"
+  }
+}

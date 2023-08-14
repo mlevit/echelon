@@ -1,0 +1,11 @@
+{
+  "job": [
+    {
+      "name": null,
+      "description": null,
+      "type": null,
+      "priority": null,
+      "dependency_logic": null
+    }
+  ]
+}
