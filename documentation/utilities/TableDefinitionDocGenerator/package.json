@@ -10,7 +10,6 @@
     "generate": "./src/index.js generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Servian",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
