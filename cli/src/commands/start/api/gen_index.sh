@@ -1,1 +1,0 @@
-docgen build -i api.postman_collection.json -o index -v -s
