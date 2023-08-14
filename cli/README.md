@@ -24,7 +24,7 @@ $ npm install -g echelon-cli
 $ echelon COMMAND
 running command...
 $ echelon (--version|-v)
-echelon-cli/0.0.1 linux-x64 node-v20.5.0
+echelon-cli/0.1.0 linux-x64 node-v20.5.0
 $ echelon --help [COMMAND]
 USAGE
   $ echelon COMMAND

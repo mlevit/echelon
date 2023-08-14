@@ -1,6 +1,6 @@
 {
   "name": "echelon-web",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -21,7 +21,7 @@
     "moment": "^2.29.4",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-mermaid": "0.0.15",
+    "vue-mermaid": "0.1.05",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

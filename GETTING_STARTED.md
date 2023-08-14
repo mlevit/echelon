@@ -191,7 +191,7 @@ Once you have established all the framework components, the next step involves g
     {
       "entity_name": "salesforce_customer_staging_table",
       "name": "database_server",
-      "value": "127.0.0.1"
+      "value": "127.0.1.0"
     },
     {
       "entity_name": "salesforce_customer_staging_table",
@@ -206,7 +206,7 @@ Once you have established all the framework components, the next step involves g
   ]
   ```
 
-- A comprehensive compilation of accessible constants within Echelon can be located in the documentation at [constraints/entity_constant_name](http://127.0.0.1:8000/constraints/entity_constant_name.html).
+- A comprehensive compilation of accessible constants within Echelon can be located in the documentation at [constraints/entity_constant_name](http://127.0.1.0:8000/constraints/entity_constant_name.html).
 
 - If desired, you can introduce additional types of constants by appending them to the `constraint.json` file under the `constraint_entity_constant_name` category and then proceeding to re-import the data.
 
@@ -382,7 +382,7 @@ GET /entity/constant?name=salesforce_customer_staging_table&jq=from_entries
 {
   "database_name": "prod001",
   "database_port": "5432",
-  "database_server": "127.0.0.1",
+  "database_server": "127.0.1.0",
   "header_count": "staging",
   "table_name": "salesforce_customer"
 }
@@ -425,7 +425,7 @@ POST /job/run/log
 
 Capture the count of records within the source file, as well as the count of records that have been inserted into the target table.
 
-> Note: To gain a deeper understanding of the flow metrics that should be documented, refer to the [Technical Reconciliation](http://127.0.0.1:8000/frameworks/technical_reconciliation.html) guide.
+> Note: To gain a deeper understanding of the flow metrics that should be documented, refer to the [Technical Reconciliation](http://127.0.1.0:8000/frameworks/technical_reconciliation.html) guide.
 
 #### Source Count
 
@@ -493,7 +493,7 @@ While the job is running, you have the option to run proactive monitoring. This 
 
 Should any of these proactive monitoring checks falter, a new entry will be added to the `alert` table.
 
-> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.0.1:8000/frameworks/proactive_monitoring.html) guide.
+> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.1.0:8000/frameworks/proactive_monitoring.html) guide.
 
 ```
 POST /job/run/monitoring
@@ -513,7 +513,7 @@ null
 
 After the workflow has concluded, carry out the technical reconciliation process to guarantee the comprehensive accountability of all records.
 
-> Note: To gain a deeper understanding of the reconciliation process, refer to the [Technical Reconciliation](http://127.0.0.1:8000/frameworks/technical_reconciliation.html) guide.
+> Note: To gain a deeper understanding of the reconciliation process, refer to the [Technical Reconciliation](http://127.0.1.0:8000/frameworks/technical_reconciliation.html) guide.
 
 **Request**
 
@@ -574,7 +574,7 @@ Following the completion of the workflow, you can choose to run proactive monito
 
 In the event that any of these proactive monitoring assessments encounter issues, a new record will be inserted into the `alert` table.
 
-> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.0.1:8000/frameworks/proactive_monitoring.html) guide.
+> Note: To gain a deeper understanding of the monitoring process, refer to the [Proactive Monitoring](http://127.0.1.0:8000/frameworks/proactive_monitoring.html) guide.
 
 ```
 POST /job/run/monitoring

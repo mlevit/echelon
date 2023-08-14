@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "fs": "^0.0.1-security",
+    "fs": "^0.1.0-security",
     "fs-extra": "^10.0.0",
     "hjson": "^3.2.2",
     "json-to-markdown-table2": "^1.0.1",

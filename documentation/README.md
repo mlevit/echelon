@@ -20,12 +20,12 @@ Documentation located within this directory is generated using [MkDocs](https://
   $ mkdocs serve
   INFO    -  Building documentation...
   INFO    -  Cleaning site directory
-  [I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+  [I 160402 15:50:43 server:271] Serving on http://127.0.1.0:8000
   [I 160402 15:50:43 handlers:58] Start watching changes
   [I 160402 15:50:43 handlers:60] Start detecting changes
   ```
 
-  Open `http://127.0.0.1:8000/` in your browser, and you'll see the default home page being displayed.
+  Open `http://127.0.1.0:8000/` in your browser, and you'll see the default home page being displayed.
 
   The dev-server also supports auto-reloading, and will rebuild your documentation whenever anything in the configuration file, documentation directory, or theme directory changes.
 
