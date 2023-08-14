@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/vue-mermaid/src/index.js"],
+  "sourcesContent": ["import VueMermaid from './vue-mermaid.vue'\n\nfunction install(Vue){\n  Vue.component(\"vue-mermaid\", VueMermaid);\n}\n\nexport default {\n  install\n}"],
+  "mappings": ";AAAA,OAAO,gBAAgB;AAEvB,SAAS,QAAQ,KAAI;AACnB,MAAI,UAAU,eAAe,UAAU;AACzC;AAEA,IAAO,cAAQ;AAAA,EACb;AACF;",
+  "names": []
+}
