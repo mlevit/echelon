@@ -5,7 +5,6 @@ A log is an event that occurred in the system during the execution of a run. Log
 ## Definition
 
 <!-- definition -->
-
 | Name        | Type                     | Nullable | Description                                                                        |
 | ----------- | ------------------------ | -------- | ---------------------------------------------------------------------------------- |
 | log_id      | integer                  | NO       | System generated unique identifier.                                                |
@@ -16,26 +15,22 @@ A log is an event that occurred in the system during the execution of a run. Log
 | message     | character varying        | NO       | Message of the error.                                                              |
 | code        | integer                  | YES      | Error code of the log. Either system generated or self-assigned.                   |
 | insert_date | timestamp with time zone | NO       | UTC timestamp when the record was inserted into the table.                         |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns         |
 | ----------- | --------------- |
 | FOREIGN KEY | priority        |
 | FOREIGN KEY | run_id          |
 | PRIMARY KEY | log_id          |
 | UNIQUE      | run_id, message |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 | Column   | Value | Comment                                                                                                   |
 | -------- | ----- | --------------------------------------------------------------------------------------------------------- |
 | priority | DEBUG | Designates fine-grained informational events that are most useful to debug an application.                |
@@ -43,5 +38,4 @@ A log is an event that occurred in the system during the execution of a run. Log
 | priority | FATAL | Designates very severe error events that will presumably lead the application to abort.                   |
 | priority | INFO  | Designates informational messages that highlight the progress of the application at coarse-grained level. |
 | priority | WARN  | Designates potentially harmful situations.                                                                |
-
 <!-- acceptablevaluesstop -->

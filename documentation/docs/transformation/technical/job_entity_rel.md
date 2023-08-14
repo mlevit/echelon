@@ -5,7 +5,6 @@ The relationship between two or more entities for a particular job.
 ## Definition
 
 <!-- definition -->
-
 | Name                | Type                     | Nullable | Description                                                                                           |
 | ------------------- | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------- |
 | job_entity_rel_id   | integer                  | NO       | System generated unique identifier.                                                                   |
@@ -18,13 +17,11 @@ The relationship between two or more entities for a particular job.
 | update_date         | timestamp with time zone | YES      | UTC timestamp when the record was updated into the table.                                             |
 | migration_insert_id | integer                  | YES      | System generated unique identifier of the migration this record was inserted by.                      |
 | migration_update_id | integer                  | YES      | System generated unique identifier of the migration this record was updated by.                       |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns                                    |
 | ----------- | ------------------------------------------ |
 | FOREIGN KEY | job_id                                     |
@@ -33,13 +30,10 @@ The relationship between two or more entities for a particular job.
 | PRIMARY KEY | job_entity_rel_id                          |
 | UNIQUE      | job_id, sequence_number                    |
 | UNIQUE      | job_id, source_entity_id, target_entity_id |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 No related acceptable values found.
-
 <!-- acceptablevaluesstop -->

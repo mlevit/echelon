@@ -5,7 +5,6 @@ An alert is a record of an event that occurred in the system that should be repo
 ## Definition
 
 <!-- definition -->
-
 | Name        | Type                     | Nullable | Description                                                                          |
 | ----------- | ------------------------ | -------- | ------------------------------------------------------------------------------------ |
 | alert_id    | integer                  | NO       | System generated unique identifier.                                                  |
@@ -14,26 +13,22 @@ An alert is a record of an event that occurred in the system that should be repo
 | subject     | character varying        | NO       | Subject of the alert.                                                                |
 | message     | text                     | NO       | Message of the alert.                                                                |
 | insert_date | timestamp with time zone | NO       | UTC timestamp when the record was inserted into the table.                           |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns      |
 | ----------- | ------------ |
 | FOREIGN KEY | code         |
 | FOREIGN KEY | run_id       |
 | PRIMARY KEY | alert_id     |
 | UNIQUE      | run_id, code |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 | Column | Value | Comment                                        |
 | ------ | ----- | ---------------------------------------------- |
 | code   | A01   | Source entity has zero rows.                   |
@@ -46,5 +41,4 @@ An alert is a record of an event that occurred in the system that should be repo
 | code   | P03   | Job has taken more time than usual to run.     |
 | code   | P04   | Job has not completed as per business SLA.     |
 | code   | P05   | Job is currently running longer than expected. |
-
 <!-- acceptablevaluesstop -->

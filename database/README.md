@@ -1,6 +1,6 @@
 # What is the Echelon database?
 
-At the core of Echelon lies a robust and centralised database. This repository serves as the heart of the framework, meticulously collecting and organizing a wealth of technical, operational, and business metadata. Through this database, Echelon gains the capacity to holistically manage and present crucial information that forms the backbone of various data-related activities.
+At the core of Echelon lies a robust and centralised database. This repository serves as the heart of the framework, collecting and organizing a wealth of technical, operational, and business metadata. Through this database, Echelon gains the capacity to manage and present crucial information that forms the backbone of various data-related activities.
 
 ## How do I deploy it?
 

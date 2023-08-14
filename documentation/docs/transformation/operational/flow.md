@@ -7,7 +7,6 @@ The collection of this data is deemed necessary for data reconciliation.
 ## Definition
 
 <!-- definition -->
-
 | Name        | Type                     | Nullable | Description                                                                 |
 | ----------- | ------------------------ | -------- | --------------------------------------------------------------------------- |
 | flow_id     | integer                  | NO       | System generated unique identifier.                                         |
@@ -17,26 +16,22 @@ The collection of this data is deemed necessary for data reconciliation.
 | label       | character varying        | NO       | Label of the flow.                                                          |
 | count       | integer                  | NO       | Record count.                                                               |
 | insert_date | timestamp with time zone | NO       | UTC timestamp when the record was inserted into the table.                  |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns       |
 | ----------- | ------------- |
 | FOREIGN KEY | label         |
 | FOREIGN KEY | run_id        |
 | PRIMARY KEY | flow_id       |
 | UNIQUE      | run_id, label |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 | Column | Value                             | Comment                                                                                                                            |
 | ------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | label  | end_date_count                    | Number of records updated in the target entity as part of SCD Type 2.                                                              |
@@ -46,5 +41,4 @@ The collection of this data is deemed necessary for data reconciliation.
 | label  | source_count                      | Number of records present in the source entity that were selected.                                                                 |
 | label  | technical_reconciliation_variance | Number of records that are not accounted for. If this value is greater than or less than zero technical reconciliation has failed. |
 | label  | update_insert_count               | Number of records inserted into the target entity as part of SCD Type 2.                                                           |
-
 <!-- acceptablevaluesstop -->

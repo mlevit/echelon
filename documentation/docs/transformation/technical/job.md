@@ -5,7 +5,6 @@ A job represents the flow of data from source to target. Jobes define point to p
 ## Definition
 
 <!-- definition -->
-
 | Name                | Type                     | Nullable | Description                                                                                                                                                                                                        |
 | ------------------- | ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | job_id              | integer                  | NO       | System generated unique identifier.                                                                                                                                                                                |
@@ -18,26 +17,22 @@ A job represents the flow of data from source to target. Jobes define point to p
 | update_date         | timestamp with time zone | YES      | UTC timestamp when the record was inserted into the table.                                                                                                                                                         |
 | migration_insert_id | integer                  | YES      | System generated unique identifier of the migration this record was inserted by.                                                                                                                                   |
 | migration_update_id | integer                  | YES      | System generated unique identifier of the migration this record was updated by.                                                                                                                                    |
-
 <!-- definitionstop -->
 
 ## Constraints
 
 <!-- constraint -->
-
 | Type        | Columns          |
 | ----------- | ---------------- |
 | FOREIGN KEY | dependency_logic |
 | FOREIGN KEY | type             |
 | PRIMARY KEY | job_id           |
 | UNIQUE      | name             |
-
 <!-- constraintstop -->
 
 ## Acceptable Values
 
 <!-- acceptablevalues -->
-
 | Column           | Value                                 | Comment                                |
 | ---------------- | ------------------------------------- | -------------------------------------- |
 | type             | accumulating_snapshot_fact_table_load |                                        |
@@ -58,5 +53,4 @@ A job represents the flow of data from source to target. Jobes define point to p
 | type             | transactional_fact_table_load         |                                        |
 | dependency_logic | and                                   | All required entities require updates. |
 | dependency_logic | or                                    | Any required entities require updates. |
-
 <!-- acceptablevaluesstop -->
