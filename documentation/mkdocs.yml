@@ -7,7 +7,7 @@ site_url:
 # Repository
 repo_name: Echelon
 repo_url: https://github.com/mlevit/echelon
-edit_uri: -/blob/master/documentation/
+edit_uri: edit/main/documentation/docs/
 
 # Copyright
 # copyright:
@@ -33,7 +33,8 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    # - toc.integrate
+    - content.action.edit
+    - content.action.view
   icon:
     logo: material/eye-outline
     repo: material/github
