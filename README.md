@@ -2,6 +2,8 @@
 
 Echelon is a flexible and scalable metadata and governance framework. It gathers technical, operational, and business metadata and puts it all in one central database. This setup allows Echelon to be used in various ways, like creating data workflows based on metadata, keeping an eye on data quality, mapping out where data comes from, and more.
 
+![Homepage](./assets/homepage.png)
+
 ## What are the various components that make up Echelon?
 
 Echelon is a comprehensive ecosystem built upon four essential components, each contributing uniquely to its functionality and utility:
@@ -13,6 +15,14 @@ Echelon is a comprehensive ecosystem built upon four essential components, each 
 - **Web**: The Echelon Web interface is as a dynamic and user-friendly web-based application. Tailored to cater to a diverse audience, this interactive interface provides an intuitive means to visualize and explore the wealth of information stored within the Echelon ecosystem. Its role extends beyond mere visualisation, allowing users to engage with operational workflows, assess data assets, and delve into the details of data lineage and governance, all while maintaining a responsive and engaging user experience.
 
 - **Documentation**: Recognising the significance of clear guidance and accessibility, Echelon places emphasis on comprehensive documentation. This component encapsulates valuable insights, guidelines, tutorials, and best practices, ensuring that users, administrators, and developers alike can harness the framework's potential to the fullest. The documentation not only aids in getting started with Echelon but also serves as an ongoing reference, promoting efficient utilisation and encouraging the exploration of its diverse capabilities.
+
+## Data Model
+
+At a logical level, the data model below illustrates the relationships among the various entities within the Echelon data model.
+
+> Note: Relationship and mapping tables are omitted to simplify the model for illustrative purposes only.
+
+![Data Model](./assets/data_model.svg)
 
 ## How do I get started?
 
