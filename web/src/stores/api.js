@@ -14,6 +14,7 @@ export const useApiStore = defineStore("api", {
     entityField: (state) => state.url + "/entity/field",
     entityConstant: (state) => state.url + "/entity/constant",
     entityLineage: (state) => state.url + "/entity/lineage",
+    export: (state) => state.url + "/export",
     jobFieldMap: (state) => state.url + "/job/field/map",
     job: (state) => state.url + "/job",
     run: (state) => state.url + "/job/run",
