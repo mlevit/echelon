@@ -24,6 +24,7 @@ export const useApiStore = defineStore("api", {
     jobDepend: (state) => state.url + "/job/depend",
     jobDependant: (state) => state.url + "/job/dependant",
     jobNext: (state) => state.url + "/job/next",
+    jobRelationship: (state) => state.url + "/job/relationship",
     jobSource: (state) => state.url + "/job/source",
     jobTarget: (state) => state.url + "/job/target",
     query: (state) => state.url + "/query",
