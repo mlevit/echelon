@@ -1,8 +1,8 @@
 <script setup>
 import { useApiStore } from "@/stores/api";
+import SvgIcon from "@/components/SvgIcon.vue";
 
 import Treeselect from "vue3-treeselect";
-import SvgIcon from "@/components/SvgIcon.vue";
 import { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
 import "vue3-treeselect/dist/vue3-treeselect.css";
 
@@ -15,14 +15,16 @@ export default {
   components: { Treeselect },
   data() {
     return {
-      rawJobData: null,
+      isExporting: false,
       // Tree variables
       alwaysOpen: true,
       apiStore: useApiStore(),
       appendToBody: false,
       autoFocus: true,
       clearable: true,
+      displayLimit: 0,
       maxHeight: window.innerHeight - 140,
+      multiSelect: true,
       options: null,
       searchable: false,
       value: null,
@@ -104,8 +106,12 @@ export default {
       const response = await axios.get(url.href);
       return response.data;
     },
-    limitText(count) {
-      return `${count} records selected for export`;
+    getExportData() {
+      if (this.isExporting) {
+        this.isExporting = false;
+      } else {
+        this.isExporting = true;
+      }
     },
     async loadOptions({ action, parentNode, callback }) {
       if (action === LOAD_CHILDREN_OPTIONS) {
@@ -206,10 +212,10 @@ export default {
               :append-to-body="appendToBody"
               :auto-focus="autoFocus"
               :clearable="clearable"
-              limit="0"
+              limit="displayLimit"
               :load-options="loadOptions"
               :max-height="maxHeight"
-              :multiple="true"
+              :multiple="multiSelect"
               :options="options"
               :searchable="searchable"
               :value-consists-of="valueConsistsOf"
@@ -223,10 +229,15 @@ export default {
         <button
           type="button"
           class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
-          @click="toggleLive()"
+          @click="getExportData()"
         >
-          Export
-          <SvgIcon icon="chevronRight" color="black" class="ml-2" />
+          {{ isExporting ? "Exporting" : "Export" }}
+          <SvgIcon
+            :icon="isExporting ? 'reload' : 'chevronRight'"
+            color="black"
+            class="ml-2"
+            :class="isExporting ? 'animate-spin' : 'animate-name'"
+          />
         </button>
       </div>
       <div class="col-span-4 flex h-full items-center justify-center rounded">
@@ -241,8 +252,7 @@ export default {
           >
             <pre
               class="max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
-              >{{ value }}
-              </pre
+              >{{ value }}</pre
             >
           </div>
         </div>
@@ -289,12 +299,13 @@ export default {
 .vue-treeselect__menu {
   @apply bg-background dark:bg-background-darker;
   @apply border-inputBorder dark:border-inputBorder-dark;
+  @apply p-0;
+  @apply rounded-lg;
   @apply w-full;
 }
+
 .vue-treeselect__input {
-  /* padding-left: 0px !important; */
   @apply pl-0 !important;
-  /* @apply bg-inputBg-dark; */
 }
 
 .vue-treeselect__option--highlight {
@@ -304,8 +315,4 @@ export default {
 .vue-treeselect__label {
   @apply text-textPrimary dark:text-textPrimary-dark;
 }
-
-/* .vue-treeselect__menu-container {
-  z-index: auto !important;
-} */
 </style>
