@@ -2,12 +2,12 @@
 import { useApiStore } from "@/stores/api";
 
 import Treeselect from "vue3-treeselect";
+import SvgIcon from "@/components/SvgIcon.vue";
 import { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
 import "vue3-treeselect/dist/vue3-treeselect.css";
 
 import axios from "axios";
 import _ from "lodash";
-import moment from "moment";
 </script>
 
 <script>
@@ -21,8 +21,10 @@ export default {
       apiStore: useApiStore(),
       appendToBody: false,
       autoFocus: true,
-      maxHeight: window.innerHeight - 200,
+      clearable: true,
+      maxHeight: window.innerHeight - 140,
       options: null,
+      searchable: false,
       value: null,
       valueConsistsOf: "ALL",
     };
@@ -55,14 +57,14 @@ export default {
       urlSource.searchParams.append("name", jobName);
       urlSource.searchParams.append(
         "jq",
-        '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null}]'
+        '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null, isDefaultExpanded: true}]'
       );
 
       const urlTarget = new URL(this.apiStore.jobTarget);
       urlTarget.searchParams.append("name", jobName);
       urlTarget.searchParams.append(
         "jq",
-        '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null}]'
+        '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null, isDefaultExpanded: true}]'
       );
 
       const responseSource = await axios.get(urlSource.href);
@@ -101,6 +103,9 @@ export default {
 
       const response = await axios.get(url.href);
       return response.data;
+    },
+    limitText(count) {
+      return `${count} records selected for export`;
     },
     async loadOptions({ action, parentNode, callback }) {
       if (action === LOAD_CHILDREN_OPTIONS) {
@@ -185,35 +190,46 @@ export default {
 </script>
 
 <template>
-  <div class="overflow-x-autosm:rounded-lg relative w-full">
-    <div class="grid grid-cols-3 gap-4">
-      <div class="col-span-2 flex h-fit items-center justify-center rounded">
+  <div class="overflow-x-autosm:rounded-lg relative h-fit w-full">
+    <div class="grid h-fit grid-cols-9 gap-4">
+      <div class="col-span-4 flex h-fit items-center justify-center rounded">
         <div class="w-full">
           <div>
             <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
               Available Records
             </h6>
           </div>
-          <div
-            class="flex h-fit border border-tableBorder marker:overflow-x-auto dark:border-tableBorder-dark sm:rounded-lg"
-          >
+          <div class="flex h-fit marker:overflow-x-auto">
             <treeselect
               v-model="value"
               :always-open="alwaysOpen"
               :append-to-body="appendToBody"
               :auto-focus="autoFocus"
+              :clearable="clearable"
+              limit="0"
               :load-options="loadOptions"
               :max-height="maxHeight"
               :multiple="true"
               :options="options"
+              :searchable="searchable"
               :value-consists-of="valueConsistsOf"
-              placeholder="Select records to export"
+              placeholder="..."
               v-if="options"
             />
           </div>
         </div>
       </div>
-      <div class="flex h-fit items-center justify-center rounded">
+      <div class="flex h-full items-center justify-center pt-[46px]">
+        <button
+          type="button"
+          class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
+          @click="toggleLive()"
+        >
+          Export
+          <SvgIcon icon="chevronRight" color="black" class="ml-2" />
+        </button>
+      </div>
+      <div class="col-span-4 flex h-full items-center justify-center rounded">
         <div class="w-full">
           <div>
             <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
@@ -224,8 +240,9 @@ export default {
             class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
           >
             <pre
-              class="h-full w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
-              >{{ value }}</pre
+              class="max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
+              >{{ value }}
+              </pre
             >
           </div>
         </div>
@@ -242,17 +259,53 @@ export default {
   box-shadow: none !important;
 }
 
-/* .vue-treeselect__control {
-  @apply bg-inputBg-dark;
-} */
+.vue-treeselect {
+  @apply rounded-lg;
+  @apply w-full;
+}
 
+.vue-treeselect__control {
+  @apply bg-inputBg dark:bg-inputBg-dark;
+  @apply border-inputBorder dark:border-inputBorder-dark;
+  @apply hidden;
+}
+
+.vue-treeselect__control:hover {
+  @apply border-inputBorder dark:border-inputBorder-dark !important;
+}
+
+.vue-treeselect__multi-value {
+  @apply mb-0 !important;
+}
+.vue-treeselect__list {
+  @apply border-inputBorder dark:border-inputBorder-dark;
+  @apply w-full;
+}
+
+.vue-treeselect__option {
+  @apply hover:bg-hover hover:dark:bg-hover-dark;
+}
+
+.vue-treeselect__menu {
+  @apply bg-background dark:bg-background-darker;
+  @apply border-inputBorder dark:border-inputBorder-dark;
+  @apply w-full;
+}
 .vue-treeselect__input {
   /* padding-left: 0px !important; */
   @apply pl-0 !important;
   /* @apply bg-inputBg-dark; */
 }
 
-.vue-treeselect__menu-container {
-  z-index: auto !important;
+.vue-treeselect__option--highlight {
+  @apply bg-transparent dark:bg-transparent;
 }
+
+.vue-treeselect__label {
+  @apply text-textPrimary dark:text-textPrimary-dark;
+}
+
+/* .vue-treeselect__menu-container {
+  z-index: auto !important;
+} */
 </style>

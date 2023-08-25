@@ -178,6 +178,28 @@ export default {
           </RouterLink>
         </li>
       </ul>
+      <ul
+        class="mt-4 space-y-2 border-t border-border pt-4 dark:border-border-dark"
+      >
+        <li>
+          <RouterLink
+            to="/import"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
+          >
+            <SvgIcon icon="download" size="lg" color="black" />
+            <span class="ml-3">Data Import</span>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/export"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
+          >
+            <SvgIcon icon="upload" size="lg" color="black" />
+            <span class="ml-3">Data Export</span>
+          </RouterLink>
+        </li>
+      </ul>
     </div>
   </aside>
   <RouterView :key="$route.path" class="mt-14" v-if="dateStore.isReady" />
