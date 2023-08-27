@@ -7,6 +7,7 @@ import { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
 import "vue3-treeselect/dist/vue3-treeselect.css";
 
 import axios from "axios";
+import { initFlowbite } from "flowbite";
 import _ from "lodash";
 </script>
 
@@ -16,6 +17,7 @@ export default {
   data() {
     return {
       isExporting: false,
+      exportData: null,
       // Tree variables
       alwaysOpen: true,
       apiStore: useApiStore(),
@@ -27,14 +29,20 @@ export default {
       multiSelect: true,
       options: null,
       searchable: false,
-      value: null,
+      selectedRecords: null,
       valueConsistsOf: "ALL",
     };
   },
   created() {
     this.getJobData();
   },
+  mounted() {
+    initFlowbite();
+  },
   methods: {
+    copyData() {
+      navigator.clipboard.writeText(JSON.stringify(this.exportData, null, 2));
+    },
     getJobData() {
       const url = new URL(this.apiStore.job);
       url.searchParams.append(
@@ -106,11 +114,37 @@ export default {
       const response = await axios.get(url.href);
       return response.data;
     },
-    getExportData() {
+    getCleanExportRequest() {
+      const cleanRequest = {};
+      for (const item of this.selectedRecords) {
+        if (item.charAt(0) != "!") {
+          let table = item.slice(0, item.lastIndexOf("_"));
+          let recordId = item.slice(item.lastIndexOf("_") + 1, item.length);
+
+          cleanRequest[table] = cleanRequest[table] || [];
+          cleanRequest[table].push(recordId);
+        }
+      }
+
+      return cleanRequest;
+    },
+    async getExportData() {
       if (this.isExporting) {
         this.isExporting = false;
       } else {
         this.isExporting = true;
+        this.exportData = null;
+
+        const url = new URL(this.apiStore.export);
+        // url.searchParams.append("table", ["job", "entity"]);
+        // url.searchParams.append("record", this.getCleanExportRequest());
+        const response = await axios.post(url.href, {
+          apiJson: JSON.stringify(this.getCleanExportRequest()),
+        });
+
+        this.exportData = response.data;
+        this.isExporting = false;
+        // return response.data;
       }
     },
     async loadOptions({ action, parentNode, callback }) {
@@ -124,7 +158,7 @@ export default {
             );
             if (jobConstandData.length > 0) {
               let constantObject = {
-                id: `${parentNode.id}_job_constants`,
+                id: `!${parentNode.id}_job_constants`,
                 label: "Constants",
                 children: jobConstandData,
               };
@@ -134,7 +168,7 @@ export default {
             const entityData = await this.getJobEntityData(parentNode.label);
             if (entityData.length > 0) {
               let entityObject = {
-                id: `${parentNode.id}_entities`,
+                id: `!${parentNode.id}_entities`,
                 label: "Entities",
                 children: entityData,
               };
@@ -146,8 +180,8 @@ export default {
             );
             if (jobRelationshipData.length > 0) {
               let jobRelationshipObject = {
-                id: `${parentNode.id}_relationships`,
-                label: "Relationships",
+                id: `!${parentNode.id}_relationships`,
+                label: "Entity Relationships",
                 children: jobRelationshipData,
               };
               jobChildrenObject.push(jobRelationshipObject);
@@ -165,7 +199,7 @@ export default {
             );
             if (entityConstandData.length > 0) {
               let constantObject = {
-                id: `${parentNode.id}_entity_constants`,
+                id: `!${parentNode.id}_entity_constants`,
                 label: "Constants",
                 children: entityConstandData,
               };
@@ -175,7 +209,7 @@ export default {
             const fieldData = await this.getFieldData(parentNode.label);
             if (fieldData.length > 0) {
               let fieldObject = {
-                id: `${parentNode.id}_fields`,
+                id: `!${parentNode.id}_fields`,
                 label: "Fields",
                 children: fieldData,
               };
@@ -207,7 +241,7 @@ export default {
           </div>
           <div class="flex h-fit marker:overflow-x-auto">
             <treeselect
-              v-model="value"
+              v-model="selectedRecords"
               :always-open="alwaysOpen"
               :append-to-body="appendToBody"
               :auto-focus="autoFocus"
@@ -228,31 +262,46 @@ export default {
       <div class="flex h-full items-center justify-center pt-[46px]">
         <button
           type="button"
-          class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
+          class="inline-flex min-w-full max-w-full select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
           @click="getExportData()"
         >
-          {{ isExporting ? "Exporting" : "Export" }}
+          {{ isExporting ? "" : "Export" }}
           <SvgIcon
             :icon="isExporting ? 'reload' : 'chevronRight'"
             color="black"
-            class="ml-2"
-            :class="isExporting ? 'animate-spin' : 'animate-name'"
+            :class="isExporting ? 'animate-spin' : 'animate-name ml-2'"
           />
         </button>
       </div>
       <div class="col-span-4 flex h-full items-center justify-center rounded">
         <div class="w-full">
-          <div>
+          <div class="flex items-center">
             <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-              Selected Records
+              Exported Records
             </h6>
+            <SvgIcon
+              icon="clipboard"
+              color="black"
+              class="mb-4 ml-2 cursor-pointer"
+              @click="copyData"
+              data-tooltip-target="tooltip-copy"
+              data-tooltip-placement="right"
+            />
+            <div
+              id="tooltip-copy"
+              role="tooltip"
+              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-background-darker px-3 py-2 text-sm font-medium text-textPrimary-dark opacity-0 shadow-sm dark:bg-gray-700"
+            >
+              Copy
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
           </div>
           <div
             class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
           >
             <pre
-              class="max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
-              >{{ value }}</pre
+              class="h-[calc(100vh-140px)] max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
+              >{{ exportData }}</pre
             >
           </div>
         </div>
@@ -270,8 +319,8 @@ export default {
 }
 
 .vue-treeselect {
+  @apply h-full w-full;
   @apply rounded-lg;
-  @apply w-full;
 }
 
 .vue-treeselect__control {
@@ -299,9 +348,9 @@ export default {
 .vue-treeselect__menu {
   @apply bg-background dark:bg-background-darker;
   @apply border-inputBorder dark:border-inputBorder-dark;
+  @apply h-[calc(100vh-140px)] w-full !important;
   @apply p-0;
   @apply rounded-lg;
-  @apply w-full;
 }
 
 .vue-treeselect__input {
