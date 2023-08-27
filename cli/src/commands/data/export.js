@@ -249,7 +249,7 @@ class CustomCommand extends Command {
       });
   }
 
-  async getJobFieldMapRecords() {
+  async getJobFieldMapRecords(ids) {
     return await knex
       .select(
         "job.name as job_name",
@@ -283,7 +283,7 @@ class CustomCommand extends Command {
       )
       .modify(function (qb) {
         if (ids) {
-          qb.whereIn("job_field_map_id", ids);
+          qb.whereIn("job_field_map.job_field_map_id", ids);
         }
       });
   }

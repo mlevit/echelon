@@ -19,6 +19,7 @@ class CustomCommand extends Command {
       try {
         var mapResult = await knex
           .select([
+            "job_field_map.job_field_map_id",
             "source_entity.entity_id AS source_entity_id",
             "source_entity.name AS source_entity_name",
             "source_field.physical_name AS source_field_name",

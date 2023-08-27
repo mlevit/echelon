@@ -81,12 +81,23 @@ export default {
       const responseTarget = await axios.get(urlTarget.href);
       return [...responseSource.data, ...responseTarget.data];
     },
+    async getJobFieldMapData(jobName) {
+      const url = new URL(this.apiStore.jobFieldMap);
+      url.searchParams.append("name", jobName);
+      url.searchParams.append(
+        "jq",
+        '[.[] | {id: ("job_field_map_" + (.job_field_map_id | tostring)), label: ((.source_field_name | tostring) + " › " + (.target_field_name | tostring))}]'
+      );
+
+      const response = await axios.get(url.href);
+      return response.data;
+    },
     async getJobRelationshipData(jobName) {
       const url = new URL(this.apiStore.jobRelationship);
       url.searchParams.append("name", jobName);
       url.searchParams.append(
         "jq",
-        '[.[] | {id: ("job_entity_rel_" + (.job_entity_rel_id | tostring)), label: ((.source_entity_name | tostring) + " > " + (.target_entity_name | tostring))}]'
+        '[.[] | {id: ("job_entity_rel_" + (.job_entity_rel_id | tostring)), label: ((.source_entity_name | tostring) + " › " + (.target_entity_name | tostring))}]'
       );
 
       const response = await axios.get(url.href);
@@ -125,7 +136,6 @@ export default {
           cleanRequest[table].push(recordId);
         }
       }
-
       return cleanRequest;
     },
     async getExportData() {
@@ -136,15 +146,12 @@ export default {
         this.exportData = null;
 
         const url = new URL(this.apiStore.export);
-        // url.searchParams.append("table", ["job", "entity"]);
-        // url.searchParams.append("record", this.getCleanExportRequest());
         const response = await axios.post(url.href, {
           apiJson: JSON.stringify(this.getCleanExportRequest()),
         });
 
         this.exportData = response.data;
         this.isExporting = false;
-        // return response.data;
       }
     },
     async loadOptions({ action, parentNode, callback }) {
@@ -185,6 +192,18 @@ export default {
                 children: jobRelationshipData,
               };
               jobChildrenObject.push(jobRelationshipObject);
+            }
+
+            const jobFieldMapData = await this.getJobFieldMapData(
+              parentNode.label
+            );
+            if (jobRelationshipData.length > 0) {
+              let jobFieldMapObject = {
+                id: `!${parentNode.id}_field_maps`,
+                label: "Field Mapping",
+                children: jobFieldMapData,
+              };
+              jobChildrenObject.push(jobFieldMapObject);
             }
 
             parentNode.children = jobChildrenObject;
