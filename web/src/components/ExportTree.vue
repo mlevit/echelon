@@ -264,6 +264,7 @@ export default {
           type="button"
           class="inline-flex min-w-full max-w-full select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
           @click="getExportData()"
+          :disabled="_.isEmpty(selectedRecords)"
         >
           {{ isExporting ? "" : "Export" }}
           <SvgIcon
@@ -300,7 +301,7 @@ export default {
             class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
           >
             <pre
-              class="h-[calc(100vh-140px)] max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
+              class="h-[calc(100vh-140px)] max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-sm text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
               >{{ exportData }}</pre
             >
           </div>
@@ -333,35 +334,38 @@ export default {
   @apply border-inputBorder dark:border-inputBorder-dark !important;
 }
 
-.vue-treeselect__multi-value {
-  @apply mb-0 !important;
+.vue-treeselect__input {
+  @apply pl-0 !important;
 }
+
+.vue-treeselect__label {
+  @apply text-textPrimary dark:text-textPrimary-dark;
+  @apply text-sm;
+}
+
 .vue-treeselect__list {
   @apply border-inputBorder dark:border-inputBorder-dark;
   @apply w-full;
 }
 
-.vue-treeselect__option {
-  @apply hover:bg-hover hover:dark:bg-hover-dark;
-}
-
 .vue-treeselect__menu {
-  @apply bg-background dark:bg-background-darker;
+  @apply bg-background-lightest dark:bg-background-darker;
   @apply border-inputBorder dark:border-inputBorder-dark;
   @apply h-[calc(100vh-140px)] w-full !important;
   @apply p-0;
   @apply rounded-lg;
 }
 
-.vue-treeselect__input {
-  @apply pl-0 !important;
+.vue-treeselect__multi-value {
+  @apply mb-0 !important;
+}
+
+.vue-treeselect__option {
+  @apply hover:bg-hover hover:dark:bg-hover-dark;
+  @apply py-2;
 }
 
 .vue-treeselect__option--highlight {
   @apply bg-transparent dark:bg-transparent;
-}
-
-.vue-treeselect__label {
-  @apply text-textPrimary dark:text-textPrimary-dark;
 }
 </style>
