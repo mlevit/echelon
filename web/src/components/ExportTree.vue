@@ -147,7 +147,7 @@ export default {
 
         const url = new URL(this.apiStore.export);
         const response = await axios.post(url.href, {
-          apiJson: JSON.stringify(this.getCleanExportRequest()),
+          input: JSON.stringify(this.getCleanExportRequest()),
         });
 
         this.exportData = response.data;
