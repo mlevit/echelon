@@ -183,20 +183,20 @@ export default {
       >
         <li>
           <RouterLink
-            to="/import"
-            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
-          >
-            <SvgIcon icon="download" size="lg" color="black" />
-            <span class="ml-3">Data Import</span>
-          </RouterLink>
-        </li>
-        <li>
-          <RouterLink
             to="/export"
             class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
           >
             <SvgIcon icon="upload" size="lg" color="black" />
             <span class="ml-3">Data Export</span>
+          </RouterLink>
+        </li>
+        <li v-if="apiStore.env === 'dev'">
+          <RouterLink
+            to="/import"
+            class="flex items-center rounded-lg p-2 text-base font-normal text-textPrimary hover:bg-hover dark:text-textPrimary-dark dark:hover:bg-gray-700"
+          >
+            <SvgIcon icon="download" size="lg" color="black" />
+            <span class="ml-3">Data Import</span>
           </RouterLink>
         </li>
       </ul>

@@ -4,6 +4,7 @@ import DashboardView from "@/views/DashboardView.vue";
 import EntityDetailView from "@/views/EntityDetailView.vue";
 import EntityListView from "@/views/EntityListView.vue";
 import ExportView from "@/views/ExportView.vue";
+import ImportView from "@/views/ImportView.vue";
 import JobDetailView from "@/views/JobDetailView.vue";
 import JobListView from "@/views/JobListView.vue";
 import RunDetailView from "@/views/RunDetailView.vue";
@@ -52,9 +53,13 @@ const router = createRouter({
     },
     {
       path: "/export",
-      props: true,
       name: "export",
       component: ExportView,
+    },
+    {
+      path: "/import",
+      name: "import",
+      component: ImportView,
     },
   ],
 });

@@ -26,8 +26,9 @@ export default {
   data() {
     return {
       apiStore: useApiStore(),
-      rawRunFlowData: null,
+      copyText: "Copy",
       liveIntervalId: null,
+      rawRunFlowData: null,
     };
   },
   created() {
@@ -63,6 +64,12 @@ export default {
       navigator.clipboard.writeText(
         JSON.stringify(this.rawRunFlowData, null, 2)
       );
+
+      let ref = this;
+      this.copyText = "Copied";
+      setTimeout(function () {
+        ref.copyText = "Copy";
+      }, 2000);
     },
     createInterval() {
       if (this.runStatus === "running") {
@@ -82,17 +89,17 @@ export default {
       <SvgIcon
         icon="clipboard"
         color="black"
-        class="ml-2 cursor-pointer"
+        class="ml-2 cursor-pointer focus:outline-none"
         @click="copyData"
-        data-tooltip-target="tooltip-copy"
+        data-tooltip-target="tooltip-copy-flow"
         data-tooltip-placement="right"
       />
       <div
-        id="tooltip-copy"
+        id="tooltip-copy-flow"
         role="tooltip"
         class="tooltip invisible absolute z-10 inline-block rounded-lg bg-background-darker px-3 py-2 text-sm font-medium text-textPrimary-dark opacity-0 shadow-sm dark:bg-gray-700"
       >
-        Copy
+        {{ copyText }}
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
     </div>

@@ -1,14 +1,15 @@
 <script setup>
-import { useApiStore } from "@/stores/api";
 import SvgIcon from "@/components/SvgIcon.vue";
+import { useApiStore } from "@/stores/api";
 
-import Treeselect from "vue3-treeselect";
-import { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
+import Treeselect, { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
 import "vue3-treeselect/dist/vue3-treeselect.css";
 
 import axios from "axios";
 import { initFlowbite } from "flowbite";
 import _ from "lodash";
+import { saveAs } from "file-saver";
+import moment from "moment";
 </script>
 
 <script>
@@ -16,6 +17,8 @@ export default {
   components: { Treeselect },
   data() {
     return {
+      copyText: "Copy",
+      downloadText: "Download",
       isExporting: false,
       exportData: null,
       // Tree variables
@@ -25,7 +28,7 @@ export default {
       autoFocus: true,
       clearable: true,
       displayLimit: 0,
-      maxHeight: window.innerHeight - 140,
+      maxHeight: window.innerHeight - 250,
       multiSelect: true,
       options: null,
       searchable: false,
@@ -41,7 +44,30 @@ export default {
   },
   methods: {
     copyData() {
-      navigator.clipboard.writeText(JSON.stringify(this.exportData, null, 2));
+      if (this.exportData) {
+        navigator.clipboard.writeText(JSON.stringify(this.exportData, null, 2));
+
+        let ref = this;
+        this.copyText = "Copied";
+        setTimeout(function () {
+          ref.copyText = "Copy";
+        }, 2000);
+      }
+    },
+    downloadData() {
+      if (this.exportData) {
+        const timestamp = moment().format("YYYYMMDD_HHmmss");
+        const json = JSON.stringify(this.exportData, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+
+        saveAs(blob, `export_${timestamp}.json`);
+
+        let ref = this;
+        this.downloadText = "Downloaded";
+        setTimeout(function () {
+          ref.downloadText = "Download";
+        }, 2000);
+      }
     },
     getJobData() {
       const url = new URL(this.apiStore.job);
@@ -249,13 +275,43 @@ export default {
 </script>
 
 <template>
+  <div class="mb-4 w-full">
+    <div
+      class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg"
+    >
+      <div
+        class="flex-row items-center justify-between space-y-3 p-4 sm:flex sm:space-x-4 sm:space-y-0"
+      >
+        <div>
+          <h5 class="mr-3 font-semibold dark:text-white">Export Data</h5>
+          <p class="text-gray-500 dark:text-gray-400">
+            Select the records you want to export to generate JSON output
+          </p>
+        </div>
+        <button
+          type="button"
+          class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
+          @click="getExportData()"
+          :disabled="_.isEmpty(selectedRecords)"
+        >
+          {{ isExporting ? "" : "Export" }}
+          <SvgIcon
+            icon="reload"
+            color="black"
+            class="animate-spin"
+            v-if="isExporting"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="overflow-x-autosm:rounded-lg relative h-fit w-full">
-    <div class="grid h-fit grid-cols-9 gap-4">
-      <div class="col-span-4 flex h-fit items-center justify-center rounded">
+    <div class="grid h-fit grid-cols-2 gap-4">
+      <div class="flex h-fit items-center justify-center rounded">
         <div class="w-full">
           <div>
             <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-              Available Records
+              Available
             </h6>
           </div>
           <div class="flex h-fit marker:overflow-x-auto">
@@ -273,46 +329,46 @@ export default {
               :searchable="searchable"
               :value-consists-of="valueConsistsOf"
               placeholder="..."
+              zIndex="1"
               v-if="options"
             />
           </div>
         </div>
       </div>
-      <div class="flex h-full items-center justify-center pt-[46px]">
-        <button
-          type="button"
-          class="inline-flex min-w-full max-w-full select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
-          @click="getExportData()"
-          :disabled="_.isEmpty(selectedRecords)"
-        >
-          {{ isExporting ? "" : "Export" }}
-          <SvgIcon
-            :icon="isExporting ? 'reload' : 'chevronRight'"
-            color="black"
-            :class="isExporting ? 'animate-spin' : 'animate-name ml-2'"
-          />
-        </button>
-      </div>
-      <div class="col-span-4 flex h-full items-center justify-center rounded">
+      <div class="flex h-full items-center justify-center rounded">
         <div class="w-full">
           <div class="flex items-center">
             <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-              Exported Records
+              Exported
             </h6>
             <SvgIcon
               icon="clipboard"
               color="black"
-              class="mb-4 ml-2 cursor-pointer"
+              class="mb-4 ml-2 cursor-pointer focus:outline-none"
               @click="copyData"
               data-tooltip-target="tooltip-copy"
-              data-tooltip-placement="right"
             />
             <div
               id="tooltip-copy"
               role="tooltip"
               class="tooltip invisible absolute z-10 inline-block rounded-lg bg-background-darker px-3 py-2 text-sm font-medium text-textPrimary-dark opacity-0 shadow-sm dark:bg-gray-700"
             >
-              Copy
+              {{ copyText }}
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <SvgIcon
+              icon="download"
+              color="black"
+              class="mb-4 ml-2 cursor-pointer focus:outline-none"
+              @click="downloadData"
+              data-tooltip-target="tooltip-download"
+            />
+            <div
+              id="tooltip-download"
+              role="tooltip"
+              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-background-darker px-3 py-2 text-sm font-medium text-textPrimary-dark opacity-0 shadow-sm dark:bg-gray-700"
+            >
+              {{ downloadText }}
               <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
           </div>
@@ -320,7 +376,7 @@ export default {
             class="overflow-x-auto border border-tableBorder dark:border-tableBorder-dark sm:rounded-lg"
           >
             <pre
-              class="h-[calc(100vh-140px)] max-h-[calc(100vh-140px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-sm text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
+              class="h-[calc(100vh-250px)] max-h-[calc(100vh-250px)] w-full overflow-y-auto rounded-lg border border-border-lighter bg-background-lightest p-4 text-sm text-textPrimary shadow dark:border-border-darker dark:bg-background-darker dark:text-textPrimary-dark"
               >{{ exportData }}</pre
             >
           </div>
@@ -370,7 +426,7 @@ export default {
 .vue-treeselect__menu {
   @apply bg-background-lightest dark:bg-background-darker;
   @apply border-inputBorder dark:border-inputBorder-dark;
-  @apply h-[calc(100vh-140px)] w-full !important;
+  @apply h-[calc(100vh-250px)] w-full !important;
   @apply p-0;
   @apply rounded-lg;
 }
