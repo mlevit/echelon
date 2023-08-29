@@ -57,7 +57,7 @@ export default {
       return [
         { title: "Average Runtime", value: "10 minutes" },
         { title: "Run Frequency", value: "12 hours" },
-        { title: "Average Records Processed", value: "12312" },
+        { title: "Average Entries Processed", value: "12312" },
       ];
     },
   },

@@ -162,7 +162,7 @@ export default {
                   type="radio"
                   value=""
                   name="filter-radio"
-                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-2 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-0 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="statusTerm"
                 />
                 <label
@@ -182,7 +182,7 @@ export default {
                   type="radio"
                   value="running"
                   name="filter-radio"
-                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-2 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-0 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="statusTerm"
                 />
                 <label
@@ -202,7 +202,7 @@ export default {
                   type="radio"
                   value="failed"
                   name="filter-radio"
-                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-2 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-0 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="statusTerm"
                 />
                 <label
@@ -222,7 +222,7 @@ export default {
                   type="radio"
                   value="completed"
                   name="filter-radio"
-                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-2 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-inputBorder bg-inputBg text-accent focus:ring-0 focus:ring-accent dark:border-inputBorder-dark dark:bg-inputBg-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="statusTerm"
                 />
                 <label

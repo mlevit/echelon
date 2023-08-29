@@ -142,7 +142,7 @@ export default {
         <KpiCard
           title="Processed"
           :value="runFlowCount"
-          unit="records"
+          unit="entries"
           v-if="runFlowCount"
         />
       </div>

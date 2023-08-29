@@ -17,13 +17,13 @@ export default {
   components: { Treeselect },
   data() {
     return {
+      apiStore: useApiStore(),
       copyText: "Copy",
       downloadText: "Download",
       isExporting: false,
       exportData: null,
       // Tree variables
       alwaysOpen: true,
-      apiStore: useApiStore(),
       appendToBody: false,
       autoFocus: true,
       clearable: true,
@@ -32,7 +32,7 @@ export default {
       multiSelect: true,
       options: null,
       searchable: false,
-      selectedRecords: null,
+      selectedEntries: null,
       valueConsistsOf: "ALL",
     };
   },
@@ -153,7 +153,7 @@ export default {
     },
     getCleanExportRequest() {
       const cleanRequest = {};
-      for (const item of this.selectedRecords) {
+      for (const item of this.selectedEntries) {
         if (item.charAt(0) != "!") {
           let table = item.slice(0, item.lastIndexOf("_"));
           let recordId = item.slice(item.lastIndexOf("_") + 1, item.length);
@@ -165,15 +165,13 @@ export default {
       return cleanRequest;
     },
     async getExportData() {
-      if (this.isExporting) {
-        this.isExporting = false;
-      } else {
+      if (!this.isExporting) {
         this.isExporting = true;
         this.exportData = null;
 
         const url = new URL(this.apiStore.export);
         const response = await axios.post(url.href, {
-          input: JSON.stringify(this.getCleanExportRequest()),
+          inputJson: JSON.stringify(this.getCleanExportRequest()),
         });
 
         this.exportData = response.data;
@@ -285,14 +283,14 @@ export default {
         <div>
           <h5 class="mr-3 font-semibold dark:text-white">Export Data</h5>
           <p class="text-gray-500 dark:text-gray-400">
-            Select the records you want to export to generate JSON output
+            Select the entries you want to export to generate JSON output
           </p>
         </div>
         <button
           type="button"
           class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
           @click="getExportData()"
-          :disabled="_.isEmpty(selectedRecords)"
+          :disabled="_.isEmpty(selectedEntries)"
         >
           {{ isExporting ? "" : "Export" }}
           <SvgIcon
@@ -316,7 +314,7 @@ export default {
           </div>
           <div class="flex h-fit marker:overflow-x-auto">
             <treeselect
-              v-model="selectedRecords"
+              v-model="selectedEntries"
               :always-open="alwaysOpen"
               :append-to-body="appendToBody"
               :auto-focus="autoFocus"

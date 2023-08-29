@@ -39,7 +39,7 @@ export default {
             data-drawer-toggle="logo-sidebar"
             aria-controls="logo-sidebar"
             type="button"
-            class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-hover focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-hover focus:outline-none focus:ring-0 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
           >
             <span class="sr-only">Open sidebar</span>
             <svg
@@ -95,7 +95,7 @@ export default {
                 </button>
                 <!-- <button
                   type="button"
-                  class="inline-flex items-center rounded-r-lg border-t border border-border-lighter bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent focus:z-10 focus:text-accent focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark dark:focus:text-textPrimary-dark dark:focus:ring-accent"
+                  class="inline-flex items-center rounded-r-lg border-t border border-border-lighter bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent focus:z-10 focus:text-accent focus:ring-0 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark dark:focus:text-textPrimary-dark dark:focus:ring-accent"
                 >
                   <svg
                     aria-hidden="true"

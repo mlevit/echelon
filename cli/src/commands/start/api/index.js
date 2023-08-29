@@ -137,6 +137,50 @@ class CustomCommand extends Command {
         }
       });
 
+      app.all("/import", async (req, res) => {
+        // Import command from class path
+        const commandClass = require("../../data/import.js");
+
+        // Convert query paramters to array
+        let parameters = this.getParameters(req);
+
+        try {
+          // Execute command
+          var result = await commandClass.run(parameters);
+
+          // Send response
+          for (var key in result) {
+            if (result[key] === "FAIL") {
+              res.status(500).json(result);
+              return;
+            }
+          }
+          res.status(200).json(result);
+        } catch (error) {
+          if (error.code === "MODULE_NOT_FOUND") {
+            // 404 error
+            res.status(404).json(["Not found"]);
+          } else if (error.toString().includes("Missing required flag")) {
+            // Flag error
+            res
+              .status(400)
+              .json([
+                `Missing required flag: ${error.flag.name} (${error.flag.description})`,
+              ]);
+          } else if (error.toString().includes("Unexpected arguments")) {
+            // Unexpected arguments error
+            res.status(400).json([
+              `Unexpected arguments: ${error.args
+                .filter((n) => n)
+                .toString()
+                .replaceAll("--", "")}`,
+            ]);
+          } else {
+            res.status(400).json([error.toString().replace(/[eE]rror:\s/, "")]);
+          }
+        }
+      });
+
       app.all("/*", async (req, res) => {
         try {
           // Generate class path from route

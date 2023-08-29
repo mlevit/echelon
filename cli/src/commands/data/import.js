@@ -12,10 +12,11 @@ var responseJson = { tables: [], errors: [] };
 class CustomCommand extends Command {
   async run() {
     const { flags } = await this.parse(CustomCommand);
-    const input = flags.input;
+    const input = flags.input || flags.inputJson;
     const insertFlag = flags.insert;
     const updateFlag = flags.update;
     const deleteFlag = flags.delete;
+    const api = flags.api;
 
     const inputOrder = [
       "constraint_alert_code",
@@ -58,23 +59,25 @@ class CustomCommand extends Command {
     // Create request JSON
     requestJson["input"] = [];
 
-    // Get all files to be jobed and record them in the request JSON
-    if (fs.lstatSync(input).isDirectory()) {
-      for (var file of fs.readdirSync(input)) {
-        if (file.toLowerCase().includes(".json")) {
-          requestJson["input"].push({
-            name: path.join(input, file),
-            size: fs.statSync(path.join(input, file)).size,
-            checksum: md5File.sync(path.join(input, file)),
-          });
+    if (!api) {
+      // Get all files to be jobed and record them in the request JSON
+      if (fs.lstatSync(input).isDirectory()) {
+        for (var file of fs.readdirSync(input)) {
+          if (file.toLowerCase().includes(".json")) {
+            requestJson["input"].push({
+              name: path.join(input, file),
+              size: fs.statSync(path.join(input, file)).size,
+              checksum: md5File.sync(path.join(input, file)),
+            });
+          }
         }
+      } else {
+        requestJson["input"].push({
+          name: input,
+          size: fs.statSync(input).size,
+          checksum: md5File.sync(input),
+        });
       }
-    } else {
-      requestJson["input"].push({
-        name: input,
-        size: fs.statSync(input).size,
-        checksum: md5File.sync(input),
-      });
     }
 
     requestJson["insert"] = insertFlag;
@@ -85,15 +88,18 @@ class CustomCommand extends Command {
     const migrationId = await this.startMigration(requestJson);
 
     // Create a progress bar
-    const progressBar = new progress.SingleBar(
-      {
-        format: "| {table} | {bar} {percentage}% |",
-        hideCursor: true,
-      },
-      progress.Presets.shades_classic
-    );
+    const progressBar = null;
+    if (!api) {
+      progressBar = new progress.SingleBar(
+        {
+          format: "| {table} | {bar} {percentage}% |",
+          hideCursor: true,
+        },
+        progress.Presets.shades_classic
+      );
+    }
 
-    const inputJson = this.getInputJson(input);
+    const inputJson = this.getInputJson(input, api);
     const padEndLength = this.getLongestTableLength(inputJson);
     for (var table of inputOrder) {
       // eslint-disable-next-line no-prototype-builtins
@@ -102,8 +108,10 @@ class CustomCommand extends Command {
       }
 
       try {
-        progressBar.start(inputJson[table].length, 0);
-        progressBar.update(0, { table: table.padEnd(padEndLength) });
+        if (!api) {
+          progressBar.start(inputJson[table].length, 0);
+          progressBar.update(0, { table: table.padEnd(padEndLength) });
+        }
 
         var insertArray = [];
         var updateArray = [];
@@ -201,7 +209,9 @@ class CustomCommand extends Command {
               }
             }
           }
-          progressBar.increment();
+          if (!api) {
+            progressBar.increment();
+          }
         }
 
         if (deleteFlag && recordsToDelete.length > 0) {
@@ -233,7 +243,9 @@ class CustomCommand extends Command {
           string: error.toString(),
         });
       } finally {
-        progressBar.stop();
+        if (!api) {
+          progressBar.stop();
+        }
       }
     }
     await this.stopMigration(migrationId, responseJson);
@@ -245,20 +257,24 @@ class CustomCommand extends Command {
     })[0].length;
   }
 
-  getInputJson(input) {
-    if (fs.lstatSync(input).isDirectory()) {
-      var inputJson = {};
-      for (var file of fs.readdirSync(input)) {
-        if (file.toLowerCase().includes(".json")) {
-          inputJson = merge(
-            JSON.parse(fs.readFileSync(path.join(input, file)), "utf8"),
-            inputJson
-          );
-        }
-      }
-      return inputJson;
+  getInputJson(input, api) {
+    if (api) {
+      return JSON.parse(input);
     } else {
-      return JSON.parse(fs.readFileSync(input, "utf8"));
+      if (fs.lstatSync(input).isDirectory()) {
+        var inputJson = {};
+        for (var file of fs.readdirSync(input)) {
+          if (file.toLowerCase().includes(".json")) {
+            inputJson = merge(
+              JSON.parse(fs.readFileSync(path.join(input, file)), "utf8"),
+              inputJson
+            );
+          }
+        }
+        return inputJson;
+      } else {
+        return JSON.parse(fs.readFileSync(input, "utf8"));
+      }
     }
   }
 
@@ -434,7 +450,7 @@ CustomCommand.description = "import Echelon entries from file";
 CustomCommand.flags = {
   input: Flags.string({
     description: "input filename or directory",
-    required: true,
+    exactlyOne: ["input", "inputJson"],
   }),
   insert: Flags.boolean({
     description: "(flag) insert new entries",
@@ -447,6 +463,18 @@ CustomCommand.flags = {
   delete: Flags.boolean({
     description: "(flag) delete existing entries not present in input file",
     default: false,
+  }),
+  inputJson: Flags.string({
+    description: "JSON of tables and IDs to export e.g., {table: [id, id]}",
+    exclusive: ["input"],
+    dependsOn: ["api"],
+    hidden: true,
+  }),
+  api: Flags.boolean({
+    description: "(flag) is API result expected",
+    exclusive: ["input"],
+    dependsOn: ["inputJson"],
+    hidden: true,
   }),
 };
 

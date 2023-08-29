@@ -12,7 +12,7 @@ class CustomCommand extends Command {
   async run() {
     const { flags } = await this.parse(CustomCommand);
     var tables = flags.table;
-    const input = JSON.parse(flags.input);
+    const inputJson = JSON.parse(flags.inputJson);
     const output = flags.output;
     const api = flags.api;
 
@@ -39,8 +39,8 @@ class CustomCommand extends Command {
       );
     }
 
-    if (input) {
-      tables = Object.keys(input);
+    if (inputJson) {
+      tables = Object.keys(inputJson);
     } else {
       if (!tables) {
         tables = Object.values(schema).map((table) => table["name"]);
@@ -56,7 +56,7 @@ class CustomCommand extends Command {
       var errorJSON = [];
       for (var table of tables) {
         try {
-          let ids = input ? input[table] : null;
+          let ids = inputJson ? inputJson[table] : null;
           outputJSON[table] = await this.getTableRecords(table, ids);
         } catch (error) {
           errorJSON.push({ error: error, string: error.toString() });
@@ -309,15 +309,15 @@ CustomCommand.description = "export Echelon entries";
 CustomCommand.flags = {
   table: Flags.string({
     description: "table to export (can be specified multiple times)",
-    exclusive: ["input", "api"],
+    exclusive: ["inputJson", "api"],
     multiple: true,
   }),
   output: Flags.string({
     description: "output filename",
     default: "./export.json",
-    exclusive: ["input", "api"],
+    exclusive: ["inputJson", "api"],
   }),
-  input: Flags.string({
+  inputJson: Flags.string({
     description: "JSON of tables and IDs to export e.g., {table: [id, id]}",
     exclusive: ["table", "output"],
     dependsOn: ["api"],
@@ -326,7 +326,7 @@ CustomCommand.flags = {
   api: Flags.boolean({
     description: "(flag) is API result expected",
     exclusive: ["output"],
-    dependsOn: ["input"],
+    dependsOn: ["inputJson"],
     hidden: true,
   }),
 };
