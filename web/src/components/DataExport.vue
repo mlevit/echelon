@@ -71,6 +71,7 @@ export default {
     },
     getJobData() {
       const url = new URL(this.apiStore.job);
+      url.searchParams.append("limit", "1000");
       url.searchParams.append(
         "jq",
         '[.[] | {id: ("job_" + (.job_id | tostring)), label: .name, children: null}]'
@@ -397,10 +398,40 @@ export default {
   @apply rounded-lg;
 }
 
+.vue-treeselect__checkbox--checked {
+  @apply border-accent dark:border-accent-dark;
+  @apply bg-accent dark:bg-accent-dark;
+}
+
 .vue-treeselect__control {
   @apply bg-inputBg dark:bg-inputBg-dark;
   @apply border-inputBorder dark:border-inputBorder-dark;
   @apply hidden;
+}
+
+.vue-treeselect__label-container:hover .vue-treeselect__checkbox--unchecked {
+  @apply border-accent dark:border-accent-dark;
+}
+
+.vue-treeselect__checkbox--checked,
+.vue-treeselect__checkbox--indeterminate,
+.vue-treeselect__label-container:hover .vue-treeselect__checkbox--checked,
+.vue-treeselect__label-container:hover
+  .vue-treeselect__checkbox--indeterminate {
+  @apply border-accent dark:border-accent-dark;
+  @apply bg-accent dark:bg-accent-dark;
+}
+
+.vue-treeselect__check-mark {
+  background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 12'%3e %3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M1 5.917 5.724 10.5 15 1.5'/%3e %3c/svg%3e");
+  @apply ml-[0.2px] mt-[0.4px];
+}
+
+.vue-treeselect__minus-mark {
+  background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3e %3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='6' d='M18 12H6'/%3e %3c/svg%3e");
+  @apply ml-[.5px] mt-[0.4px];
+  /* writing-mode: horizontal-tb !important;
+  background-image: none !important; */
 }
 
 .vue-treeselect__control:hover {

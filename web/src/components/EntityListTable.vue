@@ -181,7 +181,7 @@ export default {
                   type="radio"
                   value=""
                   name="filter-type"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="typeTerm"
                 />
                 <label
@@ -203,7 +203,7 @@ export default {
                   type="radio"
                   :value="record"
                   name="filter-type"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="typeTerm"
                 />
                 <label
@@ -244,7 +244,7 @@ export default {
                   type="radio"
                   value=""
                   name="filter-source"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="sourceTerm"
                 />
                 <label
@@ -266,7 +266,7 @@ export default {
                   type="radio"
                   :value="record"
                   name="filter-source"
-                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                  class="h-4 w-4 border-border bg-gray-100 text-blue-600 focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-accent-dark dark:focus:ring-offset-gray-800"
                   v-model="sourceTerm"
                 />
                 <label

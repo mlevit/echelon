@@ -82,7 +82,7 @@ export default {
                 id="insertCheckbox"
                 type="checkbox"
                 value="insert"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-0 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-accent focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-accent-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark"
                 v-model="insertSelection"
               />
               <label
@@ -99,7 +99,7 @@ export default {
                 id="updateCheckbox"
                 type="checkbox"
                 value="update"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-0 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-accent focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-accent-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark"
                 v-model="updateSelection"
               />
               <label
@@ -116,7 +116,7 @@ export default {
                 id="deleteCheckbox"
                 type="checkbox"
                 value="delete"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-0 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-accent focus:ring-0 focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-accent-dark dark:ring-offset-gray-800 dark:focus:ring-accent-dark"
                 v-model="deleteSelection"
               />
               <label
@@ -186,7 +186,7 @@ export default {
     <div class="flex h-[calc(100vh-395px)] items-center justify-between">
       <textarea
         id="pastedEntries"
-        class="block h-full w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 font-mono text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        class="block h-full w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 font-mono text-sm text-gray-900 focus:border-accent focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-accent-dark dark:focus:ring-accent-dark"
         placeholder=""
         v-model="pastedEntries"
       ></textarea>
