@@ -1,4 +1,5 @@
 const { Command, Flags } = require("@oclif/core");
+const mcache = require("memory-cache");
 const cors = require("cors");
 const express = require("express");
 const expressWinston = require("express-winston");
@@ -41,6 +42,24 @@ class CustomCommand extends Command {
       "job/run": "job/run/index",
       entity: "entity/index",
       job: "job/index",
+    };
+
+    var cache = (duration) => {
+      return (req, res, next) => {
+        let key = req.originalUrl || req.url;
+        let cachedBody = mcache.get(key);
+        if (cachedBody && req.method === "GET") {
+          res.send(cachedBody);
+          return;
+        } else {
+          res.sendResponse = res.send;
+          res.send = (body) => {
+            mcache.put(key, body, duration * 1000);
+            res.sendResponse(body);
+          };
+          next();
+        }
+      };
     };
 
     try {
@@ -181,7 +200,7 @@ class CustomCommand extends Command {
         }
       });
 
-      app.all("/*", async (req, res) => {
+      app.all("/*", cache(10), async (req, res) => {
         try {
           // Generate class path from route
           var classPath = req.path.replace(/\/$/gm, "").slice(1);

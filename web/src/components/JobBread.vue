@@ -24,7 +24,7 @@ defineProps({
           >
             <RouterLink
               to="/job"
-              class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-textPrimary-dark"
+              class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-accent dark:text-accent-dark dark:text-gray-400 dark:hover:text-textPrimary-dark"
             >
               Job
             </RouterLink>
