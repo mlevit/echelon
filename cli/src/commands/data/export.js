@@ -12,7 +12,9 @@ class CustomCommand extends Command {
   async run() {
     const { flags } = await this.parse(CustomCommand);
     var tables = flags.table;
+    const inputJson = JSON.parse(flags.inputJson);
     const output = flags.output;
+    const api = flags.api;
 
     requestJSON["tables"] = tables;
     requestJSON["output"] = output;
@@ -23,27 +25,39 @@ class CustomCommand extends Command {
     // Read Echelon catalogue schema
     const schema = this.getSchema();
 
-    // Create a progress bar
-    const progressBar = new progress.SingleBar(
-      {
-        format: "| export | {bar} {percentage}% | {value}/{total} tables |",
-        hideCursor: true,
-      },
-      progress.Presets.shades_classic
-    );
+    // Define progress bar const
+    var progressBar = null;
 
-    if (!tables) {
-      tables = Object.values(schema).map((table) => table["name"]);
+    if (!api) {
+      // Create a progress bar
+      progressBar = new progress.SingleBar(
+        {
+          format: "| export | {bar} {percentage}% | {value}/{total} tables |",
+          hideCursor: true,
+        },
+        progress.Presets.shades_classic
+      );
     }
 
-    progressBar.start(tables.length, 0);
+    if (inputJson) {
+      tables = Object.keys(inputJson);
+    } else {
+      if (!tables) {
+        tables = Object.values(schema).map((table) => table["name"]);
+      }
+    }
+
+    if (!api) {
+      progressBar.start(tables.length, 0);
+    }
 
     try {
       var outputJSON = {};
       var errorJSON = [];
       for (var table of tables) {
         try {
-          outputJSON[table] = await this.getTableRecords(table);
+          let ids = inputJson ? inputJson[table] : null;
+          outputJSON[table] = await this.getTableRecords(table, ids);
         } catch (error) {
           errorJSON.push({ error: error, string: error.toString() });
         } finally {
@@ -52,23 +66,32 @@ class CustomCommand extends Command {
             count: outputJSON[table] ? outputJSON[table].length : 0,
             errors: errorJSON,
           });
-          progressBar.increment();
+          if (!api) {
+            progressBar.increment();
+          }
         }
       }
 
-      // Write output to file
-      fs.writeFileSync(output, JSON.stringify(outputJSON, null, 2));
+      if (api) {
+        this.log(outputJSON);
+        return outputJSON;
+      } else {
+        // Write output to file
+        fs.writeFileSync(output, JSON.stringify(outputJSON, null, 2));
 
-      // Get output file metadata
-      responseJSON["output"] = {
-        name: output,
-        size: fs.statSync(output).size,
-        checksum: md5File.sync(output),
-      };
+        // Get output file metadata
+        responseJSON["output"] = {
+          name: output,
+          size: fs.statSync(output).size,
+          checksum: md5File.sync(output),
+        };
+      }
     } catch (error) {
       responseJSON["errors"].push({ error: error, string: error.toString() });
     } finally {
-      progressBar.stop();
+      if (!api) {
+        progressBar.stop();
+      }
       await this.stopMigration(migrationId, responseJSON);
     }
   }
@@ -88,24 +111,24 @@ class CustomCommand extends Command {
     }
   }
 
-  async getTableRecords(table) {
+  async getTableRecords(table, ids) {
     switch (table) {
       case "field":
-        return await this.getFieldRecords();
+        return await this.getFieldRecords(ids);
       case "job_constant":
-        return await this.getJobConstantRecords();
+        return await this.getJobConstantRecords(ids);
       case "entity_constant":
-        return await this.getEntityConstantRecords();
+        return await this.getEntityConstantRecords(ids);
       case "job_entity_rel":
-        return await this.getJobEntityRelRecords();
+        return await this.getJobEntityRelRecords(ids);
       case "job_field_map":
-        return await this.getJobFieldMapRecords();
+        return await this.getJobFieldMapRecords(ids);
       default:
-        return await this.getOtherTableRecords(table);
+        return await this.getOtherTableRecords(table, ids);
     }
   }
 
-  async getOtherTableRecords(table) {
+  async getOtherTableRecords(table, ids) {
     const orderKeys = this.getTableProperty(table, "unique_key");
     var tableColumnsResult = await knex
       .select("column_name")
@@ -121,13 +144,23 @@ class CustomCommand extends Command {
 
     if (tableColumnsResult.length != 0) {
       var columns = tableColumnsResult.map((column) => column.column_name);
-      return await knex.select(columns).from(table).orderBy(orderKeys);
+
+      return await knex
+        .select(columns)
+        .from(table)
+        .whereIn(`${table}_id`, ids)
+        .modify(function (qb) {
+          if (ids) {
+            qb.whereIn(`${table}_id`, ids);
+          }
+        })
+        .orderBy(orderKeys);
     } else {
       this.error(`Table '${table}' does not exist.`);
     }
   }
 
-  async getFieldRecords() {
+  async getFieldRecords(ids) {
     return await knex
       .select(
         "entity.name as entity_name",
@@ -152,17 +185,27 @@ class CustomCommand extends Command {
         "field.business_date_flag"
       )
       .from("field")
-      .join("entity", "field.entity_id", "entity.entity_id");
+      .join("entity", "field.entity_id", "entity.entity_id")
+      .modify(function (qb) {
+        if (ids) {
+          qb.whereIn("field_id", ids);
+        }
+      });
   }
 
-  async getJobConstantRecords() {
+  async getJobConstantRecords(ids) {
     return await knex
       .select("job.name as job_name", "job_constant.name", "job_constant.value")
       .from("job_constant")
-      .join("job", "job_constant.job_id", "job.job_id");
+      .join("job", "job_constant.job_id", "job.job_id")
+      .modify(function (qb) {
+        if (ids) {
+          qb.whereIn("job_constant_id", ids);
+        }
+      });
   }
 
-  async getEntityConstantRecords() {
+  async getEntityConstantRecords(ids) {
     return await knex
       .select(
         "entity.name as entity_name",
@@ -170,10 +213,15 @@ class CustomCommand extends Command {
         "entity_constant.value"
       )
       .from("entity_constant")
-      .join("entity", "entity_constant.entity_id", "entity.entity_id");
+      .join("entity", "entity_constant.entity_id", "entity.entity_id")
+      .modify(function (qb) {
+        if (ids) {
+          qb.whereIn("entity_constant_id", ids);
+        }
+      });
   }
 
-  async getJobEntityRelRecords() {
+  async getJobEntityRelRecords(ids) {
     return await knex
       .select(
         "job.name as job_name",
@@ -193,10 +241,15 @@ class CustomCommand extends Command {
         "entity as target",
         "job_entity_rel.target_entity_id",
         "target.entity_id"
-      );
+      )
+      .modify(function (qb) {
+        if (ids) {
+          qb.whereIn("job_entity_rel_id", ids);
+        }
+      });
   }
 
-  async getJobFieldMapRecords() {
+  async getJobFieldMapRecords(ids) {
     return await knex
       .select(
         "job.name as job_name",
@@ -227,7 +280,12 @@ class CustomCommand extends Command {
         "entity as target_entity",
         "target_field.entity_id",
         "target_entity.entity_id"
-      );
+      )
+      .modify(function (qb) {
+        if (ids) {
+          qb.whereIn("job_field_map.job_field_map_id", ids);
+        }
+      });
   }
 
   async startMigration(requestJSON) {
@@ -246,16 +304,30 @@ class CustomCommand extends Command {
   }
 }
 
-CustomCommand.description = "export Echelon entries to file";
+CustomCommand.description = "export Echelon entries";
 
 CustomCommand.flags = {
   table: Flags.string({
     description: "table to export (can be specified multiple times)",
+    exclusive: ["inputJson", "api"],
     multiple: true,
   }),
   output: Flags.string({
     description: "output filename",
     default: "./export.json",
+    exclusive: ["inputJson", "api"],
+  }),
+  inputJson: Flags.string({
+    description: "JSON of tables and IDs to export e.g., {table: [id, id]}",
+    exclusive: ["table", "output"],
+    dependsOn: ["api"],
+    hidden: true,
+  }),
+  api: Flags.boolean({
+    description: "(flag) is API result expected",
+    exclusive: ["output"],
+    dependsOn: ["inputJson"],
+    hidden: true,
   }),
 };
 

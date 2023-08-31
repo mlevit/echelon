@@ -1,4 +1,5 @@
 const { Command, Flags } = require("@oclif/core");
+const mcache = require("memory-cache");
 const cors = require("cors");
 const express = require("express");
 const expressWinston = require("express-winston");
@@ -41,6 +42,24 @@ class CustomCommand extends Command {
       "job/run": "job/run/index",
       entity: "entity/index",
       job: "job/index",
+    };
+
+    var cache = (duration) => {
+      return (req, res, next) => {
+        let key = req.originalUrl || req.url;
+        let cachedBody = mcache.get(key);
+        if (cachedBody && req.method === "GET") {
+          res.send(cachedBody);
+          return;
+        } else {
+          res.sendResponse = res.send;
+          res.send = (body) => {
+            mcache.put(key, body, duration * 1000);
+            res.sendResponse(body);
+          };
+          next();
+        }
+      };
     };
 
     try {
@@ -93,7 +112,95 @@ class CustomCommand extends Command {
         res.status(200).json(result);
       });
 
-      app.all("/*", async (req, res) => {
+      app.all("/export", async (req, res) => {
+        // Import command from class path
+        const commandClass = require("../../data/export.js");
+
+        // Convert query paramters to array
+        let parameters = this.getParameters(req);
+
+        try {
+          // Execute command
+          var result = await commandClass.run(parameters);
+
+          // Send response
+          for (var key in result) {
+            if (result[key] === "FAIL") {
+              res.status(500).json(result);
+              return;
+            }
+          }
+          res.status(200).json(result);
+        } catch (error) {
+          if (error.code === "MODULE_NOT_FOUND") {
+            // 404 error
+            res.status(404).json(["Not found"]);
+          } else if (error.toString().includes("Missing required flag")) {
+            // Flag error
+            res
+              .status(400)
+              .json([
+                `Missing required flag: ${error.flag.name} (${error.flag.description})`,
+              ]);
+          } else if (error.toString().includes("Unexpected arguments")) {
+            // Unexpected arguments error
+            res.status(400).json([
+              `Unexpected arguments: ${error.args
+                .filter((n) => n)
+                .toString()
+                .replaceAll("--", "")}`,
+            ]);
+          } else {
+            res.status(400).json([error.toString().replace(/[eE]rror:\s/, "")]);
+          }
+        }
+      });
+
+      app.all("/import", async (req, res) => {
+        // Import command from class path
+        const commandClass = require("../../data/import.js");
+
+        // Convert query paramters to array
+        let parameters = this.getParameters(req);
+
+        try {
+          // Execute command
+          var result = await commandClass.run(parameters);
+
+          // Send response
+          for (var key in result) {
+            if (result[key] === "FAIL") {
+              res.status(500).json(result);
+              return;
+            }
+          }
+          res.status(200).json(result);
+        } catch (error) {
+          if (error.code === "MODULE_NOT_FOUND") {
+            // 404 error
+            res.status(404).json(["Not found"]);
+          } else if (error.toString().includes("Missing required flag")) {
+            // Flag error
+            res
+              .status(400)
+              .json([
+                `Missing required flag: ${error.flag.name} (${error.flag.description})`,
+              ]);
+          } else if (error.toString().includes("Unexpected arguments")) {
+            // Unexpected arguments error
+            res.status(400).json([
+              `Unexpected arguments: ${error.args
+                .filter((n) => n)
+                .toString()
+                .replaceAll("--", "")}`,
+            ]);
+          } else {
+            res.status(400).json([error.toString().replace(/[eE]rror:\s/, "")]);
+          }
+        }
+      });
+
+      app.all("/*", cache(10), async (req, res) => {
         try {
           // Generate class path from route
           var classPath = req.path.replace(/\/$/gm, "").slice(1);

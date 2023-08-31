@@ -51,7 +51,7 @@ export default {
   <div class="w-full">
     <div>
       <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-        Source for
+        Downstream
       </h6>
     </div>
     <div
@@ -87,7 +87,9 @@ export default {
       </table>
     </div>
     <div v-else>
-      <p class="text-gray-400 dark:text-gray-500">Not a source for any jobs.</p>
+      <p class="text-gray-400 dark:text-gray-500">
+        No downstream jobs defined.
+      </p>
     </div>
   </div>
 </template>

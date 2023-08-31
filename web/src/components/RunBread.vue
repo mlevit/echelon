@@ -53,7 +53,7 @@ export default {
       <li class="inline-flex items-center">
         <RouterLink
           to="/job"
-          class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-textPrimary-dark"
+          class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-accent dark:text-accent-dark dark:text-gray-400 dark:hover:text-textPrimary-dark"
         >
           Job
         </RouterLink>
@@ -63,7 +63,7 @@ export default {
           <SvgIcon icon="chevronRight" />
           <RouterLink
             :to="'/job/' + jobId"
-            class="ml-1 text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-textPrimary-dark md:ml-2"
+            class="ml-1 text-sm font-medium text-textSecondary hover:text-accent dark:text-accent-dark dark:text-gray-400 dark:hover:text-textPrimary-dark md:ml-2"
             >{{ jobName }}</RouterLink
           >
         </div>
@@ -76,7 +76,7 @@ export default {
           >
             <RouterLink
               to="/run"
-              class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-blue-600 dark:text-gray-400 dark:hover:text-textPrimary-dark"
+              class="inline-flex items-center text-sm font-medium text-textSecondary hover:text-accent dark:text-accent-dark dark:text-gray-400 dark:hover:text-textPrimary-dark"
             >
               Run
             </RouterLink></span

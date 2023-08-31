@@ -51,7 +51,7 @@ export default {
   <div class="w-full">
     <div>
       <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-        Target of
+        Upstream
       </h6>
     </div>
     <div
@@ -87,7 +87,7 @@ export default {
       </table>
     </div>
     <div v-else>
-      <p class="text-gray-400 dark:text-gray-500">Not a target of any jobs.</p>
+      <p class="text-gray-400 dark:text-gray-500">No upstream jobs defined.</p>
     </div>
   </div>
 </template>

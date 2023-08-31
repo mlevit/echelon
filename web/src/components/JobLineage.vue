@@ -106,40 +106,26 @@ export default {
 </template>
 
 <style>
-.edgePaths {
-  stroke: rgb(156 163 175) !important;
+.label {
+  @apply text-textPrimary dark:text-textPrimary-dark !important;
+  @apply font-sans text-sm !important;
+  @apply flex items-center justify-center !important;
 }
 
-.edgePaths .path {
-  stroke: rgb(156 163 175) !important;
-  margin-left: 5px !important;
+.label g foreignObject div {
+  @apply relative top-1/2 -translate-y-1/2 transform whitespace-nowrap text-center;
+}
+
+.node rect {
+  @apply fill-background dark:fill-background-dark !important;
+  @apply stroke-border dark:stroke-border-dark !important;
+}
+
+.edgePath path {
+  @apply stroke-border-dark dark:stroke-border !important;
 }
 
 .arrowheadPath {
-  fill: rgb(156 163 175) !important;
-}
-
-.node {
-  fill: rgb(31 41 55) !important;
-  stroke: rgb(156 163 175) !important;
-  stroke-width: 1px !important;
-}
-
-.label-container {
-  fill: rgb(31 41 55) !important;
-  stroke: rgb(156 163 175) !important;
-}
-
-.label-container:hover {
-  fill: rgb(75 85 99) !important;
-}
-
-.label {
-  color: white !important;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  font-size: 14px !important;
-  pointer-events: none;
+  @apply fill-border-dark dark:fill-border !important;
 }
 </style>

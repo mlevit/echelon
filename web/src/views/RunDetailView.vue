@@ -117,7 +117,7 @@ export default {
 </script>
 
 <template>
-  <div class="min-h-screen p-4 dark:bg-background-darker sm:ml-64">
+  <div class="min-h-[calc(100vh-56px)] p-4 dark:bg-background-darker sm:ml-64">
     <div class="mb-4 flex h-fit items-center">
       <RunBread
         :jobName="jobName"
@@ -142,7 +142,7 @@ export default {
         <KpiCard
           title="Processed"
           :value="runFlowCount"
-          unit="records"
+          unit="entries"
           v-if="runFlowCount"
         />
       </div>

@@ -85,41 +85,4 @@ export default {
   </div>
 </template>
 
-<style>
-.edgePaths {
-  stroke: rgb(156 163 175) !important;
-}
-
-.edgePaths .path {
-  stroke: rgb(156 163 175) !important;
-  margin-left: 5px !important;
-}
-
-.arrowheadPath {
-  fill: rgb(156 163 175) !important;
-}
-
-.node {
-  fill: rgb(31 41 55) !important;
-  stroke: rgb(156 163 175) !important;
-  stroke-width: 1px !important;
-}
-
-.label-container {
-  fill: rgb(31 41 55) !important;
-  stroke: rgb(156 163 175) !important;
-}
-
-.label-container:hover {
-  fill: rgb(75 85 99) !important;
-}
-
-.label {
-  color: white !important;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  font-size: 14px !important;
-  pointer-events: none;
-}
-</style>
+<style></style>
