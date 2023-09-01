@@ -1,15 +1,17 @@
 <script setup>
-import SvgIcon from "@/components/SvgIcon.vue";
-import { useApiStore } from "@/stores/api";
+import ButtonAlt from '@/components/ButtonAlt.vue'
+import ButtonPrimary from '@/components/ButtonPrimary.vue'
+import SvgIcon from '@/components/SvgIcon.vue'
+import { useApiStore } from '@/stores/api'
 
-import Treeselect, { LOAD_CHILDREN_OPTIONS } from "vue3-treeselect";
-import "vue3-treeselect/dist/vue3-treeselect.css";
+import Treeselect, { LOAD_CHILDREN_OPTIONS } from 'vue3-treeselect'
+import 'vue3-treeselect/dist/vue3-treeselect.css'
 
-import axios from "axios";
-import { initFlowbite } from "flowbite";
-import _ from "lodash";
-import { saveAs } from "file-saver";
-import moment from "moment";
+import axios from 'axios'
+import { initFlowbite } from 'flowbite'
+import _ from 'lodash'
+import { saveAs } from 'file-saver'
+import moment from 'moment'
 </script>
 
 <script>
@@ -18,8 +20,8 @@ export default {
   data() {
     return {
       apiStore: useApiStore(),
-      copyText: "Copy",
-      downloadText: "Download",
+      copyText: 'Copy',
+      downloadText: 'Download',
       isExporting: false,
       exportData: null,
       // Tree variables
@@ -33,251 +35,241 @@ export default {
       options: null,
       searchable: false,
       selectedEntries: null,
-      valueConsistsOf: "ALL",
-    };
+      valueConsistsOf: 'ALL',
+    }
   },
   created() {
-    this.getJobData();
+    this.getJobData()
   },
   mounted() {
-    initFlowbite();
+    initFlowbite()
   },
   methods: {
     copyData() {
       if (this.exportData) {
-        navigator.clipboard.writeText(JSON.stringify(this.exportData, null, 2));
+        navigator.clipboard.writeText(JSON.stringify(this.exportData, null, 2))
 
-        let ref = this;
-        this.copyText = "Copied";
+        let ref = this
+        this.copyText = 'Copied'
         setTimeout(function () {
-          ref.copyText = "Copy";
-        }, 2000);
+          ref.copyText = 'Copy'
+        }, 2000)
       }
     },
     downloadData() {
       if (this.exportData) {
-        const timestamp = moment().format("YYYYMMDD_HHmmss");
-        const json = JSON.stringify(this.exportData, null, 2);
-        const blob = new Blob([json], { type: "application/json" });
+        const timestamp = moment().format('YYYYMMDD_HHmmss')
+        const json = JSON.stringify(this.exportData, null, 2)
+        const blob = new Blob([json], { type: 'application/json' })
 
-        saveAs(blob, `export_${timestamp}.json`);
+        saveAs(blob, `export_${timestamp}.json`)
 
-        let ref = this;
-        this.downloadText = "Downloaded";
+        let ref = this
+        this.downloadText = 'Downloaded'
         setTimeout(function () {
-          ref.downloadText = "Download";
-        }, 2000);
+          ref.downloadText = 'Download'
+        }, 2000)
       }
     },
     getJobData() {
-      const url = new URL(this.apiStore.job);
-      url.searchParams.append("limit", "1000");
+      const url = new URL(this.apiStore.job)
+      url.searchParams.append('limit', '1000')
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("job_" + (.job_id | tostring)), label: .name, children: null}]'
-      );
-      axios.get(url.href).then((response) => (this.options = response.data));
+      )
+      axios.get(url.href).then((response) => (this.options = response.data))
     },
     async getJobConstantData(jobName) {
-      const url = new URL(this.apiStore.jobConstant);
-      url.searchParams.append("name", jobName);
+      const url = new URL(this.apiStore.jobConstant)
+      url.searchParams.append('name', jobName)
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("job_constant_" + (.job_constant_id | tostring)), label: .name}]'
-      );
+      )
 
-      const response = await axios.get(url.href);
-      return response.data;
+      const response = await axios.get(url.href)
+      return response.data
     },
     async getJobEntityData(jobName) {
-      const urlSource = new URL(this.apiStore.jobSource);
-      urlSource.searchParams.append("name", jobName);
+      const urlSource = new URL(this.apiStore.jobSource)
+      urlSource.searchParams.append('name', jobName)
       urlSource.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null, isDefaultExpanded: true}]'
-      );
+      )
 
-      const urlTarget = new URL(this.apiStore.jobTarget);
-      urlTarget.searchParams.append("name", jobName);
+      const urlTarget = new URL(this.apiStore.jobTarget)
+      urlTarget.searchParams.append('name', jobName)
       urlTarget.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("entity_" + (.entity_id | tostring)), label: .name, children: null, isDefaultExpanded: true}]'
-      );
+      )
 
-      const responseSource = await axios.get(urlSource.href);
-      const responseTarget = await axios.get(urlTarget.href);
-      return [...responseSource.data, ...responseTarget.data];
+      const responseSource = await axios.get(urlSource.href)
+      const responseTarget = await axios.get(urlTarget.href)
+      return [...responseSource.data, ...responseTarget.data]
     },
     async getJobFieldMapData(jobName) {
-      const url = new URL(this.apiStore.jobFieldMap);
-      url.searchParams.append("name", jobName);
+      const url = new URL(this.apiStore.jobFieldMap)
+      url.searchParams.append('name', jobName)
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("job_field_map_" + (.job_field_map_id | tostring)), label: ((.source_field_name | tostring) + " › " + (.target_field_name | tostring))}]'
-      );
+      )
 
-      const response = await axios.get(url.href);
-      return response.data;
+      const response = await axios.get(url.href)
+      return response.data
     },
     async getJobRelationshipData(jobName) {
-      const url = new URL(this.apiStore.jobRelationship);
-      url.searchParams.append("name", jobName);
+      const url = new URL(this.apiStore.jobRelationship)
+      url.searchParams.append('name', jobName)
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("job_entity_rel_" + (.job_entity_rel_id | tostring)), label: ((.source_entity_name | tostring) + " › " + (.target_entity_name | tostring))}]'
-      );
+      )
 
-      const response = await axios.get(url.href);
-      return response.data;
+      const response = await axios.get(url.href)
+      return response.data
     },
     async getEntityConstantData(entityName) {
-      const url = new URL(this.apiStore.entityConstant);
-      url.searchParams.append("name", entityName);
+      const url = new URL(this.apiStore.entityConstant)
+      url.searchParams.append('name', entityName)
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("entity_constant_" + (.entity_constant_id | tostring)), label: .name}]'
-      );
+      )
 
-      const response = await axios.get(url.href);
-      return response.data;
+      const response = await axios.get(url.href)
+      return response.data
     },
     async getFieldData(entityName) {
-      const url = new URL(this.apiStore.entityField);
-      url.searchParams.append("name", entityName);
+      const url = new URL(this.apiStore.entityField)
+      url.searchParams.append('name', entityName)
       url.searchParams.append(
-        "jq",
+        'jq',
         '[.[] | {id: ("field_" + (.field_id | tostring)), label: .physical_name}]'
-      );
+      )
 
-      const response = await axios.get(url.href);
-      return response.data;
+      const response = await axios.get(url.href)
+      return response.data
     },
     getCleanExportRequest() {
-      const cleanRequest = {};
+      const cleanRequest = {}
       for (const item of this.selectedEntries) {
-        if (item.charAt(0) != "!") {
-          let table = item.slice(0, item.lastIndexOf("_"));
-          let recordId = item.slice(item.lastIndexOf("_") + 1, item.length);
+        if (item.charAt(0) != '!') {
+          let table = item.slice(0, item.lastIndexOf('_'))
+          let recordId = item.slice(item.lastIndexOf('_') + 1, item.length)
 
-          cleanRequest[table] = cleanRequest[table] || [];
-          cleanRequest[table].push(recordId);
+          cleanRequest[table] = cleanRequest[table] || []
+          cleanRequest[table].push(recordId)
         }
       }
-      return cleanRequest;
+      return cleanRequest
     },
     async getExportData() {
       if (!this.isExporting) {
-        this.isExporting = true;
-        this.exportData = null;
+        this.isExporting = true
+        this.exportData = null
 
-        const url = new URL(this.apiStore.export);
+        const url = new URL(this.apiStore.export)
         const response = await axios.post(url.href, {
           inputJson: JSON.stringify(this.getCleanExportRequest()),
-        });
+        })
 
-        this.exportData = response.data;
-        this.isExporting = false;
+        this.exportData = response.data
+        this.isExporting = false
       }
     },
     async loadOptions({ action, parentNode, callback }) {
       if (action === LOAD_CHILDREN_OPTIONS) {
         switch (true) {
           case /job_\d+/.test(parentNode.id):
-            let jobChildrenObject = [];
+            let jobChildrenObject = []
 
-            const jobConstandData = await this.getJobConstantData(
-              parentNode.label
-            );
+            const jobConstandData = await this.getJobConstantData(parentNode.label)
             if (jobConstandData.length > 0) {
               let constantObject = {
                 id: `!${parentNode.id}_job_constants`,
-                label: "Constants",
+                label: 'Constants',
                 children: jobConstandData,
-              };
-              jobChildrenObject.push(constantObject);
+              }
+              jobChildrenObject.push(constantObject)
             }
 
-            const entityData = await this.getJobEntityData(parentNode.label);
+            const entityData = await this.getJobEntityData(parentNode.label)
             if (entityData.length > 0) {
               let entityObject = {
                 id: `!${parentNode.id}_entities`,
-                label: "Entities",
+                label: 'Entities',
                 children: entityData,
-              };
-              jobChildrenObject.push(entityObject);
+              }
+              jobChildrenObject.push(entityObject)
             }
 
-            const jobRelationshipData = await this.getJobRelationshipData(
-              parentNode.label
-            );
+            const jobRelationshipData = await this.getJobRelationshipData(parentNode.label)
             if (jobRelationshipData.length > 0) {
               let jobRelationshipObject = {
                 id: `!${parentNode.id}_relationships`,
-                label: "Entity Relationships",
+                label: 'Entity Relationships',
                 children: jobRelationshipData,
-              };
-              jobChildrenObject.push(jobRelationshipObject);
+              }
+              jobChildrenObject.push(jobRelationshipObject)
             }
 
-            const jobFieldMapData = await this.getJobFieldMapData(
-              parentNode.label
-            );
+            const jobFieldMapData = await this.getJobFieldMapData(parentNode.label)
             if (jobRelationshipData.length > 0) {
               let jobFieldMapObject = {
                 id: `!${parentNode.id}_field_maps`,
-                label: "Field Mapping",
+                label: 'Field Mapping',
                 children: jobFieldMapData,
-              };
-              jobChildrenObject.push(jobFieldMapObject);
+              }
+              jobChildrenObject.push(jobFieldMapObject)
             }
 
-            parentNode.children = jobChildrenObject;
+            parentNode.children = jobChildrenObject
 
-            callback();
-            break;
+            callback()
+            break
           case /entity_\d+/.test(parentNode.id):
-            let entityChildrenObject = [];
+            let entityChildrenObject = []
 
-            const entityConstandData = await this.getEntityConstantData(
-              parentNode.label
-            );
+            const entityConstandData = await this.getEntityConstantData(parentNode.label)
             if (entityConstandData.length > 0) {
               let constantObject = {
                 id: `!${parentNode.id}_entity_constants`,
-                label: "Constants",
+                label: 'Constants',
                 children: entityConstandData,
-              };
-              entityChildrenObject.push(constantObject);
+              }
+              entityChildrenObject.push(constantObject)
             }
 
-            const fieldData = await this.getFieldData(parentNode.label);
+            const fieldData = await this.getFieldData(parentNode.label)
             if (fieldData.length > 0) {
               let fieldObject = {
                 id: `!${parentNode.id}_fields`,
-                label: "Fields",
+                label: 'Fields',
                 children: fieldData,
-              };
-              entityChildrenObject.push(fieldObject);
+              }
+              entityChildrenObject.push(fieldObject)
             }
 
-            parentNode.children = entityChildrenObject;
+            parentNode.children = entityChildrenObject
 
-            callback();
-            break;
+            callback()
+            break
           default:
-            break;
+            break
         }
       }
     },
   },
-};
+}
 </script>
 
 <template>
   <div class="mb-4 w-full">
-    <div
-      class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg"
-    >
+    <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
       <div
         class="flex-row items-center justify-between space-y-3 p-4 sm:flex sm:space-x-4 sm:space-y-0"
       >
@@ -287,20 +279,20 @@ export default {
             Select the entries you want to export to generate JSON output
           </p>
         </div>
-        <button
+        <ButtonPrimary
+          :button-text="isExporting ? '' : 'Export'"
+          :disabled="_.isEmpty(selectedEntries)"
+          @click="getExportData()"
+        />
+        <!-- <button
           type="button"
           class="inline-flex select-none items-center justify-center rounded-lg border border-border bg-background-lightest px-4 py-2 text-sm font-medium text-textPrimary hover:bg-hover hover:text-accent dark:border-gray-600 dark:bg-gray-700 dark:text-textPrimary-dark dark:hover:bg-gray-600 dark:hover:text-textPrimary-dark"
-          @click="getExportData()"
           :disabled="_.isEmpty(selectedEntries)"
+          @click="getExportData()"
         >
-          {{ isExporting ? "" : "Export" }}
-          <SvgIcon
-            icon="reload"
-            color="black"
-            class="animate-spin"
-            v-if="isExporting"
-          />
-        </button>
+          {{ isExporting ? '' : 'Export' }}
+          <SvgIcon v-if="isExporting" icon="reload" color="black" class="animate-spin" />
+        </button> -->
       </div>
     </div>
   </div>
@@ -309,12 +301,11 @@ export default {
       <div class="flex h-fit items-center justify-center rounded">
         <div class="w-full">
           <div>
-            <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-              Available
-            </h6>
+            <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">Available</h6>
           </div>
           <div class="flex h-fit marker:overflow-x-auto">
             <treeselect
+              v-if="options"
               v-model="selectedEntries"
               :always-open="alwaysOpen"
               :append-to-body="appendToBody"
@@ -328,8 +319,7 @@ export default {
               :searchable="searchable"
               :value-consists-of="valueConsistsOf"
               placeholder="..."
-              zIndex="1"
-              v-if="options"
+              z-index="1"
             />
           </div>
         </div>
@@ -337,15 +327,13 @@ export default {
       <div class="flex h-full items-center justify-center rounded">
         <div class="w-full">
           <div class="flex items-center">
-            <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">
-              Exported
-            </h6>
+            <h6 class="mb-4 text-lg font-bold dark:text-textPrimary-dark">Exported</h6>
             <SvgIcon
               icon="clipboard"
               color="black"
               class="mb-4 ml-2 cursor-pointer focus:outline-none"
-              @click="copyData"
               data-tooltip-target="tooltip-copy"
+              @click="copyData"
             />
             <div
               id="tooltip-copy"
@@ -359,8 +347,8 @@ export default {
               icon="download"
               color="black"
               class="mb-4 ml-2 cursor-pointer focus:outline-none"
-              @click="downloadData"
               data-tooltip-target="tooltip-download"
+              @click="downloadData"
             />
             <div
               id="tooltip-download"
@@ -416,8 +404,7 @@ export default {
 .vue-treeselect__checkbox--checked,
 .vue-treeselect__checkbox--indeterminate,
 .vue-treeselect__label-container:hover .vue-treeselect__checkbox--checked,
-.vue-treeselect__label-container:hover
-  .vue-treeselect__checkbox--indeterminate {
+.vue-treeselect__label-container:hover .vue-treeselect__checkbox--indeterminate {
   @apply border-accent dark:border-accent-dark;
   @apply bg-accent dark:bg-accent-dark;
 }
